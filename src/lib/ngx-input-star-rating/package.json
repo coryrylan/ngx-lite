@@ -1,0 +1,12 @@
+{
+  "name": "ngx-input-star-rating",
+  "version": "0.0.1",
+  "repository": "https://github.com/coryrylan/ngx-input-star-rating",
+  "author": "Cory Rylan",
+  "license": "MIT",
+  "private": false,
+  "peerDependencies": {
+    "@angular/core": "^5.0.0",
+    "@angular/common": "^5.0.0"
+  }
+}

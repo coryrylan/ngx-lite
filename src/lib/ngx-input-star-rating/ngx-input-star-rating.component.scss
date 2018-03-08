@@ -1,0 +1,19 @@
+:host {
+  display: inline-block;
+}
+
+.star {
+  fill: #ccc;
+}
+
+.full, .half {
+  .star {
+    fill: gold;
+  }
+}
+
+button {
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+}

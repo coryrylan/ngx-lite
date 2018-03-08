@@ -1,0 +1,13 @@
+{
+  "name": "ngx-eq",
+  "version": "0.0.3",
+  "repository": "https://github.com/coryrylan/ngx-eq",
+  "author": "Cory Rylan",
+  "license": "MIT",
+  "private": false,
+  "peerDependencies": {
+    "@angular/core": "^5.0.0",
+    "@angular/common": "^5.0.0",
+    "resize-observer-polyfill": "^1.5.0"
+  }
+}

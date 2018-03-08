@@ -1,0 +1,55 @@
+.test-row {
+  padding: 12px;
+  margin-bottom: 12px;
+  color: #fff;
+  background-color: #4A4A4A;
+  display: block;
+
+  &.ngx-eq-sm {
+    background-color: #FF353B;
+  }
+
+  &.ngx-eq-md {
+    background-color: #3F49E8;
+  }
+
+  &.ngx-eq-lg {
+    background-color: #48B04D;
+  }
+  
+  &.ngx-eq-xl {
+    background-color: #E8BE0C;
+  }
+}
+
+.container--sm {
+  max-width: 480px;
+}
+
+.container--md {
+  max-width: 720px;
+}
+
+.container--lg {
+  max-width: 960px;
+}
+
+.grid {
+  display: grid;
+  grid-gap: 16px;
+  margin-bottom: 16px;
+
+  &.ngx-eq-md {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  &.ngx-eq-lg {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.col {
+  background-color: #ccc;
+  text-align: center;
+  padding: 12px;
+}
