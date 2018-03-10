@@ -1,4 +1,4 @@
-# NGX-DEBOUNCE-CLICK
+# ngx-debounce-click
 
 A simple Angular Directive to easily debounce click events.
 
@@ -45,7 +45,7 @@ import { Observable } from 'rxjs/Observable';
 @Component({
   selector: 'app-root',
   template: `
-    <h1>NGX-DEBOUNCE-CLICK</h1>
+    <h1>ngx-debounce-click</h1>
 
     {{count}}
 

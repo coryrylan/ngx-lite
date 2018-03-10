@@ -4,22 +4,22 @@ import { Observable } from 'rxjs/Observable';
 import { startWith } from 'rxjs/operators';
 
 @Component({
-  selector: 'app-docs-ngx-input-star-rating',
-  templateUrl: './docs-ngx-input-star-rating.component.html',
-  styleUrls: ['./docs-ngx-input-star-rating.component.scss']
+  selector: 'app-docs-ngx-input-switch',
+  templateUrl: './docs-ngx-input-switch.component.html',
+  styleUrls: ['./docs-ngx-input-switch.component.scss']
 })
-export class DocsNgxInputStarRatingComponent implements OnInit {
+export class DocsNgxInputSwitchComponent implements OnInit {
   form: FormGroup;
-  value: Observable<number>;
+  value: Observable<boolean>;
 
   constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit() {
     this.form = this.formBuilder.group({
-      rating: [3]
+      switch: [true]
     });
 
-    this.value = this.form.controls.rating.valueChanges.pipe(startWith(3));
+    this.value = this.form.controls.switch.valueChanges.pipe(startWith(true));
   }
 
   submit() {

@@ -1,4 +1,4 @@
-# NGX-IN-VIEWPORT
+# ngx-in-viewport
 
 A simple Angular Directive to easily determine if a element
 in in the viewport.

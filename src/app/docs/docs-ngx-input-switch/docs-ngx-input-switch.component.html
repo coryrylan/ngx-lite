@@ -1,0 +1,11 @@
+<h1>ngx-input-switch</h1>
+
+<form [formGroup]="form" (ngSubmit)="submit()">
+  <ngx-input-switch label="Toggle Me" formControlName="switch"></ngx-input-switch>
+
+  <p>
+    {{value | async}}
+  </p>
+
+  <button>Submit</button>
+</form>

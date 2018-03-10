@@ -1,12 +1,12 @@
-# ngx-input-star-rating
+# ngx-input-switch
 
-## [Demo](https://stackblitz.com/edit/angular-5t4gbz)
+## [Demo](https://stackblitz.com/edit/angular-vow9um)
 
 ## Installation
 
 To install this library, run:
 
-`npm install ngx-input-star-rating --save`
+`npm install ngx-input-switch --save`
 
 and then from your Angular `AppModule`:
 
@@ -14,7 +14,7 @@ and then from your Angular `AppModule`:
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
-import { NgxInputStarRatingModule } from 'ngx-input-star-rating';
+import { NgxInputSwitchModule } from 'ngx-input-switch';
 
 import { AppComponent } from './app.component';
 
@@ -25,7 +25,7 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
     ReactiveFormsModule,
-    NgxInputStarRatingModule
+    NgxInputSwitchModule
   ],
   providers: [],
   bootstrap: [AppComponent]
@@ -35,7 +35,7 @@ export class AppModule { }
 
 ## Component
 
-Once the library is imported, you can use the `ngx-input-star-rating` component.
+Once the library is imported, you can use the `ngx-input-switch` component.
 
 ```typescript
 import { Component, OnInit } from '@angular/core';
@@ -45,10 +45,10 @@ import { Observable } from 'rxjs/Observable';
 @Component({
   selector: 'app-root',
   template: `
-<h1>ngx-input-star-rating</h1>
+<h1>ngx-input-switch</h1>
 
 <form [formGroup]="form" (ngSubmit)="submit()">
-  <ngx-input-star-rating formControlName="rating"></ngx-input-star-rating>
+  <ngx-input-switch formControlName="switch"></ngx-input-switch>
   <button>Submit</button>
 </form>
   `
@@ -61,10 +61,10 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.form = this.formBuilder.group({
-      rating: [3]
+      switch: [true]
     });
 
-    this.value = this.form.controls.rating.valueChanges;
+    this.value = this.form.controls.switch.valueChanges;
   }
 
   submit() {

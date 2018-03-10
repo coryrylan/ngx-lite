@@ -8,6 +8,7 @@ import { NgxDebounceClickModule } from './../lib/ngx-debounce-click/ngx-debounce
 import { NgxEqModule } from './../lib/ngx-eq/ngx-eq.module';
 import { NgxInViewportModule } from './../lib/ngx-in-viewport/ngx-in-viewport.module';
 import { NgxInputStarRatingModule } from './../lib/ngx-input-star-rating/ngx-input-star-rating.module';
+import { NgxInputSwitchModule } from './../lib/ngx-input-switch/ngx-input-switch.module';
 import { NgxJsonLdModule } from './../lib/ngx-json-ld/ngx-json-ld.module';
 
 import { AppComponent } from './app.component';
@@ -17,6 +18,7 @@ import { DocsNgxDebounceClickComponent } from './docs/docs-ngx-debounce-click/do
 import { DocsNgxEqComponent } from './docs/docs-ngx-eq/docs-ngx-eq.component';
 import { DocsNgxInputStarRatingComponent } from './docs/docs-ngx-input-star-rating/docs-ngx-input-star-rating.component';
 import { DocsNgxJsonLdComponent } from './docs/docs-ngx-json-ld/docs-ngx-json-ld.component';
+import { DocsNgxInputSwitchComponent } from './docs/docs-ngx-input-switch/docs-ngx-input-switch.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,8 @@ import { DocsNgxJsonLdComponent } from './docs/docs-ngx-json-ld/docs-ngx-json-ld
     DocsNgxDebounceClickComponent,
     DocsNgxEqComponent,
     DocsNgxInputStarRatingComponent,
-    DocsNgxJsonLdComponent
+    DocsNgxJsonLdComponent,
+    DocsNgxInputSwitchComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +39,8 @@ import { DocsNgxJsonLdComponent } from './docs/docs-ngx-json-ld/docs-ngx-json-ld
     NgxEqModule.forRoot(),
     NgxInViewportModule,
     NgxInputStarRatingModule,
-    NgxJsonLdModule
+    NgxInputSwitchModule,
+    NgxJsonLdModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

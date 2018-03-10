@@ -1,0 +1,88 @@
+$color-white: #fff;
+$color-es-grey: #ccc;
+$color-es-type: #2d2d2d;
+$color-handle: #fff;
+$color-active: #3db33d;
+
+:host {
+  display: inline-block;
+}
+
+.switch {
+  &__wrap {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    padding: 1px 0 1px 6px;
+    overflow: visible;
+    cursor: pointer;
+  }
+
+  &__label {
+    display: inline-block;
+    font-size: 15px;
+    cursor: pointer;
+  }
+
+  &__handle {
+    position: absolute;
+    top: 4px;
+    left: 9px;
+    width: 16px;
+    height: 16px;
+    background: $color-handle;
+    color: $color-white;
+    border-radius: 100%;
+    transition: left 0.15s ease-out;
+  }
+
+  &__input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+  }
+
+  &__background {
+    position: relative;
+    display: block;
+    height: 22px;
+    width: 39px;
+    font-size: 16px;
+    font-weight: normal;
+    text-transform: uppercase;
+    background: $color-es-grey;
+    transition: 0.15s ease-out;
+    transition-property: opacity background;
+    color: $color-es-type;
+    border-radius: 11px;
+  
+    &::before,
+    &::after {
+      position: absolute;
+      top: 50%;
+      margin-top: -7px;
+      line-height: 1;
+      transition: inherit;
+    }
+  }
+}
+
+
+
+
+.checked .switch__background {
+  background: $color-active;
+}
+
+.checked .switch__background::before {
+  opacity: 0;
+}
+
+.checked .switch__background::after {
+  opacity: 1;
+}
+
+.checked .switch__handle {
+  left: 26px;
+}

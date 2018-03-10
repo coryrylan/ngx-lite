@@ -1,4 +1,4 @@
-# NGX-EQ
+# ngx-eq
 
 NGX-EQ is an Angular Directive that makes it easier to allow
 components to be responsive to their parent element size.

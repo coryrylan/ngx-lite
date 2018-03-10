@@ -1,0 +1,9 @@
+<label [for]="instanceId" class="switch">
+  <!-- (swipeleft)="value = false" (swiperight)="value = true" -->
+  <span class="switch__label">{{label}}</span>
+  <div class="switch__wrap" [ngClass]="{ 'checked': value }">
+    <input type="checkbox" [id]="instanceId" class="switch__input" [checked]="value" (change)="switch()" [attr.aria-label]="label">
+    <span class="switch__background"></span>
+    <span class="switch__handle"></span>
+  </div>
+</label>
