@@ -1,12 +1,14 @@
 {
   "name": "ngx-debounce-click",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "repository": "https://github.com/coryrylan/ngx-debounce-click",
   "author": "Cory Rylan",
   "license": "MIT",
   "private": false,
   "peerDependencies": {
     "@angular/core": "^5.0.0",
-    "@angular/common": "^5.0.0"
+    "@angular/common": "^5.0.0",
+    "@angular/forms": "^5.0.0",
+    "rxjs": "^5.5.6"
   }
 }
