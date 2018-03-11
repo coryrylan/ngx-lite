@@ -52,6 +52,7 @@ export class NgxInputSwitchComponent implements ControlValueAccessor {
   }
 
   switch() {
+    console.log('switch()');
     this.value = !this.value;
   }
 }
