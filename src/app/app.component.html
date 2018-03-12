@@ -2,15 +2,16 @@
   <h2>NGX-LIBRARIES</h2>
 </header>
 
-<nav>
+<ngx-nav-drawer [(open)]="show" [fixed]="true">
   <a routerLink="/">Home</a>
-  <a routerLink="docs/ngx-debounce-click">ngx-debounce-click</a>
-  <a routerLink="docs/ngx-eq">ngx-eq</a>
-  <a routerLink="docs/ngx-in-viewport">ngx-in-viewport</a>
-  <a routerLink="docs/ngx-input-star-rating">ngx-input-star-rating</a>
-  <a routerLink="docs/ngx-json-ld">ngx-json-ld</a>
-  <a routerLink="docs/ngx-input-switch">ngx-input-switch</a>
-</nav>
+  <a routerLink="/docs/ngx-debounce-click">ngx-debounce-click</a>
+  <a routerLink="/docs/ngx-eq">ngx-eq</a>
+  <a routerLink="/docs/ngx-in-viewport">ngx-in-viewport</a>
+  <a routerLink="/docs/ngx-input-star-rating">ngx-input-star-rating</a>
+  <a routerLink="/docs/ngx-json-ld">ngx-json-ld</a>
+  <a routerLink="/docs/ngx-input-switch">ngx-input-switch</a>
+  <a routerLink="/docs/ngx-nav-drawer">ngx-nav-drawer</a>
+</ngx-nav-drawer>
 
 <main>
   <router-outlet></router-outlet>

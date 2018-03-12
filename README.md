@@ -50,3 +50,12 @@ the [Angular CLI](https://github.com/angular/angular-cli) and [ng-packagr](https
 [Documentation](https://github.com/coryrylan/ngx-libraries/tree/master/src/lib/ngx-json-ld)
 
 [Demo](https://stackblitz.com/edit/angular-oyrw84)
+
+
+## ngx-nav-drawer
+
+[![npm version](https://badge.fury.io/js/ngx-nav-drawer.svg)](https://badge.fury.io/js/ngx-nav-drawer)
+
+[Documentation](https://github.com/coryrylan/ngx-libraries/tree/master/src/lib/ngx-nav-drawer)
+
+[Demo](https://stackblitz.com/edit/angular-veeywy)

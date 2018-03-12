@@ -8,6 +8,7 @@ import { DocsNgxInViewportComponent } from './docs/docs-ngx-in-viewport/docs-ngx
 import { DocsNgxInputStarRatingComponent } from './docs/docs-ngx-input-star-rating/docs-ngx-input-star-rating.component';
 import { DocsNgxJsonLdComponent } from './docs/docs-ngx-json-ld/docs-ngx-json-ld.component';
 import { DocsNgxInputSwitchComponent } from './docs/docs-ngx-input-switch/docs-ngx-input-switch.component';
+import { DocsNgxNavDrawerComponent } from './docs/docs-ngx-nav-drawer/docs-ngx-nav-drawer.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -16,7 +17,8 @@ export const routes: Routes = [
   { path: 'docs/ngx-in-viewport', component: DocsNgxInViewportComponent },
   { path: 'docs/ngx-input-star-rating', component: DocsNgxInputStarRatingComponent },
   { path: 'docs/ngx-json-ld', component: DocsNgxJsonLdComponent },
-  { path: 'docs/ngx-input-switch', component: DocsNgxInputSwitchComponent }
+  { path: 'docs/ngx-input-switch', component: DocsNgxInputSwitchComponent },
+  { path: 'docs/ngx-nav-drawer', component: DocsNgxNavDrawerComponent }
 ];
 
 @NgModule({

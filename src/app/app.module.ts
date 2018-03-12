@@ -10,6 +10,7 @@ import { NgxInViewportModule } from './../lib/ngx-in-viewport/ngx-in-viewport.mo
 import { NgxInputStarRatingModule } from './../lib/ngx-input-star-rating/ngx-input-star-rating.module';
 import { NgxInputSwitchModule } from './../lib/ngx-input-switch/ngx-input-switch.module';
 import { NgxJsonLdModule } from './../lib/ngx-json-ld/ngx-json-ld.module';
+import { NgxNavDrawerModule } from './../lib/ngx-nav-drawer/ngx-nav-drawer.module';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -19,6 +20,7 @@ import { DocsNgxEqComponent } from './docs/docs-ngx-eq/docs-ngx-eq.component';
 import { DocsNgxInputStarRatingComponent } from './docs/docs-ngx-input-star-rating/docs-ngx-input-star-rating.component';
 import { DocsNgxJsonLdComponent } from './docs/docs-ngx-json-ld/docs-ngx-json-ld.component';
 import { DocsNgxInputSwitchComponent } from './docs/docs-ngx-input-switch/docs-ngx-input-switch.component';
+import { DocsNgxNavDrawerComponent } from './docs/docs-ngx-nav-drawer/docs-ngx-nav-drawer.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,8 @@ import { DocsNgxInputSwitchComponent } from './docs/docs-ngx-input-switch/docs-n
     DocsNgxEqComponent,
     DocsNgxInputStarRatingComponent,
     DocsNgxJsonLdComponent,
-    DocsNgxInputSwitchComponent
+    DocsNgxInputSwitchComponent,
+    DocsNgxNavDrawerComponent
   ],
   imports: [
     BrowserModule,
@@ -41,6 +44,7 @@ import { DocsNgxInputSwitchComponent } from './docs/docs-ngx-input-switch/docs-n
     NgxInputStarRatingModule,
     NgxInputSwitchModule,
     NgxJsonLdModule,
+    NgxNavDrawerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,5 +1,9 @@
 # ngx-input-star-rating
 
+[![npm version](https://badge.fury.io/js/ngx-input-star-rating.svg)](https://badge.fury.io/js/ngx-input-star-rating)
+
+A small star rating component compatible with both Angular Reactive Forms and Template Forms.
+
 ## [Demo](https://stackblitz.com/edit/angular-5t4gbz)
 
 ## Installation

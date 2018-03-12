@@ -1,5 +1,7 @@
 # ngx-eq
 
+[![npm version](https://badge.fury.io/js/ngx-eq.svg)](https://badge.fury.io/js/ngx-eq)
+
 NGX-EQ is an Angular Directive that makes it easier to allow
 components to be responsive to their parent element size.
 CSS Media Queries fall short when it comes to reusable components,

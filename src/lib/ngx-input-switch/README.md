@@ -1,5 +1,9 @@
 # ngx-input-switch
 
+[![npm version](https://badge.fury.io/js/ngx-input-switch.svg)](https://badge.fury.io/js/ngx-input-switch)
+
+A small switch component compatible with both Angular Reactive Forms and Template Forms.
+
 ## [Demo](https://stackblitz.com/edit/angular-vow9um)
 
 ## Installation
