@@ -1,4 +1,6 @@
-import { Directive, ElementRef, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
+import { Directive, ElementRef, EventEmitter, Inject, Input, OnDestroy, OnInit, Output, PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser, isPlatformServer } from '@angular/common';
+
 import { fromEvent } from 'rxjs/observable/fromEvent';
 import { debounceTime, merge } from 'rxjs/operators';
 import { Subscription } from 'rxjs/Subscription';
@@ -16,10 +18,10 @@ export class NgxInViewportDirective implements OnInit, OnDestroy {
   @Output() readonly inViewport = new EventEmitter<InViewportEvent>();
   private subscription: Subscription;
 
-  constructor(private readonly elementRef: ElementRef) { }
+  constructor(@Inject(PLATFORM_ID) private platformId: any, private readonly elementRef: ElementRef) { }
 
   ngOnInit() {
-    if (window && document) {
+    if (isPlatformBrowser(this.platformId)) {
       this.subscription = fromEvent(window, 'scroll')
         .pipe(
           merge(fromEvent(window, 'resize')),
