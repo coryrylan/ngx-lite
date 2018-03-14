@@ -1,0 +1,11 @@
+<h1>ngx-input-tag</h1>
+
+<form [formGroup]="form" (ngSubmit)="submit()">
+  <ngx-input-tag formControlName="tags" [tagSuggestions]="tagSuggestions"></ngx-input-tag>
+
+  <pre>
+    {{value | async | json}}
+  </pre>
+
+  <button>Submit</button>
+</form>

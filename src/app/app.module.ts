@@ -9,6 +9,7 @@ import { NgxEqModule } from './../lib/ngx-eq/ngx-eq.module';
 import { NgxInViewportModule } from './../lib/ngx-in-viewport/ngx-in-viewport.module';
 import { NgxInputStarRatingModule } from './../lib/ngx-input-star-rating/ngx-input-star-rating.module';
 import { NgxInputSwitchModule } from './../lib/ngx-input-switch/ngx-input-switch.module';
+import { NgxInputTagModule } from './../lib/ngx-input-tag/ngx-input-tag.module';
 import { NgxJsonLdModule } from './../lib/ngx-json-ld/ngx-json-ld.module';
 import { NgxNavDrawerModule } from './../lib/ngx-nav-drawer/ngx-nav-drawer.module';
 
@@ -20,6 +21,7 @@ import { DocsNgxEqComponent } from './docs/docs-ngx-eq/docs-ngx-eq.component';
 import { DocsNgxInputStarRatingComponent } from './docs/docs-ngx-input-star-rating/docs-ngx-input-star-rating.component';
 import { DocsNgxJsonLdComponent } from './docs/docs-ngx-json-ld/docs-ngx-json-ld.component';
 import { DocsNgxInputSwitchComponent } from './docs/docs-ngx-input-switch/docs-ngx-input-switch.component';
+import { DocsNgxInputTagComponent } from './docs/docs-ngx-input-tag/docs-ngx-input-tag.component';
 import { DocsNgxNavDrawerComponent } from './docs/docs-ngx-nav-drawer/docs-ngx-nav-drawer.component';
 
 @NgModule({
@@ -30,6 +32,7 @@ import { DocsNgxNavDrawerComponent } from './docs/docs-ngx-nav-drawer/docs-ngx-n
     DocsNgxDebounceClickComponent,
     DocsNgxEqComponent,
     DocsNgxInputStarRatingComponent,
+    DocsNgxInputTagComponent,
     DocsNgxJsonLdComponent,
     DocsNgxInputSwitchComponent,
     DocsNgxNavDrawerComponent
@@ -43,6 +46,7 @@ import { DocsNgxNavDrawerComponent } from './docs/docs-ngx-nav-drawer/docs-ngx-n
     NgxInViewportModule,
     NgxInputStarRatingModule,
     NgxInputSwitchModule,
+    NgxInputTagModule,
     NgxJsonLdModule,
     NgxNavDrawerModule
   ],

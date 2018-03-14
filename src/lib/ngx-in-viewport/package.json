@@ -1,7 +1,7 @@
 {
   "name": "ngx-in-viewport",
   "version": "0.0.2",
-  "repository": "https://github.com/coryrylan/ngx-in-viewport",
+  "repository": "https://github.com/coryrylan/ngx-libraries",
   "author": "Cory Rylan",
   "license": "MIT",
   "private": false,

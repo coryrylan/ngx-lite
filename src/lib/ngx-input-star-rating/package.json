@@ -1,7 +1,7 @@
 {
   "name": "ngx-input-star-rating",
   "version": "0.0.2",
-  "repository": "https://github.com/coryrylan/ngx-input-star-rating",
+  "repository": "https://github.com/coryrylan/ngx-libraries",
   "author": "Cory Rylan",
   "license": "MIT",
   "private": false,

@@ -1,0 +1,81 @@
+$color-white: #fff;
+$color-grey: #b5b5b5;
+$color-grey-light: #f2f2f2;
+$color-grey-border: #ccc;
+
+:host {
+  display: inline-block;
+  width: 100%;
+}
+
+.ngx-input-tag {
+  padding: 5px 80px 1px 4px;
+  position: relative;
+  min-height: 33px;
+  margin-bottom: 0;
+  border: 1px solid $color-grey-border;
+  font-size: 16px;
+
+  &:focus {
+    outline: initial;
+  }
+
+  &__input {
+    border: 0;
+    padding: 4px 0;
+    outline: none;
+    width: 8px;
+    max-width: calc(100% + 70px);
+    margin-left: 4px;
+    min-width: 4px;
+    margin-bottom: 0;
+    font-size: 16px;
+  }
+
+  &__tag {
+    display: inline-block;
+    border: 1px solid $color-grey-border;
+    padding: 4px;
+    margin-right: 4px;
+    border-radius: 2px;
+
+    button {
+      background: transparent;
+      border: 0;
+      cursor: pointer;
+      color: $color-grey;
+    }
+  }
+
+  &__btn {
+    position: absolute;
+    width: 75px;
+    height: 41px;
+    color: $color-grey;
+    background-color: $color-white;
+    border: 0;
+    top: -1px;
+    right: -1px;
+    cursor: pointer;
+    border: 1px solid $color-grey-border;
+    font-size: 30px;
+  }
+}
+
+.ngx-input-tag-suggestions {
+  border: 1px solid $color-grey-border;
+
+  &__tag {
+    padding: 10px 14px;
+    border: 0;
+    background: transparent;
+    display: block;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+
+    &:hover {
+      background: $color-grey-light;
+    }
+  }
+}

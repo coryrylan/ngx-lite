@@ -1,6 +1,6 @@
 $color-white: #fff;
-$color-es-grey: #ccc;
-$color-es-type: #2d2d2d;
+$color-grey: #ccc;
+$color-type: #2d2d2d;
 $color-handle: #fff;
 $color-active: #3db33d;
 
@@ -51,10 +51,10 @@ $color-active: #3db33d;
     font-size: 16px;
     font-weight: normal;
     text-transform: uppercase;
-    background: $color-es-grey;
+    background: $color-grey;
     transition: 0.15s ease-out;
     transition-property: opacity background;
-    color: $color-es-type;
+    color: $color-type;
     border-radius: 11px;
   
     &::before,

@@ -1,0 +1,17 @@
+<div (click)="focus()" class="ngx-input-tag">
+  <div *ngFor="let tag of value" class="ngx-input-tag__tag">
+    {{tag}}
+    <button type="button" (click)="removeTag(tag, $event)">
+      &#10006;
+    </button>
+  </div>
+  <input type="text" #inputElement aria-label="Tags" [style.width]="inputElement.value.length * 10 + 10 + 'px'" (keyup)="addTagEvent($event)" (keydown)="preventDefaultTabBehavior($event)"
+    class="ngx-input-tag__input" />
+  <button type="button" aria-label="Add Tag" title="Add Tag" (click)="addTagClick($event, inputElement.value)" class="ngx-input-tag__btn">
+    +
+  </button>
+</div>
+
+<div *ngIf="inputElement.value.length && tagSuggestions && tagSuggestions.length" class="ngx-input-tag-suggestions">
+  <button type="button" (click)="addSuggestedTag(tag)" *ngFor="let tag of tagSuggestions" class="ngx-input-tag-suggestions__tag">{{tag}}</button>
+</div>

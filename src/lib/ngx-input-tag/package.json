@@ -1,5 +1,5 @@
 {
-  "name": "ngx-debounce-click",
+  "name": "ngx-input-tag",
   "version": "0.0.1",
   "repository": "https://github.com/coryrylan/ngx-libraries",
   "author": "Cory Rylan",
@@ -8,7 +8,6 @@
   "peerDependencies": {
     "@angular/core": "^5.0.0",
     "@angular/common": "^5.0.0",
-    "@angular/forms": "^5.0.0",
-    "rxjs": "^5.5.6"
+    "@angular/forms": "^5.0.0"
   }
 }

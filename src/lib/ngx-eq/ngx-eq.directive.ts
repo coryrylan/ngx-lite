@@ -12,7 +12,7 @@ export class NgxEqDirective implements OnDestroy {
   @HostBinding('class.ngx-eq-md') medium = false;
   @HostBinding('class.ngx-eq-lg') large = false;
   @HostBinding('class.ngx-eq-xl') extraLarge = false;
-  changes: ResizeObserver;
+  changes: any;
 
   constructor(private readonly elementRef: ElementRef, private ref: ChangeDetectorRef, @Inject('config') private config: Config) {
     const element = this.elementRef.nativeElement;
