@@ -44,6 +44,14 @@ the [Angular CLI](https://github.com/angular/angular-cli) and [ng-packagr](https
 [Demo](https://stackblitz.com/edit/angular-vow9um)
 
 
+## ngx-input-tag
+[![npm version](https://badge.fury.io/js/ngx-input-tag.svg)](https://badge.fury.io/js/ngx-input-tag)
+
+[Documentation](https://github.com/coryrylan/ngx-libraries/tree/master/src/lib/ngx-input-tag)
+
+[Demo](https://stackblitz.com/edit/angular-8qhlb4)
+
+
 ## ngx-json-ld
 [![npm version](https://badge.fury.io/js/ngx-json-ld.svg)](https://badge.fury.io/js/ngx-json-ld)
 
