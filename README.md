@@ -2,7 +2,7 @@
 [![Build Status](https://travis-ci.org/coryrylan/ngx-libraries.svg?branch=master)](https://travis-ci.org/coryrylan/ngx-libraries)
 
 A mono repo collection of lightweight stand alone Angular libraries built with 
-the [Angular CLI](https://github.com/angular/angular-cli) and [ng-packagr](https://github.com/coryrylan/ngx-libraries)
+the [Angular CLI](https://github.com/angular/angular-cli) and [ng-packagr](https://github.com/dherges/ng-packagr)
 
 | Package | Demo | Documentation | Version |
 | ------------- | ------------- | ------------- | ------------- |
