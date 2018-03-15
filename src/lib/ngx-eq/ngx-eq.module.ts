@@ -10,13 +10,6 @@ export interface Config {
   extraLarge?: number;
 }
 
-export const defaultConfig: Config = {
-  small: 480,
-  medium: 720,
-  large: 960,
-  extraLarge: 1440
-};
-
 @NgModule({
   imports: [
     CommonModule
@@ -33,7 +26,17 @@ export class NgxEqModule {
     return {
       ngModule: NgxEqModule,
       providers: [
-        { provide: 'config', useValue: { ...defaultConfig, ...config }}
+        {
+          provide: 'config',
+          // inline config, otherwise they get treeshaken out when they shouldnt
+          useValue: {
+            small: 480,
+            medium: 720,
+            large: 960,
+            extraLarge: 1440,
+            ...config
+          }
+        }
       ]
     };
   }
