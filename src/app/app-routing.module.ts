@@ -9,6 +9,7 @@ import { DocsNgxInputStarRatingComponent } from './docs/docs-ngx-input-star-rati
 import { DocsNgxInputTagComponent } from './docs/docs-ngx-input-tag/docs-ngx-input-tag.component';
 import { DocsNgxJsonLdComponent } from './docs/docs-ngx-json-ld/docs-ngx-json-ld.component';
 import { DocsNgxInputSwitchComponent } from './docs/docs-ngx-input-switch/docs-ngx-input-switch.component';
+import { DocsNgxLoadersComponent } from './docs/docs-ngx-loaders/docs-ngx-loaders.component';
 import { DocsNgxNavDrawerComponent } from './docs/docs-ngx-nav-drawer/docs-ngx-nav-drawer.component';
 
 export const routes: Routes = [
@@ -20,6 +21,7 @@ export const routes: Routes = [
   { path: 'docs/ngx-input-switch', component: DocsNgxInputSwitchComponent },
   { path: 'docs/ngx-input-tag', component: DocsNgxInputTagComponent },
   { path: 'docs/ngx-json-ld', component: DocsNgxJsonLdComponent },
+  { path: 'docs/ngx-loaders', component: DocsNgxLoadersComponent },
   { path: 'docs/ngx-nav-drawer', component: DocsNgxNavDrawerComponent }
 ];
 
