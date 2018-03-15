@@ -1,19 +1,17 @@
-$color-white: #fff;
-$color-grey: #b5b5b5;
-$color-grey-light: #f2f2f2;
-$color-grey-border: #ccc;
+@import './../styles/_base';
 
 :host {
   display: inline-block;
+  margin-bottom: 12px;
   width: 100%;
 }
 
 .ngx-input-tag {
-  padding: 5px 80px 1px 4px;
+  padding: 5px 80px 5px 4px;
   position: relative;
-  min-height: 33px;
+  height: 41px;
   margin-bottom: 0;
-  border: 1px solid $color-grey-border;
+  border: 1px solid $color-border;
   font-size: 16px;
 
   &:focus {
@@ -34,10 +32,11 @@ $color-grey-border: #ccc;
 
   &__tag {
     display: inline-block;
-    border: 1px solid $color-grey-border;
+    border: 1px solid $color-border;
     padding: 4px;
     margin-right: 4px;
     border-radius: 2px;
+    height: 29px;
 
     button {
       background: transparent;
@@ -57,13 +56,13 @@ $color-grey-border: #ccc;
     top: -1px;
     right: -1px;
     cursor: pointer;
-    border: 1px solid $color-grey-border;
+    border: 1px solid $color-border;
     font-size: 30px;
   }
 }
 
 .ngx-input-tag-suggestions {
-  border: 1px solid $color-grey-border;
+  border: 1px solid $color-border;
 
   &__tag {
     padding: 10px 14px;

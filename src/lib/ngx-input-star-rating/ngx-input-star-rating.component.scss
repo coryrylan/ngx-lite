@@ -1,14 +1,16 @@
+@import './../styles/_base';
+
 :host {
   display: inline-block;
 }
 
 .star {
-  fill: #ccc;
+  fill: $color-grey;
 }
 
 .full, .half {
   .star {
-    fill: gold;
+    fill: $color-gold;
   }
 }
 
