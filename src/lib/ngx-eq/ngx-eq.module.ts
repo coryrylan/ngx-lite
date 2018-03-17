@@ -10,6 +10,13 @@ export interface Config {
   extraLarge?: number;
 }
 
+export const defaultConfig = {
+  small: 480,
+  medium: 720,
+  large: 960,
+  extraLarge: 1440
+};
+
 @NgModule({
   imports: [
     CommonModule

@@ -6,13 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./docs-ngx-in-viewport.component.scss']
 })
 export class DocsNgxInViewportComponent implements OnInit {
-
+  count = 0;
   constructor() { }
 
   ngOnInit() {
   }
 
   log(event) {
+    this.count++;
     console.log(event);
   }
 }
