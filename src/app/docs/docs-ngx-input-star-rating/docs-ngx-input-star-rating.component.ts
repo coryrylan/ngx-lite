@@ -16,10 +16,10 @@ export class DocsNgxInputStarRatingComponent implements OnInit {
 
   ngOnInit() {
     this.form = this.formBuilder.group({
-      rating: [3]
+      rating: [3.5]
     });
 
-    this.value = this.form.controls.rating.valueChanges.pipe(startWith(3));
+    this.value = this.form.controls.rating.valueChanges.pipe(startWith(3.5));
   }
 
   submit() {

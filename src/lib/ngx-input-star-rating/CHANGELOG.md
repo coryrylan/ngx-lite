@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.3
+- a11y improvements
+- half point rating support
+
 ## 0.0.2
 - update peer deps
 

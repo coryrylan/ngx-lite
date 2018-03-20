@@ -8,8 +8,14 @@
   fill: $color-grey;
 }
 
-.full, .half {
+.full {
   .star {
+    fill: $color-gold;
+  }
+}
+
+.half {
+  .star-half {
     fill: $color-gold;
   }
 }
@@ -18,4 +24,13 @@ button {
   background-color: transparent;
   border: 0;
   cursor: pointer;
+  position: relative;
+  width: 30px;
+  height: 25px;
+
+  svg {
+    position: absolute;
+    top: 0;
+    left: 5px;
+  }
 }
