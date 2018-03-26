@@ -1,0 +1,10 @@
+<h1>ngx-input-range</h1>
+<form [formGroup]="form" (ngSubmit)="submit()">
+  <ngx-input-range label="distance" formControlName="distance"></ngx-input-range>
+  <ngx-input-range  label="condition" [min]="0" [max]="3" [step]="1" [labels]="['Poor', 'Fair', 'Good', 'Excellent']"></ngx-input-range>
+  <button>Submit</button>
+</form>
+
+<p>
+  {{value | async}}
+</p>

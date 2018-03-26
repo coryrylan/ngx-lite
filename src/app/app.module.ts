@@ -7,6 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { NgxDebounceClickModule } from './../lib/ngx-debounce-click/ngx-debounce-click.module';
 import { NgxEqModule } from './../lib/ngx-eq/ngx-eq.module';
 import { NgxInViewportModule } from './../lib/ngx-in-viewport/ngx-in-viewport.module';
+import { NgxInputRangeModule } from './../lib/ngx-input-range/ngx-input-range.module';
 import { NgxInputStarRatingModule } from './../lib/ngx-input-star-rating/ngx-input-star-rating.module';
 import { NgxInputSwitchModule } from './../lib/ngx-input-switch/ngx-input-switch.module';
 import { NgxLoadersModule } from './../lib/ngx-loaders/ngx-loaders.module';
@@ -19,6 +20,7 @@ import { HomeComponent } from './home/home.component';
 import { DocsNgxInViewportComponent } from './docs/docs-ngx-in-viewport/docs-ngx-in-viewport.component';
 import { DocsNgxDebounceClickComponent } from './docs/docs-ngx-debounce-click/docs-ngx-debounce-click.component';
 import { DocsNgxEqComponent } from './docs/docs-ngx-eq/docs-ngx-eq.component';
+import { DocsNgxInputRangeComponent } from './docs/docs-ngx-input-range/docs-ngx-input-range.component';
 import { DocsNgxInputStarRatingComponent } from './docs/docs-ngx-input-star-rating/docs-ngx-input-star-rating.component';
 import { DocsNgxJsonLdComponent } from './docs/docs-ngx-json-ld/docs-ngx-json-ld.component';
 import { DocsNgxInputSwitchComponent } from './docs/docs-ngx-input-switch/docs-ngx-input-switch.component';
@@ -33,12 +35,13 @@ import { DocsNgxLoadersComponent } from './docs/docs-ngx-loaders/docs-ngx-loader
     DocsNgxInViewportComponent,
     DocsNgxDebounceClickComponent,
     DocsNgxEqComponent,
+    DocsNgxInputRangeComponent,
     DocsNgxInputStarRatingComponent,
     DocsNgxInputTagComponent,
     DocsNgxJsonLdComponent,
     DocsNgxInputSwitchComponent,
     DocsNgxNavDrawerComponent,
-    DocsNgxLoadersComponent
+    DocsNgxLoadersComponent,
   ],
   imports: [
     BrowserModule,
@@ -47,6 +50,7 @@ import { DocsNgxLoadersComponent } from './docs/docs-ngx-loaders/docs-ngx-loader
     NgxDebounceClickModule,
     NgxEqModule.forRoot(),
     NgxInViewportModule,
+    NgxInputRangeModule,
     NgxInputStarRatingModule,
     NgxInputSwitchModule,
     NgxInputTagModule,
