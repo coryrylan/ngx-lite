@@ -7,9 +7,8 @@
 }
 
 .ngx-input-tag {
-  padding: 5px 80px 5px 4px;
+  padding: 5px 80px 4.5px 4px;
   position: relative;
-  height: 41px;
   margin-bottom: 0;
   border: 1px solid $color-border;
   font-size: 16px;
@@ -28,6 +27,7 @@
     min-width: 4px;
     margin-bottom: 0;
     font-size: 16px;
+    min-height: 29px;
   }
 
   &__tag {
@@ -37,6 +37,7 @@
     margin-right: 4px;
     border-radius: 2px;
     height: 29px;
+    line-height: 18px;
 
     button {
       background: transparent;
