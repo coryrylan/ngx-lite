@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.0.6
+- add the ability to override breakpoints per element use case
+
 ## 0.0.5
 - fix prod build issue
 

@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { NgxEqDirective } from './ngx-eq.directive';
 
 export interface Config {
+  extraSmall?: number;
   small?: number;
   medium?: number;
   large?: number;
@@ -11,6 +12,7 @@ export interface Config {
 }
 
 export const defaultConfig = {
+  extraSmall: 280,
   small: 480,
   medium: 720,
   large: 960,
@@ -37,6 +39,7 @@ export class NgxEqModule {
           provide: 'config',
           // inline config, otherwise they get treeshaken out when they shouldnt
           useValue: {
+            extraSmall: 280,
             small: 480,
             medium: 720,
             large: 960,

@@ -5,6 +5,10 @@
   background-color: #4A4A4A;
   display: block;
 
+  &.ngx-eq-xs {
+    background-color: #A929AD;
+  }
+
   &.ngx-eq-sm {
     background-color: #FF353B;
   }
@@ -20,6 +24,10 @@
   &.ngx-eq-xl {
     background-color: #E8BE0C;
   }
+}
+
+.container--xs {
+  max-width: 270px;
 }
 
 .container--sm {

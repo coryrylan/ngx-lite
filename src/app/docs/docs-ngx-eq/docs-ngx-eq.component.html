@@ -2,7 +2,7 @@
 
 <h2>Element Queries</h2>
 
-<div ngxEQ class="test-row">
+<div ngxEQ [extraSmall]="100" class="test-row">
   This is a element using ngxEQ for element query based styles.
 </div>
 
@@ -15,6 +15,10 @@
 </div>
 
 <div ngxEQ class="test-row container--sm">
+  This is a element's parent element has a restricted width.
+</div>
+
+<div ngxEQ class="test-row container--xs">
   This is a element's parent element has a restricted width.
 </div>
 

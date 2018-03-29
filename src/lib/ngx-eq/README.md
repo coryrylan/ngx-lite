@@ -28,6 +28,10 @@ size of the component.
   display: block;
 }
 
+:host.ngx-eq-xs {
+  background-color: #A929AD;
+}
+
 :host.ngx-eq-sm {
   background-color: #FF353B;
 }
@@ -77,9 +81,17 @@ The Element Query breakpoints can be customized.
 ```typescript
 NgxEqModule.forRoot({
   // default values
+  extraSmall: 280,
   small: 480,
   medium: 720,
   large: 960,
   extraLarge: 1440
 })
+```
+
+You can override the breakpoints per a element. In this example the small breakpoint
+will now occur at 500px instead of the default 480px for only this particular element.
+
+```html
+<my-component ngxEQ [small]="500"></my-component
 ```

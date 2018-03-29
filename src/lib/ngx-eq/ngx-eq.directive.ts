@@ -1,4 +1,4 @@
-import { Directive, ElementRef, HostBinding, OnDestroy, ChangeDetectorRef, Inject } from '@angular/core';
+import { Directive, ElementRef, HostBinding, Input, OnDestroy, ChangeDetectorRef, Inject } from '@angular/core';
 import ResizeObserver from 'resize-observer-polyfill';
 
 import { Config } from './ngx-eq.module';
@@ -8,10 +8,16 @@ import { Config } from './ngx-eq.module';
 })
 export class NgxEqDirective implements OnDestroy {
   @HostBinding('class.ngx-eq') ngxEQ = true;
-  @HostBinding('class.ngx-eq-sm') small = false;
-  @HostBinding('class.ngx-eq-md') medium = false;
-  @HostBinding('class.ngx-eq-lg') large = false;
-  @HostBinding('class.ngx-eq-xl') extraLarge = false;
+  @HostBinding('class.ngx-eq-xs') extraSmallClass = false;
+  @HostBinding('class.ngx-eq-sm') smallClass = false;
+  @HostBinding('class.ngx-eq-md') mediumClass = false;
+  @HostBinding('class.ngx-eq-lg') largeClass = false;
+  @HostBinding('class.ngx-eq-xl') extraLargeClass = false;
+  @Input() extraSmall = this.config.extraSmall;
+  @Input() small = this.config.small;
+  @Input() medium = this.config.medium;
+  @Input() large = this.config.large;
+  @Input() extraLarge = this.config.extraLarge;
   changes: any;
 
   constructor(private readonly elementRef: ElementRef, private ref: ChangeDetectorRef, @Inject('config') private config: Config) {
@@ -22,20 +28,24 @@ export class NgxEqDirective implements OnDestroy {
         const width = entry.contentRect.width;
         this.reset();
 
-        if (width >= config.small) {
-          this.small = true;
+        if (width >= this.extraSmall) {
+          this.extraSmallClass = true;
         }
 
-        if (width >= config.medium) {
-          this.medium = true;
+        if (width >= this.small) {
+          this.smallClass = true;
         }
 
-        if (width >= config.large) {
-          this.large = true;
+        if (width >= this.medium) {
+          this.mediumClass = true;
         }
 
-        if (width >= config.extraLarge) {
-          this.extraLarge = true;
+        if (width >= this.large) {
+          this.largeClass = true;
+        }
+
+        if (width >= this.extraLarge) {
+          this.extraLargeClass = true;
         }
       }
 
@@ -50,9 +60,10 @@ export class NgxEqDirective implements OnDestroy {
   }
 
   private reset() {
-    this.small = false;
-    this.medium = false;
-    this.large = false;
-    this.extraLarge = false;
+    this.extraSmallClass = false;
+    this.smallClass = false;
+    this.mediumClass = false;
+    this.largeClass = false;
+    this.extraLargeClass = false;
   }
 }
