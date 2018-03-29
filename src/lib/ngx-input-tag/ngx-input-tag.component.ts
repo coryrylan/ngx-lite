@@ -1,4 +1,4 @@
-import { forwardRef, Component, ElementRef, EventEmitter, HostListener, Input, Output, ViewChild } from '@angular/core';
+import { forwardRef, Component, ElementRef, EventEmitter, HostListener, Input, Output, ViewChild, Inject } from '@angular/core';
 import { ControlValueAccessor, NG_VALIDATORS, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 export enum KeyCodes {
@@ -45,7 +45,7 @@ export class NgxInputTagComponent implements ControlValueAccessor {
   private currentNumberOfTags = 0;
   private tagError: { message: string } = null;
 
-  constructor() { }
+  constructor(@Inject('tagFormatter') private tagFormatter) { }
 
   onChange = (_value: string[]) => {};
 
@@ -61,7 +61,7 @@ export class NgxInputTagComponent implements ControlValueAccessor {
 
   writeValue(value: string[]) {
     if (value) {
-      this.value = value;
+      this.value = value.map(v => this.tagFormatter(v));
       this.setCurrentNumberOfTags();
     }
   }
@@ -78,7 +78,7 @@ export class NgxInputTagComponent implements ControlValueAccessor {
   }
 
   addTag(tag: string) {
-    const formattedTag = formatTag(tag);
+    const formattedTag = this.tagFormatter(tag);
     const tagIsEmpty = formattedTag.length === 0;
     const invalidTagLength = !formattedTag.length || formattedTag.length > maxTagLength;
     const duplicateTag = this.value.indexOf(formattedTag) > -1;
@@ -158,7 +158,7 @@ export class NgxInputTagComponent implements ControlValueAccessor {
   }
 }
 
-function formatTag(tag: string) {
+export function formatter(tag: string): string {
   return tag
     .trim()
     .replace(/(\s|-)+/g, '-')

@@ -1,6 +1,6 @@
-import { NgModule } from '@angular/core';
+import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NgxInputTagComponent } from './ngx-input-tag.component';
+import { NgxInputTagComponent, formatter as tagFormatter } from './ngx-input-tag.component';
 
 @NgModule({
   imports: [
@@ -9,4 +9,16 @@ import { NgxInputTagComponent } from './ngx-input-tag.component';
   declarations: [NgxInputTagComponent],
   exports: [NgxInputTagComponent]
 })
-export class NgxInputTagModule { }
+export class NgxInputTagModule {
+  static forRoot(config = { tagFormatter }): ModuleWithProviders {
+    return {
+      ngModule: NgxInputTagModule,
+      providers: [
+        {
+          provide: 'tagFormatter',
+          useValue: config.tagFormatter
+        }
+      ]
+    };
+  }
+}

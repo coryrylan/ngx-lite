@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { async, ComponentFixture, TestBed, fakeAsync } from '@angular/core/testing';
 
-import { NgxInputTagComponent } from './ngx-input-tag.component';
+import { NgxInputTagComponent, formatter } from './ngx-input-tag.component';
 
 const testData = ['dog', 'cat', 'bird'];
 
@@ -21,9 +21,15 @@ describe('NgxInputTagComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TestComponent, NgxInputTagComponent ]
+      declarations: [TestComponent, NgxInputTagComponent],
+      providers: [
+        {
+          provide: 'tagFormatter',
+          useValue: formatter
+        }
+      ]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

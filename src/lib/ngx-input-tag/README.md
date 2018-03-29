@@ -29,7 +29,9 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
     ReactiveFormsModule,
-    NgxInputTagModule
+    NgxInputTagModule.forRoot()
+    // A optional custom tag formatter can be configured
+    // NgxInputTagModule.forRoot({ tagFormatter: (tag) => tag.toUpperCase() })
   ],
   providers: [],
   bootstrap: [AppComponent]

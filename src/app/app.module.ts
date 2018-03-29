@@ -53,7 +53,7 @@ import { DocsNgxLoadersComponent } from './docs/docs-ngx-loaders/docs-ngx-loader
     NgxInputRangeModule,
     NgxInputStarRatingModule,
     NgxInputSwitchModule,
-    NgxInputTagModule,
+    NgxInputTagModule.forRoot(), // { tagFormatter: (tag) => tag.toUpperCase() }
     NgxLoadersModule,
     NgxJsonLdModule,
     NgxNavDrawerModule
