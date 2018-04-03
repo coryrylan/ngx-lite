@@ -1,0 +1,26 @@
+html {
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+main, header {
+  margin: 0 auto;
+  padding: 12px;
+  display: block;
+  max-width: 1400px;
+
+  @media (min-width: 1024px) {
+    margin-left: 240px;
+    padding: 18px;
+  }
+}
+
+header {
+  border-bottom: 1px solid #ccc;
+  h2 {
+    font-size: 24px;
+  }
+}

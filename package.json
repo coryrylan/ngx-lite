@@ -10,7 +10,8 @@
     "lint": "ng lint",
     "e2e": "ng e2e --aot",
     "coverage": "ng test --watch=false --code-coverage",
-    "package": "npm run package:ngx-debounce-click && npm run package:ngx-eq && npm run package:ngx-in-viewport && npm run package:ngx-input-range && npm run package:ngx-input-star-rating && npm run package:ngx-input-switch && npm run package:ngx-input-tag && npm run package:ngx-json-ld && npm run package:ngx-loaders && npm run package:ngx-nav-drawer",
+    "package": "npm run package:ngx-code-example && npm run package:ngx-debounce-click && npm run package:ngx-eq && npm run package:ngx-in-viewport && npm run package:ngx-input-range && npm run package:ngx-input-star-rating && npm run package:ngx-input-switch && npm run package:ngx-input-tag && npm run package:ngx-json-ld && npm run package:ngx-loaders && npm run package:ngx-nav-drawer",
+    "package:ngx-code-example": "ng-packagr -p src/lib/ngx-code-example/ng-package.json",
     "package:ngx-debounce-click": "ng-packagr -p src/lib/ngx-debounce-click/ng-package.json",
     "package:ngx-eq": "ng-packagr -p src/lib/ngx-eq/ng-package.json",
     "package:ngx-in-viewport": "ng-packagr -p src/lib/ngx-in-viewport/ng-package.json",
@@ -34,6 +35,8 @@
     "@angular/platform-browser-dynamic": "^5.2.0",
     "@angular/router": "^5.2.0",
     "core-js": "^2.4.1",
+    "normalize.css": "^8.0.0",
+    "prismjs": "^1.13.0",
     "resize-observer-polyfill": "^1.5.0",
     "rxjs": "^5.5.6",
     "zone.js": "^0.8.19"

@@ -1,3 +1,4 @@
+import { DocsNgxCodeExampleComponent } from './docs/docs-ngx-code-example/docs-ngx-code-example.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes, PreloadAllModules } from '@angular/router';
 
@@ -15,6 +16,7 @@ import { DocsNgxNavDrawerComponent } from './docs/docs-ngx-nav-drawer/docs-ngx-n
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
+  { path: 'docs/ngx-code-example', component: DocsNgxCodeExampleComponent },
   { path: 'docs/ngx-debounce-click', component: DocsNgxDebounceClickComponent },
   { path: 'docs/ngx-eq', component: DocsNgxEqComponent },
   { path: 'docs/ngx-in-viewport', component: DocsNgxInViewportComponent },

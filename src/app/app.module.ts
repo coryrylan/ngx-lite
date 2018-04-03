@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
-
+import { NgxCodeExampleModule } from './../lib/ngx-code-example/ngx-code-example.module';
 import { NgxDebounceClickModule } from './../lib/ngx-debounce-click/ngx-debounce-click.module';
 import { NgxEqModule } from './../lib/ngx-eq/ngx-eq.module';
 import { NgxInViewportModule } from './../lib/ngx-in-viewport/ngx-in-viewport.module';
@@ -17,6 +17,7 @@ import { NgxNavDrawerModule } from './../lib/ngx-nav-drawer/ngx-nav-drawer.modul
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
+import { DocsNgxCodeExampleComponent } from './docs/docs-ngx-code-example/docs-ngx-code-example.component';
 import { DocsNgxInViewportComponent } from './docs/docs-ngx-in-viewport/docs-ngx-in-viewport.component';
 import { DocsNgxDebounceClickComponent } from './docs/docs-ngx-debounce-click/docs-ngx-debounce-click.component';
 import { DocsNgxEqComponent } from './docs/docs-ngx-eq/docs-ngx-eq.component';
@@ -32,6 +33,7 @@ import { DocsNgxLoadersComponent } from './docs/docs-ngx-loaders/docs-ngx-loader
   declarations: [
     AppComponent,
     HomeComponent,
+    DocsNgxCodeExampleComponent,
     DocsNgxInViewportComponent,
     DocsNgxDebounceClickComponent,
     DocsNgxEqComponent,
@@ -47,8 +49,9 @@ import { DocsNgxLoadersComponent } from './docs/docs-ngx-loaders/docs-ngx-loader
     BrowserModule,
     ReactiveFormsModule,
     AppRoutingModule,
+    NgxCodeExampleModule,
     NgxDebounceClickModule,
-    NgxEqModule.forRoot(),
+    NgxEqModule.forRoot(), // { disableForTesting: true }
     NgxInViewportModule,
     NgxInputRangeModule,
     NgxInputStarRatingModule,

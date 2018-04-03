@@ -1,6 +1,6 @@
 {
-  "name": "ngx-eq",
-  "version": "0.0.7",
+  "name": "ngx-debounce-click",
+  "version": "0.0.1",
   "repository": "https://github.com/coryrylan/ngx-libraries",
   "author": "Cory Rylan",
   "license": "MIT",
@@ -8,6 +8,6 @@
   "peerDependencies": {
     "@angular/core": "^5.0.0",
     "@angular/common": "^5.0.0",
-    "resize-observer-polyfill": "^1.5.0"
+    "prismjs": "^1.13.0"
   }
 }

@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.0.7
+- support disabling directive for unit testing in karma
+
 ## 0.0.6
 - add the ability to override breakpoints per element use case
 

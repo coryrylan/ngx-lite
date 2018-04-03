@@ -23,7 +23,7 @@ $nav-break: 45em;
   position: fixed;
   z-index: 4;
   background-color: $color-white;
-  overflow: hidden;
+  overflow-y: auto;
   transition: left 0.3s;
   will-change: left;
   border-right: 1px solid $color-border;

@@ -23,40 +23,44 @@ export class NgxEqDirective implements OnDestroy {
   constructor(private readonly elementRef: ElementRef, private ref: ChangeDetectorRef, @Inject('config') private config: Config) {
     const element = this.elementRef.nativeElement;
 
-    this.changes = new ResizeObserver(entries => {
-      for (const entry of entries) {
-        const width = entry.contentRect.width;
-        this.reset();
+    if (!this.config.disableForTesting) {
+      this.changes = new ResizeObserver(entries => {
+        for (const entry of entries) {
+          const width = entry.contentRect.width;
+          this.reset();
 
-        if (width >= this.extraSmall) {
-          this.extraSmallClass = true;
+          if (width >= this.extraSmall) {
+            this.extraSmallClass = true;
+          }
+
+          if (width >= this.small) {
+            this.smallClass = true;
+          }
+
+          if (width >= this.medium) {
+            this.mediumClass = true;
+          }
+
+          if (width >= this.large) {
+            this.largeClass = true;
+          }
+
+          if (width >= this.extraLarge) {
+            this.extraLargeClass = true;
+          }
         }
 
-        if (width >= this.small) {
-          this.smallClass = true;
-        }
+        this.ref.detectChanges();
+      });
 
-        if (width >= this.medium) {
-          this.mediumClass = true;
-        }
-
-        if (width >= this.large) {
-          this.largeClass = true;
-        }
-
-        if (width >= this.extraLarge) {
-          this.extraLargeClass = true;
-        }
-      }
-
-      this.ref.detectChanges();
-    });
-
-    this.changes.observe(element);
+      this.changes.observe(element);
+    }
   }
 
   ngOnDestroy() {
-    this.changes.disconnect();
+    if (this.changes) {
+      this.changes.disconnect();
+    }
   }
 
   private reset() {

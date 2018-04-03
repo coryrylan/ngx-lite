@@ -9,6 +9,7 @@ export interface Config {
   medium?: number;
   large?: number;
   extraLarge?: number;
+  disableForTesting?: boolean;
 }
 
 export const defaultConfig = {
@@ -16,7 +17,8 @@ export const defaultConfig = {
   small: 480,
   medium: 720,
   large: 960,
-  extraLarge: 1440
+  extraLarge: 1440,
+  disableForTesting: false // for unit testing in karma
 };
 
 @NgModule({
@@ -44,6 +46,7 @@ export class NgxEqModule {
             medium: 720,
             large: 960,
             extraLarge: 1440,
+            disableForTesting: false,
             ...config
           }
         }

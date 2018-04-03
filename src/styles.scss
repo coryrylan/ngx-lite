@@ -1,29 +1,3 @@
-html {
-  box-sizing: border-box;
-}
-
-*, *::before, *::after {
-  box-sizing: inherit;
-}
-
-body {
-  font-family: Helvetica, Arial, "Lucida Grande", sans-serif;
-  font-weight: 300;
-}
-
-main, header {
-  margin: 12px auto;
-  display: block;
-  max-width: 1020px;
-
-  @media (min-width: 1024px) {
-    margin-left: 260px;
-  }
-}
-
-header {
-  border-bottom: 1px solid #ccc;
-  h2 {
-    font-size: 24px;
-  }
-}
+@import '~normalize.css/normalize';
+@import './styles/_typography';
+@import './styles/_global';
