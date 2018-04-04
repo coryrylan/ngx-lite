@@ -1,3 +1,7 @@
 @import '~normalize.css/normalize';
+@import '~blueprint-css/src/blueprint';
+@import '~prismjs/themes/prism.css';
+@import './styles/_variables';
 @import './styles/_typography';
 @import './styles/_global';
+@import './styles/_icons';

@@ -1,7 +1,75 @@
 <h1>ngx-debounce-click</h1>
+<app-badges package="@ngx-libraries/debounce-click" stackblitzId="angular-nbhugm"></app-badges>
 
-<div>{{count}}</div>
+<p>
+  A simple Angular Directive to easily debounce click events.
+</p>
 
-<button (click)="count = count + 1">Regular Click</button>
+<h2>Demo</h2>
+<div class="demo">
+  <div>{{count}}</div>
 
-<button ngxDebounceClick (debouncedClick)="count = count + 1">Debounced Click</button>
+  <button (click)="count = count + 1">Regular Click</button>
+
+  <button ngxDebounceClick (debouncedClick)="count = count + 1">Debounced Click</button>
+</div>
+
+<h2>Installation</h2>
+
+<p>
+  To install this library, run
+  <code>npm install @ngx-libraries/debounce-click --save</code> and then from your Angular
+  <code>AppModule</code>:
+</p>
+
+<ngx-code-example ngNonBindable>
+  <![CDATA[
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { NgxDebounceClickModule } from 'ngx-debounce-click';
+
+import { AppComponent } from './app.component';
+
+@NgModule({
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    BrowserModule,
+    NgxDebounceClickModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+  ]]>
+</ngx-code-example>
+
+<h2>Component</h2>
+
+<p>
+  Once the library is imported, you can use the
+  <code>ngx-debounce-click</code> directive.
+</p>
+
+<ngx-code-example ngNonBindable>
+  <![CDATA[
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { Observable } from 'rxjs/Observable';
+
+@Component({
+  selector: 'app-root',
+  template: `
+    <h1>ngx-debounce-click</h1>
+    {{count}}
+
+    <button (click)="count = count + 1">Regular Click</button>
+    <button ngxDebounceClick (debouncedClick)="count = count + 1">Debounced Click</button>
+  `
+})
+export class AppComponent {
+  count = 0;
+}
+  ]]>
+</ngx-code-example>

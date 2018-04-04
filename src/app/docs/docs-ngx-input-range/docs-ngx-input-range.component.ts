@@ -4,8 +4,7 @@ import { Observable } from 'rxjs/Observable';
 import { startWith } from 'rxjs/operators';
 @Component({
   selector: 'app-docs-ngx-input-range',
-  templateUrl: './docs-ngx-input-range.component.html',
-  styleUrls: ['./docs-ngx-input-range.component.scss']
+  templateUrl: './docs-ngx-input-range.component.html'
 })
 export class DocsNgxInputRangeComponent implements OnInit {
   form: FormGroup;

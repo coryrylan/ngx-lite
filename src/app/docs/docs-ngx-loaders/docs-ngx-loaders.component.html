@@ -1,4 +1,9 @@
 <h1>ngx-loaders</h1>
+<app-badges package="@ngx-libraries/loaders" stackblitzId="angular-i5c8wa"></app-badges>
+
+<p>
+  Small lightweight loading indicator components.
+</p>
 
 <h2>ngx-loading-spinner</h2>
 <ngx-loading-spinner mini></ngx-loading-spinner>
@@ -9,7 +14,59 @@
   <ngx-loading-spinner light></ngx-loading-spinner>
 </div>
 
-<br><br>
+<br>
+<br>
 
 <h2>ngx-loading-bar</h2>
 <ngx-loading-bar></ngx-loading-bar>
+
+<h2>Installation</h2>
+
+<p>
+  To install this library, run:
+  <code>npm install @ngx-libraries/loaders --save</code> and then from your Angular
+  <code>AppModule</code>:
+</p>
+
+<ngx-code-example>
+  <![CDATA[
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+
+import { AppComponent } from './app.component';
+
+// Import library module
+import { NgxLoadersModule } from 'ngx-loaders';
+
+@NgModule({
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    BrowserModule,
+    // Register module
+    NgxLoadersModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+  ]]>
+</ngx-code-example>
+
+<h2>Component</h2>
+
+<p>
+  Once the library is imported, you can use the
+  <code>ngx-loader</code> components.
+</p>
+
+<ngx-code-example ngNonBindable language="html">
+  <![CDATA[
+<ngx-loading-spinner mini></ngx-loading-spinner>
+<ngx-loading-spinner small></ngx-loading-spinner>
+<ngx-loading-spinner></ngx-loading-spinner>
+<ngx-loading-spinner light></ngx-loading-spinner>
+<ngx-loading-bar></ngx-loading-bar>
+  ]]>
+</ngx-code-example>

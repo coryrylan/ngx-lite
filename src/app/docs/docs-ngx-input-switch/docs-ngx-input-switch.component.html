@@ -1,11 +1,96 @@
 <h1>ngx-input-switch</h1>
+<app-badges package="@ngx-libraries/input-switch" stackblitzId="angular-vow9um"></app-badges>
+
+<p>
+  A lightweight switch component compatible with both Angular Reactive Forms and Template Forms.
+</p>
+
+<div class="demo">
+  <form [formGroup]="form" (ngSubmit)="submit()">
+    <ngx-input-switch label="Toggle Me" formControlName="switch"></ngx-input-switch>
+
+    <p>
+      {{value | async}}
+    </p>
+
+    <button>Submit</button>
+  </form>
+</div>
+
+<h2>Installation</h2>
+
+<p>
+  To install this library, run:
+  <code>npm install @ngx-libraries/input-switch --save</code> and then from your Angular
+  <code>AppModule</code>:
+</p>
+
+<ngx-code-example>
+  <![CDATA[
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
+import { NgxInputSwitchModule } from 'ngx-input-switch';
+
+import { AppComponent } from './app.component';
+
+@NgModule({
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    BrowserModule,
+    ReactiveFormsModule,
+    NgxInputSwitchModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+  ]]>
+</ngx-code-example>
+
+<h2>Component</h2>
+
+<p>
+  Once the library is imported, you can use the
+  <code>ngx-input-switch</code> component.
+</p>
+
+<ngx-code-example ngNonBindable>
+  <![CDATA[
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { Observable } from 'rxjs/Observable';
+
+@Component({
+  selector: 'app-root',
+  template: `
+<h1>ngx-input-switch</h1>
 
 <form [formGroup]="form" (ngSubmit)="submit()">
-  <ngx-input-switch label="Toggle Me" formControlName="switch"></ngx-input-switch>
-
-  <p>
-    {{value | async}}
-  </p>
-
+  <ngx-input-switch formControlName="switch"></ngx-input-switch>
   <button>Submit</button>
 </form>
+  `
+})
+export class AppComponent implements OnInit {
+  form: FormGroup;
+  value: Observable<number>;
+
+  constructor(private formBuilder: FormBuilder) { }
+
+  ngOnInit() {
+    this.form = this.formBuilder.group({
+      switch: [true]
+    });
+
+    this.value = this.form.controls.switch.valueChanges;
+  }
+
+  submit() {
+    console.log(this.form.value);
+  }
+}
+  ]]>
+</ngx-code-example>

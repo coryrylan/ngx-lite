@@ -1,11 +1,16 @@
-<!-- <header>
-  <h2>NGX-LIBRARIES</h2>
-</header> -->
+<header class="header">
+  <nav class="header-nav">
+    <a routerLink="/" class="header-nav__link logo">ngx-libraries</a>
+    <a href="https://github.com/coryrylan/ngx-libraries" class="header-nav__link">Github</a>
+    <a routerLink="/about" class="header-nav__link">About</a>
+  </nav>
+</header>
 
 <ngx-nav-drawer [(open)]="show" [fixed]="true">
-  <a routerLink="/">Home</a>
-  <a routerLink="/docs/ngx-code-example">ngx-code-example</a>
+  <a routerLink="/">docs</a>
+  <hr>
   <a routerLink="/docs/ngx-debounce-click">ngx-debounce-click</a>
+  <a routerLink="/docs/ngx-code-example">ngx-code-example</a>
   <a routerLink="/docs/ngx-eq">ngx-eq</a>
   <a routerLink="/docs/ngx-in-viewport">ngx-in-viewport</a>
   <a routerLink="/docs/ngx-input-range">ngx-input-range</a>

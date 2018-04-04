@@ -8,8 +8,7 @@ const tagSuggestions = ['google', 'apple', 'microsoft'];
 
 @Component({
   selector: 'app-docs-ngx-input-tag',
-  templateUrl: './docs-ngx-input-tag.component.html',
-  styleUrls: ['./docs-ngx-input-tag.component.scss']
+  templateUrl: './docs-ngx-input-tag.component.html'
 })
 export class DocsNgxInputTagComponent implements OnInit {
   form: FormGroup;

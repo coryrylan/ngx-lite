@@ -6,21 +6,82 @@ html {
   box-sizing: inherit;
 }
 
-main, header {
+main {
   margin: 0 auto;
   padding: 12px;
   display: block;
-  max-width: 1400px;
+  max-width: 1100px;
 
-  @media (min-width: 1024px) {
+  @media (min-width: $nav-break) {
     margin-left: 240px;
-    padding: 18px;
+    padding: 76px 18px 18px 18px;
   }
 }
 
-header {
-  border-bottom: 1px solid #ccc;
-  h2 {
-    font-size: 24px;
+.header {
+  margin-bottom: 12px;
+  background-color: $color-primary;
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  position: fixed;
+  z-index: 99;
+  top: 0;
+}
+
+.header-nav {
+  &__link {
+    padding: 16px 8px;
+    text-decoration: none;
+    display: block;
+    float: right;
+    color: $color-white;
+
+    &:hover {
+      background-color: darken($color-primary, 5%);
+    }
+
+    @media (min-width: $nav-break) {
+      padding: 16px 14px;
+    }
   }
+
+  .logo {
+    float: left;
+  }
+}
+
+.ngx-nav-drawer {
+  @media (min-width: $nav-break) {
+    padding: 56px 0 !important;
+  }
+}
+
+ngx-code-example {
+  display: block;
+  margin-bottom: 48px;
+
+  pre {
+    padding-bottom: 0;
+  }
+
+  code {
+    display: block;
+    margin: -96px 0 -60px 0;
+  }
+}
+
+:not(pre) > code[class*='language-'], pre[class*='language-'] {
+  background: #f7f7f7;
+}
+
+.demo {
+  margin: 24px 0 48px 0;
+  padding: 12px;
+  background: #f7f7f7;
+}
+
+code, .code {
+  background: #f7f7f7;
+  padding: 2px;
 }

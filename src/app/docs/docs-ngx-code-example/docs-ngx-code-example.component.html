@@ -1,8 +1,16 @@
 <h1>ngx-code-example</h1>
 
+<app-badges package="@ngx-libraries/code-example" stackblitzId="angular-siyvon"></app-badges>
+
+<p>
+  The <code>ngx-code-example</code> component uses prismjs and Angular to
+  easily display code examples in a view.
+</p>
+
+<h2>Demo</h2>
 <ngx-code-example>
   <![CDATA[
-if (true) {
+if (someCondition) {
   console.log('hi');
 } else {
   console.log('bye');
@@ -10,8 +18,46 @@ if (true) {
   ]]>
 </ngx-code-example>
 
-<ngx-code-example language="html">
+<h2>Installation</h2>
+
+<p>
+  To install this library, run <code>npm install @ngx-libraries/code-example --save</code> and then from your Angular <code>AppModule</code>:
+</p>
+
+<ngx-code-example>
   <![CDATA[
-<h2>Hello World</h2>
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { NgxCodeExampleModule } from '@ngx-libraries/code-example';
+
+import { AppComponent } from './app.component';
+
+@NgModule({
+  imports: [BrowserModule, NgxCodeExampleModule],
+  declarations: [AppComponent],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
   ]]>
 </ngx-code-example>
+
+<h2>Component</h2>
+
+<p>
+  Once the library is imported, you can use the
+  <code>ngx-code-example</code> component.
+</p>
+
+<pre class="code" style="padding: 24px">
+  <code>
+&lt;ngx-code-example&gt;
+  &lt;![CDATA[
+if (true) {{'{'}}
+  console.log('hi');
+{{'}'}} else {{'{'}}
+  console.log('bye');
+{{'}'}}
+  ]]&gt;
+&lt;/ngx-code-example&gt;    
+  </code>
+</pre>

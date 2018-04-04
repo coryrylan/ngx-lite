@@ -5,8 +5,7 @@ import { startWith } from 'rxjs/operators';
 
 @Component({
   selector: 'app-docs-ngx-input-switch',
-  templateUrl: './docs-ngx-input-switch.component.html',
-  styleUrls: ['./docs-ngx-input-switch.component.scss']
+  templateUrl: './docs-ngx-input-switch.component.html'
 })
 export class DocsNgxInputSwitchComponent implements OnInit {
   form: FormGroup;

@@ -1,12 +1,78 @@
 <h1>ngx-in-viewport</h1>
+<app-badges package="@ngx-libraries/in-viewport" stackblitzId="angular-ecokut"></app-badges>
 
 <p>
-  Number of times elment entered or left viewport <span class="e2e-count">{{count}}</span>
+  A simple Angular Directive to easily determine if a element in in the viewport.
 </p>
 
+<div class="demo">
+  <p>
+    Number of times elment entered or left viewport
+    <span class="e2e-count">{{count}}</span>
+  </p>
+
+  <p>
+    Scroll Down and view log to see the inViewport event.
+  </p>
+</div>
+
+<h2>Installation</h2>
+
 <p>
-  Scroll Down and view log to see the inViewport event.
+  To install this library, run:
+  <code>npm install @ngx-libraries/in-viewport --save</code> and then from your Angular
+  <code>AppModule</code>:
 </p>
+
+<ngx-code-example>
+  <![CDATA[
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { NgxInViewportModule } from 'ngx-in-viewport';
+
+import { AppComponent } from './app.component';
+
+@NgModule({
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    BrowserModule,
+    NgxInViewportModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+  ]]>
+</ngx-code-example>
+
+<h2>Component</h2>
+
+<p>
+  Once the library is imported, you can use the `ngx-in-viewport` directive.
+</p>
+
+<ngx-code-example ngNonBindable>
+  <![CDATA[
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
+
+@Component({
+  selector: 'app-root',
+  template: `
+  <div ngxInViewport (inViewport)="log($event)">
+    Hello World!
+  </div>
+  `
+})
+export class AppComponent {
+  log(event) {
+    console.log(event);
+  }
+}
+  ]]>
+</ngx-code-example>
 
 <div ngxInViewport (inViewport)="log($event)">
   Hello World!

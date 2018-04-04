@@ -1,11 +1,99 @@
 <h1>ngx-input-tag</h1>
+<app-badges package="@ngx-libraries/input-tag" stackblitzId="angular-8qhlb4"></app-badges>
+
+<p>
+  A lightweight tag input component compatible with both Angular Reactive Forms and Template Forms.
+</p>
+
+<div class="demo">
+  <form [formGroup]="form" (ngSubmit)="submit()">
+    <ngx-input-tag formControlName="tags" [tagSuggestions]="tagSuggestions"></ngx-input-tag>
+
+    <pre>
+      {{value | async | json}}
+    </pre>
+
+    <button>Submit</button>
+  </form>
+</div>
+
+<h2>Installation</h2>
+
+<p>
+  To install this library, run:
+  <code>npm install @ngx-libraries/input-tag --save</code> and then from your Angular
+  <code>AppModule</code>:
+</p>
+
+<ngx-code-example>
+  <![CDATA[
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
+import { NgxInputTagModule } from 'ngx-input-tag';
+
+import { AppComponent } from './app.component';
+
+@NgModule({
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    BrowserModule,
+    ReactiveFormsModule,
+    NgxInputTagModule.forRoot()
+    // A optional custom tag formatter can be configured
+    // NgxInputTagModule.forRoot({ tagFormatter: (tag) => tag.toUpperCase() })
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+  ]]>
+</ngx-code-example>
+
+<h2>Component</h2>
+
+<p>
+  Once the library is imported, you can use the
+  <code>ngx-input-tag</code> component.
+</p>
+
+<ngx-code-example ngNonBindable>
+  <![CDATA[
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { Observable } from 'rxjs/Observable';
+
+@Component({
+  selector: 'app-root',
+  template: `
+<h1>ngx-input-tag</h1>
 
 <form [formGroup]="form" (ngSubmit)="submit()">
   <ngx-input-tag formControlName="tags" [tagSuggestions]="tagSuggestions"></ngx-input-tag>
-
-  <pre>
-    {{value | async | json}}
-  </pre>
-
   <button>Submit</button>
 </form>
+  `
+})
+export class AppComponent implements OnInit {
+  form: FormGroup;
+  value: Observable<number>;
+  tagSuggestions = ['google', 'apple', 'microsoft'];
+
+  constructor(private formBuilder: FormBuilder) { }
+
+  ngOnInit() {
+    this.form = this.formBuilder.group({
+      tags: [['dog', 'cat', 'bird']]
+    });
+
+    this.value = this.form.controls.tags.valueChanges;
+  }
+
+  submit() {
+    console.log(this.form.value);
+  }
+}
+  ]]>
+</ngx-code-example>

@@ -5,8 +5,7 @@ import { startWith } from 'rxjs/operators';
 
 @Component({
   selector: 'app-docs-ngx-input-star-rating',
-  templateUrl: './docs-ngx-input-star-rating.component.html',
-  styleUrls: ['./docs-ngx-input-star-rating.component.scss']
+  templateUrl: './docs-ngx-input-star-rating.component.html'
 })
 export class DocsNgxInputStarRatingComponent implements OnInit {
   form: FormGroup;

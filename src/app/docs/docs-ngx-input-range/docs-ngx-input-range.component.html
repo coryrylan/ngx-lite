@@ -1,4 +1,76 @@
 <h1>ngx-input-range</h1>
+<app-badges package="@ngx-libraries/input-range" stackblitzId="angular-m8nwd6"></app-badges>
+
+<p>
+  A lightweight range input component supporting both Reactive and Template forms.
+</p>
+
+<div class="demo">
+  <form [formGroup]="form" (ngSubmit)="submit()">
+    <ngx-input-range label="distance" formControlName="distance"></ngx-input-range>
+    <ngx-input-range label="condition" [min]="0" [max]="3" [step]="1" [labels]="['Poor', 'Fair', 'Good', 'Excellent']"></ngx-input-range>
+    <button>Submit</button>
+  </form>
+
+  <p>
+    {{value | async}}
+  </p>
+</div>
+
+<h2>Installation</h2>
+
+<p>
+  To install this library, run:
+  <code>npm install @ngx-libraries/input-range --save</code> and then from your Angular
+  <code>AppModule</code>:
+</p>
+
+<ngx-code-example>
+  <![CDATA[
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
+import { NgxInputRangeModule } from 'ngx-input-range';
+
+import { AppComponent } from './app.component';
+
+@NgModule({
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    BrowserModule,
+    ReactiveFormsModule,
+    NgxInputRangeModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+  ]]>
+</ngx-code-example>
+
+
+<h2>Component</h2>
+
+<p>
+  Once the library is imported, you can use the
+  <code>ngx-input-range</code> component.
+</p>
+
+<ngx-code-example ngNonBindable>
+  <![CDATA[
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { Observable } from 'rxjs/Observable';
+
+@Component({
+  selector: 'app-root',
+  template: `
+<a href="https://github.com/coryrylan/ngx-libraries">
+  <h1>ngx-input-range</h1>
+</a>
+
 <form [formGroup]="form" (ngSubmit)="submit()">
   <ngx-input-range label="distance" formControlName="distance"></ngx-input-range>
   <ngx-input-range  label="condition" [min]="0" [max]="3" [step]="1" [labels]="['Poor', 'Fair', 'Good', 'Excellent']"></ngx-input-range>
@@ -8,3 +80,26 @@
 <p>
   {{value | async}}
 </p>
+  `
+})
+export class AppComponent implements OnInit {
+  form: FormGroup;
+  value: Observable<number>;
+
+  constructor(private formBuilder: FormBuilder) { }
+
+  ngOnInit() {
+    this.form = this.formBuilder.group({
+      distance: [75],
+      condition: [2]
+    });
+
+    this.value = this.form.controls.distance.valueChanges.pipe(startWith(75));
+  }
+
+  submit() {
+    console.log(this.form.value);
+  }
+}
+  ]]>
+</ngx-code-example>
