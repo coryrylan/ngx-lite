@@ -1,7 +1,7 @@
 {
-  "name": "ngx-input-range",
+  "name": "@ngx-lite/input-range",
   "version": "0.0.0",
-  "repository": "https://github.com/coryrylan/ngx-libraries",
+  "repository": "https://github.com/coryrylan/ngx-lite",
   "author": "Cory Rylan",
   "license": "MIT",
   "private": false,

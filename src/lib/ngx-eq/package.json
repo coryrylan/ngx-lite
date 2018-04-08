@@ -1,7 +1,7 @@
 {
-  "name": "ngx-eq",
+  "name": "@ngx-lite/eq",
   "version": "0.0.7",
-  "repository": "https://github.com/coryrylan/ngx-libraries",
+  "repository": "https://github.com/coryrylan/ngx-lite",
   "author": "Cory Rylan",
   "license": "MIT",
   "private": false,

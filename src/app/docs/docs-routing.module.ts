@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
+import { DocsNgxCarbonAdComponent } from './docs-ngx-carbon-ad/docs-ngx-carbon-ad.component';
 import { DocsNgxCodeExampleComponent } from './docs-ngx-code-example/docs-ngx-code-example.component';
 import { DocsHomeComponent } from './docs-home/docs-home.component';
 import { DocsComponent } from './docs.component';
@@ -14,22 +15,25 @@ import { DocsNgxJsonLdComponent } from './docs-ngx-json-ld/docs-ngx-json-ld.comp
 import { DocsNgxInputSwitchComponent } from './docs-ngx-input-switch/docs-ngx-input-switch.component';
 import { DocsNgxLoadersComponent } from './docs-ngx-loaders/docs-ngx-loaders.component';
 import { DocsNgxNavDrawerComponent } from './docs-ngx-nav-drawer/docs-ngx-nav-drawer.component';
+import { DocsNgxTabsComponent } from './docs-ngx-tabs/docs-ngx-tabs.component';
 
 const routes: Routes = [
   {
     path: '', component: DocsComponent, children: [
       { path: '', component: DocsHomeComponent },
-      { path: 'ngx-code-example', component: DocsNgxCodeExampleComponent },
-      { path: 'ngx-debounce-click', component: DocsNgxDebounceClickComponent },
-      { path: 'ngx-eq', component: DocsNgxEqComponent },
-      { path: 'ngx-in-viewport', component: DocsNgxInViewportComponent },
-      { path: 'ngx-input-range', component: DocsNgxInputRangeComponent },
-      { path: 'ngx-input-star-rating', component: DocsNgxInputStarRatingComponent },
-      { path: 'ngx-input-switch', component: DocsNgxInputSwitchComponent },
-      { path: 'ngx-input-tag', component: DocsNgxInputTagComponent },
-      { path: 'ngx-json-ld', component: DocsNgxJsonLdComponent },
-      { path: 'ngx-loaders', component: DocsNgxLoadersComponent },
-      { path: 'ngx-nav-drawer', component: DocsNgxNavDrawerComponent }
+      { path: 'carbon-ad', component: DocsNgxCarbonAdComponent },
+      { path: 'code-example', component: DocsNgxCodeExampleComponent },
+      { path: 'debounce-click', component: DocsNgxDebounceClickComponent },
+      { path: 'eq', component: DocsNgxEqComponent },
+      { path: 'in-viewport', component: DocsNgxInViewportComponent },
+      { path: 'input-range', component: DocsNgxInputRangeComponent },
+      { path: 'input-star-rating', component: DocsNgxInputStarRatingComponent },
+      { path: 'input-switch', component: DocsNgxInputSwitchComponent },
+      { path: 'input-tag', component: DocsNgxInputTagComponent },
+      { path: 'json-ld', component: DocsNgxJsonLdComponent },
+      { path: 'loaders', component: DocsNgxLoadersComponent },
+      { path: 'nav-drawer', component: DocsNgxNavDrawerComponent },
+      { path: 'tabs', component: DocsNgxTabsComponent }
     ]
   }
 ];

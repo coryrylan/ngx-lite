@@ -16,6 +16,8 @@ import { DocsNgxInputSwitchComponent } from './docs-ngx-input-switch/docs-ngx-in
 import { DocsNgxInputTagComponent } from './docs-ngx-input-tag/docs-ngx-input-tag.component';
 import { DocsNgxNavDrawerComponent } from './docs-ngx-nav-drawer/docs-ngx-nav-drawer.component';
 import { DocsNgxLoadersComponent } from './docs-ngx-loaders/docs-ngx-loaders.component';
+import { DocsNgxTabsComponent } from './docs-ngx-tabs/docs-ngx-tabs.component';
+import { DocsNgxCarbonAdComponent } from './docs-ngx-carbon-ad/docs-ngx-carbon-ad.component';
 
 @NgModule({
   imports: [
@@ -36,6 +38,8 @@ import { DocsNgxLoadersComponent } from './docs-ngx-loaders/docs-ngx-loaders.com
     DocsNgxInputSwitchComponent,
     DocsNgxNavDrawerComponent,
     DocsNgxLoadersComponent,
+    DocsNgxTabsComponent,
+    DocsNgxCarbonAdComponent,
   ]
 })
 export class DocsModule { }

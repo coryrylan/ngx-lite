@@ -1,31 +1,62 @@
-<h1>ngx-in-viewport</h1>
-<app-badges package="@ngx-libraries/in-viewport" stackblitzId="angular-ecokut"></app-badges>
+<section bp="grid vertical-start"> 
+  <div bp="8@md">
+    <h1>@ngx-lite/in-viewport</h1>
+    <app-badges package="in-viewport" stackblitzId="angular-ecokut"></app-badges>
 
-<p>
-  A simple Angular Directive to easily determine if a element in in the viewport.
-</p>
+    <p>
+      A simple Angular Directive to easily determine if a element in in the viewport.
+    </p>
+  </div>
+  <ngx-carbon-ad siteName="coryrylancom" bp="4@md"></ngx-carbon-ad>
+</section>
 
-<div class="demo">
-  <p>
-    Number of times elment entered or left viewport
-    <span class="e2e-count">{{count}}</span>
-  </p>
+<ngx-tabs>
+  <ngx-tab [active]="true" name="Usage">
+    <div class="demo">
+      <p>
+        Number of times elment entered or left viewport
+        <span class="e2e-count">{{count}}</span>
+      </p>
 
-  <p>
-    Scroll Down and view log to see the inViewport event.
-  </p>
-</div>
+      <p>
+        Scroll Down and view log to see the inViewport event.
+      </p>
+    </div>
 
-<h2>Installation</h2>
+    <ngx-code-example ngNonBindable>
+      <![CDATA[
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
-<p>
-  To install this library, run:
-  <code>npm install @ngx-libraries/in-viewport --save</code> and then from your Angular
-  <code>AppModule</code>:
-</p>
+@Component({
+  selector: 'app-root',
+  template: `
+  <div ngxInViewport (inViewport)="log($event)">
+    Hello World!
+  </div>
+  `
+})
+export class AppComponent {
+  log(event) {
+    console.log(event);
+  }
+}
+      ]]>
+    </ngx-code-example>
 
-<ngx-code-example>
-  <![CDATA[
+    <div ngxInViewport (inViewport)="log($event)">
+      Hello World!
+    </div>
+  </ngx-tab>
+  <ngx-tab name="Installation">
+    <p>
+      To install this library, run:
+      <code>npm install @ngx-lite/in-viewport --save</code> and then from your Angular
+      <code>AppModule</code>:
+    </p>
+
+    <ngx-code-example>
+      <![CDATA[
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { NgxInViewportModule } from 'ngx-in-viewport';
@@ -44,36 +75,10 @@ import { AppComponent } from './app.component';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
-  ]]>
-</ngx-code-example>
-
-<h2>Component</h2>
-
-<p>
-  Once the library is imported, you can use the `ngx-in-viewport` directive.
-</p>
-
-<ngx-code-example ngNonBindable>
-  <![CDATA[
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
-
-@Component({
-  selector: 'app-root',
-  template: `
-  <div ngxInViewport (inViewport)="log($event)">
-    Hello World!
-  </div>
-  `
-})
-export class AppComponent {
-  log(event) {
-    console.log(event);
-  }
-}
-  ]]>
-</ngx-code-example>
-
-<div ngxInViewport (inViewport)="log($event)">
-  Hello World!
-</div>
+      ]]>
+    </ngx-code-example>
+  </ngx-tab>
+  <ngx-tab name="API">
+    <h2>Coming Soon</h2>
+  </ngx-tab>
+</ngx-tabs>

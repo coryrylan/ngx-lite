@@ -1,63 +1,30 @@
-<h1>ngx-input-star-rating</h1>
-<app-badges package="@ngx-libraries/input-star-rating" stackblitzId="angular-5t4gbz"></app-badges>
+<section bp="grid vertical-start"> 
+  <div bp="8@md">
+    <h1>@ngx-lite/input-star-rating</h1>
+    <app-badges package="input-star-rating" stackblitzId="angular-5t4gbz"></app-badges>
 
-<p>
-  A lightweight star rating component compatible with both Angular Reactive Forms and Template Forms.
-</p>
+    <p>
+      A lightweight star rating component compatible with both Angular Reactive Forms and Template Forms.
+    </p>
+  </div>
+  <ngx-carbon-ad siteName="coryrylancom" bp="4@md"></ngx-carbon-ad>
+</section>
 
-<div class="demo">
-  <form [formGroup]="form" (ngSubmit)="submit()">
-    <ngx-input-star-rating formControlName="rating"></ngx-input-star-rating>
-    <button>Submit</button>
-  </form>
+<ngx-tabs>
+  <ngx-tab [active]="true" name="Usage">
+    <div class="demo">
+      <form [formGroup]="form" (ngSubmit)="submit()">
+        <ngx-input-star-rating formControlName="rating"></ngx-input-star-rating>
+        <button>Submit</button>
+      </form>
 
-  <p>
-    {{value | async}}
-  </p>
-</div>
+      <p>
+        {{value | async}}
+      </p>
+    </div>
 
-<h2>Installation</h2>
-
-<p>
-  To install this library, run:
-  <code>npm install @ngx-libraries/input-star-rating --save</code> and then from your Angular
-  <code>AppModule</code>:
-</p>
-
-<ngx-code-example>
-  <![CDATA[
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
-import { NgxInputStarRatingModule } from 'ngx-input-star-rating';
-
-import { AppComponent } from './app.component';
-
-@NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    BrowserModule,
-    ReactiveFormsModule,
-    NgxInputStarRatingModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
-})
-export class AppModule { }
-  ]]>
-</ngx-code-example>
-
-<h2>Component</h2>
-
-<p>
-  Once the library is imported, you can use the
-  <code>ngx-input-star-rating</code> component.
-</p>
-
-<ngx-code-example ngNonBindable>
-  <![CDATA[
+    <ngx-code-example ngNonBindable>
+      <![CDATA[
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Observable } from 'rxjs/Observable';
@@ -91,5 +58,43 @@ export class AppComponent implements OnInit {
     console.log(this.form.value);
   }
 }
-  ]]>
-</ngx-code-example>
+      ]]>
+    </ngx-code-example>
+  </ngx-tab>
+  <ngx-tab name="Installation">
+
+    <p>
+      To install this library, run:
+      <code>npm install @ngx-lite/input-star-rating --save</code> and then from your Angular
+      <code>AppModule</code>:
+    </p>
+
+    <ngx-code-example>
+      <![CDATA[
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
+import { NgxInputStarRatingModule } from 'ngx-input-star-rating';
+
+import { AppComponent } from './app.component';
+
+@NgModule({
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    BrowserModule,
+    ReactiveFormsModule,
+    NgxInputStarRatingModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+      ]]>
+    </ngx-code-example>
+  </ngx-tab>
+  <ngx-tab name="API">
+    <h2>Coming Soon</h2>
+  </ngx-tab>
+</ngx-tabs>

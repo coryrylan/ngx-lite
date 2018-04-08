@@ -1,5 +1,5 @@
 {
-  "name": "ngx-json-ld",
+  "name": "@ngx-lite/json-ld",
   "version": "0.3.1",
   "repository": "https://github.com/coryrylan/ngx-json-ld",
   "author": "Cory Rylan",

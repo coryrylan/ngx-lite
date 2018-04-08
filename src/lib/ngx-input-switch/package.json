@@ -1,7 +1,7 @@
 {
-  "name": "ngx-input-switch",
+  "name": "@ngx-lite/input-switch",
   "version": "0.0.1",
-  "repository": "https://github.com/coryrylan/ngx-libraries",
+  "repository": "https://github.com/coryrylan/ngx-lite",
   "author": "Cory Rylan",
   "license": "MIT",
   "private": false,

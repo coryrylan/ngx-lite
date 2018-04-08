@@ -1,7 +1,7 @@
 {
-  "name": "@ngx-libraries/code-example",
-  "version": "0.0.2",
-  "repository": "https://github.com/coryrylan/ngx-libraries",
+  "name": "@ngx-lite/code-example",
+  "version": "0.0.0",
+  "repository": "https://github.com/coryrylan/ngx-lite",
   "author": "Cory Rylan",
   "license": "MIT",
   "private": false,

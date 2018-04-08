@@ -1,7 +1,7 @@
 {
-  "name": "ngx-input-tag",
+  "name": "@ngx-lite/input-tag",
   "version": "0.0.5",
-  "repository": "https://github.com/coryrylan/ngx-libraries",
+  "repository": "https://github.com/coryrylan/ngx-lite",
   "author": "Cory Rylan",
   "license": "MIT",
   "private": false,

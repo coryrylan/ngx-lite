@@ -1,6 +1,8 @@
-# ngx-nav-drawer
+# @ngx-lite/nav-drawer
 
-[![npm version](https://badge.fury.io/js/ngx-nav-drawer.svg)](https://badge.fury.io/js/ngx-nav-drawer)
+[![npm version](https://badge.fury.io/js/%40ngx-lite%2Fnav-drawer.svg)](https://badge.fury.io/js/%40ngx-lite%2Fnav-drawer)
+
+A lightweight Angular component for simple navigation drawers.
 
 ## [Demo]()
 

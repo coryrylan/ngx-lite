@@ -1,7 +1,7 @@
 {
-  "name": "ngx-debounce-click",
-  "version": "0.0.1",
-  "repository": "https://github.com/coryrylan/ngx-libraries",
+  "name": "@ngx-lite/debounce-click",
+  "version": "0.0.0",
+  "repository": "https://github.com/coryrylan/ngx-lite",
   "author": "Cory Rylan",
   "license": "MIT",
   "private": false,

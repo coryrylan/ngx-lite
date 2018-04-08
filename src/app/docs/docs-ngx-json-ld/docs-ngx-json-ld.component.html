@@ -1,27 +1,30 @@
-<h1>ngx-json-ld</h1>
-<app-badges package="@ngx-libraries/json-ld" stackblitzId="angular-oyrw84"></app-badges>
+<section bp="grid vertical-start"> 
+  <div bp="8@md">
+    <h1>@ngx-lite/json-ld</h1>
+    <app-badges package="json-ld" stackblitzId="angular-oyrw84"></app-badges>
 
-<p>
-  A small component to easily bind
-  <a href="https://developers.google.com/search/docs/guides/intro-structured-data">JSON-LD schema</a>
-  to Angular templates.
-</p>
+    <p>
+      A small component to easily bind
+      <a href="https://developers.google.com/search/docs/guides/intro-structured-data">JSON-LD schema</a>
+      to Angular templates.
+    </p>
+  </div>
+  <ngx-carbon-ad siteName="coryrylancom" bp="4@md"></ngx-carbon-ad>
+</section>
 
-<p>
-  Inspect the DOM to see the rendered
-  <a href="https://developers.google.com/search/docs/guides/intro-structured-data">JSON-LD schema</a>
-  element.
-</p>
+<ngx-tabs>
+  <ngx-tab [active]="true" name="Usage">
+    <p>
+      Inspect the DOM to see the rendered
+      <a href="https://developers.google.com/search/docs/guides/intro-structured-data">JSON-LD schema</a>
+      element.
+    </p>
 
-<pre>
-{{demoData | json}}
-</pre>
+    <ngx-json-ld [json]="demoData"></ngx-json-ld>
+    <ngx-json-ld [json]="json"></ngx-json-ld>
 
-<ngx-json-ld [json]="demoData"></ngx-json-ld>
-<ngx-json-ld [json]="json"></ngx-json-ld>
-
-<ngx-code-example ngNonBindable>
-  <![CDATA[
+    <ngx-code-example ngNonBindable>
+      <![CDATA[
 <ngx-json-ld>
   <script type="application/ld+json">
     {
@@ -32,19 +35,35 @@
     }
   </script>
 </ngx-json-ld>
-  ]]>
-</ngx-code-example>
+      ]]>
+    </ngx-code-example>
 
-<h2>Installation</h2>
+    <ngx-code-example ngNonBindable>
+      <![CDATA[
+@Component({
+  selector: 'app',
+  template: `<ngx-json-ld [json]="schema"></ngx-json-ld>`
+})
+class AppComponent {
+  schema = {
+    '@context': 'http://schema.org',
+    '@type': 'WebSite',
+    'name': 'angular.io',
+    'url': 'https://angular.io'
+  };
+}
+      ]]>
+    </ngx-code-example>
+  </ngx-tab>
+  <ngx-tab name="Installation">
+    <p>
+      To install this library, run:
+      <code>npm install @ngx-lite/json-ld --save</code> and then from your Angular
+      <code>AppModule</code>:
+    </p>
 
-<p>
-  To install this library, run:
-  <code>npm install @ngx-libraries/json-ld --save</code> and then from your Angular
-  <code>AppModule</code>:
-</p>
-
-<ngx-code-example>
-  <![CDATA[
+    <ngx-code-example>
+      <![CDATA[
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -66,29 +85,10 @@ import { NgxJsonLdModule } from 'ngx-json-ld';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
-  ]]>
-</ngx-code-example>
-
-<h2>Component</h2>
-
-<p>
-  Once the library is imported, you can use the
-  <code>ngx-json-ld</code> component.
-</p>
-
-<ngx-code-example ngNonBindable>
-  <![CDATA[
-@Component({
-  selector: 'app',
-  template: `<ngx-json-ld [json]="schema"></ngx-json-ld>`
-})
-class AppComponent {
-  schema = {
-    '@context': 'http://schema.org',
-    '@type': 'WebSite',
-    'name': 'angular.io',
-    'url': 'https://angular.io'
-  };
-}
-  ]]>
-</ngx-code-example>
+      ]]>
+    </ngx-code-example>
+  </ngx-tab>
+  <ngx-tab name="API">
+    <h2>Coming Soon</h2>
+  </ngx-tab>
+</ngx-tabs>

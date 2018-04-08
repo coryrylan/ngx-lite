@@ -1,35 +1,48 @@
-<h1>ngx-loaders</h1>
-<app-badges package="@ngx-libraries/loaders" stackblitzId="angular-i5c8wa"></app-badges>
+<section bp="grid vertical-start"> 
+  <div bp="8@md">
+    <h1>@ngx-lite/loaders</h1>
+    <app-badges package="loaders" stackblitzId="angular-i5c8wa"></app-badges>
 
-<p>
-  Small lightweight loading indicator components.
-</p>
+    <p>
+      Small lightweight loading indicator components.
+    </p>
+  </div>
+  <ngx-carbon-ad siteName="coryrylancom" bp="4@md"></ngx-carbon-ad>
+</section>
 
-<h2>ngx-loading-spinner</h2>
+<ngx-tabs>
+  <ngx-tab [active]="true" name="Usage">
+    <h2>ngx-loading-spinner</h2>
+    <ngx-loading-spinner mini></ngx-loading-spinner>
+    <ngx-loading-spinner small></ngx-loading-spinner>
+    <ngx-loading-spinner></ngx-loading-spinner>
+
+    <div class="box">
+      <ngx-loading-spinner light></ngx-loading-spinner>
+    </div>
+
+    <h2>ngx-loading-bar</h2>
+    <ngx-loading-bar></ngx-loading-bar>
+
+    <ngx-code-example ngNonBindable language="html">
+      <![CDATA[
 <ngx-loading-spinner mini></ngx-loading-spinner>
 <ngx-loading-spinner small></ngx-loading-spinner>
 <ngx-loading-spinner></ngx-loading-spinner>
-
-<div class="box">
-  <ngx-loading-spinner light></ngx-loading-spinner>
-</div>
-
-<br>
-<br>
-
-<h2>ngx-loading-bar</h2>
+<ngx-loading-spinner light></ngx-loading-spinner>
 <ngx-loading-bar></ngx-loading-bar>
+      ]]>
+    </ngx-code-example>
+  </ngx-tab>
+  <ngx-tab name="Installation">
+    <p>
+      To install this library, run:
+      <code>npm install @ngx-lite/loaders --save</code> and then from your Angular
+      <code>AppModule</code>:
+    </p>
 
-<h2>Installation</h2>
-
-<p>
-  To install this library, run:
-  <code>npm install @ngx-libraries/loaders --save</code> and then from your Angular
-  <code>AppModule</code>:
-</p>
-
-<ngx-code-example>
-  <![CDATA[
+    <ngx-code-example>
+      <![CDATA[
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -51,22 +64,13 @@ import { NgxLoadersModule } from 'ngx-loaders';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
-  ]]>
-</ngx-code-example>
+      ]]>
+    </ngx-code-example>
+  </ngx-tab>
+  <ngx-tab name="API">
+    <h2>Coming Soon</h2>
+  </ngx-tab>
+</ngx-tabs>
 
-<h2>Component</h2>
-
-<p>
-  Once the library is imported, you can use the
-  <code>ngx-loader</code> components.
-</p>
-
-<ngx-code-example ngNonBindable language="html">
-  <![CDATA[
-<ngx-loading-spinner mini></ngx-loading-spinner>
-<ngx-loading-spinner small></ngx-loading-spinner>
-<ngx-loading-spinner></ngx-loading-spinner>
-<ngx-loading-spinner light></ngx-loading-spinner>
-<ngx-loading-bar></ngx-loading-bar>
-  ]]>
-</ngx-code-example>
+<br>
+<br>

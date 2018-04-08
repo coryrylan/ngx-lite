@@ -1,7 +1,10 @@
 <header class="header">
   <nav class="header-nav">
-    <a routerLink="/" class="header-nav__link logo">ngx-libraries</a>
-    <a href="https://github.com/coryrylan/ngx-libraries" class="header-nav__link">Github</a>
+    <a routerLink="/" class="logo">
+      <img src="/assets/images/feather.svg" alt="ngx-lite" />
+      <div class="header-nav__link">ngx-lite</div>
+    </a>
+    <a href="https://github.com/coryrylan/ngx-lite" class="header-nav__link">Github</a>
     <a routerLink="/about" class="header-nav__link">About</a>
   </nav>
 </header>
@@ -9,19 +12,21 @@
 <ngx-nav-drawer [(open)]="show" [fixed]="true">
   <a routerLink="/">docs</a>
   <hr>
-  <a routerLink="/docs/ngx-debounce-click">ngx-debounce-click</a>
-  <a routerLink="/docs/ngx-code-example">ngx-code-example</a>
-  <a routerLink="/docs/ngx-eq">ngx-eq</a>
-  <a routerLink="/docs/ngx-in-viewport">ngx-in-viewport</a>
-  <a routerLink="/docs/ngx-input-range">ngx-input-range</a>
-  <a routerLink="/docs/ngx-input-star-rating">ngx-input-star-rating</a>
-  <a routerLink="/docs/ngx-input-switch">ngx-input-switch</a>
-  <a routerLink="/docs/ngx-input-tag">ngx-input-tag</a>
-  <a routerLink="/docs/ngx-json-ld">ngx-json-ld</a>
-  <a routerLink="/docs/ngx-loaders">ngx-loaders</a>
-  <a routerLink="/docs/ngx-nav-drawer">ngx-nav-drawer</a>
+  <a routerLink="/docs/debounce-click" routerLinkActive="active-link">debounce-click</a>
+  <a routerLink="/docs/eq" routerLinkActive="active-link">eq</a>
+  <a routerLink="/docs/in-viewport" routerLinkActive="active-link">in-viewport</a>
+  <a routerLink="/docs/input-range" routerLinkActive="active-link">input-range</a>
+  <a routerLink="/docs/input-star-rating" routerLinkActive="active-link">input-star-rating</a>
+  <a routerLink="/docs/input-switch" routerLinkActive="active-link">input-switch</a>
+  <a routerLink="/docs/input-tag" routerLinkActive="active-link">input-tag</a>
+  <a routerLink="/docs/json-ld" routerLinkActive="active-link">json-ld</a>
+  <a routerLink="/docs/loaders" routerLinkActive="active-link">loaders</a>
+  <a routerLink="/docs/nav-drawer" routerLinkActive="active-link">nav-drawer</a>
+  <a routerLink="/docs/tabs" routerLinkActive="active-link">tabs</a>
+  <a routerLink="/docs/code-example" routerLinkActive="active-link">code-example</a>
+  <a routerLink="/docs/carbon-ad" routerLinkActive="active-link">carbon-ad</a>
 </ngx-nav-drawer>
 
-<main>
-  <router-outlet></router-outlet>
+<main [@fadeAnimation]="getRouterOutletState(o)">
+  <router-outlet #o="outlet"></router-outlet>
 </main>

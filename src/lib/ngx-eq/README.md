@@ -1,6 +1,6 @@
-# ngx-eq
+# @ngx-lite/eq
 
-[![npm version](https://badge.fury.io/js/ngx-eq.svg)](https://badge.fury.io/js/ngx-eq)
+[![npm version](https://badge.fury.io/js/%40ngx-lite%2Feq.svg)](https://badge.fury.io/js/%40ngx-lite%2Feq)
 
 NGX-EQ is an Angular Directive that makes it easier to allow
 components to be responsive to their parent element size.

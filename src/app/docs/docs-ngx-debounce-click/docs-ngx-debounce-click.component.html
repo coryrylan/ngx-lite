@@ -1,59 +1,26 @@
-<h1>ngx-debounce-click</h1>
-<app-badges package="@ngx-libraries/debounce-click" stackblitzId="angular-nbhugm"></app-badges>
+<section bp="grid vertical-start"> 
+  <div bp="8@md">
+    <h1>@ngx-lite/debounce-click</h1>
+    <app-badges package="debounce-click" stackblitzId="angular-nbhugm"></app-badges>
+    
+    <p>
+      A simple Angular Directive to easily debounce click events.
+    </p>
+  </div>
+  <ngx-carbon-ad siteName="coryrylancom" bp="4@md"></ngx-carbon-ad>
+</section>
 
-<p>
-  A simple Angular Directive to easily debounce click events.
-</p>
+<ngx-tabs>
+  <ngx-tab [active]="true" name="Usage">
+    <div class="demo">
+      <div>{{count}}</div>
+      <button (click)="count = count + 1">Regular Click</button>
+      <button ngxDebounceClick (debouncedClick)="count = count + 1">Debounced Click</button>  
+    </div>
 
-<h2>Demo</h2>
-<div class="demo">
-  <div>{{count}}</div>
-
-  <button (click)="count = count + 1">Regular Click</button>
-
-  <button ngxDebounceClick (debouncedClick)="count = count + 1">Debounced Click</button>
-</div>
-
-<h2>Installation</h2>
-
-<p>
-  To install this library, run
-  <code>npm install @ngx-libraries/debounce-click --save</code> and then from your Angular
-  <code>AppModule</code>:
-</p>
-
-<ngx-code-example ngNonBindable>
-  <![CDATA[
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { NgxDebounceClickModule } from 'ngx-debounce-click';
-
-import { AppComponent } from './app.component';
-
-@NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    BrowserModule,
-    NgxDebounceClickModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
-})
-export class AppModule { }
-  ]]>
-</ngx-code-example>
-
-<h2>Component</h2>
-
-<p>
-  Once the library is imported, you can use the
-  <code>ngx-debounce-click</code> directive.
-</p>
-
-<ngx-code-example ngNonBindable>
-  <![CDATA[
+    <h2>Usage</h2>
+    <ngx-code-example ngNonBindable>
+      <![CDATA[
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Observable } from 'rxjs/Observable';
@@ -71,5 +38,40 @@ import { Observable } from 'rxjs/Observable';
 export class AppComponent {
   count = 0;
 }
-  ]]>
-</ngx-code-example>
+      ]]>
+    </ngx-code-example>
+  </ngx-tab>
+  <ngx-tab name="Installation">
+    <p>
+      To install this library, run
+      <code>npm install @ngx-lite/debounce-click --save</code> and then from your Angular
+      <code>AppModule</code>:
+    </p>
+
+    <ngx-code-example ngNonBindable>
+      <![CDATA[
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { NgxDebounceClickModule } from '@ngx-lite/debounce-click';
+
+import { AppComponent } from './app.component';
+
+@NgModule({
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    BrowserModule,
+    NgxDebounceClickModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+      ]]>
+    </ngx-code-example>
+  </ngx-tab>
+  <ngx-tab name="API">
+    <h2>Coming Soon</h2>
+  </ngx-tab>
+</ngx-tabs>

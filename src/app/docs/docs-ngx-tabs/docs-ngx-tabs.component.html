@@ -1,0 +1,82 @@
+<section bp="grid vertical-start">
+  <div bp="8@md">
+    <h1>@ngx-lite/tabs</h1>
+    <app-badges package="tabs" stackblitzId=""></app-badges>
+
+    <p>
+      A tabs component with ability to programmatically set active tabs.
+    </p>
+  </div>
+  <ngx-carbon-ad siteName="coryrylancom" bp="4@md"></ngx-carbon-ad>
+</section>
+
+<ngx-tabs [(activeTabIndex)]="index">
+  <ngx-tab [active]="true" name="Usage">
+    <ngx-code-example ngNonBindable language="html">
+      <![CDATA[
+<ngx-tabs>
+  <ngx-tab [active]="true" name="Tab 1">
+    Tab 1
+  </ngx-tab>
+  <ngx-tab name="Tab 2">
+    Tab 2
+  </ngx-tab>
+  <ngx-tab name="Tab 3">
+    <h2>Coming Soon</h2>
+  </ngx-tab>
+</ngx-tabs>
+
+<!-- programmatically set the active tab -->
+<ngx-tabs [(activeTabIndex)]="index">
+  <ngx-tab name="Tab 1">
+    Tab 1
+  </ngx-tab>
+  <ngx-tab name="Tab 2">
+    Tab 2
+    <button (click)="index = 0">Go Back</button>
+  </ngx-tab>
+  <ngx-tab name="Tab 3">
+    <h2>Coming Soon</h2>
+  </ngx-tab>
+</ngx-tabs>
+      ]]>
+    </ngx-code-example>
+  </ngx-tab>
+  <ngx-tab name="Installation">
+    <button (click)="index = 0">Go Back to Usage</button><br><br>
+    <p>
+      To install this library, run:
+      <code>npm install @ngx-lite/tabs --save</code> and then from your Angular
+      <code>AppModule</code>:
+    </p>
+
+    <ngx-code-example>
+      <![CDATA[
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+
+import { AppComponent } from './app.component';
+
+// Import library module
+import { NgxTabsModule } from 'ngx-loaders';
+
+@NgModule({
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    BrowserModule,
+    // Register module
+    NgxTabsModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+      ]]>
+    </ngx-code-example>
+  </ngx-tab>
+  <ngx-tab name="API">
+    <h2>Coming Soon</h2>
+  </ngx-tab>
+</ngx-tabs>

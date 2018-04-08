@@ -1,0 +1,54 @@
+<section bp="grid vertical-start">
+  <div bp="8@md">
+    <h1>@ngx-lite/carbon-ad</h1>
+    <app-badges package="carbon-ad" stackblitzId=""></app-badges>
+
+    <p>
+      A simple component for rendering Carbon Ads.
+    </p>
+  </div>
+  <ngx-carbon-ad siteName="coryrylancom" bp="4@md"></ngx-carbon-ad>
+</section>
+
+<ngx-tabs>
+  <ngx-tab [active]="true" name="Usage">
+    <ngx-code-example ngNonBindable language="html">
+      <![CDATA[
+<ngx-carbon-ad siteName="coryrylancom"></ngx-carbon-ad>
+      ]]>
+    </ngx-code-example>
+  </ngx-tab>
+  <ngx-tab name="Installation">
+    <p>
+      To install this library, run
+      <code>npm install @ngx-lite/carbon-ad --save</code> and then from your Angular
+      <code>AppModule</code>:
+    </p>
+
+    <ngx-code-example ngNonBindable>
+      <![CDATA[
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { NgxCarbonAdModule } from '@ngx-lite/carbon-ad';
+
+import { AppComponent } from './app.component';
+
+@NgModule({
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    BrowserModule,
+    NgxCarbonAdModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+          ]]>
+    </ngx-code-example>
+  </ngx-tab>
+  <ngx-tab name="API">
+    <h2>Coming Soon</h2>
+  </ngx-tab>
+</ngx-tabs>

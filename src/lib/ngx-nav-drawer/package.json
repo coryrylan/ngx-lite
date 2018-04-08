@@ -1,7 +1,7 @@
 {
-  "name": "ngx-nav-drawer",
+  "name": "@ngx-lite/nav-drawer",
   "version": "0.0.3",
-  "repository": "https://github.com/coryrylan/ngx-libraries",
+  "repository": "https://github.com/coryrylan/ngx-lite",
   "author": "Cory Rylan",
   "license": "MIT",
   "private": false,

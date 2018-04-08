@@ -1,6 +1,8 @@
-# ngx-loaders
+# @ngx-lite/loaders
 
-[![npm version](https://badge.fury.io/js/ngx-loaders.svg)](https://badge.fury.io/js/ngx-loaders)
+[![npm version](https://badge.fury.io/js/%40ngx-lite%2Floaders.svg)](https://badge.fury.io/js/%40ngx-lite%2Floaders)
+
+Small lightweight loading indicator Angular components.
 
 ## [Demo]()
 

@@ -1,63 +1,30 @@
-<h1>ngx-nav-drawer</h1>
-<app-badges package="@ngx-libraries/nav-drawer" stackblitzId="angular-veeywy"></app-badges>
+<section bp="grid vertical-start"> 
+  <div bp="8@md">
+    <h1>@ngx-lite/nav-drawer</h1>
+    <app-badges package="nav-drawer" stackblitzId="angular-veeywy"></app-badges>
 
-<p>
-  A lightweight component for simple navigation drawers.
-</p>
-
-<div class="demo">
-  <button (click)="show = !show">
-    Open Menu
-  </button>
-</div>
+    <p>
+      A lightweight component for simple navigation drawers.
+    </p>
+  </div>
+  <ngx-carbon-ad siteName="coryrylancom" bp="4@md"></ngx-carbon-ad>
+</section>
 
 <ngx-nav-drawer [(open)]="show">
   <a routerLink="/">Home</a>
   <a routerLink="/docs/ngx-nav-drawer">ngx-nav-drawer</a>
 </ngx-nav-drawer>
 
-<h2>Installation</h2>
+<ngx-tabs>
+  <ngx-tab [active]="true" name="Usage">
+    <div class="demo">
+      <button (click)="show = !show">
+        Open Menu
+      </button>
+    </div>
 
-<p>
-  To install this library, run:
-  <code>npm install @ngx-libraries/nav-drawer --save</code> and then from your Angular
-  <code>AppModule</code>:
-</p>
-
-<ngx-code-example>
-  <![CDATA[
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
-import { NgxNavDrawerModule } from 'ngx-nav-drawer';
-
-import { AppComponent } from './app.component';
-
-@NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    BrowserModule,
-    ReactiveFormsModule,
-    NgxNavDrawerModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
-})
-export class AppModule { }
-  ]]>
-</ngx-code-example>
-
-<h2>Component</h2>
-
-<p>
-  Once the library is imported, you can use the
-  <code>ngx-nav-drawer</code> component.
-</p>
-
-<ngx-code-example ngNonBindable>
-  <![CDATA[
+    <ngx-code-example ngNonBindable>
+      <![CDATA[
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -78,5 +45,43 @@ export class AppComponent implements OnInit {
 
   ngOnInit() { }
 }
-  ]]>
-</ngx-code-example>
+      ]]>
+    </ngx-code-example>
+  </ngx-tab>
+  <ngx-tab name="Installation">
+
+    <p>
+      To install this library, run:
+      <code>npm install @ngx-lite/nav-drawer --save</code> and then from your Angular
+      <code>AppModule</code>:
+    </p>
+
+    <ngx-code-example>
+      <![CDATA[
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
+import { NgxNavDrawerModule } from 'ngx-nav-drawer';
+
+import { AppComponent } from './app.component';
+
+@NgModule({
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    BrowserModule,
+    ReactiveFormsModule,
+    NgxNavDrawerModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+      ]]>
+    </ngx-code-example>
+  </ngx-tab>
+  <ngx-tab name="API">
+    <h2>Coming Soon</h2>
+  </ngx-tab>
+</ngx-tabs>

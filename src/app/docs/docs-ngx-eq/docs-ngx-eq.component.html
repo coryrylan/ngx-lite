@@ -1,101 +1,67 @@
-<h1>ngx-eq</h1>
-<app-badges package="@ngx-libraries/ngx-eq" stackblitzId="angular-fgjuh8"></app-badges>
+<section bp="grid vertical-start"> 
+  <div bp="8@md">
+    <h1>@ngx-lite/eq</h1>
+    <app-badges package="eq" stackblitzId="angular-fgjuh8"></app-badges>
 
-<p>
-  NGX-EQ is an Angular Directive that makes it easier to allow components to be responsive to their parent element size. CSS
-  Media Queries fall short when it comes to reusable components, as they measure screen size and not the size context of
-  the element.
-</p>
+    <p>
+      NGX-EQ is an Angular Directive that makes it easier to allow components to be responsive to their parent element size. CSS
+      Media Queries fall short when it comes to reusable components, as they measure screen size and not the size context
+      of the element.
+    </p>
 
-<p>
-  NGX-EQ uses the Resize Observer API to efficiently add special CSS class hooks to style your component based on the current
-  size of the component.
-</p>
+    <p>
+      NGX-EQ uses the Resize Observer API to efficiently add special CSS class hooks to style your component based on the current
+      size of the component.
+    </p>
+  </div>
+  <ngx-carbon-ad siteName="coryrylancom" bp="4@md"></ngx-carbon-ad>
+</section>
 
-<br>
+<ngx-tabs>
+  <ngx-tab [active]="true" name="Usage">
+    <div ngxEQ [extraSmall]="100" class="test-row">
+      This is a element using ngxEQ for element query based styles.
+    </div>
 
-<h2>Example</h2>
+    <div ngxEQ class="test-row container--lg">
+      This is a element's parent element has a restricted width.
+    </div>
 
-<div ngxEQ [extraSmall]="100" class="test-row">
-  This is a element using ngxEQ for element query based styles.
-</div>
+    <div ngxEQ class="test-row container--md">
+      This is a element's parent element has a restricted width.
+    </div>
 
-<div ngxEQ class="test-row container--lg">
-  This is a element's parent element has a restricted width.
-</div>
+    <div ngxEQ class="test-row container--sm">
+      This is a element's parent element has a restricted width.
+    </div>
 
-<div ngxEQ class="test-row container--md">
-  This is a element's parent element has a restricted width.
-</div>
+    <div ngxEQ class="test-row container--xs">
+      This is a element's parent element has a restricted width.
+    </div>
+    <br>
+    <h2>CSS Grid & Element Queries</h2>
+    <div ngxEQ class="grid">
+      <div class="col">col</div>
+      <div class="col">col</div>
+      <div class="col">col</div>
+      <div class="col">col</div>
+    </div>
 
-<div ngxEQ class="test-row container--sm">
-  This is a element's parent element has a restricted width.
-</div>
+    <div ngxEQ class="grid container--md">
+      <div class="col">col</div>
+      <div class="col">col</div>
+      <div class="col">col</div>
+      <div class="col">col</div>
+    </div>
 
-<div ngxEQ class="test-row container--xs">
-  This is a element's parent element has a restricted width.
-</div>
-<br>
-<h2>CSS Grid & Element Queries</h2>
-<div ngxEQ class="grid">
-  <div class="col">col</div>
-  <div class="col">col</div>
-  <div class="col">col</div>
-  <div class="col">col</div>
-</div>
-
-<div ngxEQ class="grid container--md">
-  <div class="col">col</div>
-  <div class="col">col</div>
-  <div class="col">col</div>
-  <div class="col">col</div>
-</div>
-
-<br>
-<h2>Installation</h2>
-
-<p>
-  To install this library, run <code>npm install @ngx-libraries/eq --save</code> and then from your Angular <code>AppModule</code>:
-</p>
-
-<ngx-code-example ngNonBindable>
-  <![CDATA[
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { NgxEqModule } from 'ngx-eq';
-
-import { AppComponent } from './app.component';
-
-@NgModule({
-  declarations: [
-    AppComponent,
-  ],
-  imports: [
-    BrowserModule,
-    NgxEqModule.forRoot()
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
-})
-export class AppModule { }
-  ]]>
-</ngx-code-example>
-
-<h2>Component</h2>
-
-<p>
-  Once the library is imported, you can use the
-  <code>ngx-eq</code> directive.
-</p>
-
-<ngx-code-example ngNonBindable language="html">
-  <![CDATA[
+    <ngx-code-example ngNonBindable language="html">
+      <![CDATA[
 <my-component ngxEQ></my-component>
-  ]]>
-</ngx-code-example>
+      ]]>
+    </ngx-code-example>
 
-<ngx-code-example ngNonBindable language="css">
-  <![CDATA[
+    <ngx-code-example ngNonBindable language="css">
+      <![CDATA[
 :host {
   padding: 12px;
   margin-bottom: 12px;
@@ -123,17 +89,46 @@ export class AppModule { }
 :host.ngx-eq-xl {
   background-color: #E8BE0C;
 }
-  ]]>
-</ngx-code-example>
+      ]]>
+    </ngx-code-example>
+  </ngx-tab>
+  <ngx-tab name="Installation">
+    <p>
+      To install this library, run
+      <code>npm install @ngx-lite/eq --save</code> and then from your Angular
+      <code>AppModule</code>:
+    </p>
 
-<h2>Configuration</h2>
+    <ngx-code-example ngNonBindable>
+      <![CDATA[
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { NgxEqModule } from 'ngx-eq';
 
-<p>
-  The Element Query breakpoints can be customized.
-</p>
+import { AppComponent } from './app.component';
 
-<ngx-code-example ngNonBindable>
-  <![CDATA[
+@NgModule({
+  declarations: [
+    AppComponent,
+  ],
+  imports: [
+    BrowserModule,
+    NgxEqModule.forRoot()
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+      ]]>
+    </ngx-code-example>
+  </ngx-tab>
+  <ngx-tab name="API">
+    <p>
+      The Element Query breakpoints can be customized.
+    </p>
+
+    <ngx-code-example ngNonBindable>
+      <![CDATA[
 NgxEqModule.forRoot({
   // default values
   extraSmall: 280,
@@ -142,16 +137,18 @@ NgxEqModule.forRoot({
   large: 960,
   extraLarge: 1440
 })
-  ]]>
-</ngx-code-example>
+      ]]>
+    </ngx-code-example>
 
-<p>
-  You can override the breakpoints per a element. In this example the small breakpoint will now occur at 500px instead of the
-  default 480px for only this particular element.
-</p>
+    <p>
+      You can override the breakpoints per a element. In this example the small breakpoint will now occur at 500px instead of the
+      default 480px for only this particular element.
+    </p>
 
-<ngx-code-example ngNonBindable language="html">
-  <![CDATA[
+    <ngx-code-example ngNonBindable language="html">
+      <![CDATA[
 <my-component ngxEQ [small]="500"></my-component>
-  ]]>
-</ngx-code-example>
+      ]]>
+    </ngx-code-example>
+  </ngx-tab>
+</ngx-tabs>

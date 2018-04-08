@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 
+import { NgxCarbonAdModule } from './../../../lib/ngx-carbon-ad/ngx-carbon-ad.module';
 import { NgxCodeExampleModule } from './../../../lib/ngx-code-example/ngx-code-example.module';
 import { NgxDebounceClickModule } from './../../../lib/ngx-debounce-click/ngx-debounce-click.module';
 import { NgxEqModule } from './../../../lib/ngx-eq/ngx-eq.module';
@@ -13,6 +14,7 @@ import { NgxLoadersModule } from './../../../lib/ngx-loaders/ngx-loaders.module'
 import { NgxInputTagModule } from './../../../lib/ngx-input-tag/ngx-input-tag.module';
 import { NgxJsonLdModule } from './../../../lib/ngx-json-ld/ngx-json-ld.module';
 import { NgxNavDrawerModule } from './../../../lib/ngx-nav-drawer/ngx-nav-drawer.module';
+import { NgxTabsModule } from './../../../lib/ngx-tabs/ngx-tabs.module';
 import { BadgesComponent } from './badges/badges.component';
 
 const components = [
@@ -20,6 +22,7 @@ const components = [
 ];
 
 const modules = [
+  NgxCarbonAdModule,
   NgxCodeExampleModule,
   NgxDebounceClickModule,
   NgxEqModule,
@@ -30,7 +33,8 @@ const modules = [
   NgxInputTagModule,
   NgxLoadersModule,
   NgxJsonLdModule,
-  NgxNavDrawerModule
+  NgxNavDrawerModule,
+  NgxTabsModule
 ];
 
 @NgModule({
