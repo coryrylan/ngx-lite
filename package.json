@@ -9,6 +9,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e --aot",
+    "deploy": "ng build --prod && firebase deploy",
     "coverage": "ng test --watch=false --code-coverage",
     "package": "npm run package:ngx-carbon-ad && npm run package:ngx-code-example && npm run package:ngx-debounce-click && npm run package:ngx-eq && npm run package:ngx-in-viewport && npm run package:ngx-input-range && npm run package:ngx-input-star-rating && npm run package:ngx-input-switch && npm run package:ngx-input-tag && npm run package:ngx-json-ld && npm run package:ngx-loaders && npm run package:ngx-nav-drawer && npm run package:ngx-tabs",
     "package:ngx-carbon-ad": "ng-packagr -p src/lib/ngx-carbon-ad/ng-package.json",
