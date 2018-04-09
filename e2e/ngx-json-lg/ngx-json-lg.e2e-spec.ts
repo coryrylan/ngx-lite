@@ -9,6 +9,6 @@ describe('ngx-json-ld', () => {
 
   it('should display heading', () => {
     page.navigateTo();
-    expect(page.getPageHeading()).toEqual('ngx-json-ld');
+    expect(page.getPageHeading()).toEqual('@ngx-lite/json-ld');
   });
 });

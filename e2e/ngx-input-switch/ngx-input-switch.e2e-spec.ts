@@ -9,6 +9,6 @@ describe('ngx-input-switch', () => {
 
   it('should display heading', () => {
     page.navigateTo();
-    expect(page.getPageHeading()).toEqual('ngx-input-switch');
+    expect(page.getPageHeading()).toEqual('@ngx-lite/input-switch');
   });
 });

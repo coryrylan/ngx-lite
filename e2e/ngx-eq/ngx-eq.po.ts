@@ -5,7 +5,7 @@ const scrollBarAndPaddingOffset = 100;
 
 export class NgxEqPage {
   navigateTo() {
-    return browser.get('/docs/ngx-eq');
+    return browser.get('/docs/eq');
   }
 
   getPageHeading() {

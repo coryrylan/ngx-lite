@@ -9,6 +9,6 @@ describe('ngx-input-star-rating', () => {
 
   it('should display heading', () => {
     page.navigateTo();
-    expect(page.getPageHeading()).toEqual('ngx-input-star-rating');
+    expect(page.getPageHeading()).toEqual('@ngx-lite/input-star-rating');
   });
 });

@@ -9,7 +9,7 @@ describe('ngx-eq', () => {
 
   it('should display heading', () => {
     page.navigateTo();
-    expect(page.getPageHeading()).toEqual('ngx-eq');
+    expect(page.getPageHeading()).toEqual('@ngx-lite/eq');
   });
 
   it('should apply the ngx-eq-sm class when the element is small', () => {

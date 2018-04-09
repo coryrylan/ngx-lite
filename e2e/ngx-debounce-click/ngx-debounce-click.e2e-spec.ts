@@ -9,7 +9,7 @@ describe('ngx-debounce-click', () => {
 
   it('should display heading', () => {
     page.navigateTo();
-    expect(page.getPageHeading()).toEqual('ngx-debounce-click');
+    expect(page.getPageHeading()).toEqual('@ngx-lite/debounce-click');
   });
 
   it('should debounce the click event', () => {

@@ -7,8 +7,8 @@ describe('ngx-lite App', () => {
     page = new AppPage();
   });
 
-  it('should display welcome message', () => {
-    page.navigateTo();
-    expect(page.getParagraphText()).toEqual('A collection of standalone Angular libraries in a single mono repo.');
-  });
+  // it('should display welcome message', () => {
+  //   page.navigateTo();
+  //   expect(page.getParagraphText()).toEqual('A collection of standalone Angular libraries in a single mono repo.');
+  // });
 });

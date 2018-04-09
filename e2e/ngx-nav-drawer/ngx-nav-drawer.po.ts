@@ -2,7 +2,7 @@ import { browser, by, element } from 'protractor';
 
 export class NgxNavDrawerPage {
   navigateTo() {
-    return browser.get('/docs/ngx-nav-drawer');
+    return browser.get('/docs/nav-drawer');
   }
 
   getPageHeading() {

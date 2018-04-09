@@ -9,6 +9,6 @@ describe('ngx-input-tag', () => {
 
   it('should display heading', () => {
     page.navigateTo();
-    expect(page.getPageHeading()).toEqual('ngx-input-tag');
+    expect(page.getPageHeading()).toEqual('@ngx-lite/input-tag');
   });
 });

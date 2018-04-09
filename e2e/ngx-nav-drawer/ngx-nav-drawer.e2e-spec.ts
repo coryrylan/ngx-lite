@@ -9,6 +9,6 @@ describe('ngx-loaders', () => {
 
   it('should display heading', () => {
     page.navigateTo();
-    expect(page.getPageHeading()).toEqual('ngx-nav-drawer');
+    expect(page.getPageHeading()).toEqual('@ngx-lite/nav-drawer');
   });
 });

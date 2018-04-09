@@ -2,7 +2,7 @@ import { browser, by, element } from 'protractor';
 
 export class NgxLoadersPage {
   navigateTo() {
-    return browser.get('/docs/ngx-loaders');
+    return browser.get('/docs/loaders');
   }
 
   getPageHeading() {

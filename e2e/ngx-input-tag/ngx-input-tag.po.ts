@@ -2,7 +2,7 @@ import { browser, by, element } from 'protractor';
 
 export class NgxInputTagPage {
   navigateTo() {
-    return browser.get('/docs/ngx-input-tag');
+    return browser.get('/docs/input-tag');
   }
 
   getPageHeading() {

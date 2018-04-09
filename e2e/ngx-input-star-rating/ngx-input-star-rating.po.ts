@@ -2,7 +2,7 @@ import { browser, by, element } from 'protractor';
 
 export class NgxInputStarRatingPage {
   navigateTo() {
-    return browser.get('/docs/ngx-input-star-rating');
+    return browser.get('/docs/input-star-rating');
   }
 
   getPageHeading() {

@@ -2,7 +2,7 @@ import { browser, by, element } from 'protractor';
 
 export class NgxDebounceClickPage {
   navigateTo() {
-    return browser.get('/docs/ngx-debounce-click');
+    return browser.get('/docs/debounce-click');
   }
 
   getPageHeading() {
@@ -18,6 +18,6 @@ export class NgxDebounceClickPage {
   }
 
   getCounter() {
-    return element(by.css('app-docs-ngx-debounce-click div'));
+    return element(by.css('.e2e-counter'));
   }
 }

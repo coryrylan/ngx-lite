@@ -2,7 +2,7 @@ import { browser, by, element } from 'protractor';
 
 export class NgxJsonLdPage {
   navigateTo() {
-    return browser.get('/docs/ngx-json-ld');
+    return browser.get('/docs/json-ld');
   }
 
   getPageHeading() {

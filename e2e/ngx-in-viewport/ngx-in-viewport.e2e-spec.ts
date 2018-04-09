@@ -9,7 +9,7 @@ describe('ngx-in-viewport', () => {
 
   it('should display heading', () => {
     page.navigateTo();
-    expect(page.getPageHeading()).toEqual('ngx-in-viewport');
+    expect(page.getPageHeading()).toEqual('@ngx-lite/in-viewport');
   });
 
   it('should emit an event when the directive enters or leaves the viewport', () => {

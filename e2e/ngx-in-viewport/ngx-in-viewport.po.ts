@@ -2,7 +2,7 @@ import { browser, by, element } from 'protractor';
 
 export class NgxInViewportPage {
   navigateTo() {
-    return browser.get('/docs/ngx-in-viewport');
+    return browser.get('/docs/in-viewport');
   }
 
   getPageHeading() {

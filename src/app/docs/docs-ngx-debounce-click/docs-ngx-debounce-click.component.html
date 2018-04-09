@@ -1,8 +1,8 @@
-<section bp="grid vertical-start"> 
+<section bp="grid vertical-start">
   <div bp="8@md">
     <h1>@ngx-lite/debounce-click</h1>
     <app-badges package="debounce-click" stackblitzId="angular-nbhugm"></app-badges>
-    
+
     <p>
       A simple Angular Directive to easily debounce click events.
     </p>
@@ -10,14 +10,14 @@
   <ngx-carbon-ad siteName="coryrylancom" bp="4@md"></ngx-carbon-ad>
 </section>
 
+<div class="demo">
+  <div class="e2e-counter">{{count}}</div>
+  <button (click)="count = count + 1">Regular Click</button>
+  <button ngxDebounceClick (debouncedClick)="count = count + 1">Debounced Click</button>
+</div>
+
 <ngx-tabs>
   <ngx-tab [active]="true" name="Usage">
-    <div class="demo">
-      <div>{{count}}</div>
-      <button (click)="count = count + 1">Regular Click</button>
-      <button ngxDebounceClick (debouncedClick)="count = count + 1">Debounced Click</button>  
-    </div>
-
     <h2>Usage</h2>
     <ngx-code-example ngNonBindable>
       <![CDATA[

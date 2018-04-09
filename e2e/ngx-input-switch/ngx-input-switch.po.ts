@@ -2,7 +2,7 @@ import { browser, by, element } from 'protractor';
 
 export class NgxInputSwitchPage {
   navigateTo() {
-    return browser.get('/docs/ngx-input-switch');
+    return browser.get('/docs/input-switch');
   }
 
   getPageHeading() {
