@@ -10,21 +10,24 @@
 </header>
 
 <ngx-nav-drawer [(open)]="show" [fixed]="true">
-  <a routerLink="/">docs</a>
+  <a routerLink="/">Home</a>
+  <a routerLink="/docs">Getting Started</a>
+  <a routerLink="/about">About</a>
   <hr>
-  <a routerLink="/docs/debounce-click" routerLinkActive="active-link">debounce-click</a>
-  <a routerLink="/docs/eq" routerLinkActive="active-link">eq</a>
-  <a routerLink="/docs/in-viewport" routerLinkActive="active-link">in-viewport</a>
   <a routerLink="/docs/input-range" routerLinkActive="active-link">input-range</a>
   <a routerLink="/docs/input-star-rating" routerLinkActive="active-link">input-star-rating</a>
   <a routerLink="/docs/input-switch" routerLinkActive="active-link">input-switch</a>
   <a routerLink="/docs/input-tag" routerLinkActive="active-link">input-tag</a>
-  <a routerLink="/docs/json-ld" routerLinkActive="active-link">json-ld</a>
   <a routerLink="/docs/loaders" routerLinkActive="active-link">loaders</a>
+  <!-- <a routerLink="/docs/progress" routerLinkActive="active-link">progress</a> -->
   <a routerLink="/docs/nav-drawer" routerLinkActive="active-link">nav-drawer</a>
   <a routerLink="/docs/tabs" routerLinkActive="active-link">tabs</a>
+  <a routerLink="/docs/eq" routerLinkActive="active-link">eq</a>
+  <a routerLink="/docs/debounce-click" routerLinkActive="active-link">debounce-click</a>
+  <a routerLink="/docs/in-viewport" routerLinkActive="active-link">in-viewport</a>
+  <a routerLink="/docs/json-ld" routerLinkActive="active-link">json-ld</a>
   <a routerLink="/docs/code-example" routerLinkActive="active-link">code-example</a>
-  <a routerLink="/docs/carbon-ad" routerLinkActive="active-link">carbon-ad</a>
+  <!-- <a routerLink="/docs/carbon-ad" routerLinkActive="active-link">carbon-ad</a> -->
 </ngx-nav-drawer>
 
 <main [@fadeAnimation]="getRouterOutletState(o)">

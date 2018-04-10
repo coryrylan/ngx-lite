@@ -15,6 +15,7 @@ import { NgxInputTagModule } from './../../../lib/ngx-input-tag/ngx-input-tag.mo
 import { NgxJsonLdModule } from './../../../lib/ngx-json-ld/ngx-json-ld.module';
 import { NgxNavDrawerModule } from './../../../lib/ngx-nav-drawer/ngx-nav-drawer.module';
 import { NgxTabsModule } from './../../../lib/ngx-tabs/ngx-tabs.module';
+import { NgxProgressModule } from './../../../lib/ngx-progress/ngx-progress.module';
 import { BadgesComponent } from './badges/badges.component';
 
 const components = [
@@ -34,7 +35,8 @@ const modules = [
   NgxLoadersModule,
   NgxJsonLdModule,
   NgxNavDrawerModule,
-  NgxTabsModule
+  NgxTabsModule,
+  NgxProgressModule
 ];
 
 @NgModule({

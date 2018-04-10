@@ -7,13 +7,15 @@
       A simple Angular Directive to easily debounce click events.
     </p>
   </div>
-  <ngx-carbon-ad siteName="coryrylancom" bp="4@md"></ngx-carbon-ad>
+  <div bp="4@md">
+    <ngx-carbon-ad siteName="coryrylancom" bp="float-right"></ngx-carbon-ad>
+  </div>
 </section>
 
 <div class="demo">
   <div class="e2e-counter">{{count}}</div>
-  <button (click)="count = count + 1">Regular Click</button>
-  <button ngxDebounceClick (debouncedClick)="count = count + 1">Debounced Click</button>
+  <button (click)="count = count + 1" class="btn">Regular Click</button>
+  <button ngxDebounceClick (debouncedClick)="count = count + 1" class="btn" >Debounced Click</button>
 </div>
 
 <ngx-tabs>

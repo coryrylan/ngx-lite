@@ -15,7 +15,5 @@ describe('ngx-in-viewport', () => {
   it('should emit an event when the directive enters or leaves the viewport', () => {
     page.scrollToDirective();
     expect(page.getCount()).toBe('1');
-    page.scrollToCount();
-    expect(page.getCount()).toBe('2');
   });
 });

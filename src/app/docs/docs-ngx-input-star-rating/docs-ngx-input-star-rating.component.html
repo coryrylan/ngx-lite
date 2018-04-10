@@ -1,4 +1,4 @@
-<section bp="grid vertical-start"> 
+<section bp="grid vertical-start">
   <div bp="8@md">
     <h1>@ngx-lite/input-star-rating</h1>
     <app-badges package="input-star-rating" stackblitzId="angular-5t4gbz"></app-badges>
@@ -7,7 +7,9 @@
       A lightweight star rating component compatible with both Angular Reactive Forms and Template Forms.
     </p>
   </div>
-  <ngx-carbon-ad siteName="coryrylancom" bp="4@md"></ngx-carbon-ad>
+  <div bp="4@md">
+    <ngx-carbon-ad siteName="coryrylancom" bp="float-right"></ngx-carbon-ad>
+  </div>
 </section>
 
 <ngx-tabs>
@@ -15,7 +17,7 @@
     <div class="demo">
       <form [formGroup]="form" (ngSubmit)="submit()">
         <ngx-input-star-rating formControlName="rating"></ngx-input-star-rating>
-        <button>Submit</button>
+        <button class="btn">Submit</button>
       </form>
 
       <p>

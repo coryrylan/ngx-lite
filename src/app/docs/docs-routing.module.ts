@@ -15,6 +15,7 @@ import { DocsNgxJsonLdComponent } from './docs-ngx-json-ld/docs-ngx-json-ld.comp
 import { DocsNgxInputSwitchComponent } from './docs-ngx-input-switch/docs-ngx-input-switch.component';
 import { DocsNgxLoadersComponent } from './docs-ngx-loaders/docs-ngx-loaders.component';
 import { DocsNgxNavDrawerComponent } from './docs-ngx-nav-drawer/docs-ngx-nav-drawer.component';
+import { DocsNgxProgressComponent } from './docs-ngx-progress/docs-ngx-progress.component';
 import { DocsNgxTabsComponent } from './docs-ngx-tabs/docs-ngx-tabs.component';
 
 const routes: Routes = [
@@ -33,7 +34,8 @@ const routes: Routes = [
       { path: 'json-ld', component: DocsNgxJsonLdComponent },
       { path: 'loaders', component: DocsNgxLoadersComponent },
       { path: 'nav-drawer', component: DocsNgxNavDrawerComponent },
-      { path: 'tabs', component: DocsNgxTabsComponent }
+      { path: 'tabs', component: DocsNgxTabsComponent },
+      { path: 'progress', component: DocsNgxProgressComponent }
     ]
   }
 ];

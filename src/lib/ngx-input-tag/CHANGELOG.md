@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.0.6
+- minor bug with max tags validation
+
 ## 0.0.5
 - add the support for custom tag formatter
 

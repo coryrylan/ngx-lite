@@ -18,6 +18,7 @@ import { DocsNgxNavDrawerComponent } from './docs-ngx-nav-drawer/docs-ngx-nav-dr
 import { DocsNgxLoadersComponent } from './docs-ngx-loaders/docs-ngx-loaders.component';
 import { DocsNgxTabsComponent } from './docs-ngx-tabs/docs-ngx-tabs.component';
 import { DocsNgxCarbonAdComponent } from './docs-ngx-carbon-ad/docs-ngx-carbon-ad.component';
+import { DocsNgxProgressComponent } from './docs-ngx-progress/docs-ngx-progress.component';
 
 @NgModule({
   imports: [
@@ -40,6 +41,7 @@ import { DocsNgxCarbonAdComponent } from './docs-ngx-carbon-ad/docs-ngx-carbon-a
     DocsNgxLoadersComponent,
     DocsNgxTabsComponent,
     DocsNgxCarbonAdComponent,
+    DocsNgxProgressComponent,
   ]
 })
 export class DocsModule { }

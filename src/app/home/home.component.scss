@@ -1,5 +1,9 @@
 @import "./../../styles/_config";
 
+.container {
+  position: relative;
+}
+
 .background {
   background-color: darken($color-primary, 3%);
   color: $color-white;
@@ -7,9 +11,9 @@
   overflow: hidden;
   width: 100%;
   position: relative;
-  min-height: 300px;
+  min-height: 400px;
   padding: 40px 40px 15px 40px;
-  margin: -24px -24px 40px -24px;
+  margin: -24px -24px 60px -24px;
   width: 105%;
   z-index: 1;
 }
@@ -18,7 +22,7 @@
   max-width: 360px;
   position: absolute;
   right: -25px;
-  bottom: -10px;
+  top: -30px;
 }
 
 h1 {
@@ -71,4 +75,14 @@ section {
 .comet2 {
   left: 140px;
   animation: comet 8s infinite ease-in-out;
+}
+
+@media (min-width: $nav-break) {
+  .comet {
+    left: 240px;
+  }
+
+  .comet2 {
+    left: 340px;
+  }
 }

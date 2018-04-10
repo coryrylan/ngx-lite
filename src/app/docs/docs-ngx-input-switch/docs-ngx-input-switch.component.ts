@@ -23,5 +23,6 @@ export class DocsNgxInputSwitchComponent implements OnInit {
 
   submit() {
     console.log(this.form.value);
+    alert(this.form.value.switch);
   }
 }

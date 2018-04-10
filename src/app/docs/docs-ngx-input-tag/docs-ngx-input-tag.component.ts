@@ -27,5 +27,6 @@ export class DocsNgxInputTagComponent implements OnInit {
 
   submit() {
     console.log(this.form.value);
+    alert(this.form.value.tags);
   }
 }

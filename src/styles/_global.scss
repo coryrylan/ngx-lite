@@ -2,6 +2,10 @@ html {
   box-sizing: border-box;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 *, *::before, *::after {
   box-sizing: inherit;
 }
@@ -10,7 +14,6 @@ main {
   margin: 0 auto;
   padding: 75px 12px 12px 12px;
   display: block;
-  max-width: 1100px;
 
   @media (min-width: $nav-break) {
     margin-left: 240px;
@@ -22,6 +25,7 @@ router-outlet ~ * {
   position: absolute;
   width: calc(100% - 12px);
   height: 100%;
+  max-width: $container-width;
 
   @media (min-width: $nav-break) {
     width: calc(100% - 280px);
@@ -32,6 +36,14 @@ app-docs router-outlet ~ * {
   @media (min-width: $nav-break) {
     width: 100%;
   }
+}
+
+router-outlet ~ app-home {
+  max-width: 100%;
+}
+
+.container {
+  max-width: $container-width;
 }
 
 .header {
@@ -46,6 +58,8 @@ app-docs router-outlet ~ * {
 }
 
 .header-nav {
+  max-width: $container-width + 260px;
+
   &__link {
     padding: 16px 8px;
     text-decoration: none;
@@ -103,10 +117,7 @@ ngx-code-example {
 }
 
 .demo {
-  margin: 0 0 48px 0;
-  padding: 12px;
-  background: $color-demo;
-  border-left: 8px solid $color-demo-border;
+  margin: 20px 0 36px 0;
 }
 
 code, .code {

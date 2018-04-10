@@ -1,4 +1,4 @@
-<section bp="grid vertical-start"> 
+<section bp="grid vertical-start">
   <div bp="8@md">
     <h1>@ngx-lite/input-tag</h1>
     <app-badges package="input-tag" stackblitzId="angular-8qhlb4"></app-badges>
@@ -7,20 +7,22 @@
       A lightweight tag input component compatible with both Angular Reactive Forms and Template Forms.
     </p>
   </div>
-  <ngx-carbon-ad siteName="coryrylancom" bp="4@md"></ngx-carbon-ad>
+  <div bp="4@md">
+    <ngx-carbon-ad siteName="coryrylancom" bp="float-right"></ngx-carbon-ad>
+  </div>
 </section>
 
 <ngx-tabs>
   <ngx-tab [active]="true" name="Usage">
     <div class="demo">
-      <form [formGroup]="form" (ngSubmit)="submit()">
+      <form [formGroup]="form" (ngSubmit)="submit()" bp="8--max">
         <ngx-input-tag formControlName="tags" [tagSuggestions]="tagSuggestions"></ngx-input-tag>
 
         <pre>
-          {{value | async | json}}
+{{value | async | json}}
         </pre>
 
-        <button>Submit</button>
+        <button class="btn">Submit</button>
       </form>
     </div>
 

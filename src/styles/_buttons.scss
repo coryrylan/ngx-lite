@@ -1,0 +1,25 @@
+.btn {
+  padding: 10px 20px;
+  border: 2px solid $color-primary;
+  border-radius: 4px;
+  text-decoration: none;
+  text-align: center;
+  font-size: 1.2em;
+  color: $color-primary;
+  background-color: transparent;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $color-primary;
+    color: $color-white;
+  }
+}
+
+.btn-white {
+  border-color: $color-white;
+  color: $color-white;
+}
+
+.btn-large {
+  padding: 15px 40px;
+}

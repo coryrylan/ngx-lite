@@ -1,4 +1,4 @@
-<section bp="grid vertical-start"> 
+<section bp="grid vertical-start">
   <div bp="8@md">
     <h1>@ngx-lite/input-range</h1>
     <app-badges package="input-range" stackblitzId="angular-m8nwd6"></app-badges>
@@ -7,16 +7,18 @@
       A lightweight range input component supporting both Reactive and Template forms.
     </p>
   </div>
-  <ngx-carbon-ad siteName="coryrylancom" bp="4@md"></ngx-carbon-ad>
+  <div bp="4@md">
+    <ngx-carbon-ad siteName="coryrylancom" bp="float-right"></ngx-carbon-ad>
+  </div>
 </section>
 
 <ngx-tabs>
   <ngx-tab [active]="true" name="Usage">
     <div class="demo">
-      <form [formGroup]="form" (ngSubmit)="submit()">
+      <form [formGroup]="form" (ngSubmit)="submit()" bp="7--max">
         <ngx-input-range label="distance" formControlName="distance"></ngx-input-range>
         <ngx-input-range label="condition" [min]="0" [max]="3" [step]="1" [labels]="['Poor', 'Fair', 'Good', 'Excellent']"></ngx-input-range>
-        <button>Submit</button>
+        <button class="btn">Submit</button>
       </form>
 
       <p>

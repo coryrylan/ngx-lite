@@ -23,5 +23,6 @@ export class DocsNgxInputStarRatingComponent implements OnInit {
 
   submit() {
     console.log(this.form.value);
+    alert(this.form.value.rating);
   }
 }

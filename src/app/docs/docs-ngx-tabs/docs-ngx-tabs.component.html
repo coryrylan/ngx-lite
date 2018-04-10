@@ -7,7 +7,9 @@
       A tabs component with ability to programmatically set active tabs.
     </p>
   </div>
-  <ngx-carbon-ad siteName="coryrylancom" bp="4@md"></ngx-carbon-ad>
+  <div bp="4@md">
+    <ngx-carbon-ad siteName="coryrylancom" bp="float-right"></ngx-carbon-ad>
+  </div>
 </section>
 
 <ngx-tabs [(activeTabIndex)]="index">
@@ -43,7 +45,9 @@
     </ngx-code-example>
   </ngx-tab>
   <ngx-tab name="Installation">
-    <button (click)="index = 0">Go Back to Usage</button><br><br>
+    <button (click)="index = 0" class="btn">Go Back to Usage</button>
+    <br>
+    <br>
     <p>
       To install this library, run:
       <code>npm install @ngx-lite/tabs --save</code> and then from your Angular
