@@ -15,7 +15,7 @@ export class DocsNgxInputRangeComponent implements OnInit {
   ngOnInit() {
     this.form = this.formBuilder.group({
       distance: [75],
-      condition: [2]
+      condition: [1]
     });
 
     this.value = this.form.controls.distance.valueChanges.pipe(startWith(75));

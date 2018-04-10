@@ -53,8 +53,12 @@ router-outlet ~ app-home {
   width: 100%;
   overflow: hidden;
   position: fixed;
-  z-index: 99;
+  z-index: 3;
   top: 0;
+
+  @media (min-width: $nav-break) {
+    z-index: 5;
+  }
 }
 
 .header-nav {
@@ -73,6 +77,17 @@ router-outlet ~ app-home {
 
     @media (min-width: $nav-break) {
       padding: 16px 14px;
+    }
+  }
+
+  &__nav-drawer-btn {
+    float: right;
+    background-color: transparent;
+    border: 0;
+    padding: 11px 15px;
+
+    @media (min-width: $nav-break) {
+      display: none;
     }
   }
 

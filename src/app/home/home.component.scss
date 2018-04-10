@@ -13,16 +13,24 @@
   position: relative;
   min-height: 400px;
   padding: 40px 40px 15px 40px;
-  margin: -24px -24px 60px -24px;
-  width: 105%;
+  margin: -24px 0 60px -24px;
+  width: calc(100% + 24px);
   z-index: 1;
+
+  @media (min-width: $nav-break) {
+    width: calc(100% + 48px);
+  }
 }
 
 .earth {
   max-width: 360px;
   position: absolute;
-  right: -25px;
   top: -30px;
+  right: -180px;
+  
+  @media (min-width: 720px) {
+    right: 0;
+  }
 }
 
 h1 {

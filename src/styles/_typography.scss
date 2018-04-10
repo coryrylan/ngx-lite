@@ -12,8 +12,10 @@ h1, h2, h3 {
   line-height: 1.2em;
 }
 
-h1 {
-  font-size: 2.5em;
+@media (min-width: $nav-break) {
+  h1 {
+    font-size: 2.5em;
+  }
 }
 
 h1 {
