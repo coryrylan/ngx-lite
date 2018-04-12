@@ -17,12 +17,11 @@
     <div class="demo">
       <form [formGroup]="form" (ngSubmit)="submit()">
         <ngx-input-star-rating formControlName="rating"></ngx-input-star-rating>
+        <p>
+          {{value | async}}
+        </p>
         <button class="btn">Submit</button>
       </form>
-
-      <p>
-        {{value | async}}
-      </p>
     </div>
 
     <ngx-code-example ngNonBindable>

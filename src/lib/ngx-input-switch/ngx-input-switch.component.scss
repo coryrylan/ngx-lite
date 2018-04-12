@@ -1,10 +1,17 @@
 @import './../styles/_base';
 
-:host {
+$color-handle: $color-white;
+$color-background: $color-grey;
+$color-selected: $color-primary;
+
+ngx-input-switch {
   display: inline-block;
+  --color-handle: $color-handle;
+  --color-background: $color-grey;
+  --color-selected: $color-primary;
 }
 
-.switch {
+.ngx-input-switch {
   &__wrap {
     position: relative;
     display: inline-block;
@@ -26,8 +33,8 @@
     left: 9px;
     width: 16px;
     height: 16px;
-    background: $color-white;
-    color: $color-white;
+    background: $color-handle;
+    background: var(--color-handle);
     border-radius: 100%;
     transition: left 0.15s ease-out;
   }
@@ -47,10 +54,10 @@
     font-size: 16px;
     font-weight: normal;
     text-transform: uppercase;
-    background: $color-grey;
+    background: $color-background;
+    background: var(--color-background);
     transition: 0.15s ease-out;
     transition-property: opacity background;
-    color: $color-type;
     border-radius: 11px;
   
     &::before,
@@ -64,18 +71,19 @@
   }
 }
 
-.checked .switch__background {
-  background: $color-green;
+.ngx-input-switch__checked .ngx-input-switch__background {
+  background: $color-selected;
+  background: var(--color-selected);
 }
 
-.checked .switch__background::before {
+.ngx-input-switch__checked .ngx-input-switch__background::before {
   opacity: 0;
 }
 
-.checked .switch__background::after {
+.ngx-input-switch__checked .ngx-input-switch__background::after {
   opacity: 1;
 }
 
-.checked .switch__handle {
+.ngx-input-switch__checked .ngx-input-switch__handle {
   left: 26px;
 }

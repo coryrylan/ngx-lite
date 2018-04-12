@@ -1,14 +1,14 @@
 <label>
-  <div class="label">
+  <div class="ngx-input-range__top-label">
     {{label}}
     <ng-container *ngIf="measure">{{value}} {{measure}}</ng-container>
   </div>
 
-  <input type="range" #rangeInput [formControl]="control" [id]="instanceId" [attr.min]="min" [attr.max]="max" [attr.step]="step"
+  <input type="range" #rangeInput [formControl]="control" [id]="instanceId" [attr.min]="min" [attr.max]="max" [attr.step]="step" class="ngx-input-range__input"
   />
 
-  <div class="range-labels" [style.margin]="margin">
-    <div *ngFor="let rangeLabel of labels; let index = index; let last = last; let first = first;" class="range-label" [class]="rangeLabelCssClasses[index]">
+  <div class="ngx-input-range__labels" [style.margin]="margin">
+    <div *ngFor="let rangeLabel of labels; let index = index; let last = last; let first = first;" class="ngx-input-range__label" [class]="rangeLabelCssClasses[index]">
       {{rangeLabel}}
     </div>
   </div>

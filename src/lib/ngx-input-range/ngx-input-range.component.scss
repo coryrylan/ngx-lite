@@ -1,142 +1,149 @@
+@import './../styles/_base';
+
 $range-height: 9px;
-$md-break: 720px;
+$color-range-upper-fill: $color-grey;
+$color-range-lower-fill: $color-primary;
+$color-range-thumb: darken($color-primary, 10%);
 
-// default blue
-$color-range-upper-fill: #ccc;
-$color-range-track: #2d2d2d;
-$color-range-lower-fill:#2d2d2d;
-$color-range-thumb: darken(#2d2d2d, 10%);
-
-:host {
+ngx-input-range {
   display: block;
   padding: 4px 0;
   margin-bottom: 24px;
   position: relative;
+  
+  --range-height: $range-height;
+  --color-range-upper-fill: $color-range-upper-fill;
+  --color-range-lower-fill: $color-range-lower-fill;
+  --color-range-thumb: $color-range-thumb;
 }
 
-input[type='range'] {
-  -webkit-appearance: none;
-  width: 100%;
-  margin: 0;
-  background: $color-range-upper-fill;
-  height: $range-height;
-  cursor: pointer;
-
-  &:focus {
-    outline: none;
-  }
-
-  &::-webkit-slider-runnable-track {
-    width: 200%;
-    height: $range-height;
-    cursor: pointer;
-    background: linear-gradient(90deg, $color-range-lower-fill, $color-range-lower-fill) 0 100% no-repeat content-box;
-    border-radius: 0;
-  }
-
-  &::-webkit-slider-thumb {
-    height: 27px;
-    width: 15px;
-    border-radius: 0;
-    background: $color-range-thumb;
-    cursor: pointer;
+.ngx-input-range {
+  &__input {
     -webkit-appearance: none;
-    margin-top: -$range-height;
-  }
-
-  &::-moz-range-track {
     width: 100%;
-    height: $range-height;
+    margin: 0;
+    background: $color-grey;
+    background: var(--color-range-upper-fill);
+    height: var(--range-height);
     cursor: pointer;
-    background: linear-gradient(90deg, $color-range-lower-fill, $color-range-lower-fill) 0 100% no-repeat content-box;
-    border-radius: 0;
-    border: 0;
+
+    &:focus {
+      outline: none;
+    }
+
+    &::-webkit-slider-runnable-track {
+      width: 200%;
+      height: $range-height;
+      height: var(--range-height);
+      cursor: pointer;
+      background: linear-gradient(90deg, $color-range-lower-fill, $color-range-lower-fill) 0 100% no-repeat content-box;
+      background: linear-gradient(90deg, var(--color-range-lower-fill), var(--color-range-lower-fill)) 0 100% no-repeat content-box;
+      border-radius: 0;
+    }
+
+    &::-webkit-slider-thumb {
+      height: 27px;
+      width: 15px;
+      border-radius: 0;
+      background: $color-range-thumb;
+      background: var(--color-range-thumb);
+      cursor: pointer;
+      -webkit-appearance: none;
+      margin-top: -9px;
+    }
+
+    &::-moz-range-track {
+      width: 100%;
+      height: var(--range-height);
+      cursor: pointer;
+      background: linear-gradient(90deg, $color-range-lower-fill, $color-range-lower-fill) 0 100% no-repeat content-box;
+      background: linear-gradient(90deg, var(--color-range-lower-fill), var(--color-range-lower-fill)) 0 100% no-repeat content-box;
+      border-radius: 0;
+      border: 0;
+    }
+
+    &::-moz-range-thumb {
+      border: 0;
+      height: 27px;
+      width: 15px;
+      border-radius: 0;
+      background: $color-range-thumb;
+      background: var(--color-range-thumb);
+      cursor: pointer;
+    }
+
+    &::-ms-track {
+      width: 100%;
+      height: $range-height;
+      height: var(--range-height);
+      cursor: pointer;
+      background: transparent;
+      border-color: transparent;
+      color: transparent;
+    }
+
+    &::-ms-fill-lower {
+      background: $color-range-lower-fill;
+      background: var(--color-range-lower-fill);
+      border: 0;
+      border-radius: 3px;
+    }
+
+    &::-ms-fill-upper {
+      background: $color-range-upper-fill;
+      background: var(--color-range-upper-fill);
+      border: 0;
+      border-radius: 0;
+    }
+
+    &::-ms-thumb {
+      border: 0;
+      height: 38px;
+      width: 15px;
+      border-radius: 0;
+      background: $color-range-thumb;
+      background: var(--color-range-thumb);
+      cursor: pointer;
+    }
   }
 
-  &::-moz-range-thumb {
-    border: 0;
-    height: 27px;
-    width: 15px;
-    border-radius: 0;
-    background: $color-range-thumb;
-    cursor: pointer;
+  &__top-label {
+    margin-bottom: 6px;
   }
 
-  &::-ms-track {
-    width: 100%;
-    height: $range-height;
-    cursor: pointer;
-    background: transparent;
-    border-color: transparent;
-    color: transparent;
+  &__labels {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -7.5%;
   }
 
-  &::-ms-fill-lower {
-    background: $color-range-lower-fill;
-    border: 0;
-    border-radius: 3px;
-  }
+  &__label {
+    display: inline-block;
+    text-align: center;
+    padding-top: 15px;
+    font-size: 14px;
+    flex: 1;
 
-  &::-ms-fill-upper {
-    background: $color-range-upper-fill;
-    border: 0;
-    border-radius: 0;
-  }
-
-  &::-ms-thumb {
-    border: 0;
-    height: 38px;
-    width: 15px;
-    border-radius: 0;
-    background: $color-range-thumb;
-    cursor: pointer;
+    &:first-child {
+      text-align: left;
+      position: absolute;
+      left: 0;
+    }
+    
+    &:last-child {
+      text-align: right;
+      position: absolute;
+      right: 0;
+    }
   }
 }
 
-.label {
-  margin-bottom: 6px;
-}
-
-.range-labels {
-  display: flex;
-  flex-wrap: wrap;
-  margin: 0 -7.5%;
-}
-
-.range-label {
-  display: inline-block;
-  text-align: center;
-  padding-top: 15px;
-  font-size: 14px;
-  flex: 1;
-}
-
-.range-label--current {
+.ngx-input-range__label--current {
   font-weight: bold;
 }
 
-// .range-label--left {
-//   text-align: left;
-// }
-
-// .range-label--right {
-//   text-align: right;
-// }
-
-.range-label:first-child {
-  text-align: left;
-  position: absolute;
-  left: 0;
-}
-
-.range-label:last-child {
-  text-align: right;
-  position: absolute;
-  right: 0;
-}
-
 @media all and (-ms-high-contrast: none) { // ie11 only
-  input[type='range'] {
+  .ngx-input-range__input {
     background: transparent;
     height: auto;
   }

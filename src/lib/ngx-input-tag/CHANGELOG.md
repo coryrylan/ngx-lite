@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.0.7
+- support css custom properties for custom themes
+
 ## 0.0.6
 - minor bug with max tags validation
 

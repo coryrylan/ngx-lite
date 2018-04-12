@@ -1,3 +1,19 @@
-<p>
-  ngx-progress-circle works!
-</p>
+<div class="ngx-progress-circle">
+  <svg class="ngx-progress-circle__svg" width="170" height="170" viewBox="0 0 170 170">
+    <circle class="ngx-progress-circle__svg__meter" cx="84" cy="84" [attr.r]="radius" stroke-width="16" />
+    <circle class="ngx-progress-circle__svg__value" [style.strokeDasharray]="circumference" [style.strokeDashoffset]="dashoffset"
+      cx="84" cy="84" [attr.r]="radius" stroke-width="16" />
+  </svg>
+
+  <div class="ngx-progress-circle__value">
+    <ng-container *ngIf="valueLabel !== null">{{valueLabel}}</ng-container>
+    <ng-container *ngIf="valueLabel === null">{{value}}</ng-container>
+    {{symbol}}
+  </div>
+
+  <div *ngIf="!valueLabel" class="ngx-progress-circle__value ng-content">
+    <ng-content select="[icon-value-label]"></ng-content>
+  </div>
+
+  <div class="ngx-progress-circle__complete">{{label}}</div>
+</div>

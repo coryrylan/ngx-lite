@@ -1,9 +1,9 @@
-<label [for]="instanceId" class="switch">
+<label [for]="instanceId" class="ngx-input-switch">
   <!-- (swipeleft)="value = false" (swiperight)="value = true" -->
-  <span class="switch__label">{{label}}</span>
-  <div class="switch__wrap" [ngClass]="{ 'checked': value }">
-    <input type="checkbox" [id]="instanceId" class="switch__input" [checked]="value" (change)="switch()" [attr.aria-label]="label">
-    <span class="switch__background"></span>
-    <span class="switch__handle"></span>
+  <span class="ngx-input-switch__label">{{label}}</span>
+  <div class="ngx-input-switch__wrap" [ngClass]="{ 'ngx-input-switch__checked': value }">
+    <input type="checkbox" [id]="instanceId" class="ngx-input-switch__input" [checked]="value" (change)="switch()" [attr.aria-label]="label">
+    <span class="ngx-input-switch__background"></span>
+    <span class="ngx-input-switch__handle"></span>
   </div>
 </label>

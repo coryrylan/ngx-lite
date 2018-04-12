@@ -10,7 +10,8 @@ import {
   OnInit,
   ViewChild,
   PLATFORM_ID,
-  SimpleChanges
+  SimpleChanges,
+  ViewEncapsulation
 } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { FormControl, NG_VALUE_ACCESSOR } from '@angular/forms';
@@ -23,7 +24,8 @@ let instanceId = 0;
   selector: 'ngx-input-range',
   templateUrl: './ngx-input-range.component.html',
   styleUrls: ['./ngx-input-range.component.scss'],
-  providers: [{ provide: NG_VALUE_ACCESSOR, useExisting: forwardRef(() => NgxInputRangeComponent), multi: true }]
+  providers: [{ provide: NG_VALUE_ACCESSOR, useExisting: forwardRef(() => NgxInputRangeComponent), multi: true }],
+  encapsulation: ViewEncapsulation.None
 })
 export class NgxInputRangeComponent implements OnInit, OnChanges, OnDestroy, AfterViewInit {
   @ViewChild('rangeInput') rangeInput: ElementRef;
@@ -64,10 +66,7 @@ export class NgxInputRangeComponent implements OnInit, OnChanges, OnDestroy, Aft
     this.isBrowser = isPlatformBrowser(platformId);
   }
 
-  // tslint:disable-next-line:no-empty
   onChange = (_value: number) => { };
-
-  // tslint:disable-next-line:no-empty
   onTouched = () => { };
 
   registerOnChange(fn: (value: number) => void) {
@@ -130,18 +129,10 @@ export class NgxInputRangeComponent implements OnInit, OnChanges, OnDestroy, Aft
 
   private getRangeLabelCssClasses(labels: string[]) {
     return labels.map((_label, index) => {
-      const cssClasses: string[] = ['range-label'];
+      const cssClasses: string[] = ['ngx-input-range__label'];
 
       if (index === this.currentLabelIndex) {
-        cssClasses.push('range-label--current');
-      }
-
-      if (index < this.labels.length / 2) {
-        cssClasses.push('range-label--left');
-      }
-
-      if (index > this.labels.length / 2) {
-        cssClasses.push('range-label--right');
+        cssClasses.push('ngx-input-range__label--current');
       }
 
       return cssClasses.join(' ');

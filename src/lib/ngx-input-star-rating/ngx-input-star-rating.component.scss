@@ -1,36 +1,46 @@
 @import './../styles/_base';
 
-:host {
+$color-star-default: $color-grey;
+$color-star-highlight: $color-primary;
+
+ngx-input-star-rating {
   display: inline-block;
+  --color-star-default: $color-star-default;
+  --color-star-highlight: $color-star-highlight;
 }
 
-.star {
-  fill: $color-grey;
-}
+.ngx-input-star-rating {
+  &__star {
+    fill: $color-star-default;
+    fill: var(--color-star-default);
+  }
 
-.full {
-  .star {
-    fill: $color-gold;
+  &__btn {
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+    position: relative;
+    width: 30px;
+    height: 25px;
+  
+    svg {
+      position: absolute;
+      top: 0;
+      left: 5px;
+    }
   }
 }
 
-.half {
-  .star-half {
-    fill: $color-gold;
+.ngx-input-star-rating__full {
+  .ngx-input-star-rating__star {
+    fill: $color-star-highlight;
+    fill: var(--color-star-highlight);
   }
 }
 
-button {
-  background-color: transparent;
-  border: 0;
-  cursor: pointer;
-  position: relative;
-  width: 30px;
-  height: 25px;
-
-  svg {
-    position: absolute;
-    top: 0;
-    left: 5px;
+.ngx-input-star-rating__half {
+  .ngx-input-star-rating__star-half {
+    fill: $color-star-highlight;
+    fill: var(--color-star-highlight);
   }
 }

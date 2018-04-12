@@ -1,4 +1,4 @@
-import { forwardRef, Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { forwardRef, Component, Input, OnChanges, OnInit, SimpleChanges, ViewEncapsulation } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 const starIcons = {
@@ -11,13 +11,8 @@ const starIcons = {
   selector: 'ngx-input-star-rating',
   templateUrl: './ngx-input-star-rating.component.html',
   styleUrls: ['./ngx-input-star-rating.component.scss'],
-  providers: [
-    {
-      provide: NG_VALUE_ACCESSOR,
-      useExisting: forwardRef(() => NgxInputStarRatingComponent),
-      multi: true
-    }
-  ]
+  providers: [{ provide: NG_VALUE_ACCESSOR, useExisting: forwardRef(() => NgxInputStarRatingComponent), multi: true }],
+  encapsulation: ViewEncapsulation.None
 })
 export class NgxInputStarRatingComponent implements ControlValueAccessor, OnInit, OnChanges {
   get value() {
@@ -40,10 +35,10 @@ export class NgxInputStarRatingComponent implements ControlValueAccessor, OnInit
   buttons: { active: boolean; icon: string }[] = [];
 
   // tslint:disable-next-line:no-empty
-  onChange = (_value: number) => {};
+  onChange = (_value: number) => { };
 
   // tslint:disable-next-line:no-empty
-  onTouched = () => {};
+  onTouched = () => { };
 
   registerOnChange(fn: (value: number) => void) {
     this.onChange = fn;

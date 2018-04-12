@@ -1,13 +1,13 @@
-<div class="input-rating" (mouseleave)="mouseLeave()">
-  <button type="button" [disabled]="disabled" *ngFor="let btn of buttons; let i = index" class="input-rating__btn" (click)="rate(i)" [attr.aria-label]="'rate ' + (i + 1) + ' of ' + buttons.length"
-    (mouseenter)="mouseEnter(i)">
-    <span *ngIf="btn.active || btn.icon === starIcons.full" class="full">
+<div class="ngx-input-rating" (mouseleave)="mouseLeave()">
+  <button type="button" [disabled]="disabled" *ngFor="let btn of buttons; let i = index" class="ngx-input-rating__btn" (click)="rate(i)" [attr.aria-label]="'rate ' + (i + 1) + ' of ' + buttons.length"
+    (mouseenter)="mouseEnter(i)" class="ngx-input-star-rating__btn">
+    <span *ngIf="btn.active || btn.icon === starIcons.full" class="ngx-input-star-rating__full">
       <ng-container *ngTemplateOutlet="star"></ng-container>
     </span>
     <ng-container *ngIf="!btn.active">
-      <span *ngIf="btn.icon === starIcons.half" class="half">
+      <span *ngIf="btn.icon === starIcons.half" class="ngx-input-star-rating__half">
         <ng-container *ngTemplateOutlet="star"></ng-container>
-        <svg height="25" width="10" class="star-half">
+        <svg height="25" width="10" class="ngx-input-star-rating__star-half">
           <polygon points="9.9, 1.1, 3.3, 21.78, 19.8, 8.58, 0, 8.58, 16.5, 21.78" style="fill-rule:nonzero;"/>
         </svg>
       </span>
@@ -19,7 +19,7 @@
 </div>
 
 <ng-template #star>
-  <svg height="25" width="23" class="star">
+  <svg height="25" width="23" class="ngx-input-star-rating__star">
     <polygon points="9.9, 1.1, 3.3, 21.78, 19.8, 8.58, 0, 8.58, 16.5, 21.78" style="fill-rule:nonzero;"/>
   </svg>
 </ng-template>

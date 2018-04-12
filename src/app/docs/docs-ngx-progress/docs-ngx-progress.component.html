@@ -1,8 +1,73 @@
-<p>
-  docs-ngx-progress works!
-</p>
+<section bp="grid vertical-start">
+  <div bp="8@md">
+    <h1>@ngx-lite/progress</h1>
+    <app-badges package="loaders" stackblitzId="angular-nt2gwp"></app-badges>
 
+    <p>
+      Progress indicator components.
+    </p>
+  </div>
+  <div bp="4@md">
+    <ngx-carbon-ad siteName="coryrylancom" bp="float-right"></ngx-carbon-ad>
+  </div>
+</section>
+
+<ngx-tabs>
+  <ngx-tab [active]="true" name="Usage">
+    <div bp="7--max">
+      <h2>Progress Bar</h2>
+      <ngx-progress-bar [value]="process | async"></ngx-progress-bar>
+      <br>
+      <ngx-progress-bar [value]="process | async" [showValue]="false"></ngx-progress-bar>
+      <br>
+      <br>
+
+      <h2>Progress Circle</h2>
+      <ngx-progress-circle [value]="process | async"></ngx-progress-circle>
+      <br>
+      <br>
+    </div>
+    <ngx-code-example ngNonBindable language="html">
+      <![CDATA[
 <ngx-progress-bar [value]="75"></ngx-progress-bar>
-<ngx-progress-bar [value]="25" [showValue]="false"></ngx-progress-bar>
-<br><br>
-<ngx-progress-circle></ngx-progress-circle>
+<ngx-progress-circle [value]="75"></ngx-progress-circle>
+      ]]>
+    </ngx-code-example>
+  </ngx-tab>
+  <ngx-tab name="Installation">
+    <p>
+      To install this library, run:
+      <code>npm install @ngx-lite/progress --save</code> and then from your Angular
+      <code>AppModule</code>:
+    </p>
+
+    <ngx-code-example>
+      <![CDATA[
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+
+import { AppComponent } from './app.component';
+
+// Import library module
+import { NgxProgressModule } from '@ngx-lite/progress';
+
+@NgModule({
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    BrowserModule,
+    // Register module
+    NgxProgressModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+      ]]>
+    </ngx-code-example>
+  </ngx-tab>
+  <ngx-tab name="API">
+    <h2>Coming Soon</h2>
+  </ngx-tab>
+</ngx-tabs>

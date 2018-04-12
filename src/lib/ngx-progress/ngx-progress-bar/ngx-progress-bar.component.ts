@@ -1,9 +1,10 @@
-import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, Input, OnChanges, SimpleChanges, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'ngx-progress-bar',
   templateUrl: './ngx-progress-bar.component.html',
-  styleUrls: ['./ngx-progress-bar.component.scss']
+  styleUrls: ['./ngx-progress-bar.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class NgxProgressBarComponent implements OnChanges {
   @Input() value: number;

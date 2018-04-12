@@ -1,4 +1,15 @@
-import { forwardRef, Component, ElementRef, EventEmitter, HostListener, Input, Output, ViewChild, Inject } from '@angular/core';
+import {
+  forwardRef,
+  Component,
+  ElementRef,
+  EventEmitter,
+  HostListener,
+  Input,
+  Output,
+  ViewChild,
+  Inject,
+  ViewEncapsulation
+} from '@angular/core';
 import { ControlValueAccessor, NG_VALIDATORS, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 export enum KeyCodes {
@@ -22,7 +33,8 @@ const maxTagLength = 25;
   providers: [
     { provide: NG_VALUE_ACCESSOR, useExisting: forwardRef(() => NgxInputTagComponent), multi: true },
     { provide: NG_VALIDATORS, useExisting: forwardRef(() => NgxInputTagComponent), multi: true }
-  ]
+  ],
+  encapsulation: ViewEncapsulation.None
 })
 export class NgxInputTagComponent implements ControlValueAccessor {
   get value() {
