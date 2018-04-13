@@ -4,7 +4,6 @@ import * as addMonths from 'date-fns/add_months';
 import * as subMonths from 'date-fns/sub_months';
 import * as getDaysInMonth from 'date-fns/get_days_in_month';
 import * as setDate from 'date-fns/set_date';
-import * as isSameDay from 'date-fns/is_same_day';
 import * as isToday from 'date-fns/is_today';
 import * as getDayOfYear from 'date-fns/get_day_of_year';
 
@@ -34,7 +33,7 @@ export class NgxInputDatepickerComponent implements ControlValueAccessor, OnInit
   daysInMonth: number[];
   dayOfWeekOffset: number[];
 
-  private _value = new Date();
+  private _value: Date | [Date, Date] = new Date();
 
   get value() {
     return this._value;
@@ -48,7 +47,7 @@ export class NgxInputDatepickerComponent implements ControlValueAccessor, OnInit
 
   instanceId = `ngx-input-switch-${instanceId++}`;
 
-  onChange = (_value: Date) => { };
+  onChange = (_value: Date | [Date, Date]) => { };
   onTouched = () => { };
 
   registerOnChange(fn: (value: Date) => void) {
@@ -78,7 +77,8 @@ export class NgxInputDatepickerComponent implements ControlValueAccessor, OnInit
   }
 
   setDay(dayOfMonth: number) {
-    this.value = setDate(this.calendarDate, dayOfMonth);
+    const dayIsSameDayOfYear = getDayOfYear(this.value as Date) === getDayOfYear(setDate(this.calendarDate, dayOfMonth));
+    this.value = !dayIsSameDayOfYear ? setDate(this.calendarDate, dayOfMonth) : undefined;
   }
 
   prev() {
@@ -91,16 +91,19 @@ export class NgxInputDatepickerComponent implements ControlValueAccessor, OnInit
 
   getDayClass(day: number) {
     const cssClasses = [];
-    const isSameYear = this.value.getFullYear() === this.calendarDate.getFullYear();
-    const dayIsSameDayOfYear = getDayOfYear(this.value) === getDayOfYear(setDate(this.calendarDate, day));
     const dayIsSameDay = day === this.calendarDate.getDate() && isToday(this.calendarDate);
-
-    if (dayIsSameDayOfYear && isSameYear) {
-      cssClasses.push('ngx-input-datepicker__current-date');
-    }
 
     if (dayIsSameDay) {
       cssClasses.push('ngx-input-datepicker__today');
+    }
+
+    if (this.value && !this.range) {
+      const isSameYear = (this.value as Date).getFullYear() === this.calendarDate.getFullYear();
+      const dayIsSameDayOfYear = getDayOfYear(this.value as Date) === getDayOfYear(setDate(this.calendarDate, day));
+
+      if (dayIsSameDayOfYear && isSameYear) {
+        cssClasses.push('ngx-input-datepicker__current-date');
+      }
     }
 
     return cssClasses;

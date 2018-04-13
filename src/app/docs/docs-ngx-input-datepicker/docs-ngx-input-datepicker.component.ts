@@ -15,13 +15,17 @@ export class DocsNgxInputDatepickerComponent implements OnInit {
   constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit() {
+    const today = new Date();
+    const sevenDaysFromNow = new Date();
+    sevenDaysFromNow.setDate(sevenDaysFromNow.getDate() + 7);
+
     this.form = this.formBuilder.group({
-      date: [new Date()],
-      date2: [new Date()]
+      date: [today],
+      date2: [[today, sevenDaysFromNow]]
     });
 
-    this.value = this.form.controls.date.valueChanges.pipe(startWith(new Date()));
-    this.value2 = this.form.controls.date2.valueChanges.pipe(startWith(new Date()));
+    this.value = this.form.controls.date.valueChanges.pipe(startWith(today));
+    this.value2 = this.form.controls.date2.valueChanges.pipe(startWith(today));
   }
 
   submit() {
