@@ -1,10 +1,10 @@
 <section bp="grid vertical-start">
   <div bp="8@md">
-    <h1>@ngx-lite/input-switch</h1>
-    <app-badges package="input-switch" stackblitzId="angular-vow9um"></app-badges>
+    <h1>@ngx-lite/input-datepicker</h1>
+    <app-badges package="input-datepicker" stackblitzId=""></app-badges>
 
     <p>
-      A lightweight switch component compatible with both Angular Reactive Forms and Template Forms.
+      A lightweight datepicker component compatible with both Angular Reactive Forms and Template Forms.
     </p>
   </div>
   <div bp="4@md">
@@ -16,12 +16,15 @@
   <ngx-tab [active]="true" name="Usage">
     <div class="demo">
       <form [formGroup]="form" (ngSubmit)="submit()">
-        <ngx-input-switch label="Toggle Me" formControlName="switch"></ngx-input-switch>
-
+        <ngx-input-datepicker formControlName="date"></ngx-input-datepicker>
+        <ngx-input-datepicker formControlName="date2" [range]="true"></ngx-input-datepicker>
         <p>
           {{value | async}}
         </p>
-
+        <p>
+          {{value2 | async}}
+        </p>
+      
         <button class="btn">Submit</button>
       </form>
     </div>
@@ -38,7 +41,7 @@ import { Observable } from 'rxjs/Observable';
 <h1>ngx-input-switch</h1>
 
 <form [formGroup]="form" (ngSubmit)="submit()">
-  <ngx-input-switch formControlName="switch"></ngx-input-switch>
+  <ngx-input-datepicker formControlName="date"></ngx-input-datepicker>
   <button>Submit</button>
 </form>
   `
@@ -51,10 +54,10 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.form = this.formBuilder.group({
-      switch: [true]
+      date: [new Date()]
     });
 
-    this.value = this.form.controls.switch.valueChanges;
+    this.value = this.form.controls.date.valueChanges;
   }
 
   submit() {
@@ -67,7 +70,7 @@ export class AppComponent implements OnInit {
   <ngx-tab name="Installation">
     <p>
       To install this library, run:
-      <code>npm install @ngx-lite/input-switch --save</code> and then from your Angular
+      <code>npm install @ngx-lite/input-datepicker --save</code> and then from your Angular
       <code>AppModule</code>:
     </p>
 
@@ -76,7 +79,7 @@ export class AppComponent implements OnInit {
     import { BrowserModule } from '@angular/platform-browser';
     import { NgModule } from '@angular/core';
     import { ReactiveFormsModule } from '@angular/forms';
-    import { NgxInputSwitchModule } from '@ngx-lite/input-switch';
+    import { NgxInputDatepickerModule } from '@ngx-lite/input-datepicker';
     
     import { AppComponent } from './app.component';
     
@@ -87,7 +90,7 @@ export class AppComponent implements OnInit {
       imports: [
         BrowserModule,
         ReactiveFormsModule,
-        NgxInputSwitchModule
+        NgxInputDatepickerModule
       ],
       providers: [],
       bootstrap: [AppComponent]

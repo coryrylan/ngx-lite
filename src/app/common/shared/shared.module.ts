@@ -7,6 +7,7 @@ import { NgxCodeExampleModule } from './../../../lib/ngx-code-example/ngx-code-e
 import { NgxDebounceClickModule } from './../../../lib/ngx-debounce-click/ngx-debounce-click.module';
 import { NgxEqModule } from './../../../lib/ngx-eq/ngx-eq.module';
 import { NgxInViewportModule } from './../../../lib/ngx-in-viewport/ngx-in-viewport.module';
+import { NgxInputDatepickerModule } from './../../../lib/ngx-input-datepicker/ngx-input-datepicker.module';
 import { NgxInputRangeModule } from './../../../lib/ngx-input-range/ngx-input-range.module';
 import { NgxInputStarRatingModule } from './../../../lib/ngx-input-star-rating/ngx-input-star-rating.module';
 import { NgxInputSwitchModule } from './../../../lib/ngx-input-switch/ngx-input-switch.module';
@@ -28,6 +29,7 @@ const modules = [
   NgxDebounceClickModule,
   NgxEqModule,
   NgxInViewportModule,
+  NgxInputDatepickerModule,
   NgxInputRangeModule,
   NgxInputStarRatingModule,
   NgxInputSwitchModule,

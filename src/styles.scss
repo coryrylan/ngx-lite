@@ -24,6 +24,11 @@ ngx-input-switch {
   --color-selected: var(--color-theme-primary) !important;
 }
 
+ngx-input-datepicker {
+  --color-today: var(--color-theme-primary) !important;
+  --color-selected: var(--color-theme-primary) !important;
+}
+
 ngx-progress-bar {
   --color-bar: var(--color-theme-primary) !important;
 }

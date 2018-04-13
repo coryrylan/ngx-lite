@@ -6,11 +6,11 @@
   text-align: center;
   font-size: 1.2em;
   color: $color-white;
-  background-color: $color-primary;
+  background-color: lighten($color-primary, 5%);
   cursor: pointer;
 
   &:hover {
-    background-color: lighten($color-primary, 5%);
+    background-color: lighten($color-primary, 10%);
   }
 }
 
