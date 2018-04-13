@@ -64,11 +64,15 @@ ngx-input-datepicker {
     }
   }
 
+  &__in-range-date {
+    background-color: var(--color-button-hover);
+  }
+
   &__today {
     color: var(--color-today);
   }
 
-  &__current-date {
+  &__selected-date, &__start-date, &__end-date {
     background-color: var(--color-selected);
     color: var(--color-selected-text);
 
