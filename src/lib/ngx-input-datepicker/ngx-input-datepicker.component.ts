@@ -51,7 +51,7 @@ export class NgxInputDatepickerComponent implements ControlValueAccessor, OnInit
   calendarDate: Date;
   monthName: string;
   year: number;
-  daysInMonth: number[];
+  daysInMonth: Date[];
   dayOfWeekOffset: number[];
   showInputDatepicker = false;
 
@@ -123,7 +123,7 @@ export class NgxInputDatepickerComponent implements ControlValueAccessor, OnInit
     this.dayOfWeekOffset = getDayOfWeekOffset(this.calendarDate);
   }
 
-  setDay(dayOfMonth: number) {
+  setDay(dayOfMonth: Date) {
     if (this.range) {
       this.setRange(dayOfMonth);
     } else {
@@ -131,22 +131,23 @@ export class NgxInputDatepickerComponent implements ControlValueAccessor, OnInit
     }
   }
 
-  setSingleDay(dayOfMonth: number) {
+  setSingleDay(dayOfMonth: Date) {
     const value = this.value as Date;
-    const dayIsSameDayOfYear = getDayOfYear(value) === getDayOfYear(setDate(this.calendarDate, dayOfMonth));
-    this.value = !dayIsSameDayOfYear ? setDate(this.calendarDate, dayOfMonth) : undefined;
+    const dayIsSameDayOfYear = getDayOfYear(value) === getDayOfYear(setDate(this.calendarDate, dayOfMonth.getDate()));
+    this.value = !dayIsSameDayOfYear ? setDate(this.calendarDate, dayOfMonth.getDate()) : undefined;
     this.showInputDatepicker = false;
   }
 
-  setRange(dayOfMonth: number) {
+  setRange(dayOfMonth: Date) {
     let dates = this.value as [Date, Date];
-    const dayIsSameDayOfYear = getDayOfYear(dates[this.selectedRangeIndex]) === getDayOfYear(setDate(this.calendarDate, dayOfMonth));
+    const day = dayOfMonth.getDate();
+    const dayIsSameDayOfYear = getDayOfYear(dates[this.selectedRangeIndex]) === getDayOfYear(setDate(this.calendarDate, day));
 
     if (this.selectedRangeIndex === 0) {
-      dates[0] = !dayIsSameDayOfYear ? setDate(this.calendarDate, dayOfMonth) : undefined;
+      dates[0] = !dayIsSameDayOfYear ? setDate(this.calendarDate, day) : undefined;
       dates[1] = undefined;
     } else {
-      dates[1] = setDate(this.calendarDate, dayOfMonth);
+      dates[1] = setDate(this.calendarDate, day);
     }
 
     dates = isAfter(dates[0], dates[1]) ? [dates[1], dates[0]] : dates;
@@ -154,35 +155,50 @@ export class NgxInputDatepickerComponent implements ControlValueAccessor, OnInit
     this.value = [dates[0], dates[1]];
   }
 
-  getDayClass(day: number) {
+  getDayClass(day: Date) {
     const cssClasses = [];
-    const dateSelected = setDate(this.calendarDate, day);
 
-    if (isToday(dateSelected)) {
+    if (isToday(day)) {
       cssClasses.push('ngx-input-datepicker__today');
     }
 
-    if (!this.range && isSameDate(dateSelected, this.value as Date)) {
+    if (!this.range && isSameDate(day, this.value as Date)) {
       cssClasses.push('ngx-input-datepicker__selected-date');
     }
 
     if (this.range) {
       const dateRange = this.value as [Date, Date];
 
-      if (isStartOfDateRange(dateSelected, dateRange)) {
+      if (isStartOfDateRange(day, dateRange)) {
         cssClasses.push('ngx-input-datepicker__start-date');
       }
 
-      if (isEndOfDateRange(dateSelected, dateRange)) {
+      if (isEndOfDateRange(day, dateRange)) {
         cssClasses.push('ngx-input-datepicker__end-date');
       }
 
-      if (isBetweenDateRange(dateSelected, dateRange)) {
+      if (isBetweenDateRange(day, dateRange)) {
         cssClasses.push('ngx-input-datepicker__in-range-date');
       }
     }
 
     return cssClasses;
+  }
+
+  getIsSelected(day: Date) {
+    if (!this.range && isSameDate(day, this.value as Date)) {
+      return true;
+    }
+
+    if (this.range) {
+      const dateRange = this.value as [Date, Date];
+
+      if (isStartOfDateRange(day, dateRange) || isEndOfDateRange(day, dateRange)) {
+        return true;
+      }
+    }
+
+    return false;
   }
 }
 
@@ -240,5 +256,9 @@ function getDayOfWeekOffset(date: Date) {
 
 function daysInMonth(date: Date) {
   const totalDays = getDaysInMonth(date);
-  return Array.from(Array(totalDays), (e, i) => i + 1);
+  return Array.from(Array(totalDays), (e, i) => {
+    const day = new Date(date.getTime());
+    day.setDate(i + 1);
+    return day;
+  });
 }

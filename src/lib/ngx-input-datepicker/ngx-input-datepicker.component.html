@@ -19,9 +19,9 @@
 <ng-template #datepicker>
   <div class="ngx-input-datepicker">
     <div class="ngx-input-datepicker__top-nav">
-      <button type="button" (click)="prev()" class="ngx-input-datepicker__prev ngx-input-datepicker__btn">&lt;</button>
+      <button type="button" (click)="prev()" aria-label="previous month" class="ngx-input-datepicker__prev ngx-input-datepicker__btn">&lt;</button>
       <div class="ngx-input-datepicker__title">{{monthName}} {{year}}</div>
-      <button type="button" (click)="next()" class="ngx-input-datepicker__next ngx-input-datepicker__btn">&gt;</button>
+      <button type="button" (click)="next()" aria-label="next month" class="ngx-input-datepicker__next ngx-input-datepicker__btn">&gt;</button>
     </div>
 
     <div class="ngx-input-datepicker__weekdays">
@@ -32,8 +32,8 @@
 
     <div class="ngx-input-datepicker__days">
       <div *ngFor="let d of dayOfWeekOffset"></div>
-      <button type="button" *ngFor="let d of daysInMonth" (click)="setDay(d)" [ngClass]="getDayClass(d)" class="ngx-input-datepicker__day ngx-input-datepicker__btn">
-        {{d}}
+      <button type="button" *ngFor="let d of daysInMonth" [title]="d | date" [attr.label]="d | date" [attr.aria-selected]="getIsSelected(d)" (click)="setDay(d)" [ngClass]="getDayClass(d)" class="ngx-input-datepicker__day ngx-input-datepicker__btn">
+        {{d.getDate()}}
       </button>
     </div>
   </div>
