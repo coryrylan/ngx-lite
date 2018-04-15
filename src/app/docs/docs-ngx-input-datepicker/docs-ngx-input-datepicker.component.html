@@ -18,7 +18,7 @@
   <ngx-tab [active]="true" name="Usage">
     <div class="demo">
       <form [formGroup]="form" (ngSubmit)="submit()">
-        <ngx-input-datepicker formControlName="date" [range]="true" [showLabel]="false" label="date" bp="float-left margin-right"></ngx-input-datepicker>
+        <ngx-input-datepicker formControlName="date" [range]="true" [showLabel]="false" [minDate]="minDate" [maxDate]="maxDate" label="date" bp="float-left margin-right"></ngx-input-datepicker>
         <ngx-input-datepicker [showInput]="true" formControlName="date2" label="date" bp="float-left"></ngx-input-datepicker>
         <div bp="clear-fix margin-bottom"></div>
         <p>

@@ -1,8 +1,9 @@
 @import "./../styles/_base";
 
-$color-today: $color-primary;
+$color-today: $color-secondary;
 $color-selected: $color-primary;
 $color-selected-text: $color-white;
+$color-in-range: lighten($color-selected, 20%);
 $color-border: $color-border;
 $color-background: $color-white;
 $color-button-hover: #e9e9e9;
@@ -10,12 +11,14 @@ $color-button-hover: #e9e9e9;
 ngx-input-datepicker {
   display: inline-block;
   max-width: 300px;
+  min-width: 250px;
   width: 100%;
   font-size: 16px;
   line-height: 1.5em;
   --color-today: $color-today;
   --color-selected: $color-selected;
   --color-selected-text: $color-selected-text;
+  --color-in-range: $color-in-range;
   --color-border: $color-border;
   --color-background: $color-background;
   --color-button-hover: $color-button-hover;
@@ -68,23 +71,43 @@ ngx-input-datepicker {
 
     &:hover {
       transform: scale(1.2);
+      background-color: $color-button-hover;
       background-color: var(--color-button-hover);
+    }
+
+    &:disabled, &[disabled] {
+      background-color: $color-button-hover;
+      background-color: var(--color-button-hover);
+      transform: scale(1);
+      cursor: initial;
     }
   }
 
   &__in-range-date {
-    background-color: var(--color-button-hover);
+    background-color: $color-in-range;
+    background-color: var(--color-in-range);
+    color: $color-selected-text;
+    color: var(--color-selected-text);
+
+    &:hover {
+      background-color: $color-in-range;
+      background-color: var(--color-in-range);
+    }
   }
 
   &__today {
+    color: $color-today;
     color: var(--color-today);
   }
 
   &__selected-date, &__start-date, &__end-date {
+    background-color: $color-selected;
     background-color: var(--color-selected);
+    color: $color-selected-text;
     color: var(--color-selected-text);
 
     &:hover {
+      background-color: $color-selected;
       background-color: var(--color-selected);
     }
   }

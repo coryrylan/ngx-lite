@@ -32,7 +32,7 @@
 
     <div class="ngx-input-datepicker__days">
       <div *ngFor="let d of dayOfWeekOffset"></div>
-      <button type="button" *ngFor="let d of daysInMonth" [title]="d | date" [attr.label]="d | date" [attr.aria-selected]="getIsSelected(d)" (click)="setDay(d)" [ngClass]="getDayClass(d)" class="ngx-input-datepicker__day ngx-input-datepicker__btn">
+      <button type="button" *ngFor="let d of daysInMonth" [title]="d | date" [attr.label]="d | date" [attr.aria-selected]="getIsSelected(d)" [disabled]="getIsDisabled(d)" (click)="setDay(d)" [ngClass]="getDayClass(d)" class="ngx-input-datepicker__day ngx-input-datepicker__btn">
         {{d.getDate()}}
       </button>
     </div>

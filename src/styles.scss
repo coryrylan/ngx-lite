@@ -12,28 +12,28 @@ body {
   --color-theme-primary: $color-secondary;
 }
 
-ngx-input-range {
-  --color-range-lower-fill: var(--color-theme-primary) !important;
-  --color-range-thumb: var(--color-theme-primary) !important;
-}
+// ngx-input-range {
+//   --color-range-lower-fill: var(--color-theme-primary) !important;
+//   --color-range-thumb: var(--color-theme-primary) !important;
+// }
 
-ngx-input-star-rating {
-  --color-star-highlight: var(--color-theme-primary) !important;
-}
+// ngx-input-star-rating {
+//   --color-star-highlight: var(--color-theme-primary) !important;
+// }
 
-ngx-input-switch {
-  --color-selected: var(--color-theme-primary) !important;
-}
+// ngx-input-switch {
+//   --color-selected: var(--color-theme-primary) !important;
+// }
 
-ngx-input-datepicker {
-  --color-today: var(--color-theme-primary) !important;
-  --color-selected: var(--color-theme-primary) !important;
-}
+// ngx-input-datepicker {
+//   --color-today: var(--color-theme-primary) !important;
+//   --color-selected: var(--color-theme-primary) !important;
+// }
 
-ngx-progress-bar {
-  --color-bar: var(--color-theme-primary) !important;
-}
+// ngx-progress-bar {
+//   --color-bar: var(--color-theme-primary) !important;
+// }
 
-ngx-progress-circle {
-  --color-stroke: var(--color-theme-primary) !important;
-}
+// ngx-progress-circle {
+//   --color-stroke: var(--color-theme-primary) !important;
+// }

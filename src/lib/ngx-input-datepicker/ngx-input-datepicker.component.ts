@@ -46,6 +46,8 @@ export class NgxInputDatepickerComponent implements ControlValueAccessor, OnInit
   @Input() placeholder = '';
   @Input() label = '';
   @Input() showLabel = true;
+  @Input() minDate: Date;
+  @Input() maxDate: Date;
 
   weekDays = weekDays;
   calendarDate: Date;
@@ -196,6 +198,18 @@ export class NgxInputDatepickerComponent implements ControlValueAccessor, OnInit
       if (isStartOfDateRange(day, dateRange) || isEndOfDateRange(day, dateRange)) {
         return true;
       }
+    }
+
+    return false;
+  }
+
+  getIsDisabled(day: Date) {
+    if (this.minDate && isBefore(day, this.minDate)) {
+      return true;
+    }
+
+    if (this.maxDate && isAfter(day, this.maxDate)) {
+      return true;
     }
 
     return false;
