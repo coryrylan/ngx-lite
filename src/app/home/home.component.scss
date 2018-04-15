@@ -1,7 +1,11 @@
 @import "./../../styles/_config";
 
+$large-break: 1600px;
+
 .container {
   position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .background {
@@ -20,25 +24,34 @@
   @media (min-width: $nav-break) {
     width: calc(100% + 48px);
   }
+
+  @media (min-width: $large-break) {
+    min-height: 460px;
+  }
 }
 
 .earth {
   max-width: 360px;
   position: absolute;
-  top: -30px;
+  top: 0;
   right: -180px;
-  
+
   @media (min-width: 720px) {
     right: 0;
   }
 }
 
-h1 {
+h1, h2 {
   max-width: 550px;
   z-index: 2;
   position: relative;
-  font-size: 2.2em;
+  font-size: 3em;
+  line-height: 40px;
+}
+
+h2 {
   margin-bottom: 48px;
+  font-size: 2.2em;
 }
 
 ngx-carbon-ad {
