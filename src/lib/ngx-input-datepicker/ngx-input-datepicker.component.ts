@@ -1,15 +1,27 @@
-import { Component, OnInit, ViewEncapsulation, forwardRef, Input } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, forwardRef, Input, HostListener, ElementRef } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
-import * as addMonths from 'date-fns/add_months';
-import * as subMonths from 'date-fns/sub_months';
-import * as getDaysInMonth from 'date-fns/get_days_in_month';
-import * as setDate from 'date-fns/set_date';
-import * as isToday from 'date-fns/is_today';
-import * as getDayOfYear from 'date-fns/get_day_of_year';
-import * as isSameYear from 'date-fns/is_same_year';
-import * as isSameDay from 'date-fns/is_same_day';
-import * as isBefore from 'date-fns/is_before';
-import * as isAfter from 'date-fns/is_after';
+import * as addMonths_ from 'date-fns/add_months';
+import * as subMonths_ from 'date-fns/sub_months';
+import * as getDaysInMonth_ from 'date-fns/get_days_in_month';
+import * as setDate_ from 'date-fns/set_date';
+import * as isToday_ from 'date-fns/is_today';
+import * as getDayOfYear_ from 'date-fns/get_day_of_year';
+import * as isSameYear_ from 'date-fns/is_same_year';
+import * as isSameDay_ from 'date-fns/is_same_day';
+import * as isBefore_ from 'date-fns/is_before';
+import * as isAfter_ from 'date-fns/is_after';
+
+// https://github.com/rollup/rollup/issues/670
+const addMonths = addMonths_;
+const subMonths = subMonths_;
+const getDaysInMonth = getDaysInMonth_;
+const setDate = setDate_;
+const isToday = isToday_;
+const getDayOfYear = getDayOfYear_;
+const isSameYear = isSameYear_;
+const isSameDay = isSameDay_;
+const isBefore = isBefore_;
+const isAfter = isAfter_;
 
 const monthNames = ['January', 'February', 'March', 'April', 'May', 'June',
   'July', 'August', 'September', 'October', 'November', 'December'
@@ -29,13 +41,19 @@ let instanceId = 0;
   providers: [{ provide: NG_VALUE_ACCESSOR, useExisting: forwardRef(() => NgxInputDatepickerComponent), multi: true }],
 })
 export class NgxInputDatepickerComponent implements ControlValueAccessor, OnInit {
+  @Input() showInput = false;
   @Input() range = false;
+  @Input() placeholder = '';
+  @Input() label = '';
+  @Input() showLabel = true;
+
   weekDays = weekDays;
   calendarDate: Date;
   monthName: string;
   year: number;
   daysInMonth: number[];
   dayOfWeekOffset: number[];
+  showInputDatepicker = false;
 
   private _value: Date | [Date, Date];
   private selectedRangeIndex = 0;
@@ -52,8 +70,16 @@ export class NgxInputDatepickerComponent implements ControlValueAccessor, OnInit
 
   instanceId = `ngx-input-switch-${instanceId++}`;
 
+
   onChange = (_value: Date | [Date, Date]) => { };
   onTouched = () => { };
+
+  @HostListener('document:click', ['$event'])
+  handleClick(event: MouseEvent) {
+    if (!this.elementRef.nativeElement.contains(event.target)) {
+      this.showInputDatepicker = false;
+    }
+  }
 
   registerOnChange(fn: (value: Date) => void) {
     this.onChange = fn;
@@ -67,13 +93,29 @@ export class NgxInputDatepickerComponent implements ControlValueAccessor, OnInit
     this.value = value;
   }
 
-  constructor() { }
+  constructor(private elementRef: ElementRef) { }
 
   ngOnInit() {
-    this.getNewDate(new Date());
+    this.setCalendarDate(new Date());
+
+    if (!this.label) {
+      throw new Error('Attribute label required');
+    }
   }
 
-  getNewDate(date: Date) {
+  prev() {
+    this.setCalendarDate(subMonths(this.calendarDate, 1));
+  }
+
+  next() {
+    this.setCalendarDate(addMonths(this.calendarDate, 1));
+  }
+
+  clear() {
+    this.value = undefined;
+  }
+
+  setCalendarDate(date: Date) {
     this.calendarDate = date;
     this.monthName = monthNames[this.calendarDate.getMonth()];
     this.year = this.calendarDate.getFullYear();
@@ -82,105 +124,109 @@ export class NgxInputDatepickerComponent implements ControlValueAccessor, OnInit
   }
 
   setDay(dayOfMonth: number) {
-    if (!this.range) {
-      const value =  this.value as Date;
-      const dayIsSameDayOfYear = getDayOfYear(value) === getDayOfYear(setDate(this.calendarDate, dayOfMonth));
-      this.value = !dayIsSameDayOfYear ? setDate(this.calendarDate, dayOfMonth) : undefined;
+    if (this.range) {
+      this.setRange(dayOfMonth);
     } else {
-      const value = this.value as [Date, Date];
-      const dayIsSameDayOfYear = getDayOfYear(value[this.selectedRangeIndex]) === getDayOfYear(setDate(this.calendarDate, dayOfMonth));
-
-      this.value[this.selectedRangeIndex] = !dayIsSameDayOfYear ? setDate(this.calendarDate, dayOfMonth) : undefined;
-      this.value = isAfter(value[0], value[1]) ? [value[1], value[0]] : value;
-      this.selectedRangeIndex = this.selectedRangeIndex === 0 ? 1 : 0;
+      this.setSingleDay(dayOfMonth);
     }
   }
 
-  prev() {
-    this.getNewDate(subMonths(this.calendarDate, 1));
+  setSingleDay(dayOfMonth: number) {
+    const value = this.value as Date;
+    const dayIsSameDayOfYear = getDayOfYear(value) === getDayOfYear(setDate(this.calendarDate, dayOfMonth));
+    this.value = !dayIsSameDayOfYear ? setDate(this.calendarDate, dayOfMonth) : undefined;
+    this.showInputDatepicker = false;
   }
 
-  next() {
-    this.getNewDate(addMonths(this.calendarDate, 1));
+  setRange(dayOfMonth: number) {
+    let dates = this.value as [Date, Date];
+    const dayIsSameDayOfYear = getDayOfYear(dates[this.selectedRangeIndex]) === getDayOfYear(setDate(this.calendarDate, dayOfMonth));
+
+    if (this.selectedRangeIndex === 0) {
+      dates[0] = !dayIsSameDayOfYear ? setDate(this.calendarDate, dayOfMonth) : undefined;
+      dates[1] = undefined;
+    } else {
+      dates[1] = setDate(this.calendarDate, dayOfMonth);
+    }
+
+    dates = isAfter(dates[0], dates[1]) ? [dates[1], dates[0]] : dates;
+    this.selectedRangeIndex = this.selectedRangeIndex === 0 ? 1 : 0;
+    this.value = [dates[0], dates[1]];
   }
 
   getDayClass(day: number) {
     const cssClasses = [];
-    const dayIsSameDay = day === this.calendarDate.getDate() && isToday(this.calendarDate);
+    const dateSelected = setDate(this.calendarDate, day);
 
-    if (dayIsSameDay) {
+    if (isToday(dateSelected)) {
       cssClasses.push('ngx-input-datepicker__today');
     }
 
-    if (this.isSelectedDate(day)) {
+    if (!this.range && isSameDate(dateSelected, this.value as Date)) {
       cssClasses.push('ngx-input-datepicker__selected-date');
     }
 
-    if (this.isStartDate(day)) {
-      cssClasses.push('ngx-input-datepicker__start-date');
-    }
+    if (this.range) {
+      const dateRange = this.value as [Date, Date];
 
-    if (this.isEndDate(day)) {
-      cssClasses.push('ngx-input-datepicker__end-date');
-    }
+      if (isStartOfDateRange(dateSelected, dateRange)) {
+        cssClasses.push('ngx-input-datepicker__start-date');
+      }
 
-    if (this.isBetweenDateRange(day)) {
-      cssClasses.push('ngx-input-datepicker__in-range-date');
+      if (isEndOfDateRange(dateSelected, dateRange)) {
+        cssClasses.push('ngx-input-datepicker__end-date');
+      }
+
+      if (isBetweenDateRange(dateSelected, dateRange)) {
+        cssClasses.push('ngx-input-datepicker__in-range-date');
+      }
     }
 
     return cssClasses;
   }
+}
 
-  private isBetweenDateRange(dayOfMonth: number) {
-    const value = this.value as [Date, Date];
-    const isDateRange = value[0] && value[1];
-    const date = setDate(this.calendarDate, dayOfMonth);
-
-    if (isDateRange && isAfter(date, value[0]) && isBefore(date, value[1])) {
-      return true;
-    } else {
-      return false;
-    }
+function isSameDate(date1: Date, date2: Date) {
+  if (
+    date2 &&
+    isSameDay(date2, date1) &&
+    isSameYear(date2, date1)
+  ) {
+    return true;
+  } else {
+    return false;
   }
+}
 
-  private isStartDate(dayOfMonth: number) {
-    const value = this.value as [Date, Date];
-    if (value &&
-      this.range &&
-      isSameDay(value[0], setDate(this.calendarDate, dayOfMonth)) &&
-      isSameYear(value[0], this.calendarDate)
-    ) {
-      return true;
-    } else {
-      return false;
-    }
+function isBetweenDateRange(date: Date, range: [Date, Date]) {
+  const isDateRange = range[0] && range[1];
+
+  if (isDateRange && isAfter(date, range[0]) && isBefore(date, range[1])) {
+    return true;
+  } else {
+    return false;
   }
+}
 
-  private isEndDate(dayOfMonth: number) {
-    const value = this.value as [Date, Date];
-    if (value &&
-      this.range &&
-      isSameDay(value[1], setDate(this.calendarDate, dayOfMonth)) &&
-      isSameYear(value[1], this.calendarDate)
-    ) {
-      return true;
-    } else {
-      return false;
-    }
+function isStartOfDateRange(date: Date, range: [Date, Date]) {
+  if (range &&
+    isSameDay(range[0], date) &&
+    isSameYear(range[0], date)
+  ) {
+    return true;
+  } else {
+    return false;
   }
+}
 
-  private isSelectedDate(dayOfMonth: number) {
-    const value = this.value as Date;
-    if (
-      value &&
-      !this.range &&
-      isSameDay(value, setDate(this.calendarDate, dayOfMonth)) &&
-      isSameYear(value, this.calendarDate)
-    ) {
-      return true;
-    } else {
-      return false;
-    }
+function isEndOfDateRange(date: Date, range: [Date, Date]) {
+  if (range &&
+    isSameDay(range[1], date) &&
+    isSameYear(range[1], date)
+  ) {
+    return true;
+  } else {
+    return false;
   }
 }
 

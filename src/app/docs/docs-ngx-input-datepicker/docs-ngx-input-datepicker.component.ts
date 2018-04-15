@@ -9,8 +9,8 @@ import { startWith } from 'rxjs/operators';
 })
 export class DocsNgxInputDatepickerComponent implements OnInit {
   form: FormGroup;
-  value: Observable<Date>;
-  value2: Observable<[Date, Date]>;
+  value: Observable<[Date, Date]>;
+  value2: Observable<Date>;
 
   constructor(private formBuilder: FormBuilder) { }
 
@@ -22,12 +22,12 @@ export class DocsNgxInputDatepickerComponent implements OnInit {
     later.setDate(later.getDate() + 5);
 
     this.form = this.formBuilder.group({
-      date: [today],
-      date2: [range]
+      date: [range],
+      date2: [today]
     });
 
-    this.value = this.form.controls.date.valueChanges.pipe(startWith(today));
-    this.value2 = this.form.controls.date2.valueChanges.pipe(startWith(range));
+    this.value = this.form.controls.date.valueChanges.pipe(startWith(range));
+    this.value2 = this.form.controls.date2.valueChanges.pipe(startWith(today));
   }
 
   submit() {

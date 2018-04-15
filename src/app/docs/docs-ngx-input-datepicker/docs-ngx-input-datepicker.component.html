@@ -5,6 +5,8 @@
 
     <p>
       A lightweight datepicker component compatible with both Angular Reactive Forms and Template Forms.
+      The datepicker supports single dates and ranges. You can show the datepicker inline or from a
+      text input.
     </p>
   </div>
   <div bp="4@md">
@@ -16,15 +18,16 @@
   <ngx-tab [active]="true" name="Usage">
     <div class="demo">
       <form [formGroup]="form" (ngSubmit)="submit()">
-        <ngx-input-datepicker formControlName="date"></ngx-input-datepicker>
-        <ngx-input-datepicker formControlName="date2" [range]="true"></ngx-input-datepicker>
+        <ngx-input-datepicker formControlName="date" [range]="true" [showLabel]="false" label="date" bp="float-left margin-right"></ngx-input-datepicker>
+        <ngx-input-datepicker [showInput]="true" formControlName="date2" label="date" bp="float-left"></ngx-input-datepicker>
+        <div bp="clear-fix margin-bottom"></div>
         <p>
           {{value | async}}
         </p>
         <p>
           {{value2 | async}}
         </p>
-      
+
         <button class="btn">Submit</button>
       </form>
     </div>

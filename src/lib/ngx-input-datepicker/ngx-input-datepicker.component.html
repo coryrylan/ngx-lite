@@ -1,20 +1,40 @@
-<div class="ngx-input-datepicker">
-  <div class="ngx-input-datepicker__top-nav">
-    <button type="button" (click)="prev()" class="ngx-input-datepicker__prev ngx-input-datepicker__btn">&lt;</button>
-    <div class="ngx-input-datepicker__title">{{monthName}} {{year}}</div>
-    <button type="button" (click)="next()" class="ngx-input-datepicker__next ngx-input-datepicker__btn">&gt;</button>
+<div *ngIf="showInput" class="ngx-input-datepicker__show-input">
+  <label *ngIf="showLabel" [attr.for]="'ngx-input-datepicker__input-' + instanceId" class="ngx-input-datepicker__label">{{label}}</label>
+  <div class="ngx-input-datepicker__input-wrap">
+    <input (click)="showInputDatepicker = true" (focus)="showInputDatepicker = true" [value]="value | date" [placeholder]="placeholder"
+      [id]="'ngx-input-datepicker__input-' + instanceId" [attr.aria-label]="label" readonly class="ngx-input-datepicker__input"
+    />
+    <button (click)="clear()" aria-label="clear date" type="button" class="ngx-input-datepicker__clear-btn">&times;</button>
   </div>
+  <ng-container *ngIf="showInputDatepicker">
+    <ng-container *ngTemplateOutlet="datepicker"></ng-container>
+  </ng-container>
+</div>
 
-  <div class="ngx-input-datepicker__weekdays">
-    <div *ngFor="let d of weekDays" class="ngx-input-datepicker__weekday">
-      {{d}}
+<div *ngIf="!showInput">
+  <label *ngIf="showLabel" class="ngx-input-datepicker__label">{{label}}</label>
+  <ng-container *ngTemplateOutlet="datepicker"></ng-container>
+</div>
+
+<ng-template #datepicker>
+  <div class="ngx-input-datepicker">
+    <div class="ngx-input-datepicker__top-nav">
+      <button type="button" (click)="prev()" class="ngx-input-datepicker__prev ngx-input-datepicker__btn">&lt;</button>
+      <div class="ngx-input-datepicker__title">{{monthName}} {{year}}</div>
+      <button type="button" (click)="next()" class="ngx-input-datepicker__next ngx-input-datepicker__btn">&gt;</button>
+    </div>
+
+    <div class="ngx-input-datepicker__weekdays">
+      <div *ngFor="let d of weekDays" class="ngx-input-datepicker__weekday">
+        {{d}}
+      </div>
+    </div>
+
+    <div class="ngx-input-datepicker__days">
+      <div *ngFor="let d of dayOfWeekOffset"></div>
+      <button type="button" *ngFor="let d of daysInMonth" (click)="setDay(d)" [ngClass]="getDayClass(d)" class="ngx-input-datepicker__day ngx-input-datepicker__btn">
+        {{d}}
+      </button>
     </div>
   </div>
-
-  <div class="ngx-input-datepicker__days">
-    <div *ngFor="let d of dayOfWeekOffset"></div>
-    <button type="button" *ngFor="let d of daysInMonth" (click)="setDay(d)" [ngClass]="getDayClass(d)" class="ngx-input-datepicker__day ngx-input-datepicker__btn">
-      {{d}}
-    </button>
-  </div>
-</div>
+</ng-template>
