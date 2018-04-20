@@ -15,6 +15,7 @@ import { DocsNgxInputStarRatingComponent } from './docs-ngx-input-star-rating/do
 import { DocsNgxJsonLdComponent } from './docs-ngx-json-ld/docs-ngx-json-ld.component';
 import { DocsNgxInputSwitchComponent } from './docs-ngx-input-switch/docs-ngx-input-switch.component';
 import { DocsNgxInputTagComponent } from './docs-ngx-input-tag/docs-ngx-input-tag.component';
+import { DocsNgxModalComponent } from './docs-ngx-modal/docs-ngx-modal.component';
 import { DocsNgxNavDrawerComponent } from './docs-ngx-nav-drawer/docs-ngx-nav-drawer.component';
 import { DocsNgxLoadersComponent } from './docs-ngx-loaders/docs-ngx-loaders.component';
 import { DocsNgxTabsComponent } from './docs-ngx-tabs/docs-ngx-tabs.component';
@@ -39,6 +40,7 @@ import { DocsNgxProgressComponent } from './docs-ngx-progress/docs-ngx-progress.
     DocsNgxInputTagComponent,
     DocsNgxJsonLdComponent,
     DocsNgxInputSwitchComponent,
+    DocsNgxModalComponent,
     DocsNgxNavDrawerComponent,
     DocsNgxLoadersComponent,
     DocsNgxTabsComponent,

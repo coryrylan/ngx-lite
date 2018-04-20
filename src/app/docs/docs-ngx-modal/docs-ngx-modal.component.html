@@ -1,0 +1,176 @@
+<section bp="grid vertical-start">
+  <div bp="8@md">
+    <h1>@ngx-lite/modal</h1>
+    <app-badges package="loaders" stackblitzId="angular-zzqxjw"></app-badges>
+
+    <p>
+      Simple accesible modal component, supports ng-templates as well.
+    </p>
+  </div>
+  <div bp="4@md">
+    <ngx-carbon-ad siteName="coryrylancom" bp="float-right"></ngx-carbon-ad>
+  </div>
+</section>
+
+<ngx-tabs>
+  <ngx-tab [active]="true" name="Usage">
+    <button (click)="showStandard = !showStandard" class="btn">open standard</button>
+    <button (click)="showLongContent = !showLongContent" class="btn">open content</button>
+    <button (click)="showTemplate = !showTemplate" class="btn">open template</button>
+    <button (click)="showForm = !showForm" class="btn">open form</button>
+
+    <ngx-modal [(visible)]="showStandard">
+      <div ngx-modal-header>
+        header
+      </div>
+      <h2>Modal Content</h2>
+      <p>
+        Hello World!
+      </p>
+      <div ngx-modal-footer>
+        footer
+      </div>
+    </ngx-modal>
+
+    <ngx-modal [(visible)]="showLongContent">
+      <h2>Modal with a lot of content</h2>
+
+      <p>
+        Bacon ipsum dolor amet meatball spare ribs ham hock chuck t-bone porchetta. Pork belly drumstick tenderloin pastrami leberkas
+        frankfurter pancetta ball tip. Andouille ham porchetta pork landjaeger ball tip. Leberkas spare ribs jerky, filet
+        mignon flank landjaeger ham picanha.
+      </p>
+      <p>
+        Bacon ipsum dolor amet meatball spare ribs ham hock chuck t-bone porchetta. Pork belly drumstick tenderloin pastrami leberkas
+        frankfurter pancetta ball tip. Andouille ham porchetta pork landjaeger ball tip. Leberkas spare ribs jerky, filet
+        mignon flank landjaeger ham picanha.
+      </p>
+      <p>
+        Bacon ipsum dolor amet meatball spare ribs ham hock chuck t-bone porchetta. Pork belly drumstick tenderloin pastrami leberkas
+        frankfurter pancetta ball tip. Andouille ham porchetta pork landjaeger ball tip. Leberkas spare ribs jerky, filet
+        mignon flank landjaeger ham picanha.
+      </p>
+    </ngx-modal>
+
+    <ngx-modal [(visible)]="showTemplate" [templateRef]="templateModal"></ngx-modal>
+    <ng-template #templateModal>
+      <h2>Template Modal</h2>
+      <p>
+        Template Modals are useful for when you do not want the content of the template to render until the modal has opened.
+      </p>
+    </ng-template>
+
+    <ngx-modal [(visible)]="showForm">
+      <form [formGroup]="modalForm" (ngSubmit)="submit()">
+        <h2>Form Example</h2>
+        <label>
+          First Name
+          <br>
+          <input [formControlName]="controls.firstName" />
+        </label>
+        <br>
+        <label>
+          Last Name
+          <br>
+          <input [formControlName]="controls.lastName" />
+        </label>
+        <br>
+        <label>
+          Email Address
+          <br>
+          <input type="email" [formControlName]="controls.email" />
+        </label>
+        <br>
+        <br>
+        <button class="btn">save</button>
+      </form>
+    </ngx-modal>
+
+    <ngx-code-example ngNonBindable language="html">
+      <![CDATA[
+<button (click)="showStandard = !showStandard" class="btn">open standard</button>
+<button (click)="showLongContent = !showLongContent" class="btn">open content</button>
+<button (click)="showTemplate = !showTemplate" class="btn">open template</button>
+<button (click)="showForm = !showForm" class="btn">open form</button>
+
+<ngx-modal [(visible)]="showStandard">
+  <div ngx-modal-header>
+    header
+  </div>
+  <h2>Modal Content</h2>
+  <p>
+    Hello World!
+  </p>
+  <div ngx-modal-footer>
+    footer
+  </div>
+</ngx-modal>
+
+<ngx-modal [(visible)]="showLongContent">
+  <h2>Modal with a lot of content</h2>
+
+  <p>
+    Bacon ipsum dolor amet meatball spare ribs ham hock chuck t-bone porchetta. Pork belly drumstick tenderloin pastrami leberkas
+    frankfurter pancetta ball tip. Andouille ham porchetta pork landjaeger ball tip. Leberkas spare ribs jerky, filet
+    mignon flank landjaeger ham picanha.
+  </p>
+</ngx-modal>
+
+<ngx-modal [(visible)]="showTemplate" [templateRef]="templateModal"></ngx-modal>
+<ng-template #templateModal>
+  <h2>Template Modal</h2>
+  <p>
+    Template Modals are useful for when you do not want the content of the template to render until the modal has opened.
+  </p>
+</ng-template>
+
+<ngx-modal [(visible)]="showForm">
+    <h2>Form Example</h2>
+  <form [formGroup]="modalForm" (ngSubmit)="submit()">
+    <label>
+      Email Address
+      <input type="email" [formControlName]="controls.email" />
+    </label>
+    <button class="btn">save</button>
+  </form>
+</ngx-modal>
+        ]]>
+    </ngx-code-example>
+  </ngx-tab>
+  <ngx-tab name="Installation">
+    <p>
+      To install this library, run:
+      <code>npm install @ngx-lite/modal --save</code> and then from your Angular
+      <code>AppModule</code>:
+    </p>
+
+    <ngx-code-example>
+      <![CDATA[
+  import { BrowserModule } from '@angular/platform-browser';
+  import { NgModule } from '@angular/core';
+  
+  import { AppComponent } from './app.component';
+  
+  // Import library module
+  import { NgxModalModule } from '@ngx-lite/modal';
+  
+  @NgModule({
+    declarations: [
+      AppComponent
+    ],
+    imports: [
+      BrowserModule,
+      // Register module
+      NgxModalModule
+    ],
+    providers: [],
+    bootstrap: [AppComponent]
+  })
+  export class AppModule { }
+        ]]>
+    </ngx-code-example>
+  </ngx-tab>
+  <ngx-tab name="API">
+    <h2>Coming Soon</h2>
+  </ngx-tab>
+</ngx-tabs>

@@ -14,6 +14,7 @@ import { NgxInputSwitchModule } from './../../../lib/ngx-input-switch/ngx-input-
 import { NgxLoadersModule } from './../../../lib/ngx-loaders/ngx-loaders.module';
 import { NgxInputTagModule } from './../../../lib/ngx-input-tag/ngx-input-tag.module';
 import { NgxJsonLdModule } from './../../../lib/ngx-json-ld/ngx-json-ld.module';
+import { NgxModalModule } from './../../../lib/ngx-modal/ngx-modal.module';
 import { NgxNavDrawerModule } from './../../../lib/ngx-nav-drawer/ngx-nav-drawer.module';
 import { NgxTabsModule } from './../../../lib/ngx-tabs/ngx-tabs.module';
 import { NgxProgressModule } from './../../../lib/ngx-progress/ngx-progress.module';
@@ -36,6 +37,7 @@ const modules = [
   NgxInputTagModule,
   NgxLoadersModule,
   NgxJsonLdModule,
+  NgxModalModule,
   NgxNavDrawerModule,
   NgxTabsModule,
   NgxProgressModule

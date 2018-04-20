@@ -11,7 +11,7 @@
     "e2e": "ng e2e --aot",
     "deploy": "ng build --prod && firebase deploy",
     "coverage": "ng test --watch=false --code-coverage",
-    "package": "./node_modules/.bin/run-s package:*",
+    "package": "run-s package:*",
     "package:ngx-carbon-ad": "ng-packagr -p src/lib/ngx-carbon-ad/ng-package.json",
     "package:ngx-code-example": "ng-packagr -p src/lib/ngx-code-example/ng-package.json",
     "package:ngx-debounce-click": "ng-packagr -p src/lib/ngx-debounce-click/ng-package.json",
@@ -24,6 +24,7 @@
     "package:ngx-input-tag": "ng-packagr -p src/lib/ngx-input-tag/ng-package.json",
     "package:ngx-json-ld": "ng-packagr -p src/lib/ngx-json-ld/ng-package.json",
     "package:ngx-loaders": "ng-packagr -p src/lib/ngx-loaders/ng-package.json",
+    "package:ngx-modal": "ng-packagr -p src/lib/ngx-modal/ng-package.json",
     "package:ngx-nav-drawer": "ng-packagr -p src/lib/ngx-nav-drawer/ng-package.json",
     "package:ngx-progress": "ng-packagr -p src/lib/ngx-progress/ng-package.json",
     "package:ngx-tabs": "ng-packagr -p src/lib/ngx-tabs/ng-package.json"

@@ -15,6 +15,7 @@ import { DocsNgxInputTagComponent } from './docs-ngx-input-tag/docs-ngx-input-ta
 import { DocsNgxJsonLdComponent } from './docs-ngx-json-ld/docs-ngx-json-ld.component';
 import { DocsNgxInputSwitchComponent } from './docs-ngx-input-switch/docs-ngx-input-switch.component';
 import { DocsNgxLoadersComponent } from './docs-ngx-loaders/docs-ngx-loaders.component';
+import { DocsNgxModalComponent } from './docs-ngx-modal/docs-ngx-modal.component';
 import { DocsNgxNavDrawerComponent } from './docs-ngx-nav-drawer/docs-ngx-nav-drawer.component';
 import { DocsNgxProgressComponent } from './docs-ngx-progress/docs-ngx-progress.component';
 import { DocsNgxTabsComponent } from './docs-ngx-tabs/docs-ngx-tabs.component';
@@ -35,6 +36,7 @@ const routes: Routes = [
       { path: 'input-tag', component: DocsNgxInputTagComponent },
       { path: 'json-ld', component: DocsNgxJsonLdComponent },
       { path: 'loaders', component: DocsNgxLoadersComponent },
+      { path: 'modal', component: DocsNgxModalComponent },
       { path: 'nav-drawer', component: DocsNgxNavDrawerComponent },
       { path: 'tabs', component: DocsNgxTabsComponent },
       { path: 'progress', component: DocsNgxProgressComponent }
