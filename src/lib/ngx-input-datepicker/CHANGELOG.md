@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.1.2
+- minor style updates
+
 ## 0.1.1
 - a11y improvements
 - date range support
