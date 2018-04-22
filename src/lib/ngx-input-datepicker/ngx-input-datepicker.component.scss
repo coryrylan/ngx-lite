@@ -1,4 +1,4 @@
-@import "./../styles/_base";
+@import './../styles/_base';
 
 $color-today: $color-secondary;
 $color-selected: $color-primary;
@@ -43,7 +43,8 @@ ngx-input-datepicker {
     flex-basis: 0%;
   }
 
-  &__prev, &__next {
+  &__prev,
+  &__next {
     flex-basis: auto;
     width: 30px;
   }
@@ -75,7 +76,8 @@ ngx-input-datepicker {
       background-color: var(--color-button-hover);
     }
 
-    &:disabled, &[disabled] {
+    &:disabled,
+    &[disabled] {
       background-color: $color-button-hover;
       background-color: var(--color-button-hover);
       transform: scale(1);
@@ -100,7 +102,9 @@ ngx-input-datepicker {
     color: var(--color-today);
   }
 
-  &__selected-date, &__start-date, &__end-date {
+  &__selected-date,
+  &__start-date,
+  &__end-date {
     background-color: $color-selected;
     background-color: var(--color-selected);
     color: $color-selected-text;

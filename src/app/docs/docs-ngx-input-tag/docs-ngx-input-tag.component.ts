@@ -15,7 +15,7 @@ export class DocsNgxInputTagComponent implements OnInit {
   value: Observable<string[]>;
   tagSuggestions = tagSuggestions;
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder) {}
 
   ngOnInit() {
     this.form = this.formBuilder.group({

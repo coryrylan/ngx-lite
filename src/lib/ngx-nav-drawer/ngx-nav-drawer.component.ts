@@ -1,5 +1,14 @@
 import {
-  Component, Input, OnInit, OnDestroy, Output, EventEmitter, ViewEncapsulation, ChangeDetectorRef, PLATFORM_ID, Inject
+  Component,
+  Input,
+  OnInit,
+  OnDestroy,
+  Output,
+  EventEmitter,
+  ViewEncapsulation,
+  ChangeDetectorRef,
+  PLATFORM_ID,
+  Inject
 } from '@angular/core';
 import { Subscription } from 'rxjs/Subscription';
 import { isPlatformBrowser, isPlatformServer } from '@angular/common';
@@ -14,7 +23,8 @@ import { fromEvent } from 'rxjs/observable/fromEvent';
 })
 export class NgxNavDrawerComponent implements OnDestroy, OnInit {
   @Output() openChange = new EventEmitter<boolean>();
-  @Input() set open(value: boolean) {
+  @Input()
+  set open(value: boolean) {
     this.show = value;
     this.openChange.emit(this.show);
   }
@@ -25,12 +35,17 @@ export class NgxNavDrawerComponent implements OnDestroy, OnInit {
   fixedMode = false;
   private subscription: Subscription;
 
-  constructor(@Inject(PLATFORM_ID) private platformId: any, private changeDetectorRef: ChangeDetectorRef) { }
+  constructor(
+    @Inject(PLATFORM_ID) private platformId: any,
+    private changeDetectorRef: ChangeDetectorRef
+  ) {}
 
   ngOnInit() {
     if (isPlatformBrowser(this.platformId)) {
       this.setFixedPosition();
-      this.subscription = fromEvent(window, 'resize').subscribe(event => this.setFixedPosition());
+      this.subscription = fromEvent(window, 'resize').subscribe(event =>
+        this.setFixedPosition()
+      );
     }
   }
 
@@ -42,7 +57,10 @@ export class NgxNavDrawerComponent implements OnDestroy, OnInit {
 
   setFixedPosition() {
     if (isPlatformBrowser(this.platformId)) {
-      if (window.matchMedia(`(min-width: ${this.fixedAtWidth})`).matches && this.fixed) {
+      if (
+        window.matchMedia(`(min-width: ${this.fixedAtWidth})`).matches &&
+        this.fixed
+      ) {
         this.fixedMode = true;
       } else {
         this.fixedMode = false;

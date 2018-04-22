@@ -1,4 +1,14 @@
-import { Directive, EventEmitter, HostListener, Input, Inject, OnInit, OnDestroy, Output, PLATFORM_ID } from '@angular/core';
+import {
+  Directive,
+  EventEmitter,
+  HostListener,
+  Input,
+  Inject,
+  OnInit,
+  OnDestroy,
+  Output,
+  PLATFORM_ID
+} from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { Subject } from 'rxjs/Subject';
 import { debounceTime } from 'rxjs/operators';

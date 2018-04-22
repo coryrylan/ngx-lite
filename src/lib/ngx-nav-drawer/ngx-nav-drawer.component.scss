@@ -28,7 +28,8 @@ $nav-break: 45em;
   will-change: left;
   border-right: 1px solid $color-border;
 
-  a, button {
+  a,
+  button {
     display: block;
     padding: 18px 13px 16px 26px;
     font-size: 1em;
@@ -38,7 +39,9 @@ $nav-break: 45em;
     position: relative;
     font-weight: bold;
 
-    &:hover, &:active, &:focus {
+    &:hover,
+    &:active,
+    &:focus {
       background: darken($color-white, 5%);
     }
   }

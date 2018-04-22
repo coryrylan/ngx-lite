@@ -3,10 +3,8 @@ import { CommonModule } from '@angular/common';
 import { NgxCarbonAdComponent } from './ngx-carbon-ad.component';
 
 @NgModule({
-  imports: [
-    CommonModule
-  ],
+  imports: [CommonModule],
   declarations: [NgxCarbonAdComponent],
   exports: [NgxCarbonAdComponent]
 })
-export class NgxCarbonAdModule { }
+export class NgxCarbonAdModule {}

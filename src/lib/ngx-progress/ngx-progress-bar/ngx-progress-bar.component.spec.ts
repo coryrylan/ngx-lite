@@ -8,9 +8,8 @@ describe('NgxProgressBarComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ NgxProgressBarComponent ]
-    })
-    .compileComponents();
+      declarations: [NgxProgressBarComponent]
+    }).compileComponents();
   }));
 
   beforeEach(() => {

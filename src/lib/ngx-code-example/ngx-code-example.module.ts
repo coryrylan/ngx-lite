@@ -3,14 +3,8 @@ import { CommonModule } from '@angular/common';
 import { NgxCodeExampleComponent } from './ngx-code-example.component';
 
 @NgModule({
-  imports: [
-    CommonModule
-  ],
-  declarations: [
-    NgxCodeExampleComponent
-  ],
-  exports: [
-    NgxCodeExampleComponent
-  ]
+  imports: [CommonModule],
+  declarations: [NgxCodeExampleComponent],
+  exports: [NgxCodeExampleComponent]
 })
-export class NgxCodeExampleModule { }
+export class NgxCodeExampleModule {}

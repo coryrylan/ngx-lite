@@ -1,4 +1,11 @@
-import { Component, Input, OnInit, SimpleChanges, OnChanges, ViewEncapsulation } from '@angular/core';
+import {
+  Component,
+  Input,
+  OnInit,
+  SimpleChanges,
+  OnChanges,
+  ViewEncapsulation
+} from '@angular/core';
 
 @Component({
   selector: 'ngx-progress-circle',

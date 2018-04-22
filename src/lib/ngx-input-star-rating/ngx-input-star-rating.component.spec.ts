@@ -1,6 +1,12 @@
 import { Component } from '@angular/core';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
-import { async, fakeAsync, tick, ComponentFixture, TestBed } from '@angular/core/testing';
+import {
+  async,
+  fakeAsync,
+  tick,
+  ComponentFixture,
+  TestBed
+} from '@angular/core/testing';
 
 import { NgxInputStarRatingComponent } from './ngx-input-star-rating.component';
 
@@ -36,9 +42,12 @@ describe('NgxInputStarRatingComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should return the appropriate rating value in a form', fakeAsync(() => {
-    expect(component.rate.value).toBe(3);
-    component.rate.setValue(5);
-    expect(component.rate.value).toBe(5);
-  }));
+  it(
+    'should return the appropriate rating value in a form',
+    fakeAsync(() => {
+      expect(component.rate.value).toBe(3);
+      component.rate.setValue(5);
+      expect(component.rate.value).toBe(5);
+    })
+  );
 });

@@ -9,11 +9,9 @@ import { fadeAnimation } from './../common/animations';
   animations: [fadeAnimation]
 })
 export class DocsComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   getRouterOutletState(outlet) {
     return outlet.isActivated ? outlet.activatedRoute : '';

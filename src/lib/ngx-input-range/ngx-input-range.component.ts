@@ -24,10 +24,17 @@ let instanceId = 0;
   selector: 'ngx-input-range',
   templateUrl: './ngx-input-range.component.html',
   styleUrls: ['./ngx-input-range.component.scss'],
-  providers: [{ provide: NG_VALUE_ACCESSOR, useExisting: forwardRef(() => NgxInputRangeComponent), multi: true }],
+  providers: [
+    {
+      provide: NG_VALUE_ACCESSOR,
+      useExisting: forwardRef(() => NgxInputRangeComponent),
+      multi: true
+    }
+  ],
   encapsulation: ViewEncapsulation.None
 })
-export class NgxInputRangeComponent implements OnInit, OnChanges, OnDestroy, AfterViewInit {
+export class NgxInputRangeComponent
+  implements OnInit, OnChanges, OnDestroy, AfterViewInit {
   @ViewChild('rangeInput') rangeInput: ElementRef;
   @Input() label = '';
   @Input() measure = '';
@@ -66,8 +73,8 @@ export class NgxInputRangeComponent implements OnInit, OnChanges, OnDestroy, Aft
     this.isBrowser = isPlatformBrowser(platformId);
   }
 
-  onChange = (_value: number) => { };
-  onTouched = () => { };
+  onChange = (_value: number) => {};
+  onTouched = () => {};
 
   registerOnChange(fn: (value: number) => void) {
     this.onChange = fn;
@@ -88,18 +95,20 @@ export class NgxInputRangeComponent implements OnInit, OnChanges, OnDestroy, Aft
       throw new Error('Attribute label required');
     }
 
-    this.inputSubscription = this.control.valueChanges.pipe(
-      startWith(this.control.value),
-      distinctUntilChanged()
-    ).subscribe(v => {
-      this.value = v;
-    });
+    this.inputSubscription = this.control.valueChanges
+      .pipe(startWith(this.control.value), distinctUntilChanged())
+      .subscribe(v => {
+        this.value = v;
+      });
   }
 
   ngOnChanges(changes: SimpleChanges) {
     if (changes.labels) {
-      this.rangeLabelCssClasses = this.getRangeLabelCssClasses(changes.labels.currentValue);
-      this.margin = `0 ${100 / (changes.labels.currentValue.length + 1.5) - 2}%`;
+      this.rangeLabelCssClasses = this.getRangeLabelCssClasses(
+        changes.labels.currentValue
+      );
+      this.margin = `0 ${100 / (changes.labels.currentValue.length + 1.5) -
+        2}%`;
     }
   }
 
@@ -111,7 +120,8 @@ export class NgxInputRangeComponent implements OnInit, OnChanges, OnDestroy, Aft
     if (this.isBrowser) {
       const inlineStyle = document.getElementById(this.styleId);
 
-      if (inlineStyle) { // ie
+      if (inlineStyle) {
+        // ie
         inlineStyle.parentNode.removeChild(inlineStyle);
       }
     }
@@ -122,7 +132,10 @@ export class NgxInputRangeComponent implements OnInit, OnChanges, OnDestroy, Aft
   private updateCurrentLabel() {
     const displayLabels = this.labels && this.labels.length > 0;
     if (displayLabels) {
-      this.currentLabelIndex = (Math.min(Math.floor(this.value / this.max * this.labels.length), this.labels.length - 1));
+      this.currentLabelIndex = Math.min(
+        Math.floor(this.value / this.max * this.labels.length),
+        this.labels.length - 1
+      );
       this.rangeLabelCssClasses = this.getRangeLabelCssClasses(this.labels);
     }
   }
@@ -155,7 +168,9 @@ export class NgxInputRangeComponent implements OnInit, OnChanges, OnDestroy, Aft
       }
 
       inlineStyle.textContent = `
-        #${this.instanceId}::-webkit-slider-runnable-track{background-size:${percent}% 100%}
+        #${
+          this.instanceId
+        }::-webkit-slider-runnable-track{background-size:${percent}% 100%}
         #${this.instanceId}::-moz-range-track{background-size:${percent}% 100%}
       `;
     }

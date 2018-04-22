@@ -14,7 +14,7 @@ export class DocsNgxInputDatepickerComponent implements OnInit {
   minDate: Date;
   maxDate: Date;
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder) {}
 
   ngOnInit() {
     const today = new Date();
@@ -35,7 +35,9 @@ export class DocsNgxInputDatepickerComponent implements OnInit {
       date2: [today]
     });
 
-    this.value = this.form.controls.date.valueChanges.pipe(startWith(rangeValue));
+    this.value = this.form.controls.date.valueChanges.pipe(
+      startWith(rangeValue)
+    );
     this.value2 = this.form.controls.date2.valueChanges.pipe(startWith(today));
   }
 

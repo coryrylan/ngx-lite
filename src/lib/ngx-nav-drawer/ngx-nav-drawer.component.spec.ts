@@ -8,9 +8,8 @@ describe('NgxNavDrawerComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ NgxNavDrawerComponent ]
-    })
-    .compileComponents();
+      declarations: [NgxNavDrawerComponent]
+    }).compileComponents();
   }));
 
   beforeEach(() => {

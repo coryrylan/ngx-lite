@@ -8,9 +8,8 @@ describe('NgxProgressCircleComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ NgxProgressCircleComponent ]
-    })
-    .compileComponents();
+      declarations: [NgxProgressCircleComponent]
+    }).compileComponents();
   }));
 
   beforeEach(() => {

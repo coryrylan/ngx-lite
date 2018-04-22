@@ -6,9 +6,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DocsNgxNavDrawerComponent implements OnInit {
   show = false;
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }

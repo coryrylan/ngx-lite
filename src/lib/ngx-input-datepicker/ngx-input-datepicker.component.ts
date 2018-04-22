@@ -1,4 +1,12 @@
-import { Component, OnInit, ViewEncapsulation, forwardRef, Input, HostListener, ElementRef } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  ViewEncapsulation,
+  forwardRef,
+  Input,
+  HostListener,
+  ElementRef
+} from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import * as addMonths_ from 'date-fns/add_months';
 import * as subMonths_ from 'date-fns/sub_months';
@@ -23,8 +31,19 @@ const isSameDay = isSameDay_;
 const isBefore = isBefore_;
 const isAfter = isAfter_;
 
-const monthNames = ['January', 'February', 'March', 'April', 'May', 'June',
-  'July', 'August', 'September', 'October', 'November', 'December'
+const monthNames = [
+  'January',
+  'February',
+  'March',
+  'April',
+  'May',
+  'June',
+  'July',
+  'August',
+  'September',
+  'October',
+  'November',
+  'December'
 ];
 
 const weekDays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
@@ -38,9 +57,16 @@ let instanceId = 0;
   templateUrl: './ngx-input-datepicker.component.html',
   styleUrls: ['./ngx-input-datepicker.component.scss'],
   encapsulation: ViewEncapsulation.None,
-  providers: [{ provide: NG_VALUE_ACCESSOR, useExisting: forwardRef(() => NgxInputDatepickerComponent), multi: true }],
+  providers: [
+    {
+      provide: NG_VALUE_ACCESSOR,
+      useExisting: forwardRef(() => NgxInputDatepickerComponent),
+      multi: true
+    }
+  ]
 })
-export class NgxInputDatepickerComponent implements ControlValueAccessor, OnInit {
+export class NgxInputDatepickerComponent
+  implements ControlValueAccessor, OnInit {
   @Input() showInput = false;
   @Input() range = false;
   @Input() placeholder = '';
@@ -72,9 +98,8 @@ export class NgxInputDatepickerComponent implements ControlValueAccessor, OnInit
 
   instanceId = `ngx-input-switch-${instanceId++}`;
 
-
-  onChange = (_value: Date | [Date, Date]) => { };
-  onTouched = () => { };
+  onChange = (_value: Date | [Date, Date]) => {};
+  onTouched = () => {};
 
   @HostListener('document:click', ['$event'])
   handleClick(event: MouseEvent) {
@@ -95,7 +120,7 @@ export class NgxInputDatepickerComponent implements ControlValueAccessor, OnInit
     this.value = value;
   }
 
-  constructor(private elementRef: ElementRef) { }
+  constructor(private elementRef: ElementRef) {}
 
   ngOnInit() {
     this.setCalendarDate(new Date());
@@ -135,18 +160,26 @@ export class NgxInputDatepickerComponent implements ControlValueAccessor, OnInit
 
   setSingleDay(dayOfMonth: Date) {
     const value = this.value as Date;
-    const dayIsSameDayOfYear = getDayOfYear(value) === getDayOfYear(setDate(this.calendarDate, dayOfMonth.getDate()));
-    this.value = !dayIsSameDayOfYear ? setDate(this.calendarDate, dayOfMonth.getDate()) : undefined;
+    const dayIsSameDayOfYear =
+      getDayOfYear(value) ===
+      getDayOfYear(setDate(this.calendarDate, dayOfMonth.getDate()));
+    this.value = !dayIsSameDayOfYear
+      ? setDate(this.calendarDate, dayOfMonth.getDate())
+      : undefined;
     this.showInputDatepicker = false;
   }
 
   setRange(dayOfMonth: Date) {
     let dates = this.value as [Date, Date];
     const day = dayOfMonth.getDate();
-    const dayIsSameDayOfYear = getDayOfYear(dates[this.selectedRangeIndex]) === getDayOfYear(setDate(this.calendarDate, day));
+    const dayIsSameDayOfYear =
+      getDayOfYear(dates[this.selectedRangeIndex]) ===
+      getDayOfYear(setDate(this.calendarDate, day));
 
     if (this.selectedRangeIndex === 0) {
-      dates[0] = !dayIsSameDayOfYear ? setDate(this.calendarDate, day) : undefined;
+      dates[0] = !dayIsSameDayOfYear
+        ? setDate(this.calendarDate, day)
+        : undefined;
       dates[1] = undefined;
     } else {
       dates[1] = setDate(this.calendarDate, day);
@@ -195,7 +228,10 @@ export class NgxInputDatepickerComponent implements ControlValueAccessor, OnInit
     if (this.range) {
       const dateRange = this.value as [Date, Date];
 
-      if (isStartOfDateRange(day, dateRange) || isEndOfDateRange(day, dateRange)) {
+      if (
+        isStartOfDateRange(day, dateRange) ||
+        isEndOfDateRange(day, dateRange)
+      ) {
         return true;
       }
     }
@@ -217,11 +253,7 @@ export class NgxInputDatepickerComponent implements ControlValueAccessor, OnInit
 }
 
 function isSameDate(date1: Date, date2: Date) {
-  if (
-    date2 &&
-    isSameDay(date2, date1) &&
-    isSameYear(date2, date1)
-  ) {
+  if (date2 && isSameDay(date2, date1) && isSameYear(date2, date1)) {
     return true;
   } else {
     return false;
@@ -239,10 +271,7 @@ function isBetweenDateRange(date: Date, range: [Date, Date]) {
 }
 
 function isStartOfDateRange(date: Date, range: [Date, Date]) {
-  if (range &&
-    isSameDay(range[0], date) &&
-    isSameYear(range[0], date)
-  ) {
+  if (range && isSameDay(range[0], date) && isSameYear(range[0], date)) {
     return true;
   } else {
     return false;
@@ -250,10 +279,7 @@ function isStartOfDateRange(date: Date, range: [Date, Date]) {
 }
 
 function isEndOfDateRange(date: Date, range: [Date, Date]) {
-  if (range &&
-    isSameDay(range[1], date) &&
-    isSameYear(range[1], date)
-  ) {
+  if (range && isSameDay(range[1], date) && isSameYear(range[1], date)) {
     return true;
   } else {
     return false;

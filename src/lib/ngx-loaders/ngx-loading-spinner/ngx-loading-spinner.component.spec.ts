@@ -8,9 +8,8 @@ describe('NgxLoadingSpinnerComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ NgxLoadingSpinnerComponent ]
-    })
-    .compileComponents();
+      declarations: [NgxLoadingSpinnerComponent]
+    }).compileComponents();
   }));
 
   beforeEach(() => {

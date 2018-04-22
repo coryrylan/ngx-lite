@@ -8,9 +8,8 @@ describe('NgxTabsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ NgxTabsComponent ]
-    })
-    .compileComponents();
+      declarations: [NgxTabsComponent]
+    }).compileComponents();
   }));
 
   beforeEach(() => {

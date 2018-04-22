@@ -3,10 +3,8 @@ import { CommonModule } from '@angular/common';
 import { NgxNavDrawerComponent } from './ngx-nav-drawer.component';
 
 @NgModule({
-  imports: [
-    CommonModule
-  ],
+  imports: [CommonModule],
   declarations: [NgxNavDrawerComponent],
   exports: [NgxNavDrawerComponent]
 })
-export class NgxNavDrawerModule { }
+export class NgxNavDrawerModule {}

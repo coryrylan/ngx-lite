@@ -5,10 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './docs-ngx-carbon-ad.component.html'
 })
 export class DocsNgxCarbonAdComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }

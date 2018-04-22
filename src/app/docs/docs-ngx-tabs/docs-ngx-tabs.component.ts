@@ -6,9 +6,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DocsNgxTabsComponent implements OnInit {
   index = 0;
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }

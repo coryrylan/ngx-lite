@@ -39,11 +39,12 @@ export class NgxModalComponent implements OnInit, OnChanges, OnDestroy {
   @Input() large = false;
   @Input() visible: boolean;
   @Input() templateRef: TemplateRef<any>;
-  @Output() readonly visibleChange: EventEmitter<boolean> = new EventEmitter<boolean>();
+  @Output()
+  readonly visibleChange: EventEmitter<boolean> = new EventEmitter<boolean>();
 
-  constructor(private elementRef: ElementRef) { }
+  constructor(private elementRef: ElementRef) {}
 
-  ngOnInit() { }
+  ngOnInit() {}
 
   ngOnChanges(changes: SimpleChanges) {
     const visible = changes.visible.currentValue;
@@ -70,7 +71,13 @@ export class NgxModalComponent implements OnInit, OnChanges, OnDestroy {
   }
 
   closeClick(event?: MouseEvent) {
-    if (this.closable && event && (event.target as HTMLElement).className.includes('ngx-modal-closable-target')) {
+    if (
+      this.closable &&
+      event &&
+      (event.target as HTMLElement).className.includes(
+        'ngx-modal-closable-target'
+      )
+    ) {
       this.close();
     }
   }
@@ -84,12 +91,15 @@ export class NgxModalComponent implements OnInit, OnChanges, OnDestroy {
 }
 
 function trapFocus(elm: HTMLElement) {
-  const focusableEls = elm.querySelectorAll('a, object, input, button, iframe, [tabindex]');
+  const focusableEls = elm.querySelectorAll(
+    'a, object, input, button, iframe, [tabindex]'
+  );
   const firstFocusableEl = focusableEls[0];
   const lastFocusableEl = focusableEls[focusableEls.length - 1];
 
-  elm.addEventListener('keydown', (e) => { // need to clean up events
-    const isTabPressed = (e.key === 'Tab' || e.keyCode === KeyCodes.Tab);
+  elm.addEventListener('keydown', e => {
+    // need to clean up events
+    const isTabPressed = e.key === 'Tab' || e.keyCode === KeyCodes.Tab;
 
     if (!isTabPressed) {
       return;
@@ -122,5 +132,3 @@ function ariaHideBody() {
 function ariaShowBody() {
   document.body.setAttribute('aria-hidden', 'false');
 }
-
-

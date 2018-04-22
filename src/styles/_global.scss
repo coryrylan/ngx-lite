@@ -6,7 +6,9 @@ body {
   overflow-x: hidden;
 }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: inherit;
 }
 
@@ -126,7 +128,8 @@ ngx-code-example {
   }
 }
 
-:not(pre) > code[class*='language-'], pre[class*='language-'] {
+:not(pre) > code[class*='language-'],
+pre[class*='language-'] {
   background: $color-demo;
   border-left: 8px solid $color-demo-border;
 }
@@ -135,7 +138,8 @@ ngx-code-example {
   margin: 20px 0 36px 0;
 }
 
-code, .code {
+code,
+.code {
   background: $color-demo;
   padding: 2px;
 }

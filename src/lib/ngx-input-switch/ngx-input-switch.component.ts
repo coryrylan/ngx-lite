@@ -7,7 +7,13 @@ let instanceId = 0;
   selector: 'ngx-input-switch',
   templateUrl: './ngx-input-switch.component.html',
   styleUrls: ['./ngx-input-switch.component.scss'],
-  providers: [{ provide: NG_VALUE_ACCESSOR, useExisting: forwardRef(() => NgxInputSwitchComponent), multi: true }],
+  providers: [
+    {
+      provide: NG_VALUE_ACCESSOR,
+      useExisting: forwardRef(() => NgxInputSwitchComponent),
+      multi: true
+    }
+  ],
   encapsulation: ViewEncapsulation.None
 })
 export class NgxInputSwitchComponent implements ControlValueAccessor {
@@ -26,8 +32,8 @@ export class NgxInputSwitchComponent implements ControlValueAccessor {
 
   instanceId = `ngx-input-switch-${instanceId++}`;
 
-  onChange = (_value: boolean) => { };
-  onTouched = () => { };
+  onChange = (_value: boolean) => {};
+  onTouched = () => {};
 
   registerOnChange(fn: (value: boolean) => void) {
     this.onChange = fn;

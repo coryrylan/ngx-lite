@@ -1,5 +1,11 @@
 import { Component, DebugElement } from '@angular/core';
-import { ComponentFixture, TestBed, async, fakeAsync, tick } from '@angular/core/testing';
+import {
+  ComponentFixture,
+  TestBed,
+  async,
+  fakeAsync,
+  tick
+} from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 
 import { NgxDebounceClickDirective } from './ngx-debounce-click.directive';
@@ -21,7 +27,7 @@ describe('NgxDebounceClickDirective', () => {
   let fixture: ComponentFixture<TestComponent>;
   let button;
 
-  beforeEach(async((() => {
+  beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [NgxDebounceClickDirective, TestComponent]
     }).compileComponents();
@@ -29,14 +35,17 @@ describe('NgxDebounceClickDirective', () => {
     fixture = TestBed.createComponent(TestComponent);
     component = fixture.componentInstance;
     button = fixture.nativeElement.querySelector('button');
-  })));
-
-  it('should debounce a click event', fakeAsync(done => {
-    expect(component.count).toBe(0);
-    button.click();
-    expect(component.count).toBe(0);
-    tick(1000);
-    // fixture.detectChanges();
-    // expect(component.count).toBe(1);
   }));
+
+  it(
+    'should debounce a click event',
+    fakeAsync(done => {
+      expect(component.count).toBe(0);
+      button.click();
+      expect(component.count).toBe(0);
+      tick(1000);
+      // fixture.detectChanges();
+      // expect(component.count).toBe(1);
+    })
+  );
 });

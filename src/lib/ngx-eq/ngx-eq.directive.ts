@@ -1,4 +1,12 @@
-import { Directive, ElementRef, HostBinding, Input, OnDestroy, ChangeDetectorRef, Inject } from '@angular/core';
+import {
+  Directive,
+  ElementRef,
+  HostBinding,
+  Input,
+  OnDestroy,
+  ChangeDetectorRef,
+  Inject
+} from '@angular/core';
 import ResizeObserver from 'resize-observer-polyfill';
 
 import { Config } from './ngx-eq.module';
@@ -20,7 +28,11 @@ export class NgxEqDirective implements OnDestroy {
   @Input() extraLarge = this.config.extraLarge;
   changes: any;
 
-  constructor(private readonly elementRef: ElementRef, private ref: ChangeDetectorRef, @Inject('config') private config: Config) {
+  constructor(
+    private readonly elementRef: ElementRef,
+    private ref: ChangeDetectorRef,
+    @Inject('config') private config: Config
+  ) {
     const element = this.elementRef.nativeElement;
 
     if (!this.config.disableForTesting) {

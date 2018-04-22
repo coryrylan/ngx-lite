@@ -3,10 +3,8 @@ import { CommonModule } from '@angular/common';
 import { NgxInputDatepickerComponent } from './ngx-input-datepicker.component';
 
 @NgModule({
-  imports: [
-    CommonModule
-  ],
+  imports: [CommonModule],
   declarations: [NgxInputDatepickerComponent],
   exports: [NgxInputDatepickerComponent]
 })
-export class NgxInputDatepickerModule { }
+export class NgxInputDatepickerModule {}

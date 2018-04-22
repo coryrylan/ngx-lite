@@ -3,10 +3,8 @@ import { CommonModule } from '@angular/common';
 import { NgxModalComponent } from './ngx-modal.component';
 
 @NgModule({
-  imports: [
-    CommonModule
-  ],
+  imports: [CommonModule],
   declarations: [NgxModalComponent],
   exports: [NgxModalComponent]
 })
-export class NgxModalModule { }
+export class NgxModalModule {}

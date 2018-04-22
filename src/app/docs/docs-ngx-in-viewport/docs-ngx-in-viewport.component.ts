@@ -6,10 +6,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DocsNgxInViewportComponent implements OnInit {
   count = 0;
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   log(event) {
     this.count++;

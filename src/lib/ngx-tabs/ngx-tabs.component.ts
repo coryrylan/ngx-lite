@@ -1,5 +1,14 @@
 import {
-  Component, EventEmitter, Host, Input, OnChanges, OnInit, Output, SimpleChanges, TemplateRef, ViewEncapsulation
+  Component,
+  EventEmitter,
+  Host,
+  Input,
+  OnChanges,
+  OnInit,
+  Output,
+  SimpleChanges,
+  TemplateRef,
+  ViewEncapsulation
 } from '@angular/core';
 import { tap } from 'rxjs/operators';
 
@@ -17,7 +26,7 @@ export class NgxTabsComponent implements OnInit, OnChanges {
 
   readonly tabs: NgxTabComponent[] = [];
 
-  ngOnInit() { }
+  ngOnInit() {}
 
   ngOnChanges(changes: SimpleChanges) {
     this.setActiveTab(this.tabs[changes.activeTabIndex.currentValue]);

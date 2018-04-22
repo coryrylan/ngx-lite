@@ -1,6 +1,12 @@
 import { Component } from '@angular/core';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
-import { async, fakeAsync, tick, ComponentFixture, TestBed } from '@angular/core/testing';
+import {
+  async,
+  fakeAsync,
+  tick,
+  ComponentFixture,
+  TestBed
+} from '@angular/core/testing';
 
 import { NgxInputSwitchComponent } from './ngx-input-switch.component';
 
@@ -36,9 +42,12 @@ describe('NgxInputSwitchComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should return the appropriate boolean in a form', fakeAsync(() => {
-    expect(component.switch.value).toBe(true);
-    component.switch.setValue(false);
-    expect(component.switch.value).toBe(false);
-  }));
+  it(
+    'should return the appropriate boolean in a form',
+    fakeAsync(() => {
+      expect(component.switch.value).toBe(true);
+      component.switch.setValue(false);
+      expect(component.switch.value).toBe(false);
+    })
+  );
 });

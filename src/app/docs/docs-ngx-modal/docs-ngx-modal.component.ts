@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
-const controls =  {
+const controls = {
   firstName: 'firstName',
   lastName: 'lastName',
   email: 'email'
@@ -27,8 +27,7 @@ export class DocsNgxModalComponent implements OnInit {
     });
   }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   submit() {
     console.log(this.modalForm.value);

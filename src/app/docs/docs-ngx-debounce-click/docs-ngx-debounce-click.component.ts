@@ -6,9 +6,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DocsNgxDebounceClickComponent implements OnInit {
   count = 0;
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }

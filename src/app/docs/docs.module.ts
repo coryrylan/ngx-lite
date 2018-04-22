@@ -23,10 +23,7 @@ import { DocsNgxCarbonAdComponent } from './docs-ngx-carbon-ad/docs-ngx-carbon-a
 import { DocsNgxProgressComponent } from './docs-ngx-progress/docs-ngx-progress.component';
 
 @NgModule({
-  imports: [
-    SharedModule,
-    DocsRoutingModule
-  ],
+  imports: [SharedModule, DocsRoutingModule],
   declarations: [
     DocsComponent,
     DocsHomeComponent,
@@ -45,7 +42,7 @@ import { DocsNgxProgressComponent } from './docs-ngx-progress/docs-ngx-progress.
     DocsNgxLoadersComponent,
     DocsNgxTabsComponent,
     DocsNgxCarbonAdComponent,
-    DocsNgxProgressComponent,
+    DocsNgxProgressComponent
   ]
 })
-export class DocsModule { }
+export class DocsModule {}

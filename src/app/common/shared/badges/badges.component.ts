@@ -8,9 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
 export class BadgesComponent implements OnInit {
   @Input() package = '';
   @Input() stackblitzId = '';
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }

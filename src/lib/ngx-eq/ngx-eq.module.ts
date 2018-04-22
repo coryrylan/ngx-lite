@@ -22,15 +22,9 @@ export const defaultConfig = {
 };
 
 @NgModule({
-  imports: [
-    CommonModule
-  ],
-  declarations: [
-    NgxEqDirective
-  ],
-  exports: [
-    NgxEqDirective
-  ]
+  imports: [CommonModule],
+  declarations: [NgxEqDirective],
+  exports: [NgxEqDirective]
 })
 export class NgxEqModule {
   static forRoot(config = {}): ModuleWithProviders {

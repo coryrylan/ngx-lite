@@ -16,7 +16,7 @@ if (someCondition) {
     </ngx-code-example>
   `
 })
-class TestComponent { }
+class TestComponent {}
 
 describe('NgxCodeExampleComponent', () => {
   let component: NgxCodeExampleComponent;

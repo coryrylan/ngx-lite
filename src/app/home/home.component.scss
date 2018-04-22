@@ -1,4 +1,4 @@
-@import "./../../styles/_config";
+@import './../../styles/_config';
 
 $large-break: 1600px;
 
@@ -41,7 +41,8 @@ $large-break: 1600px;
   }
 }
 
-h1, h2 {
+h1,
+h2 {
   max-width: 550px;
   z-index: 2;
   position: relative;
@@ -70,7 +71,8 @@ section {
 }
 
 @keyframes comet {
-  20%, 100% {
+  20%,
+  100% {
     opacity: 0;
     transform: translate(400px, 430px) rotate(45deg);
   }
@@ -84,7 +86,8 @@ section {
   }
 }
 
-.comet, .comet2 {
+.comet,
+.comet2 {
   position: absolute;
   top: -20px;
   left: 40px;

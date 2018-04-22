@@ -11,7 +11,7 @@ export class DocsNgxInputStarRatingComponent implements OnInit {
   form: FormGroup;
   value: Observable<number>;
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder) {}
 
   ngOnInit() {
     this.form = this.formBuilder.group({

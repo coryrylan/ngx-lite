@@ -11,7 +11,7 @@ export class DocsNgxInputSwitchComponent implements OnInit {
   form: FormGroup;
   value: Observable<boolean>;
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder) {}
 
   ngOnInit() {
     this.form = this.formBuilder.group({

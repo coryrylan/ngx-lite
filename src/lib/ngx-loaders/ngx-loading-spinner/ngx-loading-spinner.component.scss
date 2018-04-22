@@ -9,14 +9,16 @@ $spinner-color-light: $color-white;
   display: inline-block;
 
   &[mini] {
-    .ngx-loading-spinner, .ngx-loading-spinner__circle {
+    .ngx-loading-spinner,
+    .ngx-loading-spinner__circle {
       width: 50px;
       height: 50px;
     }
   }
 
   &[small] {
-    .ngx-loading-spinner, .ngx-loading-spinner__circle {
+    .ngx-loading-spinner,
+    .ngx-loading-spinner__circle {
       width: 75px;
       height: 75px;
     }

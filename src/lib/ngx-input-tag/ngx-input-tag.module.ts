@@ -1,11 +1,12 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NgxInputTagComponent, formatter as tagFormatter } from './ngx-input-tag.component';
+import {
+  NgxInputTagComponent,
+  formatter as tagFormatter
+} from './ngx-input-tag.component';
 
 @NgModule({
-  imports: [
-    CommonModule
-  ],
+  imports: [CommonModule],
   declarations: [NgxInputTagComponent],
   exports: [NgxInputTagComponent]
 })

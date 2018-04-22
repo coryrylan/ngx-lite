@@ -4,10 +4,8 @@ import { NgxProgressBarComponent } from './ngx-progress-bar/ngx-progress-bar.com
 import { NgxProgressCircleComponent } from './ngx-progress-circle/ngx-progress-circle.component';
 
 @NgModule({
-  imports: [
-    CommonModule
-  ],
+  imports: [CommonModule],
   declarations: [NgxProgressBarComponent, NgxProgressCircleComponent],
   exports: [NgxProgressBarComponent, NgxProgressCircleComponent]
 })
-export class NgxProgressModule { }
+export class NgxProgressModule {}

@@ -8,12 +8,12 @@ export class DocsNgxJsonLdComponent implements OnInit {
   demoData = {
     '@context': 'http://schema.org',
     '@type': 'Organization',
-    'url': 'http://www.example.com',
-    'name': 'Unlimited Ball Bearings Corp.',
-    'contactPoint': {
+    url: 'http://www.example.com',
+    name: 'Unlimited Ball Bearings Corp.',
+    contactPoint: {
       '@type': 'ContactPoint',
-      'telephone': '+1-401-555-1212',
-      'contactType': 'Customer service'
+      telephone: '+1-401-555-1212',
+      contactType: 'Customer service'
     }
   };
 
@@ -23,9 +23,7 @@ export class DocsNgxJsonLdComponent implements OnInit {
     test: '<script>alert(0)</script>'
   };
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }

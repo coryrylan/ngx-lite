@@ -1,6 +1,11 @@
 import { Component } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { async, ComponentFixture, TestBed, fakeAsync } from '@angular/core/testing';
+import {
+  async,
+  ComponentFixture,
+  TestBed,
+  fakeAsync
+} from '@angular/core/testing';
 
 import { NgxInputTagComponent, formatter } from './ngx-input-tag.component';
 
@@ -28,8 +33,7 @@ describe('NgxInputTagComponent', () => {
           useValue: formatter
         }
       ]
-    })
-      .compileComponents();
+    }).compileComponents();
   }));
 
   beforeEach(() => {
@@ -42,9 +46,12 @@ describe('NgxInputTagComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should return the appropriate list of tags in a form', fakeAsync(() => {
-    expect(component.tags.value).toBe(testData);
-    component.tags.setValue([]);
-    expect(component.tags.value.length).toBe(0);
-  }));
+  it(
+    'should return the appropriate list of tags in a form',
+    fakeAsync(() => {
+      expect(component.tags.value).toBe(testData);
+      component.tags.setValue([]);
+      expect(component.tags.value.length).toBe(0);
+    })
+  );
 });

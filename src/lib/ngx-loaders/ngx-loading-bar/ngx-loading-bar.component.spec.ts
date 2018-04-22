@@ -8,9 +8,8 @@ describe('NgxLoadingBarComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ NgxLoadingBarComponent ]
-    })
-    .compileComponents();
+      declarations: [NgxLoadingBarComponent]
+    }).compileComponents();
   }));
 
   beforeEach(() => {

@@ -10,7 +10,7 @@ ngx-input-range {
   padding: 4px 0;
   margin-bottom: 24px;
   position: relative;
-  
+
   --range-height: $range-height;
   --color-range-upper-fill: $color-range-upper-fill;
   --color-range-lower-fill: $color-range-lower-fill;
@@ -36,8 +36,18 @@ ngx-input-range {
       height: $range-height;
       height: var(--range-height);
       cursor: pointer;
-      background: linear-gradient(90deg, $color-range-lower-fill, $color-range-lower-fill) 0 100% no-repeat content-box;
-      background: linear-gradient(90deg, var(--color-range-lower-fill), var(--color-range-lower-fill)) 0 100% no-repeat content-box;
+      background: linear-gradient(
+          90deg,
+          $color-range-lower-fill,
+          $color-range-lower-fill
+        )
+        0 100% no-repeat content-box;
+      background: linear-gradient(
+          90deg,
+          var(--color-range-lower-fill),
+          var(--color-range-lower-fill)
+        )
+        0 100% no-repeat content-box;
       border-radius: 0;
     }
 
@@ -56,8 +66,18 @@ ngx-input-range {
       width: 100%;
       height: var(--range-height);
       cursor: pointer;
-      background: linear-gradient(90deg, $color-range-lower-fill, $color-range-lower-fill) 0 100% no-repeat content-box;
-      background: linear-gradient(90deg, var(--color-range-lower-fill), var(--color-range-lower-fill)) 0 100% no-repeat content-box;
+      background: linear-gradient(
+          90deg,
+          $color-range-lower-fill,
+          $color-range-lower-fill
+        )
+        0 100% no-repeat content-box;
+      background: linear-gradient(
+          90deg,
+          var(--color-range-lower-fill),
+          var(--color-range-lower-fill)
+        )
+        0 100% no-repeat content-box;
       border-radius: 0;
       border: 0;
     }
@@ -129,7 +149,7 @@ ngx-input-range {
       position: absolute;
       left: 0;
     }
-    
+
     &:last-child {
       text-align: right;
       position: absolute;
@@ -142,7 +162,8 @@ ngx-input-range {
   font-weight: bold;
 }
 
-@media all and (-ms-high-contrast: none) { // ie11 only
+@media all and (-ms-high-contrast: none) {
+  // ie11 only
   .ngx-input-range__input {
     background: transparent;
     height: auto;

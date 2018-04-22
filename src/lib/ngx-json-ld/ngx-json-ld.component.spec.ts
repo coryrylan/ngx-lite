@@ -6,16 +6,15 @@ import { SimpleChange } from '@angular/core';
 const testSchema = {
   '@context': 'http://schema.org',
   '@type': 'Organization',
-  'url': 'http://www.example.com',
-  'name': 'Unlimited Ball Bearings Corp.',
-  'contactPoint': {
+  url: 'http://www.example.com',
+  name: 'Unlimited Ball Bearings Corp.',
+  contactPoint: {
     '@type': 'ContactPoint',
-    'telephone': '+1-401-555-1212',
-    'contactType': 'Customer service'
+    telephone: '+1-401-555-1212',
+    contactType: 'Customer service'
   },
-  'scriptTest': '<script>window.scriptInjection = true</script>'
+  scriptTest: '<script>window.scriptInjection = true</script>'
 };
-
 
 describe('NgxJsonLdComponent', () => {
   let component: NgxJsonLdComponent;
@@ -39,14 +38,18 @@ describe('NgxJsonLdComponent', () => {
 
   it('should create schema in the template', () => {
     component.json = testSchema;
-    component.ngOnChanges({ json: new SimpleChange(null, component.json, false) });
+    component.ngOnChanges({
+      json: new SimpleChange(null, component.json, false)
+    });
     fixture.detectChanges();
     expect(fixture.nativeElement.innerHTML).toContain('http://schema.org');
   });
 
   it('should prevent script injection', () => {
     component.json = testSchema;
-    component.ngOnChanges({ json: new SimpleChange(null, component.json, false) });
+    component.ngOnChanges({
+      json: new SimpleChange(null, component.json, false)
+    });
     fixture.detectChanges();
     expect((window as any).scriptInjection).toBe(undefined);
   });

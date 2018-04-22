@@ -22,7 +22,9 @@ import { DocsNgxTabsComponent } from './docs-ngx-tabs/docs-ngx-tabs.component';
 
 const routes: Routes = [
   {
-    path: '', component: DocsComponent, children: [
+    path: '',
+    component: DocsComponent,
+    children: [
       { path: '', component: DocsHomeComponent },
       { path: 'carbon-ad', component: DocsNgxCarbonAdComponent },
       { path: 'code-example', component: DocsNgxCodeExampleComponent },
@@ -48,4 +50,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class DocsRoutingModule { }
+export class DocsRoutingModule {}

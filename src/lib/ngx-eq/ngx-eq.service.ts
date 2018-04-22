@@ -5,7 +5,7 @@ import ResizeObserver from 'resize-observer-polyfill';
 
 @Injectable()
 export class NgxEqService {
-  elements = { };
+  elements = {};
   resizeObserver: any;
 
   constructor() {

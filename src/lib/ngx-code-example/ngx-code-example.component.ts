@@ -1,4 +1,11 @@
-import { Component, OnInit, Input, ViewChild, ElementRef, ViewEncapsulation } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  Input,
+  ViewChild,
+  ElementRef,
+  ViewEncapsulation
+} from '@angular/core';
 import * as Prism from 'prismjs';
 
 @Component({
