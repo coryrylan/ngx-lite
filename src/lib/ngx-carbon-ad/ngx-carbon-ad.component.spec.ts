@@ -8,9 +8,9 @@
 
 //   beforeEach(async(() => {
 //     TestBed.configureTestingModule({
-//       declarations: [ NgxCarbonAdComponent ]
+//       declarations: [NgxCarbonAdComponent]
 //     })
-//     .compileComponents();
+//       .compileComponents();
 //   }));
 
 //   beforeEach(() => {
