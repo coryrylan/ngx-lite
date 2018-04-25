@@ -4,7 +4,7 @@
     <app-badges package="tabs" stackblitzId="angular-clhd6f"></app-badges>
 
     <p>
-      A tabs component with ability to programmatically set active tabs.
+      A tabs component with ability to programmatically set active tabs or route to individual tabs.
     </p>
   </div>
   <div bp="4@md">
@@ -84,3 +84,7 @@ export class AppModule { }
     <h2>Coming Soon</h2>
   </ngx-tab>
 </ngx-tabs>
+
+<ngx-tab-routes [tabs]="[{ name: 'Routable Tab 1', path: './' }, { name: 'Routable Tab 2', path: './2' }]">
+  <router-outlet></router-outlet>
+</ngx-tab-routes>

@@ -4,11 +4,11 @@ import {
   Host,
   Input,
   OnChanges,
-  OnInit,
   Output,
   SimpleChanges,
   TemplateRef,
-  ViewEncapsulation
+  ViewEncapsulation,
+  ChangeDetectionStrategy
 } from '@angular/core';
 import { tap } from 'rxjs/operators';
 
@@ -18,18 +18,17 @@ import { tap } from 'rxjs/operators';
   styleUrls: ['./ngx-tabs.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class NgxTabsComponent implements OnInit, OnChanges {
+export class NgxTabsComponent implements OnChanges {
   @Input() activeTabIndex = 0;
-  @Input() neutral = false;
   @Output() readonly activeTabIndexChange = new EventEmitter<number>();
   @Output() readonly tabChange = new EventEmitter();
 
   readonly tabs: NgxTabComponent[] = [];
 
-  ngOnInit() {}
-
   ngOnChanges(changes: SimpleChanges) {
-    this.setActiveTab(this.tabs[changes.activeTabIndex.currentValue]);
+    if (changes.activeTabIndex) {
+      this.setActiveTab(this.tabs[changes.activeTabIndex.currentValue]);
+    }
   }
 
   selectTab(tab: NgxTabComponent) {
@@ -53,13 +52,14 @@ export class NgxTabsComponent implements OnInit, OnChanges {
 @Component({
   selector: 'ngx-tab',
   template: `
-    <div *ngIf="active && !templateRef" class="app-tab__content">
+    <div *ngIf="active && !templateRef" class="ngx-tab__content">
       <ng-content></ng-content>
     </div>
-    <div *ngIf="active && templateRef" class="app-tab__content">
+    <div *ngIf="active && templateRef" class="ngx-tab__content">
       <ng-template [ngTemplateOutlet]="templateRef"></ng-template>
     </div>
-  `
+  `,
+  encapsulation: ViewEncapsulation.None
 })
 export class NgxTabComponent {
   @Input() name: string;
@@ -69,4 +69,27 @@ export class NgxTabComponent {
   constructor(@Host() tabsComponent: NgxTabsComponent) {
     tabsComponent.addTab(this);
   }
+}
+
+@Component({
+  selector: 'ngx-tab-routes',
+  template: `
+  <div class="ngx-tabs">
+    <div class="ngx-tabs__nav">
+      <a *ngFor="let tab of tabs; let i = index"
+        [routerLink]="tab.path" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+        {{tab.name}}
+      </a>
+    </div>
+    <div class="ngx-tab__content">
+      <ng-content></ng-content>
+    </div>
+  </div>
+  `,
+  styleUrls: ['./ngx-tabs.component.scss'],
+  encapsulation: ViewEncapsulation.None,
+  changeDetection: ChangeDetectionStrategy.OnPush
+})
+export class NgxTabRoutesComponent {
+  @Input() tabs: { name: string; path: string }[] = [];
 }

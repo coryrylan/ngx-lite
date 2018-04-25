@@ -1,10 +1,20 @@
 @import './../styles/_base';
 
-$tab-color-active: #db0b37;
-$tab-color-hover: #a5a5a5;
-$sm-break: 480px;
+$color-active: $color-secondary;
+$color-hover: #a5a5a5;
+$border: 1px solid $color-grey;
+$tab-breakpoint: 480px;
 
-.app-tabs {
+ngx-tabs,
+ngx-tab-routes {
+  --color-active: $color-active;
+  --color-hover: $color-hover;
+  --border: $border;
+  --tab-breakpoint: $tab-breakpoint;
+  display: block;
+}
+
+.ngx-tabs {
   display: block;
 
   &__nav {
@@ -19,7 +29,8 @@ $sm-break: 480px;
       clear: both;
     }
 
-    & > button {
+    & > button,
+    & > a {
       position: relative;
       display: block;
       background-color: transparent;
@@ -39,20 +50,24 @@ $sm-break: 480px;
       &.active:hover,
       &.active:focus {
         cursor: default;
-        color: $tab-color-active;
+        color: $color-active;
+        color: var(--color-active);
       }
 
       &:hover,
       &:focus {
-        color: $tab-color-hover;
+        color: $color-hover;
+        color: var(--color-hover);
       }
 
       &:nth-child(-n + 3) {
-        border-bottom: 1px solid $color-grey-light;
+        border-bottom: $border;
+        border-bottom: var(--border);
       }
 
       &:nth-child(even) {
-        border-right: 1px solid $color-grey-light;
+        border-right: $border;
+        border-right: var(--border);
       }
 
       @media (min-width: 300px) {
@@ -72,26 +87,28 @@ $sm-break: 480px;
 
         &.active {
           background-color: $color-white;
-          border: 1px solid $color-grey;
+          border: $border;
+          border: var(--border);
           border-bottom: 3px solid transparent;
         }
       }
 
-      @media (min-width: $sm-break) {
+      @media (min-width: $tab-breakpoint) {
         padding: 10px 15px;
       }
     }
   }
 }
 
-.app-tab {
+.ngx-tab {
   &__content {
     padding: 8px 0 0 0;
     overflow: visible;
     min-height: 225px;
-    border-top: 1px solid $color-grey;
+    border-top: $border;
+    border-top: var(--border);
 
-    @media (min-width: $sm-break) {
+    @media (min-width: $tab-breakpoint) {
       padding: 20px 0 0 0;
     }
   }

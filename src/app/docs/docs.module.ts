@@ -18,7 +18,11 @@ import { DocsNgxInputTagComponent } from './docs-ngx-input-tag/docs-ngx-input-ta
 import { DocsNgxModalComponent } from './docs-ngx-modal/docs-ngx-modal.component';
 import { DocsNgxNavDrawerComponent } from './docs-ngx-nav-drawer/docs-ngx-nav-drawer.component';
 import { DocsNgxLoadersComponent } from './docs-ngx-loaders/docs-ngx-loaders.component';
-import { DocsNgxTabsComponent } from './docs-ngx-tabs/docs-ngx-tabs.component';
+import {
+  DocsNgxTabsComponent,
+  DocsNgxTabRoutes1Component,
+  DocsNgxTabRoutes2Component
+} from './docs-ngx-tabs/docs-ngx-tabs.component';
 import { DocsNgxCarbonAdComponent } from './docs-ngx-carbon-ad/docs-ngx-carbon-ad.component';
 import { DocsNgxProgressComponent } from './docs-ngx-progress/docs-ngx-progress.component';
 
@@ -41,6 +45,8 @@ import { DocsNgxProgressComponent } from './docs-ngx-progress/docs-ngx-progress.
     DocsNgxNavDrawerComponent,
     DocsNgxLoadersComponent,
     DocsNgxTabsComponent,
+    DocsNgxTabRoutes1Component,
+    DocsNgxTabRoutes2Component,
     DocsNgxCarbonAdComponent,
     DocsNgxProgressComponent
   ]

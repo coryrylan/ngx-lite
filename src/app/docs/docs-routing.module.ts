@@ -18,7 +18,11 @@ import { DocsNgxLoadersComponent } from './docs-ngx-loaders/docs-ngx-loaders.com
 import { DocsNgxModalComponent } from './docs-ngx-modal/docs-ngx-modal.component';
 import { DocsNgxNavDrawerComponent } from './docs-ngx-nav-drawer/docs-ngx-nav-drawer.component';
 import { DocsNgxProgressComponent } from './docs-ngx-progress/docs-ngx-progress.component';
-import { DocsNgxTabsComponent } from './docs-ngx-tabs/docs-ngx-tabs.component';
+import {
+  DocsNgxTabsComponent,
+  DocsNgxTabRoutes1Component,
+  DocsNgxTabRoutes2Component
+} from './docs-ngx-tabs/docs-ngx-tabs.component';
 
 const routes: Routes = [
   {
@@ -40,7 +44,14 @@ const routes: Routes = [
       { path: 'loaders', component: DocsNgxLoadersComponent },
       { path: 'modal', component: DocsNgxModalComponent },
       { path: 'nav-drawer', component: DocsNgxNavDrawerComponent },
-      { path: 'tabs', component: DocsNgxTabsComponent },
+      {
+        path: 'tabs',
+        component: DocsNgxTabsComponent,
+        children: [
+          { path: '', component: DocsNgxTabRoutes1Component },
+          { path: '2', component: DocsNgxTabRoutes2Component }
+        ]
+      },
       { path: 'progress', component: DocsNgxProgressComponent }
     ]
   }

@@ -30,6 +30,7 @@
   <a routerLink="/docs/progress" routerLinkActive="active-link">progress</a>
   <a routerLink="/docs/nav-drawer" routerLinkActive="active-link">nav-drawer</a>
   <a routerLink="/docs/tabs" routerLinkActive="active-link">tabs</a>
+  <a routerLink="/docs/tab-routes" routerLinkActive="active-link">tab routes</a>
   <a routerLink="/docs/eq" routerLinkActive="active-link">eq</a>
   <a routerLink="/docs/debounce-click" routerLinkActive="active-link">debounce-click</a>
   <a routerLink="/docs/in-viewport" routerLinkActive="active-link">in-viewport</a>
@@ -38,6 +39,6 @@
   <!-- <a routerLink="/docs/carbon-ad" routerLinkActive="active-link">carbon-ad</a> -->
 </ngx-nav-drawer>
 
-<main [@fadeAnimation]="getRouterOutletState(o)">
+<main [@fadeAnimation]="o.isActivated ? o.activatedRoute : ''">
   <router-outlet #o="outlet"></router-outlet>
 </main>

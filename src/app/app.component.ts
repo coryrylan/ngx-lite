@@ -9,8 +9,4 @@ import { fadeAnimation } from './common/animations/index';
 })
 export class AppComponent {
   show = false;
-
-  getRouterOutletState(outlet) {
-    return outlet.isActivated ? outlet.activatedRoute : '';
-  }
 }
