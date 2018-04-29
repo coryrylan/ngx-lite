@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.1.3
+- make date-fns a peer dep
+
 ## 0.1.2
 - minor style updates
 

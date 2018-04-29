@@ -1,4 +1,4 @@
-<div [class.ngx-nav-drawer-open]="show" [class.ngx-nav-drawer-fixed]="fixedMode">
+<div #nav [class.ngx-nav-drawer-open]="show" [class.ngx-nav-drawer-fixed]="fixedMode">
   <div class="ngx-nav-drawer-overlay" (click)="toggle()"></div>
   <nav class="ngx-nav-drawer" (click)="toggle()" [attr.aria-hidden]="!show">
     <ng-content></ng-content>

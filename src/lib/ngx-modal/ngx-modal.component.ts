@@ -15,16 +15,7 @@ import {
   ViewEncapsulation
 } from '@angular/core';
 
-export enum KeyCodes {
-  LeftArrow = 37,
-  UpArrow = 38,
-  RightArrow = 39,
-  DownArrow = 40,
-  Backspace = 8,
-  Tab = 9,
-  Enter = 13,
-  Escape = 27
-}
+import { trapFocus, KeyCodes } from './util';
 
 @Component({
   selector: 'ngx-modal',
@@ -41,6 +32,7 @@ export class NgxModalComponent implements OnInit, OnChanges, OnDestroy {
   @Input() templateRef: TemplateRef<any>;
   @Output()
   readonly visibleChange: EventEmitter<boolean> = new EventEmitter<boolean>();
+  private lastFocusedElement: HTMLElement;
 
   constructor(private elementRef: ElementRef) {}
 
@@ -61,6 +53,11 @@ export class NgxModalComponent implements OnInit, OnChanges, OnDestroy {
   ngOnDestroy() {
     unlockScroll();
     ariaShowBody();
+  }
+
+  @HostListener('document:click', ['$event'])
+  rootClick(event) {
+    this.lastFocusedElement = event.target;
   }
 
   @HostListener('window:keyup', ['$event'])
@@ -87,34 +84,8 @@ export class NgxModalComponent implements OnInit, OnChanges, OnDestroy {
     this.visibleChange.emit(this.visible);
     unlockScroll();
     ariaShowBody();
+    this.lastFocusedElement.focus();
   }
-}
-
-function trapFocus(elm: HTMLElement) {
-  const focusableEls = elm.querySelectorAll(
-    'a, object, input, button, iframe, [tabindex]'
-  );
-  const firstFocusableEl = focusableEls[0];
-  const lastFocusableEl = focusableEls[focusableEls.length - 1];
-
-  elm.addEventListener('keydown', e => {
-    // need to clean up events
-    const isTabPressed = e.key === 'Tab' || e.keyCode === KeyCodes.Tab;
-
-    if (!isTabPressed) {
-      return;
-    }
-
-    if (e.shiftKey && document.activeElement === firstFocusableEl) {
-      (lastFocusableEl as any).focus();
-      e.preventDefault();
-    } else {
-      if (document.activeElement === lastFocusableEl) {
-        (firstFocusableEl as any).focus();
-        e.preventDefault();
-      }
-    }
-  });
 }
 
 function lockScroll() {
