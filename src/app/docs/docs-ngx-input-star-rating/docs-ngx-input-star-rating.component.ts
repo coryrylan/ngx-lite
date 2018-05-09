@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import { startWith } from 'rxjs/operators';
 
 @Component({
   selector: 'app-docs-ngx-input-star-rating',
-  templateUrl: './docs-ngx-input-star-rating.component.html'
+  templateUrl: './docs-ngx-input-star-rating.component.html',
+  preserveWhitespaces: true
 })
 export class DocsNgxInputStarRatingComponent implements OnInit {
   form: FormGroup;

@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import { startWith } from 'rxjs/operators';
 @Component({
   selector: 'app-docs-ngx-input-range',
-  templateUrl: './docs-ngx-input-range.component.html'
+  templateUrl: './docs-ngx-input-range.component.html',
+  preserveWhitespaces: true
 })
 export class DocsNgxInputRangeComponent implements OnInit {
   form: FormGroup;

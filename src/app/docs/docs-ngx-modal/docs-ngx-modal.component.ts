@@ -9,7 +9,8 @@ const controls = {
 
 @Component({
   selector: 'app-docs-ngx-modal',
-  templateUrl: './docs-ngx-modal.component.html'
+  templateUrl: './docs-ngx-modal.component.html',
+  preserveWhitespaces: true
 })
 export class DocsNgxModalComponent implements OnInit {
   showStandard = false;

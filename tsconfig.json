@@ -1,6 +1,7 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "baseUrl": "./",
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
     "declaration": false,
@@ -14,6 +15,56 @@
     "lib": [
       "es2017",
       "dom"
-    ]
+    ],
+    "paths": {
+      "@ngx-lite/carbon-ad": [
+        "dist/ngx-carbon-ad"
+      ],
+      "@ngx-lite/code-example": [
+        "dist/ngx-code-example"
+      ],
+      "@ngx-lite/debounce-click": [
+        "dist/ngx-debounce-click"
+      ],
+      "@ngx-lite/eq": [
+        "dist/ngx-eq"
+      ],
+      "@ngx-lite/in-viewport": [
+        "dist/ngx-in-viewport"
+      ],
+      "@ngx-lite/input-datepicker": [
+        "dist/ngx-input-datepicker"
+      ],
+      "@ngx-lite/input-range": [
+        "dist/ngx-input-range"
+      ],
+      "@ngx-lite/input-star-rating": [
+        "dist/ngx-input-star-rating"
+      ],
+      "@ngx-lite/input-switch": [
+        "dist/ngx-input-switch"
+      ],
+      "@ngx-lite/loaders": [
+        "dist/ngx-loaders"
+      ],
+      "@ngx-lite/input-tag": [
+        "dist/ngx-input-tag"
+      ],
+      "@ngx-lite/json-ld": [
+        "dist/ngx-json-ld"
+      ],
+      "@ngx-lite/modal": [
+        "dist/ngx-modal"
+      ],
+      "@ngx-lite/nav-drawer": [
+        "dist/ngx-nav-drawer"
+      ],
+      "@ngx-lite/progress": [
+        "dist/ngx-progress"
+      ],
+      "@ngx-lite/tabs": [
+        "dist/ngx-tabs"
+      ]
+    }
   }
 }

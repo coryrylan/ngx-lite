@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-docs-ngx-progress',
-  templateUrl: './docs-ngx-progress.component.html'
+  templateUrl: './docs-ngx-progress.component.html',
+  preserveWhitespaces: true
 })
 export class DocsNgxProgressComponent {
   readonly process: Observable<number>;

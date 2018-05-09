@@ -1,0 +1,13 @@
+{
+  "name": "@ngx-lite/input-star-rating",
+  "version": "0.0.4",
+  "repository": "https://github.com/coryrylan/ngx-lite",
+  "author": "Cory Rylan",
+  "license": "MIT",
+  "private": false,
+  "peerDependencies": {
+    "@angular/core": "^6.0.0",
+    "@angular/common": "^6.0.0",
+    "@angular/forms": "^6.0.0"
+  }
+}

@@ -7,8 +7,8 @@ import {
   SkipSelf
 } from '@angular/core';
 
-import { NgxInputTagModule } from './../../../lib/ngx-input-tag/ngx-input-tag.module';
-import { NgxEqModule } from '../../../lib/ngx-eq/ngx-eq.module';
+import { NgxInputTagModule } from '@ngx-lite/input-tag';
+import { NgxEqModule } from '@ngx-lite/eq';
 
 @NgModule({
   imports: [

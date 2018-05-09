@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-docs-ngx-in-viewport',
-  templateUrl: './docs-ngx-in-viewport.component.html'
+  templateUrl: './docs-ngx-in-viewport.component.html',
+  preserveWhitespaces: true
 })
 export class DocsNgxInViewportComponent implements OnInit {
   count = 0;

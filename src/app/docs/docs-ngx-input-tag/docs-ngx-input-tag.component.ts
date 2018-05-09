@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import { startWith } from 'rxjs/operators';
 
 const tags = ['nasa', 'spacex', 'tesla'];
@@ -8,7 +8,8 @@ const tagSuggestions = ['google', 'apple', 'microsoft'];
 
 @Component({
   selector: 'app-docs-ngx-input-tag',
-  templateUrl: './docs-ngx-input-tag.component.html'
+  templateUrl: './docs-ngx-input-tag.component.html',
+  preserveWhitespaces: true
 })
 export class DocsNgxInputTagComponent implements OnInit {
   form: FormGroup;

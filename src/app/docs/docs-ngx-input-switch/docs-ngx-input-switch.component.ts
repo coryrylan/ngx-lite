@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import { startWith } from 'rxjs/operators';
 
 @Component({
   selector: 'app-docs-ngx-input-switch',
-  templateUrl: './docs-ngx-input-switch.component.html'
+  templateUrl: './docs-ngx-input-switch.component.html',
+  preserveWhitespaces: true
 })
 export class DocsNgxInputSwitchComponent implements OnInit {
   form: FormGroup;

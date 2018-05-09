@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-docs-ngx-json-ld',
-  templateUrl: './docs-ngx-json-ld.component.html'
+  templateUrl: './docs-ngx-json-ld.component.html',
+  preserveWhitespaces: true
 })
 export class DocsNgxJsonLdComponent implements OnInit {
   demoData = {

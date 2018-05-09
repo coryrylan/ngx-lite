@@ -1,0 +1,12 @@
+{
+  "name": "@ngx-lite/loaders",
+  "version": "0.0.0",
+  "repository": "https://github.com/coryrylan/ngx-lite",
+  "author": "Cory Rylan",
+  "license": "MIT",
+  "private": false,
+  "peerDependencies": {
+    "@angular/core": "^6.0.0",
+    "@angular/common": "^6.0.0"
+  }
+}

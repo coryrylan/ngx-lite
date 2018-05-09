@@ -21,7 +21,8 @@ export class DocsNgxTabsComponent implements OnInit {
 </ngx-tab-routes>
   ]]>
 </ngx-code-example>
-  `
+  `,
+  preserveWhitespaces: true
 })
 export class DocsNgxTabRoutes1Component {}
 
