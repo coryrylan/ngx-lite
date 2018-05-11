@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "dist/app",
+    "public": "dist/ngx-lite-docs",
     "ignore": [
       "firebase.json",
       "**/.*",
