@@ -2,5 +2,5 @@
  * Public API Surface of ngx-datepicker
  */
 
-export * from './lib/ngx-input-datepicker.component';
-export * from './lib/ngx-input-datepicker.module';
+export * from './ngx-input-datepicker.component';
+export * from './ngx-input-datepicker.module';

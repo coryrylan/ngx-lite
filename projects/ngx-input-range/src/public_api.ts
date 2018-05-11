@@ -2,5 +2,5 @@
  * Public API Surface of ngx-input-range
  */
 
-export * from './lib/ngx-input-range.component';
-export * from './lib/ngx-input-range.module';
+export * from './ngx-input-range.component';
+export * from './ngx-input-range.module';

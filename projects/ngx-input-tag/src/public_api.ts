@@ -2,5 +2,5 @@
  * Public API Surface of ngx-input-tag
  */
 
-export * from './lib/ngx-input-tag.component';
-export * from './lib/ngx-input-tag.module';
+export * from './ngx-input-tag.component';
+export * from './ngx-input-tag.module';

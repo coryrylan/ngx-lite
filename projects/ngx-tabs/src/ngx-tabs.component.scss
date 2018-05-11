@@ -1,0 +1,115 @@
+@import './../../styles/_base';
+
+$color-active: $color-secondary;
+$color-hover: #a5a5a5;
+$border: 1px solid $color-grey;
+$tab-breakpoint: 480px;
+
+ngx-tabs,
+ngx-tab-routes {
+  --color-active: #{$color-active};
+  --color-hover: #{$color-hover};
+  --border: #{$border};
+  --tab-breakpoint: #{$tab-breakpoint};
+  display: block;
+}
+
+.ngx-tabs {
+  display: block;
+
+  &__nav {
+    margin-bottom: 0;
+    padding-left: 0;
+    list-style: none;
+
+    &::before,
+    &::after {
+      content: ' ';
+      display: table;
+      clear: both;
+    }
+
+    & > button,
+    & > a {
+      position: relative;
+      display: block;
+      background-color: transparent;
+      width: 50%;
+      float: left;
+      margin-bottom: -1px;
+      cursor: pointer;
+      padding: 10px 6px;
+      line-height: 1.42857143;
+      text-decoration: none;
+      text-align: center;
+      transition: all 0.3s;
+      font-weight: 500;
+      font-size: 14px;
+
+      &.active,
+      &.active:hover,
+      &.active:focus {
+        cursor: default;
+        color: $color-active;
+        color: var(--color-active);
+      }
+
+      &:hover,
+      &:focus {
+        color: $color-hover;
+        color: var(--color-hover);
+      }
+
+      &:nth-child(-n + 3) {
+        border-bottom: $border;
+        border-bottom: var(--border);
+      }
+
+      &:nth-child(even) {
+        border-right: $border;
+        border-right: var(--border);
+      }
+
+      @media (min-width: 300px) {
+        margin-right: 2px;
+        width: auto;
+        text-align: left;
+        border: 1px solid transparent;
+        border-bottom: 3px solid transparent;
+
+        &:nth-child(even) {
+          border-right: 0;
+        }
+
+        &:nth-child(-n + 3) {
+          border-bottom: 3px solid transparent;
+        }
+
+        &.active {
+          background-color: $color-white;
+          border: $border;
+          border: var(--border);
+          border-bottom: 3px solid transparent;
+        }
+      }
+
+      @media (min-width: $tab-breakpoint) {
+        padding: 10px 15px;
+      }
+    }
+  }
+}
+
+.ngx-tab {
+  &__content {
+    padding: 8px 0 0 0;
+    overflow: visible;
+    min-height: 225px;
+    border-top: $border;
+    border-top: var(--border);
+
+    @media (min-width: $tab-breakpoint) {
+      padding: 20px 0 0 0;
+    }
+  }
+}

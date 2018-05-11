@@ -1,0 +1,58 @@
+@import './../../../styles/_base';
+
+$spinner-width: 5px;
+$spinner-color-notch: lighten($color-grey, 10);
+$spinner-background-color: rgba(lighten($color-grey, 15), 0.7);
+$spinner-color-light: $color-white;
+
+:host {
+  display: inline-block;
+
+  &[mini] {
+    .ngx-loading-spinner,
+    .ngx-loading-spinner__circle {
+      width: 50px;
+      height: 50px;
+    }
+  }
+
+  &[small] {
+    .ngx-loading-spinner,
+    .ngx-loading-spinner__circle {
+      width: 75px;
+      height: 75px;
+    }
+  }
+
+  &[light] {
+    .ngx-loading-spinner__circle {
+      border-left: $spinner-width solid $spinner-color-light;
+    }
+  }
+}
+
+.ngx-loading-spinner {
+  width: 100px;
+  height: 100px;
+
+  &__circle {
+    position: absolute;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    border: $spinner-width solid $spinner-background-color;
+    border-left: $spinner-width solid $spinner-color-notch;
+    transform: translateZ(0);
+    animation: spin 1.1s infinite linear;
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
