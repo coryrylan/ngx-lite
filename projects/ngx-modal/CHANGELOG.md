@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.1.1
+- angular 6 update
+
 ## 0.1.0
 - improve focus events
 

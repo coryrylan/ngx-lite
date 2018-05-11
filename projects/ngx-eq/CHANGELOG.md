@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.0.8
+- angular 6 update
+
 ## 0.0.7
 - support disabling directive for unit testing in karma
 

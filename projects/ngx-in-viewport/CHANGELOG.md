@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.0.3
+- angular 6 update
+
 ## 0.0.2
 - support Angular Universal
 

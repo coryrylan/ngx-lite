@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.0.6
+- angular 6 update
+
 ## 0.0.5
 - add ngx-tab-routes
 

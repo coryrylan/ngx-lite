@@ -3,6 +3,8 @@
 
 [ngxlite.com](https://ngxlite.com/)
 
+Currently in Alpha for Angular 6+
+
 A mono repo collection of lightweight stand alone Angular libraries built with 
 the [Angular CLI](https://github.com/angular/angular-cli) and [ng-packagr](https://github.com/dherges/ng-packagr)
 

@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.1.4
+- angular 6 update
+
 ## 0.1.3
 - make date-fns a peer dep
 

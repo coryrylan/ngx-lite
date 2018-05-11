@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.0.5
+- angular 6 update
+
 ## 0.0.4
 - support css custom properties for custom themes
 
