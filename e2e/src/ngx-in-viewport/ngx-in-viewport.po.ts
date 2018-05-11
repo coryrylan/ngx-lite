@@ -14,10 +14,16 @@ export class NgxInViewportPage {
   }
 
   scrollToDirective() {
-    browser.actions().mouseMove(element(by.css('app-docs-ngx-in-viewport [ngxinviewport]'))).perform();
+    browser
+      .actions()
+      .mouseMove(element(by.css('app-docs-ngx-in-viewport [ngxinviewport]')))
+      .perform();
   }
 
   scrollToCount() {
-    browser.actions().mouseMove(element(by.css('app-docs-ngx-in-viewport .e2e-count'))).perform();
+    browser
+      .actions()
+      .mouseMove(element(by.css('app-docs-ngx-in-viewport .e2e-count')))
+      .perform();
   }
 }

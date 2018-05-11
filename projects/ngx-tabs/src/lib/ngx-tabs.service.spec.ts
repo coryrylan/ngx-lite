@@ -9,7 +9,10 @@ describe('NgxTabsService', () => {
     });
   });
 
-  it('should be created', inject([NgxTabsService], (service: NgxTabsService) => {
-    expect(service).toBeTruthy();
-  }));
+  it(
+    'should be created',
+    inject([NgxTabsService], (service: NgxTabsService) => {
+      expect(service).toBeTruthy();
+    })
+  );
 });

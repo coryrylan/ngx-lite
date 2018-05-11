@@ -14,12 +14,16 @@ describe('ngx-eq', () => {
 
   it('should apply the ngx-eq-sm class when the element is small', () => {
     page.setSmallBrowserSize();
-    expect(page.getFirstElement().getAttribute('class')).toContain('test-row ngx-eq ngx-eq-xs ngx-eq-sm');
+    expect(page.getFirstElement().getAttribute('class')).toContain(
+      'test-row ngx-eq ngx-eq-xs ngx-eq-sm'
+    );
   });
 
   it('should apply the ngx-eq-md class when the element is medium', () => {
     page.setMediumBrowserSize();
-    expect(page.getFirstElement().getAttribute('class')).toContain('test-row ngx-eq ngx-eq-xs ngx-eq-sm ngx-eq-md');
+    expect(page.getFirstElement().getAttribute('class')).toContain(
+      'test-row ngx-eq ngx-eq-xs ngx-eq-sm ngx-eq-md'
+    );
   });
 
   // disabled for now as this can break dependent on the dev machine

@@ -1,7 +1,8 @@
 import { element } from 'protractor';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import ResizeObserver from 'resize-observer-polyfill';
+
+declare const ResizeObserver;
 
 @Injectable()
 export class NgxEqService {

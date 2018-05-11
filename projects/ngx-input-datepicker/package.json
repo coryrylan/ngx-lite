@@ -8,7 +8,7 @@
   "peerDependencies": {
     "@angular/core": "^6.0.0",
     "@angular/common": "^6.0.0",
-    "date-fns": "^1.29.0",
-    "@angular/forms": "^6.0.0"
+    "@angular/forms": "^6.0.0",
+    "date-fns": "^1.29.0"
   }
 }

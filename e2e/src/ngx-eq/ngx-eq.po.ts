@@ -17,18 +17,30 @@ export class NgxEqPage {
   }
 
   setSmallBrowserSize() {
-    browser.manage().window().setSize(defaultConfig.small + scrollBarAndPaddingOffset, 1024);
+    browser
+      .manage()
+      .window()
+      .setSize(defaultConfig.small + scrollBarAndPaddingOffset, 1024);
   }
 
   setMediumBrowserSize() {
-    browser.manage().window().setSize(defaultConfig.medium + scrollBarAndPaddingOffset, 1024);
+    browser
+      .manage()
+      .window()
+      .setSize(defaultConfig.medium + scrollBarAndPaddingOffset, 1024);
   }
 
   setLargeBrowserSize() {
-    browser.manage().window().setSize(defaultConfig.large + scrollBarAndPaddingOffset, 1024);
+    browser
+      .manage()
+      .window()
+      .setSize(defaultConfig.large + scrollBarAndPaddingOffset, 1024);
   }
 
   setExtraLargeBrowserSize() {
-    browser.manage().window().setSize(defaultConfig.extraLarge + scrollBarAndPaddingOffset, 1024);
+    browser
+      .manage()
+      .window()
+      .setSize(defaultConfig.extraLarge + scrollBarAndPaddingOffset, 1024);
   }
 }
