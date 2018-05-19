@@ -4,7 +4,7 @@ html {
 
 body,
 main {
-  overflow-x: hidden;
+  overflow-x: hidden !important;
 }
 
 *,
@@ -58,6 +58,7 @@ router-outlet ~ app-home {
   position: fixed;
   z-index: 3;
   top: 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
 
   @media (min-width: $nav-break) {
     z-index: 5;
