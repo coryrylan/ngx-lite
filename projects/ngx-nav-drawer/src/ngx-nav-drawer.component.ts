@@ -13,7 +13,8 @@ import {
   ViewChild,
   ElementRef,
   OnChanges,
-  SimpleChanges
+  SimpleChanges,
+  ChangeDetectionStrategy
 } from '@angular/core';
 import { isPlatformBrowser, isPlatformServer } from '@angular/common';
 import { fromEvent, Subscription } from 'rxjs';
@@ -24,7 +25,8 @@ import { trapFocus, KeyCodes } from './util';
   selector: 'ngx-nav-drawer',
   templateUrl: './ngx-nav-drawer.component.html',
   styleUrls: ['./ngx-nav-drawer.component.scss'],
-  encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.None,
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class NgxNavDrawerComponent implements OnChanges, OnDestroy, OnInit {
   @Output() openChange = new EventEmitter<boolean>();

@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.2.1
+- improved performance
+
 ## 0.1.1
 - angular 6 update
 

@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.4.2
+- improved performance
+
 ## 0.3.2
 - angular 6 update
 

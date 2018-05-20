@@ -16,7 +16,8 @@ import { tap } from 'rxjs/operators';
   selector: 'ngx-tabs',
   templateUrl: './ngx-tabs.component.html',
   styleUrls: ['./ngx-tabs.component.scss'],
-  encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.None,
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class NgxTabsComponent implements OnChanges {
   @Input() activeTabIndex = 0;

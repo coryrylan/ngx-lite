@@ -11,7 +11,8 @@ import {
   ViewChild,
   PLATFORM_ID,
   SimpleChanges,
-  ViewEncapsulation
+  ViewEncapsulation,
+  ChangeDetectionStrategy
 } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { FormControl, NG_VALUE_ACCESSOR } from '@angular/forms';
@@ -24,6 +25,7 @@ let instanceId = 0;
   selector: 'ngx-input-range',
   templateUrl: './ngx-input-range.component.html',
   styleUrls: ['./ngx-input-range.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,

@@ -12,7 +12,8 @@ import {
   TemplateRef,
   ViewChild,
   SimpleChanges,
-  ViewEncapsulation
+  ViewEncapsulation,
+  ChangeDetectionStrategy
 } from '@angular/core';
 
 import { trapFocus, KeyCodes } from './util';
@@ -21,7 +22,8 @@ import { trapFocus, KeyCodes } from './util';
   selector: 'ngx-modal',
   templateUrl: './ngx-modal.component.html',
   styleUrls: ['./ngx-modal.component.scss'],
-  encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.None,
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class NgxModalComponent implements OnInit, OnChanges, OnDestroy {
   @ViewChild('closeButton') closeButton: ElementRef;

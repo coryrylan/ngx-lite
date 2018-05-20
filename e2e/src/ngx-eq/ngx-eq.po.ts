@@ -1,5 +1,5 @@
 import { browser, by, element } from 'protractor';
-import { defaultConfig } from './../../src/lib/ngx-eq/ngx-eq.module';
+import { defaultConfig } from './../../../projects/ngx-eq/src/public_api';
 
 const scrollBarAndPaddingOffset = 100;
 

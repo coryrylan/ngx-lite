@@ -5,7 +5,8 @@ import {
   OnChanges,
   OnInit,
   SimpleChanges,
-  ViewEncapsulation
+  ViewEncapsulation,
+  ChangeDetectionStrategy
 } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
@@ -19,6 +20,7 @@ const starIcons = {
   selector: 'ngx-input-star-rating',
   templateUrl: './ngx-input-star-rating.component.html',
   styleUrls: ['./ngx-input-star-rating.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,

@@ -5,7 +5,8 @@ import {
   forwardRef,
   Input,
   HostListener,
-  ElementRef
+  ElementRef,
+  ChangeDetectionStrategy
 } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import * as addMonths_ from 'date-fns/add_months';
@@ -57,6 +58,7 @@ let instanceId = 0;
   templateUrl: './ngx-input-datepicker.component.html',
   styleUrls: ['./ngx-input-datepicker.component.scss'],
   encapsulation: ViewEncapsulation.None,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,

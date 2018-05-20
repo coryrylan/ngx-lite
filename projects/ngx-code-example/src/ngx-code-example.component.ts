@@ -4,7 +4,8 @@ import {
   Input,
   ViewChild,
   ElementRef,
-  ViewEncapsulation
+  ViewEncapsulation,
+  ChangeDetectionStrategy
 } from '@angular/core';
 import * as Prism from 'prismjs';
 
@@ -12,7 +13,8 @@ import * as Prism from 'prismjs';
   selector: 'ngx-code-example',
   templateUrl: './ngx-code-example.component.html',
   styleUrls: ['./ngx-code-example.component.scss'],
-  encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.None,
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class NgxCodeExampleComponent implements OnInit {
   @Input() language = 'javascript';

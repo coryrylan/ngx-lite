@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-docs-ngx-tabs',
-  templateUrl: './docs-ngx-tabs.component.html'
+  templateUrl: './docs-ngx-tabs.component.html',
+  preserveWhitespaces: true
 })
 export class DocsNgxTabsComponent implements OnInit {
   index = 0;

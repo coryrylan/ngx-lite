@@ -4,7 +4,8 @@ import {
   OnInit,
   AfterViewInit,
   ElementRef,
-  ViewEncapsulation
+  ViewEncapsulation,
+  ChangeDetectionStrategy
 } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 
@@ -12,7 +13,8 @@ import { DomSanitizer } from '@angular/platform-browser';
   selector: 'ngx-carbon-ad',
   templateUrl: './ngx-carbon-ad.component.html',
   styleUrls: ['./ngx-carbon-ad.component.scss'],
-  encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.None,
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class NgxCarbonAdComponent implements OnInit, AfterViewInit {
   @Input() siteName = '';

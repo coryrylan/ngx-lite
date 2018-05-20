@@ -8,7 +8,8 @@ import {
   Output,
   ViewChild,
   Inject,
-  ViewEncapsulation
+  ViewEncapsulation,
+  ChangeDetectionStrategy
 } from '@angular/core';
 import {
   ControlValueAccessor,
@@ -34,6 +35,7 @@ const maxTagLength = 25;
   selector: 'ngx-input-tag',
   templateUrl: './ngx-input-tag.component.html',
   styleUrls: ['./ngx-input-tag.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,

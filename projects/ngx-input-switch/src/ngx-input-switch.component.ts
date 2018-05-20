@@ -1,4 +1,10 @@
-import { forwardRef, Component, Input, ViewEncapsulation } from '@angular/core';
+import {
+  forwardRef,
+  Component,
+  Input,
+  ViewEncapsulation,
+  ChangeDetectionStrategy
+} from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 let instanceId = 0;
@@ -7,6 +13,7 @@ let instanceId = 0;
   selector: 'ngx-input-switch',
   templateUrl: './ngx-input-switch.component.html',
   styleUrls: ['./ngx-input-switch.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,
