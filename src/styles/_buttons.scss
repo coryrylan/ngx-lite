@@ -1,12 +1,12 @@
 .btn {
-  padding: 10px 20px;
+  padding: 10px 16px;
   margin-bottom: 2px;
   display: inline-block;
   border: 0;
-  border-radius: 4px;
+  border-radius: 3px;
   text-decoration: none;
   text-align: center;
-  font-size: 1.2em;
+  font-size: 16px;
   color: $color-white;
   background-color: lighten($color-primary, 8%);
   cursor: pointer;
@@ -23,4 +23,5 @@
 
 .btn-large {
   padding: 15px 40px;
+  font-size: 20px;
 }

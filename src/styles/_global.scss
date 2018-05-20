@@ -106,9 +106,22 @@ router-outlet ~ app-home {
   }
 }
 
-.ngx-nav-drawer {
+ngx-nav-drawer .ngx-nav-drawer {
+  & > a {
+    padding: 8px 26px;
+    font-size: 16px;
+    font-weight: normal;
+  }
+
+  .nav-category {
+    padding: 10px 14px;
+    font-size: 18px;
+    display: block;
+    border-bottom: 1px solid $color-border-light;
+  }
+
   @media (min-width: $nav-break) {
-    padding: 56px 0 !important;
+    padding: 64px 0 !important;
   }
 }
 

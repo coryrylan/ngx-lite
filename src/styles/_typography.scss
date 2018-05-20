@@ -1,3 +1,5 @@
+@import './_config';
+
 body {
   font-family: 'Roboto', Helvetica, Arial, 'Lucida Grande', sans-serif;
   font-weight: 300;
@@ -44,5 +46,5 @@ hr {
   height: 1px;
   border: 0;
   margin: 0;
-  border-top: 1px solid $color-grey-light;
+  border-top: 1px solid $color-border-light;
 }
