@@ -19,6 +19,7 @@ import { NgxNavDrawerModule } from '@ngx-lite/nav-drawer';
 import { NgxProgressModule } from '@ngx-lite/progress';
 import { NgxTabsModule } from '@ngx-lite/tabs';
 import { BadgesComponent } from './badges/badges.component';
+import { NgxMenusModule } from './ngx-menus/ngx-menus.module';
 
 const components = [BadgesComponent];
 
@@ -38,7 +39,8 @@ const modules = [
   NgxModalModule,
   NgxNavDrawerModule,
   NgxTabsModule,
-  NgxProgressModule
+  NgxProgressModule,
+  NgxMenusModule
 ];
 
 @NgModule({

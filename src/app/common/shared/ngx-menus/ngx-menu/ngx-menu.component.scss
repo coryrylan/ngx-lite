@@ -1,0 +1,26 @@
+@import './../../../../../../projects/styles/_base';
+
+ngx-menu {
+  display: inline-block;
+  padding: 8px 0;
+  background: $color-white;
+  // box-shadow: $drop-shadow-z1;
+  border: 1px solid $color-border;
+
+  a, button {
+    cursor: pointer;
+    display: block;
+    background: transparent;
+    border: 0;
+    width: 100%;
+    text-align: left;
+    padding: 12px;
+    text-decoration: none;
+    font-weight: normal;
+    color: $color-type;
+
+    &:hover {
+      background-color: $color-grey-light;
+    }
+  }
+}

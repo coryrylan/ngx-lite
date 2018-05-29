@@ -17,7 +17,8 @@ import { DomSanitizer } from '@angular/platform-browser';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class NgxCarbonAdComponent implements OnInit, AfterViewInit {
-  @Input() siteName = '';
+  @Input() placement = '';
+  @Input() serve = '';
   constructor(private elementRef: ElementRef) {}
 
   ngAfterViewInit() {
@@ -25,9 +26,7 @@ export class NgxCarbonAdComponent implements OnInit, AfterViewInit {
     s.async = true;
     s.id = '_carbonads_js';
     s.type = 'text/javascript';
-    s.src = `//cdn.carbonads.com/carbon.js?zoneid=1673&serve=C6AILKT&placement=${
-      this.siteName
-    }`;
+    s.src = `//cdn.carbonads.com/carbon.js?serve=${this.serve}&placement=${this.placement}`;
     this.elementRef.nativeElement.appendChild(s);
   }
 

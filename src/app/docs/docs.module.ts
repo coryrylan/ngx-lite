@@ -25,6 +25,7 @@ import {
 } from './docs-ngx-tabs/docs-ngx-tabs.component';
 import { DocsNgxCarbonAdComponent } from './docs-ngx-carbon-ad/docs-ngx-carbon-ad.component';
 import { DocsNgxProgressComponent } from './docs-ngx-progress/docs-ngx-progress.component';
+import { DocsNgxMenuComponent } from './docs-ngx-menu/docs-ngx-menu.component';
 
 @NgModule({
   imports: [SharedModule, DocsRoutingModule],
@@ -48,7 +49,8 @@ import { DocsNgxProgressComponent } from './docs-ngx-progress/docs-ngx-progress.
     DocsNgxTabRoutes1Component,
     DocsNgxTabRoutes2Component,
     DocsNgxCarbonAdComponent,
-    DocsNgxProgressComponent
+    DocsNgxProgressComponent,
+    DocsNgxMenuComponent
   ]
 })
 export class DocsModule {}
