@@ -1,13 +1,16 @@
-@import './../../../../../../projects/styles/_base';
+@import './../../../../projects/styles/_base';
 
-ngx-menu {
+.ngx-menu {
   display: inline-block;
   padding: 8px 0;
   background: $color-white;
-  // box-shadow: $drop-shadow-z1;
   border: 1px solid $color-border;
+  position: absolute;
+  top: 0;
+  left: 0;
 
-  a, button {
+  a,
+  button {
     cursor: pointer;
     display: block;
     background: transparent;

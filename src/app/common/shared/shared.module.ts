@@ -18,8 +18,8 @@ import { NgxModalModule } from '@ngx-lite/modal';
 import { NgxNavDrawerModule } from '@ngx-lite/nav-drawer';
 import { NgxProgressModule } from '@ngx-lite/progress';
 import { NgxTabsModule } from '@ngx-lite/tabs';
+import { NgxMenusModule } from '@ngx-lite/menus';
 import { BadgesComponent } from './badges/badges.component';
-import { NgxMenusModule } from './ngx-menus/ngx-menus.module';
 
 const components = [BadgesComponent];
 

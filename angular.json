@@ -464,6 +464,26 @@
           }
         }
       }
+    },
+    "@ngx-lite/menus": {
+      "root": "projects/ngx-menus",
+      "sourceRoot": "projects/ngx-menus/src",
+      "projectType": "library",
+      "prefix": "ngx",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/tsconfig.lib.json",
+            "project": "projects/ngx-menus/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "project": "projects/ngx-menus/ng-package.prod.json"
+            }
+          }
+        }
+      }
     }
   },
   "defaultProject": "ngx-lite-docs"

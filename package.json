@@ -29,7 +29,8 @@
     "package:modal": "ng build @ngx-lite/modal",
     "package:nav-drawer": "ng build @ngx-lite/nav-drawer",
     "package:progress": "ng build @ngx-lite/progress",
-    "package:tabs": "ng build @ngx-lite/tabs"
+    "package:tabs": "ng build @ngx-lite/tabs",
+    "package:menus": "ng build @ngx-lite/menus"
   },
   "private": true,
   "dependencies": {

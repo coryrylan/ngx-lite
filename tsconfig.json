@@ -64,6 +64,9 @@
       ],
       "@ngx-lite/tabs": [
         "dist/ngx-tabs"
+      ],
+      "@ngx-lite/menus": [
+        "dist/ngx-menus"
       ]
     }
   }

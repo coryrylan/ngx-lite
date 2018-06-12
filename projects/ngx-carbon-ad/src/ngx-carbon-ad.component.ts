@@ -26,7 +26,9 @@ export class NgxCarbonAdComponent implements OnInit, AfterViewInit {
     s.async = true;
     s.id = '_carbonads_js';
     s.type = 'text/javascript';
-    s.src = `//cdn.carbonads.com/carbon.js?serve=${this.serve}&placement=${this.placement}`;
+    s.src = `//cdn.carbonads.com/carbon.js?serve=${this.serve}&placement=${
+      this.placement
+    }`;
     this.elementRef.nativeElement.appendChild(s);
   }
 

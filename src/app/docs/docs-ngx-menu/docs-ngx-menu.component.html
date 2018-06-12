@@ -1,12 +1,14 @@
 <h1>@ngx-lite/menus</h1>
 
+https://stackblitz.com/edit/angular-hkeevr
 
-<button class="btn">
-  Menu
-</button>
-
-<ngx-menu>
-  <a>Home</a>
-  <button>About</button>
+<ngx-menu #menu>
+  <a routerLink="/">Home</a>
+  <button>About with a really long description</button>
   <button>Contact Us</button>
 </ngx-menu>
+<button (click)="menu.toggle($event)" class="btn" bp="float-left">
+  Menu
+</button>
+<br /><br /><br />
+<button (click)="menu.toggle($event)" class="btn" bp="float-right">Menu</button>

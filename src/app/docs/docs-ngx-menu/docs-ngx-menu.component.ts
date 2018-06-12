@@ -5,6 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './docs-ngx-menu.component.html'
 })
 export class DocsNgxMenuComponent implements OnInit {
+  showMenu = false;
   constructor() {}
 
   ngOnInit() {}
