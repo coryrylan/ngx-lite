@@ -1,6 +1,8 @@
 # ngx-lite
 [![Build Status](https://travis-ci.org/coryrylan/ngx-lite.svg?branch=master)](https://travis-ci.org/coryrylan/ngx-lite)
 
+[Become a Patron!](https://www.patreon.com/bePatron?u=10431713)
+
 [ngxlite.com](https://ngxlite.com/)
 
 Currently in Alpha for Angular 6+

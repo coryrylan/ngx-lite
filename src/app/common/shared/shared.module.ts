@@ -20,8 +20,9 @@ import { NgxProgressModule } from '@ngx-lite/progress';
 import { NgxTabsModule } from '@ngx-lite/tabs';
 import { NgxMenusModule } from '@ngx-lite/menus';
 import { BadgesComponent } from './badges/badges.component';
+import { PatreonComponent } from './patreon/patreon.component';
 
-const components = [BadgesComponent];
+const components = [BadgesComponent, PatreonComponent];
 
 const modules = [
   NgxCarbonAdModule,
@@ -46,6 +47,6 @@ const modules = [
 @NgModule({
   imports: [CommonModule, ReactiveFormsModule, ...modules],
   exports: [CommonModule, ReactiveFormsModule, ...modules, ...components],
-  declarations: [BadgesComponent]
+  declarations: [...components]
 })
 export class SharedModule {}
