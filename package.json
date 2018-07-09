@@ -6,6 +6,7 @@
     "start": "ng serve",
     "build": "npm run lint && npm run prettier && ng build --prod && ng test @ngx-lite/all --watch=false && npm run e2e && npm run package",
     "test": "ng test @ngx-lite/all",
+    "test:watch": "ng test @ngx-lite/all --watch",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "deploy": "ng build --prod && firebase deploy",

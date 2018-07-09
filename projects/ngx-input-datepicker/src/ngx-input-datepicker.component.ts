@@ -93,6 +93,14 @@ export class NgxInputDatepickerComponent
   }
 
   set value(val) {
+    if (val) {
+      if ((val as Date[]).length) {
+        val = [removeTimeIfAvailable(val[0]), removeTimeIfAvailable(val[1])];
+      } else {
+        val = removeTimeIfAvailable(val as Date);
+      }
+    }
+
     this._value = val;
     this.onChange(val);
     this.onTouched();
@@ -252,6 +260,20 @@ export class NgxInputDatepickerComponent
 
     return false;
   }
+}
+
+function removeTimeIfAvailable(date: Date) {
+  return date ? removeTime(date) : date;
+}
+
+function removeTime(date: Date) {
+  const d = new Date(date.getTime());
+  d.setHours(0);
+  d.setMinutes(0);
+  d.setSeconds(0);
+  d.setMilliseconds(0);
+
+  return d;
 }
 
 function isSameDate(date1: Date, date2: Date) {
