@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.2.6
+- fix css height issue
+
 ## 0.2.5
 - remove time when date set by user
 
