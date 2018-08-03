@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.1.3
+- bug fix for static progress values
+
 ## 0.1.2
 - improved performance
 

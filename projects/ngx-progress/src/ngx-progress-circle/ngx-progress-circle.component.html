@@ -7,8 +7,7 @@
 
   <div class="ngx-progress-circle__value">
     <ng-container *ngIf="valueLabel !== null">{{valueLabel}}</ng-container>
-    <ng-container *ngIf="valueLabel === null">{{value}}</ng-container>
-    {{symbol}}
+    <ng-container *ngIf="valueLabel === null">{{value}}</ng-container>{{symbol}}
   </div>
 
   <div *ngIf="!valueLabel" class="ngx-progress-circle__value ng-content">

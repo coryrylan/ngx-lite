@@ -1,7 +1,6 @@
 import {
   Component,
   Input,
-  OnInit,
   SimpleChanges,
   OnChanges,
   ViewEncapsulation,
@@ -15,7 +14,7 @@ import {
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class NgxProgressCircleComponent implements OnInit, OnChanges {
+export class NgxProgressCircleComponent implements OnChanges {
   @Input() value: number;
   @Input() symbol = '%';
   @Input() label = 'complete';
@@ -25,7 +24,7 @@ export class NgxProgressCircleComponent implements OnInit, OnChanges {
   circumference = 2 * Math.PI * this.radius;
   dashoffset: number;
 
-  ngOnInit() {
+  constructor() {
     this.progress(0);
   }
 
