@@ -35,6 +35,9 @@
       "@ngx-lite/input-datepicker": [
         "dist/ngx-input-datepicker"
       ],
+      "@ngx-lite/input-timepicker": [
+        "dist/ngx-input-timepicker"
+      ],
       "@ngx-lite/input-range": [
         "dist/ngx-input-range"
       ],

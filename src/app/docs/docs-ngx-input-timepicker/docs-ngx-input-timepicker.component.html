@@ -1,0 +1,100 @@
+<section bp="grid vertical-start">
+  <div bp="8@md">
+    <h1>@ngx-lite/input-timepicker</h1>
+    <app-badges package="input-timepicker" stackblitzId="angular-8z7fkr"></app-badges>
+    <app-patreon></app-patreon>
+
+    <p>
+      A lightweight timepicker component compatible with both Angular Reactive Forms and Template Forms.
+      The timepicker supports single dates and ranges. You can show the timepicker inline or from a
+      text input.
+    </p>
+  </div>
+  <div bp="4@md">
+    <ngx-carbon-ad serve="CKYILKJ7" placement="coryrylancom" bp="float-right"></ngx-carbon-ad>
+  </div>
+</section>
+
+<ngx-tabs>
+  <ngx-tab [active]="true" name="Usage">
+    <div class="demo">
+      <form [formGroup]="form" (ngSubmit)="submit()">
+        <ngx-input-timepicker formControlName="date" step="2"></ngx-input-timepicker>
+        <button class="btn">Submit</button>
+      </form>
+    </div>
+
+    <ngx-code-example ngNonBindable>
+      <![CDATA[
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { Observable } from 'rxjs/Observable';
+
+@Component({
+  selector: 'app-root',
+  template: `
+<h1>ngx-input-switch</h1>
+
+<form [formGroup]="form" (ngSubmit)="submit()">
+  <ngx-input-timepicker formControlName="date"></ngx-input-timepicker>
+  <button>Submit</button>
+</form>
+  `
+})
+export class AppComponent implements OnInit {
+  form: FormGroup;
+  value: Observable<number>;
+
+  constructor(private formBuilder: FormBuilder) { }
+
+  ngOnInit() {
+    this.form = this.formBuilder.group({
+      date: [new Date()]
+    });
+
+    this.value = this.form.controls.date.valueChanges;
+  }
+
+  submit() {
+    console.log(this.form.value);
+  }
+}
+      ]]>
+    </ngx-code-example>
+  </ngx-tab>
+  <ngx-tab name="Installation">
+    <p>
+      To install this library, run:
+      <code>npm install @ngx-lite/input-timepicker --save</code> and then from your Angular
+      <code>AppModule</code>:
+    </p>
+
+    <ngx-code-example>
+      <![CDATA[
+    import { BrowserModule } from '@angular/platform-browser';
+    import { NgModule } from '@angular/core';
+    import { ReactiveFormsModule } from '@angular/forms';
+    import { NgxInputTimepickerModule } from '@ngx-lite/input-timepicker';
+
+    import { AppComponent } from './app.component';
+
+    @NgModule({
+      declarations: [
+        AppComponent
+      ],
+      imports: [
+        BrowserModule,
+        ReactiveFormsModule,
+        NgxInputTimepickerModule
+      ],
+      providers: [],
+      bootstrap: [AppComponent]
+    })
+    export class AppModule { }
+      ]]>
+    </ngx-code-example>
+  </ngx-tab>
+  <ngx-tab name="API">
+    <h2>Coming Soon</h2>
+  </ngx-tab>
+</ngx-tabs>

@@ -9,6 +9,7 @@ import { DocsNgxDebounceClickComponent } from './docs-ngx-debounce-click/docs-ng
 import { DocsNgxEqComponent } from './docs-ngx-eq/docs-ngx-eq.component';
 import { DocsNgxInViewportComponent } from './docs-ngx-in-viewport/docs-ngx-in-viewport.component';
 import { DocsNgxInputDatepickerComponent } from './docs-ngx-input-datepicker/docs-ngx-input-datepicker.component';
+import { DocsNgxInputTimepickerComponent } from './docs-ngx-input-timepicker/docs-ngx-input-timepicker.component';
 import { DocsNgxInputRangeComponent } from './docs-ngx-input-range/docs-ngx-input-range.component';
 import { DocsNgxInputStarRatingComponent } from './docs-ngx-input-star-rating/docs-ngx-input-star-rating.component';
 import { DocsNgxInputTagComponent } from './docs-ngx-input-tag/docs-ngx-input-tag.component';
@@ -37,6 +38,7 @@ const routes: Routes = [
       { path: 'eq', component: DocsNgxEqComponent },
       { path: 'in-viewport', component: DocsNgxInViewportComponent },
       { path: 'input-datepicker', component: DocsNgxInputDatepickerComponent },
+      { path: 'input-timepicker', component: DocsNgxInputTimepickerComponent },
       { path: 'input-range', component: DocsNgxInputRangeComponent },
       { path: 'input-star-rating', component: DocsNgxInputStarRatingComponent },
       { path: 'input-switch', component: DocsNgxInputSwitchComponent },

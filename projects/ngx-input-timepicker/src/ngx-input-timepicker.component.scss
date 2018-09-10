@@ -1,0 +1,28 @@
+@import './../../styles/_base';
+
+ngx-input-timepicker {
+  padding: 0.857em;
+  display: block;
+}
+
+.ngx-input-timepicker {
+  display: flex;
+  flex-direction: row;
+  font-size: 1.286em;
+  justify-content: center;
+  align-items: center;
+
+  &_btn {
+    border: 0;
+    background: 0 0;
+    color: #333333;
+    cursor: pointer;
+    padding: 5px 10px;
+    opacity: .7;
+  }
+
+  &_container {
+    flex-direction: column;
+    text-align: center;
+  }
+}

@@ -8,6 +8,7 @@ import { DocsHomeComponent } from './docs-home/docs-home.component';
 import { DocsNgxCodeExampleComponent } from './docs-ngx-code-example/docs-ngx-code-example.component';
 import { DocsNgxInViewportComponent } from './docs-ngx-in-viewport/docs-ngx-in-viewport.component';
 import { DocsNgxInputDatepickerComponent } from './docs-ngx-input-datepicker/docs-ngx-input-datepicker.component';
+import { DocsNgxInputTimepickerComponent } from './docs-ngx-input-timepicker/docs-ngx-input-timepicker.component';
 import { DocsNgxDebounceClickComponent } from './docs-ngx-debounce-click/docs-ngx-debounce-click.component';
 import { DocsNgxEqComponent } from './docs-ngx-eq/docs-ngx-eq.component';
 import { DocsNgxInputRangeComponent } from './docs-ngx-input-range/docs-ngx-input-range.component';
@@ -37,6 +38,7 @@ import { DocsNgxMenuComponent } from './docs-ngx-menu/docs-ngx-menu.component';
     DocsNgxEqComponent,
     DocsNgxInViewportComponent,
     DocsNgxInputDatepickerComponent,
+    DocsNgxInputTimepickerComponent,
     DocsNgxInputRangeComponent,
     DocsNgxInputStarRatingComponent,
     DocsNgxInputTagComponent,

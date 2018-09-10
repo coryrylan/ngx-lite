@@ -8,6 +8,7 @@ import { NgxDebounceClickModule } from '@ngx-lite/debounce-click';
 import { NgxEqModule } from '@ngx-lite/eq';
 import { NgxInViewportModule } from '@ngx-lite/in-viewport';
 import { NgxInputDatepickerModule } from '@ngx-lite/input-datepicker';
+import { NgxInputTimepickerModule } from '@ngx-lite/input-timepicker';
 import { NgxInputRangeModule } from '@ngx-lite/input-range';
 import { NgxInputStarRatingModule } from '@ngx-lite/input-star-rating';
 import { NgxInputSwitchModule } from '@ngx-lite/input-switch';
@@ -31,6 +32,7 @@ const modules = [
   NgxEqModule,
   NgxInViewportModule,
   NgxInputDatepickerModule,
+  NgxInputTimepickerModule,
   NgxInputRangeModule,
   NgxInputStarRatingModule,
   NgxInputSwitchModule,

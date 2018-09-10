@@ -265,6 +265,26 @@
         }
       }
     },
+    "@ngx-lite/input-timepicker": {
+      "root": "projects/ngx-input-timepicker",
+      "sourceRoot": "projects/ngx-input-timepicker/src",
+      "projectType": "library",
+      "prefix": "ngx",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/tsconfig.lib.json",
+            "project": "projects/ngx-input-timepicker/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "project": "projects/ngx-input-timepicker/ng-package.prod.json"
+            }
+          }
+        }
+      }
+    },
     "@ngx-lite/input-range": {
       "root": "projects/ngx-input-range",
       "sourceRoot": "projects/ngx-input-range/src",
