@@ -1,0 +1,13 @@
+<div class="ngx-input-timepicker" #timepicker>
+  <div class="ngx-input-timepicker_container">
+      <button class="ngx-input-timepicker_btn" type="button" (click)="nextHours()">⯅</button>
+      <div>{{ getHours() | number:'2.' }}</div>
+      <button class="ngx-input-timepicker_btn" type="button" (click)="prevHours()">⯆</button>
+  </div>
+  <div>:</div>
+  <div class="ngx-input-timepicker_container">
+      <button class="ngx-input-timepicker_btn" type="button" (click)="nextMinutes()">⯅</button>
+      <div>{{ getMinutes() | number:'2.' }}</div>
+      <button class="ngx-input-timepicker_btn" type="button" (click)="prevMinutes()">⯆</button>
+  </div>
+</div>

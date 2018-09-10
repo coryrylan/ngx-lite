@@ -1,0 +1,13 @@
+{
+  "name": "@ngx-lite/input-timepicker",
+  "version": "0.0.1",
+  "repository": "https://github.com/coryrylan/ngx-lite",
+  "author": "João Eudes Lima",
+  "license": "MIT",
+  "private": false,
+  "peerDependencies": {
+    "@angular/core": "^6.0.0",
+    "@angular/common": "^6.0.0",
+    "@angular/forms": "^6.0.0"
+  }
+}

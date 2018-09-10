@@ -21,6 +21,7 @@
     "package:eq": "ng build @ngx-lite/eq",
     "package:in-viewport": "ng build @ngx-lite/in-viewport",
     "package:input-datepicker": "ng build @ngx-lite/input-datepicker",
+    "package:input-timepicker": "ng build @ngx-lite/input-timepicker",
     "package:input-range": "ng build @ngx-lite/input-range",
     "package:input-star-rating": "ng build @ngx-lite/input-star-rating",
     "package:input-switch": "ng build @ngx-lite/input-switch",
