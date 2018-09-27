@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.2.3
+- ssr support
+
 ## 0.2.1
 - improved performance
 

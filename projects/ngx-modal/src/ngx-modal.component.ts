@@ -91,17 +91,29 @@ export class NgxModalComponent implements OnInit, OnChanges, OnDestroy {
 }
 
 function lockScroll() {
-  document.body.style.overflow = 'hidden';
+  if (isBrowser()) {
+    document.body.style.overflow = 'hidden';
+  }
 }
 
 function unlockScroll() {
-  document.body.style.overflow = 'initial';
+  if (isBrowser()) {
+    document.body.style.overflow = 'initial';
+  }
 }
 
 function ariaHideBody() {
-  document.body.setAttribute('aria-hidden', 'true');
+  if (isBrowser()) {
+    document.body.setAttribute('aria-hidden', 'true');
+  }
 }
 
 function ariaShowBody() {
-  document.body.setAttribute('aria-hidden', 'false');
+  if (isBrowser()) {
+    document.body.setAttribute('aria-hidden', 'false');
+  }
+}
+
+function isBrowser() {
+  return typeof window !== 'undefined';
 }
