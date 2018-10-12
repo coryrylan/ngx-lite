@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.1.3
+- fix for ssr
+
 ## 0.1.2
 - improved performance
 

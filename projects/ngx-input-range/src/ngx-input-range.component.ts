@@ -128,7 +128,10 @@ export class NgxInputRangeComponent
       }
     }
 
-    this.inputSubscription.unsubscribe();
+    // ssr - on application destroy subscriptions sometimes not available
+    if (this.inputSubscription) {
+      this.inputSubscription.unsubscribe();
+    }
   }
 
   private updateCurrentLabel() {
