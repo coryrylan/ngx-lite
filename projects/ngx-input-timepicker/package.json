@@ -2,7 +2,10 @@
   "name": "@ngx-lite/input-timepicker",
   "version": "0.0.1",
   "repository": "https://github.com/coryrylan/ngx-lite",
-  "author": "João Eudes Lima",
+  "contributors": [
+    "João Eudes Lima",
+    "Cory Rylan"
+  ],
   "license": "MIT",
   "private": false,
   "peerDependencies": {

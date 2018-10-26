@@ -19,7 +19,7 @@
   <ngx-tab [active]="true" name="Usage">
     <div class="demo">
       <form [formGroup]="form" (ngSubmit)="submit()">
-        <ngx-input-timepicker formControlName="date" step="2"></ngx-input-timepicker>
+        <ngx-input-timepicker formControlName="date" [hoursStep]="1" [minutesStep]="15" [military]="false"></ngx-input-timepicker>
         <button class="btn">Submit</button>
       </form>
     </div>
@@ -36,7 +36,7 @@ import { Observable } from 'rxjs/Observable';
 <h1>ngx-input-switch</h1>
 
 <form [formGroup]="form" (ngSubmit)="submit()">
-  <ngx-input-timepicker formControlName="date"></ngx-input-timepicker>
+  <ngx-input-timepicker formControlName="date" [hoursStep]="1" [minutesStep]="15" [military]="false"></ngx-input-timepicker>
   <button>Submit</button>
 </form>
   `

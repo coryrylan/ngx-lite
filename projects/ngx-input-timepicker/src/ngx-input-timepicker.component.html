@@ -1,13 +1,19 @@
-<div class="ngx-input-timepicker" #timepicker>
-  <div class="ngx-input-timepicker_container">
-      <button class="ngx-input-timepicker_btn" type="button" (click)="nextHours()">⯅</button>
-      <div>{{ getHours() | number:'2.' }}</div>
-      <button class="ngx-input-timepicker_btn" type="button" (click)="prevHours()">⯆</button>
+<div class="ngx-input-timepicker">
+  <div class="ngx-input-timepicker__container">
+    <button class="ngx-input-timepicker__btn" type="button" (click)="nextHours()" aria-label="increment hours">⯅</button>
+    <div>{{military ? (value | date:'H') : (value | date:'h')}}</div>
+    <button class="ngx-input-timepicker__btn" type="button" (click)="prevHours()" aria-label="decrement hours">⯆</button>
   </div>
   <div>:</div>
-  <div class="ngx-input-timepicker_container">
-      <button class="ngx-input-timepicker_btn" type="button" (click)="nextMinutes()">⯅</button>
-      <div>{{ getMinutes() | number:'2.' }}</div>
-      <button class="ngx-input-timepicker_btn" type="button" (click)="prevMinutes()">⯆</button>
+  <div class="ngx-input-timepicker__container">
+    <button class="ngx-input-timepicker__btn" type="button" (click)="nextMinutes()" aria-label="increment minutes">⯅</button>
+    <div>{{value | date:'mm'}}</div>
+    <button class="ngx-input-timepicker__btn" type="button" (click)="prevMinutes()"  aria-label="increment minutes">⯆</button>
+  </div>
+  <div>&nbsp;</div>
+  <div *ngIf="!military" class="ngx-input-timepicker__container">
+    <button class="ngx-input-timepicker__btn" type="button" (click)="setAmPm()" aria-label="AM">⯅</button>
+    <div>{{value | date:'a'}}</div>
+    <button class="ngx-input-timepicker__btn" type="button" (click)="setAmPm()"  aria-label="PM">⯆</button>
   </div>
 </div>

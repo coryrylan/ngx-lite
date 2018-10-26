@@ -1,27 +1,27 @@
 @import './../../styles/_base';
 
 ngx-input-timepicker {
-  padding: 0.857em;
   display: block;
+  --color-button: #{$color-primary};
+  --color-text: #{$color-primary};
 }
 
 .ngx-input-timepicker {
   display: flex;
   flex-direction: row;
   font-size: 1.286em;
-  justify-content: center;
   align-items: center;
+  color: var(--color-text);
 
-  &_btn {
+  &__btn {
     border: 0;
     background: 0 0;
-    color: #333333;
+    color: var(--color-button);;
     cursor: pointer;
     padding: 5px 10px;
-    opacity: .7;
   }
 
-  &_container {
+  &__container {
     flex-direction: column;
     text-align: center;
   }

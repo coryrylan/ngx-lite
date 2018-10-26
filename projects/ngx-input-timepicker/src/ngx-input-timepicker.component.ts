@@ -3,11 +3,9 @@ import {
   ViewEncapsulation,
   forwardRef,
   Input,
-  ChangeDetectionStrategy,
-  OnInit
+  ChangeDetectionStrategy
 } from '@angular/core';
-import { NG_VALUE_ACCESSOR, FormControl } from '@angular/forms';
-import { distinctUntilChanged } from 'rxjs/operators';
+import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
 
 @Component({
   selector: 'ngx-input-timepicker',
@@ -23,11 +21,12 @@ import { distinctUntilChanged } from 'rxjs/operators';
     }
   ]
 })
-export class NgxInputTimepickerComponent implements OnInit {
-  @Input() step: number = 1;
+export class NgxInputTimepickerComponent implements ControlValueAccessor {
+  @Input() hoursStep = 1;
+  @Input() minutesStep = 1;
+  @Input() military = false;
 
   private _value = new Date();
-  public control = new FormControl(this._value);
 
   get value() {
     return this._value;
@@ -35,14 +34,13 @@ export class NgxInputTimepickerComponent implements OnInit {
 
   set value(val) {
     this._value = val;
-    this.zeroSeconds();
-    this.control.setValue(this._value);
+    this.resetSeconds();
     this.onChange(val);
     this.onTouched();
   }
 
   constructor() {
-    this.zeroSeconds();
+    this.resetSeconds();
   }
 
   onChange = (_value: Date) => {};
@@ -62,46 +60,52 @@ export class NgxInputTimepickerComponent implements OnInit {
     }
   }
 
-  ngOnInit() {
-    this.control.valueChanges.pipe(distinctUntilChanged()).subscribe(v => this.value = v);
-  }
-
   nextHours() {
-    this.setHours(+this.step);
+    this.setHours(+this.hoursStep);
   }
 
   prevHours() {
-    this.setHours(-this.step);
+    this.setHours(-this.hoursStep);
   }
 
   nextMinutes() {
-    this.setMinutes(+this.step);
+    this.setMinutes(+this.minutesStep);
   }
 
   prevMinutes() {
-    this.setMinutes(-this.step);
-  }
-
-  reset() {
-  }
-
-  getHours() {
-    return this.value.getHours();
-  }
-
-  getMinutes() {
-    return this.value.getMinutes();
+    this.setMinutes(-this.minutesStep);
   }
 
   setHours(h: number) {
-    this.value.setHours(this.getHours() + h);
+    const date = new Date(this.value);
+    date.setHours(this.value.getHours() + h);
+    date.setMinutes(this.value.getMinutes());
+    this.value = date;
   }
 
   setMinutes(m: number) {
-    this.value.setMinutes(this.getMinutes() + m);
+    const date = new Date(this.value);
+    date.setMinutes(this.value.getMinutes() + m);
+    date.setHours(this.value.getHours());
+    this.value = date;
   }
 
-  zeroSeconds() {
+  setAmPm() {
+    const date = new Date(this.value);
+    let hours = this.value.getHours();
+
+    if (hours > 12) {
+      hours -= 12;
+    } else {
+      hours += 12;
+    }
+
+    date.setMinutes(this.value.getMinutes());
+    date.setHours(hours);
+    this.value = date;
+  }
+
+  resetSeconds() {
     this._value.setSeconds(0);
     this._value.setMilliseconds(0);
   }
