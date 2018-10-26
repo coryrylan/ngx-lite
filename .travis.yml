@@ -4,7 +4,7 @@ sudo: false
 language: node_js
 node_js:
   - "8"
-  
+
 addons:
   apt:
     sources:
@@ -20,7 +20,5 @@ install:
   - npm install
 
 script:
-  # Use Chromium instead of Chrome.
-  - export CHROME_BIN=chromium-browser
-  - xvfb-run -a npm run test -- --watch=false --no-progress --browser=ChromeNoSandbox
-  - xvfb-run -a npm run e2e -- --no-progress --config=e2e/protractor-ci.conf.js
+  - npm run test -- --watch=false --progress=false --browsers=ChromeHeadlessCI
+  - npm run e2e -- --protractor-config=./e2e/protractor-ci.conf.js
