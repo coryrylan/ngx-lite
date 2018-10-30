@@ -19,7 +19,9 @@ export class DocsNgxInputTimepickerComponent implements OnInit {
       date: [new Date()]
     });
 
-    this.value = this.form.controls.date.valueChanges.pipe(startWith(new Date()));
+    this.value = this.form.controls.date.valueChanges.pipe(
+      startWith(new Date())
+    );
   }
 
   submit() {

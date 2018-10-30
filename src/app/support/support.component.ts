@@ -5,10 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './support.component.html'
 })
 export class SupportComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }
