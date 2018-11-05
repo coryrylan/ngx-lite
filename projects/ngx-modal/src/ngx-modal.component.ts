@@ -1,4 +1,3 @@
-import { element } from 'protractor';
 import {
   Component,
   ElementRef,
@@ -7,7 +6,6 @@ import {
   Input,
   OnChanges,
   OnDestroy,
-  OnInit,
   Output,
   TemplateRef,
   ViewChild,
@@ -16,7 +14,14 @@ import {
   ChangeDetectionStrategy
 } from '@angular/core';
 
-import { trapFocus, KeyCodes } from './util';
+import {
+  trapFocus,
+  lockScroll,
+  unlockScroll,
+  ariaHideBody,
+  ariaShowBody,
+  KeyCodes
+} from './util';
 
 @Component({
   selector: 'ngx-modal',
@@ -25,7 +30,7 @@ import { trapFocus, KeyCodes } from './util';
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class NgxModalComponent implements OnInit, OnChanges, OnDestroy {
+export class NgxModalComponent implements OnChanges, OnDestroy {
   @ViewChild('closeButton') closeButton: ElementRef;
   @Input() closable = true;
   @Input() type = '';
@@ -38,15 +43,16 @@ export class NgxModalComponent implements OnInit, OnChanges, OnDestroy {
 
   constructor(private elementRef: ElementRef) {}
 
-  ngOnInit() {}
-
   ngOnChanges(changes: SimpleChanges) {
     const visible = changes.visible.currentValue;
 
     if (visible) {
       lockScroll();
       ariaHideBody();
-      setTimeout(() => trapFocus(this.elementRef.nativeElement), 0); // need to hook into the proper lifcycle
+      setTimeout(() => trapFocus(this.elementRef.nativeElement), 0); // todo: need to hook into the proper lifecycle
+    } else {
+      unlockScroll();
+      ariaShowBody();
     }
 
     this.visibleChange.emit(this.visible);
@@ -88,32 +94,4 @@ export class NgxModalComponent implements OnInit, OnChanges, OnDestroy {
     ariaShowBody();
     this.lastFocusedElement.focus();
   }
-}
-
-function lockScroll() {
-  if (isBrowser()) {
-    document.body.style.overflow = 'hidden';
-  }
-}
-
-function unlockScroll() {
-  if (isBrowser()) {
-    document.body.style.overflow = 'initial';
-  }
-}
-
-function ariaHideBody() {
-  if (isBrowser()) {
-    document.body.setAttribute('aria-hidden', 'true');
-  }
-}
-
-function ariaShowBody() {
-  if (isBrowser()) {
-    document.body.setAttribute('aria-hidden', 'false');
-  }
-}
-
-function isBrowser() {
-  return typeof window !== 'undefined';
 }

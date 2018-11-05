@@ -35,3 +35,31 @@ export function trapFocus(elm: HTMLElement) {
     }
   });
 }
+
+export function isBrowser() {
+  return typeof window !== 'undefined';
+}
+
+export function lockScroll() {
+  if (isBrowser()) {
+    document.body.style.overflow = 'hidden';
+  }
+}
+
+export function unlockScroll() {
+  if (isBrowser()) {
+    document.body.style.overflow = 'initial';
+  }
+}
+
+export function ariaHideBody() {
+  if (isBrowser()) {
+    document.body.setAttribute('aria-hidden', 'true');
+  }
+}
+
+export function ariaShowBody() {
+  if (isBrowser()) {
+    document.body.setAttribute('aria-hidden', 'false');
+  }
+}

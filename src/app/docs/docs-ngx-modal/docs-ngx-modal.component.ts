@@ -32,5 +32,6 @@ export class DocsNgxModalComponent implements OnInit {
 
   submit() {
     console.log(this.modalForm.value);
+    this.showForm = false;
   }
 }

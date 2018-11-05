@@ -1,4 +1,4 @@
-<div role="dialog" [attr.aria-hidden]="!visible" (click)="closable ? closeClick($event) : null" [ngClass]="{'hidden': !visible}"
+<dialog role="dialog" [attr.open]="visible" [attr.aria-hidden]="!visible" (click)="closable ? closeClick($event) : null" [ngClass]="{'hidden': !visible}"
   class="ngx-modal-overlay ngx-modal-closable-target">
   <div class="ngx-modal" role="document">
     <div class="ngx-modal__header">
@@ -15,4 +15,4 @@
       <ng-content select="[ngx-modal-footer]"></ng-content>
     </div>
   </div>
-</div>
+</dialog>

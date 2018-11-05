@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.3.4
+- fix close issue on property set
+- improved a11y with dialog element
+
 ## 0.2.3
 - ssr support
 
