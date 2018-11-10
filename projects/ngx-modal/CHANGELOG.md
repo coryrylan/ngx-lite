@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.4.4
+- angular 7 update
+
 ## 0.3.4
 - fix close issue on property set
 - improved a11y with dialog element

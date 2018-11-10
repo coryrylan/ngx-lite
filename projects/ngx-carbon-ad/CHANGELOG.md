@@ -1,5 +1,8 @@
 # Changelog
 
+# 0.3.1
+- angular 7 update
+
 # 0.2.1
 - update to latest carbon ad script
 

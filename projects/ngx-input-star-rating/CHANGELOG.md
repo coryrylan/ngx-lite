@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.2.5
+- angular 7 update
+
 ## 0.1.5
 - improved performance
 

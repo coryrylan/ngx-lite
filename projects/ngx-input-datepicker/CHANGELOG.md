@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.3.6
+- angular 7 update
+
 ## 0.2.6
 - fix css height issue
 

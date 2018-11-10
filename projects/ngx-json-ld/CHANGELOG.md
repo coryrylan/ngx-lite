@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.5.2
+- angular 7 update
+
 ## 0.4.2
 - improved performance
 

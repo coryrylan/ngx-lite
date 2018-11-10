@@ -1,14 +1,14 @@
 {
   "name": "@ngx-lite/input-datepicker",
-  "version": "0.2.6",
+  "version": "0.3.6",
   "repository": "https://github.com/coryrylan/ngx-lite",
   "author": "Cory Rylan",
   "license": "MIT",
   "private": false,
   "peerDependencies": {
-    "@angular/core": "^6.0.0",
-    "@angular/common": "^6.0.0",
-    "@angular/forms": "^6.0.0",
+    "@angular/core": "^7.0.0",
+    "@angular/common": "^7.0.0",
+    "@angular/forms": "^7.0.0",
     "date-fns": "^1.29.0"
   }
 }
