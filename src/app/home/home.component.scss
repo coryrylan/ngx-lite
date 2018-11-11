@@ -30,17 +30,6 @@ $large-break: 1600px;
   }
 }
 
-.earth {
-  max-width: 360px;
-  position: absolute;
-  top: 0;
-  right: -180px;
-
-  @media (min-width: 720px) {
-    right: 0;
-  }
-}
-
 h1,
 h2 {
   max-width: 550px;
@@ -67,46 +56,5 @@ section {
     width: 100%;
     max-width: 100px;
     margin: 0 auto 12px auto;
-  }
-}
-
-@keyframes comet {
-  20%,
-  100% {
-    opacity: 0;
-    transform: translate(400px, 430px) rotate(45deg);
-  }
-
-  0% {
-    opacity: 0;
-  }
-
-  10% {
-    opacity: 1;
-  }
-}
-
-.comet,
-.comet2 {
-  position: absolute;
-  top: -20px;
-  left: 40px;
-  width: 40px;
-  transform: rotate(45deg);
-  animation: comet 10s infinite ease-in-out;
-}
-
-.comet2 {
-  left: 140px;
-  animation: comet 8s infinite ease-in-out;
-}
-
-@media (min-width: $nav-break) {
-  .comet {
-    left: 240px;
-  }
-
-  .comet2 {
-    left: 340px;
   }
 }
