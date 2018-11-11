@@ -1,0 +1,3 @@
+User-agent: *
+Sitemap: https://ngxlite.com/sitemap.xml
+Disallow:
