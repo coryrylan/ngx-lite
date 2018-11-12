@@ -45,6 +45,7 @@ describe('ngx-input-datepicker utilities', () => {
     const date2 = new Date();
     const date3 = new Date();
 
+    expect(isBetweenDateRange(date, [date2, date3])).toBe(false);
     date2.setFullYear(2000);
     date3.setFullYear(3000);
     expect(isBetweenDateRange(date, [date2, date3])).toBe(true);

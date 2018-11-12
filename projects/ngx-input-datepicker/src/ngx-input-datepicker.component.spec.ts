@@ -1,5 +1,7 @@
+import { NgxInputDatepickerComponent } from './ngx-input-datepicker.component';
+
 describe('NgxInputDatepickerComponent', () => {
   it('should have tests', () => {
-    expect(true).toBe(true);
+    expect(NgxInputDatepickerComponent).toBeTruthy();
   });
 });
