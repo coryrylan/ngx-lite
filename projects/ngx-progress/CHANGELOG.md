@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.2.4
+- update peer deps
+
 ## 0.2.3
 - angular 7 update
 
