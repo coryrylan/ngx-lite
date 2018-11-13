@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.4.5
+- fix focus issue for one or less focusable elements
+
 ## 0.4.4
 - angular 7 update
 
