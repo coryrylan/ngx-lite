@@ -8,7 +8,6 @@ import {
   OnDestroy,
   Output,
   TemplateRef,
-  ViewChild,
   SimpleChanges,
   ViewEncapsulation,
   ChangeDetectionStrategy
@@ -31,7 +30,6 @@ import {
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class NgxModalComponent implements OnChanges, OnDestroy {
-  @ViewChild('closeButton') closeButton: ElementRef;
   @Input() closable = true;
   @Input() type = '';
   @Input() large = false;
@@ -39,6 +37,7 @@ export class NgxModalComponent implements OnChanges, OnDestroy {
   @Input() templateRef: TemplateRef<any>;
   @Output()
   readonly visibleChange: EventEmitter<boolean> = new EventEmitter<boolean>();
+
   private lastFocusedElement: HTMLElement;
 
   constructor(private elementRef: ElementRef) {}
@@ -59,39 +58,48 @@ export class NgxModalComponent implements OnChanges, OnDestroy {
   }
 
   ngOnDestroy() {
-    unlockScroll();
-    ariaShowBody();
+    this.cleanUpDOM();
   }
 
   @HostListener('document:click', ['$event'])
   rootClick(event) {
-    this.lastFocusedElement = event.target;
+    if (event && event.target) {
+      this.lastFocusedElement = event.target;
+    }
   }
 
   @HostListener('window:keyup', ['$event'])
-  keyEvent(event: KeyboardEvent) {
-    if (this.closable && event.keyCode === KeyCodes.Escape) {
+  closeOnEscape(event: KeyboardEvent) {
+    const closable = this.closable && event.keyCode === KeyCodes.Escape;
+
+    if (closable) {
       this.close();
     }
   }
 
-  closeClick(event?: MouseEvent) {
-    if (
-      this.closable &&
-      event &&
-      (event.target as HTMLElement).className.includes(
-        'ngx-modal-closable-target'
-      )
-    ) {
+  closeOnClick(event?: MouseEvent) {
+    const closable =  this.closable && event && (event.target as HTMLElement).className.includes('ngx-modal-closable-target');
+
+    if (closable) {
       this.close();
     }
   }
 
-  private close() {
+  close() {
     this.visible = false;
     this.visibleChange.emit(this.visible);
+    this.cleanUpDOM();
+  }
+
+  private cleanUpDOM() {
     unlockScroll();
     ariaShowBody();
-    this.lastFocusedElement.focus();
+    this.focusLastFocusedElement();
+  }
+
+  private focusLastFocusedElement() {
+    if (this.lastFocusedElement) {
+      this.lastFocusedElement.focus();
+    }
   }
 }

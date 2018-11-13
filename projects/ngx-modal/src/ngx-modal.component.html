@@ -1,9 +1,9 @@
-<dialog role="dialog" [attr.open]="visible" [attr.aria-hidden]="!visible" (click)="closable ? closeClick($event) : null" [ngClass]="{'hidden': !visible}"
+<dialog role="dialog" [attr.open]="visible" [attr.aria-hidden]="!visible" (click)="closeOnClick($event)" [ngClass]="{'hidden': !visible}"
   class="ngx-modal-overlay ngx-modal-closable-target">
   <div class="ngx-modal" role="document">
     <div class="ngx-modal__header">
       <ng-content select="[ngx-modal-header]"></ng-content>
-      <button type="button" #closeButton *ngIf="closable" (click)="closeClick()" aria-label="close modal" title="close modal" class="ngx-modal__close-btn ngx-modal-closable-target">
+      <button type="button" *ngIf="closable" (click)="closeOnClick()" aria-label="close modal" title="close modal" class="ngx-modal__close-btn ngx-modal-closable-target">
         <span class="ngx-modal__icon-close ngx-modal-closable-target">&times;</span>
       </button>
     </div>
