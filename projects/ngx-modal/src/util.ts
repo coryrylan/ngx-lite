@@ -15,25 +15,32 @@ export function trapFocus(elm: HTMLElement) {
   );
   const firstFocusableEl = focusableEls[0] as HTMLElement;
   const lastFocusableEl = focusableEls[focusableEls.length - 1] as HTMLElement;
-  firstFocusableEl.focus();
 
-  elm.addEventListener('keydown', e => {
-    const isTabPressed = e.key === 'Tab' || e.keyCode === KeyCodes.Tab;
+  // if just a single focusable item focus it
+  if (firstFocusableEl) {
+    firstFocusableEl.focus();
+  }
 
-    if (!isTabPressed) {
-      return;
-    }
+  // if two or more focusable items create focus loop
+  if (firstFocusableEl && lastFocusableEl) {
+    elm.addEventListener('keydown', e => {
+      const isTabPressed = e.key === 'Tab' || e.keyCode === KeyCodes.Tab;
 
-    if (e.shiftKey && document.activeElement === firstFocusableEl) {
-      lastFocusableEl.focus();
-      e.preventDefault();
-    } else {
-      if (document.activeElement === lastFocusableEl) {
-        firstFocusableEl.focus();
-        e.preventDefault();
+      if (!isTabPressed) {
+        return;
       }
-    }
-  });
+
+      if (e.shiftKey && document.activeElement === firstFocusableEl) {
+        lastFocusableEl.focus();
+        e.preventDefault();
+      } else {
+        if (document.activeElement === lastFocusableEl) {
+          firstFocusableEl.focus();
+          e.preventDefault();
+        }
+      }
+    });
+  }
 }
 
 export function isBrowser() {
