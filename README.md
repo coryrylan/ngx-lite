@@ -5,14 +5,15 @@
 
 [ngxlite.com](https://ngxlite.com/)
 
-Currently in Alpha for Angular 6+
+Currently in Beta for Angular 7+
 
 A mono repo collection of lightweight stand alone Angular libraries built with 
 the [Angular CLI](https://github.com/angular/angular-cli) and [ng-packagr](https://github.com/dherges/ng-packagr)
 
 ## Contributing
 
-The project is still in the early stages but if you would like to contribute check out this video.
+The project is still in the early stages but if you would like to contribute
+check out the [CONTRIBUTING.md](https://github.com/coryrylan/ngx-lite/blob/master/CONTRIBUTING.md).
 
 [![ngx-lite bug fix](https://img.youtube.com/vi/xZYecHyC1K4/0.jpg)](https://www.youtube.com/watch?v=xZYecHyC1K4)
 
