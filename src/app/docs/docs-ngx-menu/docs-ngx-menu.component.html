@@ -1,14 +1,88 @@
-<h1>@ngx-lite/menus</h1>
+<section bp="grid vertical-start">
+  <div bp="8@md">
+    <h1>@ngx-lite/menus</h1>
+    <app-badges package="menus" stackblitzId="angular-hkeevr"></app-badges>
+    <app-patreon></app-patreon>
 
-https://stackblitz.com/edit/angular-hkeevr
+    <p>
+      Small lightweight menu dropdown components.
+    </p>
+  </div>
+  <div bp="4@md">
+    <ngx-carbon-ad serve="CKYILKJ7" placement="coryrylancom" bp="float-right"></ngx-carbon-ad>
+  </div>
+</section>
 
+<ngx-tabs>
+  <ngx-tab [active]="true" name="Usage">
+    <ngx-menu #menu>
+      <a routerLink="/">Home</a>
+      <button>About with a really long description</button>
+      <button>Contact Us</button>
+    </ngx-menu>
+
+    <ngx-menu #menu2>
+      <a routerLink="/">Item 1</a>
+      <button>Item 2</button>
+      <button>Item 3</button>
+    </ngx-menu>
+
+    <div bp="5--max">
+      <button (click)="menu.toggle($event)" class="btn" bp="float-left">
+        <div>Menu</div>
+      </button>
+
+      <button (click)="menu2.toggle($event)" class="btn" bp="float-right">Menu 2</button>
+    </div>
+
+    <div bp="clear-both"></div>
+    <br /><br /><br />
+
+    <ngx-code-example ngNonBindable language="html">
+      <![CDATA[
 <ngx-menu #menu>
   <a routerLink="/">Home</a>
   <button>About with a really long description</button>
   <button>Contact Us</button>
 </ngx-menu>
-<button (click)="menu.toggle($event)" class="btn" bp="float-left">
-  Menu
-</button>
-<br /><br /><br />
-<button (click)="menu.toggle($event)" class="btn" bp="float-right">Menu</button>
+<button (click)="menu.toggle($event)">Menu</button>
+      ]]>
+    </ngx-code-example>
+  </ngx-tab>
+  <ngx-tab name="Installation">
+    <p>
+      To install this library, run:
+      <code>npm install @ngx-lite/menus --save</code> and then from your Angular
+      <code>AppModule</code>:
+    </p>
+
+    <ngx-code-example>
+      <![CDATA[
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+
+import { AppComponent } from './app.component';
+
+// Import library module
+import { NgxMenusModule } from '@ngx-lite/menus';
+
+@NgModule({
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    BrowserModule,
+    // Register module
+    NgxMenusModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+      ]]>
+    </ngx-code-example>
+  </ngx-tab>
+  <ngx-tab name="API">
+    <h2>Coming Soon</h2>
+  </ngx-tab>
+</ngx-tabs>

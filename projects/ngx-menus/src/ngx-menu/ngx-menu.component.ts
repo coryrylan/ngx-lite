@@ -1,14 +1,15 @@
 import {
   Component,
-  EventEmitter,
   Input,
-  Output,
   ViewEncapsulation,
-  ChangeDetectionStrategy,
   HostListener,
   ElementRef,
-  ViewChild
+  ViewChild,
+  OnDestroy
 } from '@angular/core';
+
+import { NgxMenuService } from './ngx-menu.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'ngx-menu',
@@ -16,23 +17,28 @@ import {
   styleUrls: ['./ngx-menu.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class NgxMenuComponent {
+export class NgxMenuComponent implements OnDestroy {
   @Input() hover = false;
   @ViewChild('menu') menu: ElementRef;
   visible = false;
   offsetHeight = 0;
   offsetLeft = 0;
+  subscription: Subscription;
 
-  constructor(private elementRef: ElementRef) {}
+  constructor(private elementRef: ElementRef, private ngxMenuService: NgxMenuService) {
+    this.subscription = this.ngxMenuService.visible.subscribe(v => this.visible = v);
+  }
 
   toggle(event) {
     // todo: recalculate on resize
-    this.visible = !this.visible;
-    this.offsetHeight = event.target.offsetTop + event.target.offsetHeight;
-
+    const button = event.currentTarget;
     const menuWidth = this.menu.nativeElement.offsetWidth;
-    const buttonOffsetLeft = event.target.offsetLeft;
-    const buttonWidth = event.target.offsetWidth;
+    const buttonOffsetLeft = button.offsetLeft;
+    const buttonWidth = button.offsetWidth;
+
+    this.ngxMenuService.visible.next(false);
+    this.visible = !this.visible;
+    this.offsetHeight = button.offsetTop + button.offsetHeight;
 
     if (menuWidth + buttonOffsetLeft > window.innerWidth) {
       this.offsetLeft = buttonOffsetLeft - menuWidth + buttonWidth;
@@ -41,6 +47,10 @@ export class NgxMenuComponent {
     }
 
     event.stopPropagation();
+  }
+
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
   }
 
   @HostListener('document:click', ['$event'])
