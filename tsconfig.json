@@ -18,6 +18,9 @@
       "dom"
     ],
     "paths": {
+      "@ngx-lite/util": [
+        "dist/ngx-util"
+      ],
       "@ngx-lite/carbon-ad": [
         "dist/ngx-carbon-ad"
       ],

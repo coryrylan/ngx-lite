@@ -13,13 +13,12 @@ import {
   ViewChild,
   ElementRef,
   OnChanges,
-  SimpleChanges,
   ChangeDetectionStrategy
 } from '@angular/core';
-import { isPlatformBrowser, isPlatformServer } from '@angular/common';
+import { isPlatformBrowser } from '@angular/common';
 import { fromEvent, Subscription } from 'rxjs';
 
-import { trapFocus, KeyCodes } from './util';
+import { trapTabFocus, KeyCodes } from '@ngx-lite/util';
 
 @Component({
   selector: 'ngx-nav-drawer',
@@ -107,7 +106,7 @@ export class NgxNavDrawerComponent implements OnChanges, OnDestroy, OnInit {
 
   focus() {
     if (this.show) {
-      trapFocus(this.nav.nativeElement);
+      trapTabFocus(this.nav.nativeElement);
     } else if (this.lastFocusedElement) {
       this.lastFocusedElement.focus();
     }

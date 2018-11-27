@@ -15,6 +15,7 @@
     "prettier:scss": "prettier --parser=scss --single-quote --write \"**/*.scss\"",
     "prettier:typescript": "prettier --parser=typescript --single-quote --write \"**/*.ts\"",
     "package": "run-s package:*",
+    "package:util": "ng build @ngx-lite/util",
     "package:carbon-ad": "ng build @ngx-lite/carbon-ad",
     "package:code-example": "ng build @ngx-lite/code-example",
     "package:debounce-click": "ng build @ngx-lite/debounce-click",

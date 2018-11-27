@@ -164,6 +164,26 @@
         }
       }
     },
+    "@ngx-lite/util": {
+      "root": "projects/ngx-util",
+      "sourceRoot": "projects/ngx-util/src",
+      "projectType": "library",
+      "prefix": "ngx",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/tsconfig.lib.json",
+            "project": "projects/ngx-util/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "project": "projects/ngx-util/ng-package.prod.json"
+            }
+          }
+        }
+      }
+    },
     "@ngx-lite/carbon-ad": {
       "root": "projects/ngx-carbon-ad",
       "sourceRoot": "projects/ngx-carbon-ad/src",

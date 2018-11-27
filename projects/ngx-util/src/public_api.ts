@@ -9,7 +9,7 @@ export enum KeyCodes {
   Escape = 27
 }
 
-export function trapFocus(elm: HTMLElement) {
+export function trapTabFocus(elm: HTMLElement) {
   const focusableEls = elm.querySelectorAll(
     'a, object, input, button, iframe, [tabindex]'
   );

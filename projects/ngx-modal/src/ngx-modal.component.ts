@@ -14,13 +14,13 @@ import {
 } from '@angular/core';
 
 import {
-  trapFocus,
+  trapTabFocus,
   lockScroll,
   unlockScroll,
   ariaHideBody,
   ariaShowBody,
   KeyCodes
-} from './util';
+} from '@ngx-lite/util';
 
 @Component({
   selector: 'ngx-modal',
@@ -48,7 +48,7 @@ export class NgxModalComponent implements OnChanges, OnDestroy {
     if (visible) {
       lockScroll();
       ariaHideBody();
-      setTimeout(() => trapFocus(this.elementRef.nativeElement), 0); // todo: need to hook into the proper lifecycle
+      setTimeout(() => trapTabFocus(this.elementRef.nativeElement), 0); // todo: need to hook into the proper lifecycle
     } else {
       unlockScroll();
       ariaShowBody();
