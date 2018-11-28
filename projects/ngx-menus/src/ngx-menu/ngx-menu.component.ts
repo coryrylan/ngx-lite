@@ -7,6 +7,7 @@ import {
   ViewChild,
   OnDestroy
 } from '@angular/core';
+import { KeyCodes } from '@ngx-lite/util';
 
 import { NgxMenuService } from './ngx-menu.service';
 import { Subscription } from 'rxjs';
@@ -25,12 +26,16 @@ export class NgxMenuComponent implements OnDestroy {
   offsetLeft = 0;
   subscription: Subscription;
 
-  constructor(private elementRef: ElementRef, private ngxMenuService: NgxMenuService) {
-    this.subscription = this.ngxMenuService.visible.subscribe(v => this.visible = v);
+  constructor(private ngxMenuService: NgxMenuService) {
+    this.subscription = this.ngxMenuService.visible.subscribe(
+      v => (this.visible = v)
+    );
   }
 
   toggle(event) {
-    // todo: recalculate on resize
+    // todo:
+    // - recalculate on resize
+    // - trap focus in menu with arrow key navigation
     const button = event.currentTarget;
     const menuWidth = this.menu.nativeElement.offsetWidth;
     const buttonOffsetLeft = button.offsetLeft;
@@ -53,8 +58,20 @@ export class NgxMenuComponent implements OnDestroy {
     this.subscription.unsubscribe();
   }
 
-  @HostListener('document:click', ['$event'])
-  handleClick(event: MouseEvent) {
-    this.visible = false;
+  @HostListener('document:click')
+  outerClick() {
+    if (this.visible) {
+      this.visible = false;
+    }
+  }
+
+  @HostListener('window:keyup', ['$event'])
+  outerTab(event) {
+    if (
+      (event.keyCode === KeyCodes.Tab || event.keyCode === KeyCodes.Escape) &&
+      this.visible === true
+    ) {
+      this.visible = false;
+    }
   }
 }
