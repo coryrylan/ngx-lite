@@ -78,7 +78,12 @@ export class NgxModalComponent implements OnChanges, OnDestroy {
   }
 
   closeOnClick(event?: MouseEvent) {
-    const closable =  this.closable && event && (event.target as HTMLElement).className.includes('ngx-modal-closable-target');
+    const closable =
+      this.closable &&
+      event &&
+      (event.target as HTMLElement).className.includes(
+        'ngx-modal-closable-target'
+      );
 
     if (closable) {
       this.close();

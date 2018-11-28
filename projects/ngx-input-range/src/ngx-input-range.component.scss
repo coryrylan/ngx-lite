@@ -49,7 +49,6 @@ ngx-input-range {
         0 100% no-repeat content-box;
       border-radius: 0;
     }
-
     &::-webkit-slider-thumb {
       height: 27px;
       width: 15px;
@@ -60,7 +59,6 @@ ngx-input-range {
       -webkit-appearance: none;
       margin-top: -9px;
     }
-
     &::-moz-range-track {
       width: 100%;
       height: var(--range-height);
@@ -80,7 +78,6 @@ ngx-input-range {
       border-radius: 0;
       border: 0;
     }
-
     &::-moz-range-thumb {
       border: 0;
       height: 27px;
@@ -90,31 +87,28 @@ ngx-input-range {
       background: var(--color-range-thumb);
       cursor: pointer;
     }
-
     &::-ms-track {
       width: 100%;
       height: $range-height;
       height: var(--range-height);
       cursor: pointer;
       background: transparent;
+
       border-color: transparent;
       color: transparent;
     }
-
     &::-ms-fill-lower {
       background: $color-range-lower-fill;
       background: var(--color-range-lower-fill);
       border: 0;
       border-radius: 3px;
     }
-
     &::-ms-fill-upper {
       background: $color-range-upper-fill;
       background: var(--color-range-upper-fill);
       border: 0;
       border-radius: 0;
     }
-
     &::-ms-thumb {
       border: 0;
       height: 38px;
@@ -125,30 +119,25 @@ ngx-input-range {
       cursor: pointer;
     }
   }
-
   &__top-label {
     margin-bottom: 6px;
   }
-
   &__labels {
     display: flex;
     flex-wrap: wrap;
     margin: 0 -7.5%;
   }
-
   &__label {
     display: inline-block;
     text-align: center;
     padding-top: 15px;
     font-size: 14px;
     flex: 1;
-
     &:first-child {
       text-align: left;
       position: absolute;
       left: 0;
     }
-
     &:last-child {
       text-align: right;
       position: absolute;
@@ -156,11 +145,9 @@ ngx-input-range {
     }
   }
 }
-
 .ngx-input-range__label--current {
   font-weight: bold;
 }
-
 @media all and (-ms-high-contrast: none) {
   // ie11 only
   .ngx-input-range__input {

@@ -5,6 +5,7 @@ html {
 body,
 main {
   overflow-x: hidden !important;
+  background-color: $color-body;
 }
 
 *,
@@ -158,4 +159,9 @@ code,
 .code {
   background: $color-demo;
   padding: 2px;
+}
+
+.ngx-tabs__nav > a.active,
+.ngx-tabs__nav > button.active {
+  background-color: $color-body !important; // temp, need to add css custom prop for tabs
 }
