@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.1.2
+- fix peer dep
+
 ## 0.1.1
 - improve a11y and positioning
 
