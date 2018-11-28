@@ -1,6 +1,6 @@
 # Changelog
 
-## 0.1.2
+## 0.1.3
 - fix peer dep
 
 ## 0.1.1

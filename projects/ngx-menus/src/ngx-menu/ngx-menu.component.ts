@@ -60,9 +60,7 @@ export class NgxMenuComponent implements OnDestroy {
 
   @HostListener('document:click')
   outerClick() {
-    if (this.visible) {
-      this.visible = false;
-    }
+    this.visible = false;
   }
 
   @HostListener('window:keyup', ['$event'])
