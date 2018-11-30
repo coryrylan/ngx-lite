@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.1.4
+- ie11 visibility fix
+
 ## 0.1.3
 - fix peer dep
 
