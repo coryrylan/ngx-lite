@@ -9,7 +9,7 @@ import {
 } from '@angular/core';
 import ResizeObserver from 'resize-observer-polyfill';
 
-import { Config } from './ngx-eq.module';
+import { NGX_EQ_CONFIG, Config } from './ngx-eq.di-tokens';
 
 @Directive({
   selector: '[ngxEQ]'
@@ -31,7 +31,7 @@ export class NgxEqDirective implements OnDestroy {
   constructor(
     private readonly elementRef: ElementRef,
     private ref: ChangeDetectorRef,
-    @Inject('config') private config: Config
+    @Inject(NGX_EQ_CONFIG) private config: Config
   ) {
     const element = this.elementRef.nativeElement;
 

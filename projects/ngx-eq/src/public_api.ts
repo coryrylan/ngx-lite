@@ -4,3 +4,4 @@
 
 export * from './ngx-eq.directive';
 export * from './ngx-eq.module';
+export { Config } from './ngx-eq.di-tokens';
