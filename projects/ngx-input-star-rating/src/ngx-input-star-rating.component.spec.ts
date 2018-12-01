@@ -3,7 +3,6 @@ import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import {
   async,
   fakeAsync,
-  tick,
   ComponentFixture,
   TestBed
 } from '@angular/core/testing';
