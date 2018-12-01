@@ -9,7 +9,7 @@ import {
   Output,
   PLATFORM_ID
 } from '@angular/core';
-import { isPlatformBrowser, isPlatformServer } from '@angular/common';
+import { isPlatformBrowser } from '@angular/common';
 import { fromEvent, Subscription } from 'rxjs';
 import { debounceTime, merge } from 'rxjs/operators';
 

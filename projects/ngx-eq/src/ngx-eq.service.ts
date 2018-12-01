@@ -1,6 +1,5 @@
 import { element } from 'protractor';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
 
 declare const ResizeObserver;
 
