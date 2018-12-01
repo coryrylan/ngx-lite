@@ -16,6 +16,10 @@ import {
   NG_VALIDATORS,
   NG_VALUE_ACCESSOR
 } from '@angular/forms';
+import {
+  NGX_INPUT_TAG_TAG_FORMATTER,
+  TagFormatter
+} from './ngx-input-tag.di-tokens';
 
 export enum KeyCodes {
   Backspace = 8,
@@ -71,7 +75,9 @@ export class NgxInputTagComponent implements ControlValueAccessor {
   private currentNumberOfTags = 0;
   private tagError: { message: string } = null;
 
-  constructor(@Inject('tagFormatter') private tagFormatter) {}
+  constructor(
+    @Inject(NGX_INPUT_TAG_TAG_FORMATTER) private tagFormatter: TagFormatter
+  ) {}
 
   onChange = (_value: string[]) => {};
 
