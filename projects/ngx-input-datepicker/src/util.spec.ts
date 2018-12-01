@@ -21,7 +21,7 @@ describe('ngx-input-datepicker utilities', () => {
   });
 
   it('should remove time values from a date object if available', () => {
-    const date = new Date();
+    const date = new Date('2018-11-30 8:05:05');
 
     expect(removeTimeIfAvailable(null)).toBe(null);
     expect(date.getHours()).toBeTruthy();
@@ -76,7 +76,7 @@ describe('ngx-input-datepicker utilities', () => {
   });
 
   it('should get the day of the week offset', () => {
-    const date = new Date();
+    const date = new Date('2018-11-30 8:00');
     date.setDate(4);
     expect(getDayOfWeekOffset(date).toString()).toBe([0, 1, 2, 3].toString());
   });
