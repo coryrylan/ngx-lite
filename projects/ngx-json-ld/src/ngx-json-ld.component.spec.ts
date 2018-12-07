@@ -38,18 +38,25 @@ describe('NgxJsonLdComponent', () => {
 
   it('should create schema in the template', () => {
     component.json = testSchema;
-    component.ngOnChanges({
-      json: new SimpleChange(null, component.json, false)
-    });
     fixture.detectChanges();
     expect(fixture.nativeElement.innerHTML).toContain('http://schema.org');
   });
 
+  it('should update schema in template', () => {
+    const initialName = testSchema.name;
+    const predictedName = 'Unlimited Ball Bearings Corp.';
+
+    component.json = testSchema;
+    fixture.detectChanges();
+    expect(fixture.nativeElement.innerHTML).toContain(initialName);
+
+    testSchema.name = predictedName;
+    component.json = testSchema;
+    expect(fixture.nativeElement.innerHTML).toContain(predictedName);
+  });
+
   it('should prevent script injection', () => {
     component.json = testSchema;
-    component.ngOnChanges({
-      json: new SimpleChange(null, component.json, false)
-    });
     fixture.detectChanges();
     expect((window as any).scriptInjection).toBe(undefined);
   });
