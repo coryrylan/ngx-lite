@@ -44,7 +44,7 @@ describe('NgxJsonLdComponent', () => {
 
   it('should update schema in template', () => {
     const initialName = testSchema.name;
-    const predictedName = 'Unlimited Ball Bearings Corp.';
+    const predictedName = 'Limited Ball Bearings Corp.';
 
     component.json = testSchema;
     fixture.detectChanges();
@@ -52,6 +52,7 @@ describe('NgxJsonLdComponent', () => {
 
     testSchema.name = predictedName;
     component.json = testSchema;
+    fixture.detectChanges();
     expect(fixture.nativeElement.innerHTML).toContain(predictedName);
   });
 
