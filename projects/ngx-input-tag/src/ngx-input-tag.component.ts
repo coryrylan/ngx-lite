@@ -33,8 +33,6 @@ export enum KeyCodes {
   Comma = 188
 }
 
-const maxTagLength = 25;
-
 @Component({
   selector: 'ngx-input-tag',
   templateUrl: './ngx-input-tag.component.html',
@@ -67,6 +65,7 @@ export class NgxInputTagComponent implements ControlValueAccessor {
 
   @ViewChild('inputElement') inputElement: ElementRef;
   @Input() tagSuggestions: string[] = [];
+  @Input() maxTagLength = 25;
   @Input() maxNumberOfTags = 1000;
   @Output() readonly textChange = new EventEmitter<string>();
 
@@ -116,14 +115,14 @@ export class NgxInputTagComponent implements ControlValueAccessor {
     const formattedTag = this.tagFormatter(tag);
     const tagIsEmpty = formattedTag.length === 0;
     const invalidTagLength =
-      !formattedTag.length || formattedTag.length > maxTagLength;
+      !formattedTag.length || (this.maxTagLength && formattedTag.length > this.maxTagLength);
     const duplicateTag = this.value.indexOf(formattedTag) > -1;
     const exceedsMaxNumberOfTags =
       this.currentNumberOfTags > this.maxNumberOfTags;
 
     if (!tagIsEmpty && invalidTagLength) {
       this.tagError = {
-        message: `Tag length cannot exceed ${maxTagLength} characters`
+        message: `Tag length cannot exceed ${this.maxTagLength} characters`
       };
     }
 
