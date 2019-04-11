@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.3.8
+- allow max tag length to be customizable
+
 ## 0.2.8
 - angular 7 update
 
