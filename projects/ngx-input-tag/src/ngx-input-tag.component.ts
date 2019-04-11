@@ -115,7 +115,8 @@ export class NgxInputTagComponent implements ControlValueAccessor {
     const formattedTag = this.tagFormatter(tag);
     const tagIsEmpty = formattedTag.length === 0;
     const invalidTagLength =
-      !formattedTag.length || (this.maxTagLength && formattedTag.length > this.maxTagLength);
+      !formattedTag.length ||
+      (this.maxTagLength && formattedTag.length > this.maxTagLength);
     const duplicateTag = this.value.indexOf(formattedTag) > -1;
     const exceedsMaxNumberOfTags =
       this.currentNumberOfTags > this.maxNumberOfTags;
