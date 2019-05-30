@@ -47,12 +47,9 @@ describe('NgxInputTagComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it(
-    'should return the appropriate list of tags in a form',
-    fakeAsync(() => {
-      expect(component.tags.value).toBe(testData);
-      component.tags.setValue([]);
-      expect(component.tags.value.length).toBe(0);
-    })
-  );
+  it('should return the appropriate list of tags in a form', fakeAsync(() => {
+    expect(component.tags.value).toBe(testData);
+    component.tags.setValue([]);
+    expect(component.tags.value.length).toBe(0);
+  }));
 });

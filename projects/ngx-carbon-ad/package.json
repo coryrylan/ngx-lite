@@ -1,12 +1,12 @@
 {
   "name": "@ngx-lite/carbon-ad",
-  "version": "0.3.1",
+  "version": "0.4.1",
   "repository": "https://github.com/coryrylan/ngx-lite",
   "author": "Cory Rylan",
   "license": "MIT",
   "private": false,
   "peerDependencies": {
-    "@angular/core": "^7.0.0",
-    "@angular/common": "^7.0.0"
+    "@angular/core": "^8.0.0",
+    "@angular/common": "^8.0.0"
   }
 }

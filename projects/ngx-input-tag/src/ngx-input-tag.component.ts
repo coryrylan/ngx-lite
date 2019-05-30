@@ -63,7 +63,7 @@ export class NgxInputTagComponent implements ControlValueAccessor {
     this.onTouched();
   }
 
-  @ViewChild('inputElement') inputElement: ElementRef;
+  @ViewChild('inputElement', { static: false }) inputElement: ElementRef;
   @Input() tagSuggestions: string[] = [];
   @Input() maxTagLength = 25;
   @Input() maxNumberOfTags = 1000;

@@ -20,7 +20,7 @@ import { Subscription } from 'rxjs';
 })
 export class NgxMenuComponent implements OnDestroy {
   @Input() hover = false;
-  @ViewChild('menu') menu: ElementRef;
+  @ViewChild('menu', { static: false }) menu: ElementRef;
   visible = false;
   offsetHeight = 0;
   offsetLeft = 0;

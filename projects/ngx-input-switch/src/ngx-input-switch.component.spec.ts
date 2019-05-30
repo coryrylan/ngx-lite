@@ -41,12 +41,9 @@ describe('NgxInputSwitchComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it(
-    'should return the appropriate boolean in a form',
-    fakeAsync(() => {
-      expect(component.switch.value).toBe(true);
-      component.switch.setValue(false);
-      expect(component.switch.value).toBe(false);
-    })
-  );
+  it('should return the appropriate boolean in a form', fakeAsync(() => {
+    expect(component.switch.value).toBe(true);
+    component.switch.setValue(false);
+    expect(component.switch.value).toBe(false);
+  }));
 });

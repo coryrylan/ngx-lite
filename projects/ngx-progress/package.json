@@ -1,12 +1,12 @@
 {
   "name": "@ngx-lite/progress",
-  "version": "0.2.4",
+  "version": "0.3.4",
   "repository": "https://github.com/coryrylan/ngx-lite",
   "author": "Cory Rylan",
   "license": "MIT",
   "private": false,
   "peerDependencies": {
-    "@angular/core": "^7.0.0",
-    "@angular/common": "^7.0.0"
+    "@angular/core": "^8.0.0",
+    "@angular/common": "^8.0.0"
   }
 }

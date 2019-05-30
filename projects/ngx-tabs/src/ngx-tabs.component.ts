@@ -75,17 +75,21 @@ export class NgxTabComponent {
 @Component({
   selector: 'ngx-tab-routes',
   template: `
-  <div class="ngx-tabs">
-    <div class="ngx-tabs__nav">
-      <a *ngFor="let tab of tabs; let i = index"
-        [routerLink]="tab.path" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-        {{tab.name}}
-      </a>
+    <div class="ngx-tabs">
+      <div class="ngx-tabs__nav">
+        <a
+          *ngFor="let tab of tabs; let i = index"
+          [routerLink]="tab.path"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+        >
+          {{ tab.name }}
+        </a>
+      </div>
+      <div class="ngx-tab__content">
+        <ng-content></ng-content>
+      </div>
     </div>
-    <div class="ngx-tab__content">
-      <ng-content></ng-content>
-    </div>
-  </div>
   `,
   styleUrls: ['./ngx-tabs.component.scss'],
   encapsulation: ViewEncapsulation.None,

@@ -18,7 +18,7 @@ import * as Prism from 'prismjs';
 })
 export class NgxCodeExampleComponent implements OnInit {
   @Input() language = 'javascript';
-  @ViewChild('code') ref: ElementRef;
+  @ViewChild('code', { static: true }) ref: ElementRef;
   safeHtml = '';
 
   ngOnInit() {

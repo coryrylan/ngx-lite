@@ -6,13 +6,8 @@ import { NgxCodeExampleComponent } from './ngx-code-example.component';
 @Component({
   template: `
     <ngx-code-example>
-      <![CDATA[
-if (someCondition) {
-  console.log('hi');
-} else {
-  console.log('bye');
-}
-      ]]>
+      <![CDATA[ if (someCondition) { console.log('hi'); } else {
+      console.log('bye'); } ]]>
     </ngx-code-example>
   `
 })

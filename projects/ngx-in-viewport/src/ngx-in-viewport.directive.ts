@@ -34,7 +34,10 @@ export class NgxInViewportDirective implements OnInit, OnDestroy {
   ngOnInit() {
     if (isPlatformBrowser(this.platformId)) {
       this.subscription = fromEvent(window, 'scroll')
-        .pipe(merge(fromEvent(window, 'resize')), debounceTime(100))
+        .pipe(
+          merge(fromEvent(window, 'resize')),
+          debounceTime(100)
+        )
         .subscribe(() => this.check());
     }
   }

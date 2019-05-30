@@ -10,7 +10,9 @@ import {
 import { NgxDebounceClickDirective } from './ngx-debounce-click.directive';
 
 @Component({
-  template: `<button ngxDebounceClick (debouncedClick)="add()"></button>`
+  template: `
+    <button ngxDebounceClick (debouncedClick)="add()"></button>
+  `
 })
 class TestComponent {
   count = 0;
@@ -36,15 +38,12 @@ describe('NgxDebounceClickDirective', () => {
     button = fixture.nativeElement.querySelector('button');
   }));
 
-  it(
-    'should debounce a click event',
-    fakeAsync(done => {
-      expect(component.count).toBe(0);
-      button.click();
-      expect(component.count).toBe(0);
-      tick(1000);
-      // fixture.detectChanges();
-      // expect(component.count).toBe(1);
-    })
-  );
+  it('should debounce a click event', fakeAsync(done => {
+    expect(component.count).toBe(0);
+    button.click();
+    expect(component.count).toBe(0);
+    tick(1000);
+    // fixture.detectChanges();
+    // expect(component.count).toBe(1);
+  }));
 });

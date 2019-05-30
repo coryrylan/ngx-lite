@@ -37,7 +37,7 @@ let instanceId = 0;
 })
 export class NgxInputRangeComponent
   implements OnInit, OnChanges, OnDestroy, AfterViewInit {
-  @ViewChild('rangeInput') rangeInput: ElementRef;
+  @ViewChild('rangeInput', { static: false }) rangeInput: ElementRef;
   @Input() label = '';
   @Input() measure = '';
   @Input() min = 0;
@@ -98,7 +98,10 @@ export class NgxInputRangeComponent
     }
 
     this.inputSubscription = this.control.valueChanges
-      .pipe(startWith(this.control.value), distinctUntilChanged())
+      .pipe(
+        startWith(this.control.value),
+        distinctUntilChanged()
+      )
       .subscribe(v => {
         this.value = v;
       });
@@ -138,7 +141,7 @@ export class NgxInputRangeComponent
     const displayLabels = this.labels && this.labels.length > 0;
     if (displayLabels) {
       this.currentLabelIndex = Math.min(
-        Math.floor(this.value / this.max * this.labels.length),
+        Math.floor((this.value / this.max) * this.labels.length),
         this.labels.length - 1
       );
       this.rangeLabelCssClasses = this.getRangeLabelCssClasses(this.labels);
@@ -164,7 +167,7 @@ export class NgxInputRangeComponent
 
     if (this.isBrowser) {
       let inlineStyle = document.getElementById(this.styleId);
-      const percent = (this.value - this.min) / (this.max - this.min) * 100;
+      const percent = ((this.value - this.min) / (this.max - this.min)) * 100;
 
       if (!inlineStyle) {
         inlineStyle = document.createElement('style');

@@ -30,10 +30,8 @@ describe('NgxEqDirective', () => {
     component = fixture.componentInstance;
   }));
 
-  it(
-    'should apply ngx-eq css class',
-    fakeAsync(done => {
-      expect(fixture.nativeElement.innerHTML).toContain('ngx-eq');
-    })
-  );
+  it('should apply ngx-eq css class', fakeAsync(done => {
+    tick();
+    expect(fixture.nativeElement.innerHTML).toContain('ngx-eq');
+  }));
 });

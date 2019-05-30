@@ -41,12 +41,9 @@ describe('NgxInputStarRatingComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it(
-    'should return the appropriate rating value in a form',
-    fakeAsync(() => {
-      expect(component.rate.value).toBe(3);
-      component.rate.setValue(5);
-      expect(component.rate.value).toBe(5);
-    })
-  );
+  it('should return the appropriate rating value in a form', fakeAsync(() => {
+    expect(component.rate.value).toBe(3);
+    component.rate.setValue(5);
+    expect(component.rate.value).toBe(5);
+  }));
 });

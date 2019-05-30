@@ -1,13 +1,13 @@
 {
   "name": "@ngx-lite/eq",
-  "version": "0.1.8",
+  "version": "0.2.8",
   "repository": "https://github.com/coryrylan/ngx-lite",
   "author": "Cory Rylan",
   "license": "MIT",
   "private": false,
   "peerDependencies": {
-    "@angular/core": "^7.0.0",
-    "@angular/common": "^7.0.0",
+    "@angular/core": "^8.0.0",
+    "@angular/common": "^8.0.0",
     "resize-observer-polyfill": "^1.5.0"
   }
 }
