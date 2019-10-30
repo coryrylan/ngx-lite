@@ -530,5 +530,8 @@
       }
     }
   },
-  "defaultProject": "ngx-lite-docs"
+  "defaultProject": "ngx-lite-docs",
+  "cli": {
+    "analytics": "8c4a404b-8f50-4904-b96f-ab9e00b690f3"
+  }
 }

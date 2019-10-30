@@ -69,7 +69,7 @@ export class NgxModalComponent implements OnChanges, OnDestroy {
   }
 
   @HostListener('window:keyup', ['$event'])
-  closeOnEscape(event: KeyboardEvent) {
+  closeOnEscape(event: KeyboardEvent | any) {
     const closable = this.closable && event.keyCode === KeyCodes.Escape;
 
     if (closable) {

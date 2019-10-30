@@ -154,7 +154,7 @@ export class NgxInputTagComponent implements ControlValueAccessor {
     this.focus();
   }
 
-  addTagEvent(event: KeyboardEvent) {
+  addTagEvent(event: KeyboardEvent | any) {
     const input = event.target as HTMLInputElement;
 
     this.tagError = null;
@@ -178,7 +178,7 @@ export class NgxInputTagComponent implements ControlValueAccessor {
     this.prevTagInput = input.value;
   }
 
-  preventDefaultTabBehavior(event: KeyboardEvent) {
+  preventDefaultTabBehavior(event: KeyboardEvent | any) {
     if (event.keyCode === KeyCodes.Tab && this.prevTagInput.length > 0) {
       event.preventDefault();
     }
@@ -195,7 +195,7 @@ export class NgxInputTagComponent implements ControlValueAccessor {
     this.addTag(tag);
   }
 
-  removeTag(tag: string, event: KeyboardEvent) {
+  removeTag(tag: string, event: KeyboardEvent | any) {
     if (event.keyCode !== KeyCodes.Enter) {
       this.value = this._value.filter(t => t !== tag);
       this.setCurrentNumberOfTags();

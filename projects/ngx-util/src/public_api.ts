@@ -23,7 +23,7 @@ export function trapTabFocus(elm: HTMLElement) {
 
   // if two or more focusable items create focus loop
   if (firstFocusableEl && lastFocusableEl) {
-    elm.addEventListener('keydown', e => {
+    elm.addEventListener('keydown', (e: any) => {
       const isTabPressed = e.key === 'Tab' || e.keyCode === KeyCodes.Tab;
 
       if (!isTabPressed) {

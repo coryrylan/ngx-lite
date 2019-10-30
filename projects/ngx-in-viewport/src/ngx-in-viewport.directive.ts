@@ -10,8 +10,8 @@ import {
   PLATFORM_ID
 } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
-import { fromEvent, Subscription } from 'rxjs';
-import { debounceTime, merge } from 'rxjs/operators';
+import { fromEvent, Subscription, merge } from 'rxjs';
+import { debounceTime } from 'rxjs/operators';
 
 export interface InViewportEvent {
   target: HTMLElement;
@@ -33,11 +33,11 @@ export class NgxInViewportDirective implements OnInit, OnDestroy {
 
   ngOnInit() {
     if (isPlatformBrowser(this.platformId)) {
-      this.subscription = fromEvent(window, 'scroll')
-        .pipe(
-          merge(fromEvent(window, 'resize')),
-          debounceTime(100)
-        )
+      this.subscription = merge(
+        fromEvent(window, 'scroll'),
+        fromEvent(window, 'resize')
+      )
+        .pipe(debounceTime(100))
         .subscribe(() => this.check());
     }
   }
