@@ -9,13 +9,13 @@ import {
   ChangeDetectionStrategy
 } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
-import * as addMonths_ from 'date-fns/add_months';
-import * as subMonths_ from 'date-fns/sub_months';
-import * as setDate_ from 'date-fns/set_date';
-import * as isToday_ from 'date-fns/is_today';
-import * as getDayOfYear_ from 'date-fns/get_day_of_year';
-import * as isBefore_ from 'date-fns/is_before';
-import * as isAfter_ from 'date-fns/is_after';
+import addMonths from 'date-fns/esm/addMonths';
+import subMonths from 'date-fns/esm/subMonths';
+import setDate from 'date-fns/esm/setDate';
+import isToday from 'date-fns/esm/isToday';
+import getDayOfYear from 'date-fns/esm/getDayOfYear';
+import isBefore from 'date-fns/esm/isBefore';
+import isAfter from 'date-fns/esm/isAfter';
 
 import {
   removeTimeIfAvailable,
@@ -28,15 +28,6 @@ import {
   weekDays,
   monthNames
 } from './util';
-
-// https://github.com/rollup/rollup/issues/670
-const addMonths = addMonths_;
-const subMonths = subMonths_;
-const setDate = setDate_;
-const isToday = isToday_;
-const getDayOfYear = getDayOfYear_;
-const isBefore = isBefore_;
-const isAfter = isAfter_;
 
 let instanceId = 0;
 

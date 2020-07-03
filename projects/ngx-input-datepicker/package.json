@@ -9,6 +9,6 @@
     "@angular/core": "^8.0.0",
     "@angular/common": "^8.0.0",
     "@angular/forms": "^8.0.0",
-    "date-fns": "^1.29.0"
+    "date-fns": "^2.14.0"
   }
 }
