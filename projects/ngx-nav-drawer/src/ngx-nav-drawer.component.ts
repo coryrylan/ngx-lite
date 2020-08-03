@@ -52,7 +52,7 @@ export class NgxNavDrawerComponent implements OnChanges, OnDestroy, OnInit {
   ngOnInit() {
     if (isPlatformBrowser(this.platformId)) {
       this.setFixedPosition();
-      this.subscription = fromEvent(window, 'resize').subscribe(event =>
+      this.subscription = fromEvent(window, 'resize').subscribe(() =>
         this.setFixedPosition()
       );
     }

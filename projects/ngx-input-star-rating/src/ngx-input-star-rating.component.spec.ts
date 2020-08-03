@@ -21,7 +21,6 @@ class TestComponent {
 describe('NgxInputStarRatingComponent', () => {
   let component: TestComponent;
   let fixture: ComponentFixture<TestComponent>;
-  let switchEl;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -34,7 +33,6 @@ describe('NgxInputStarRatingComponent', () => {
     fixture = TestBed.createComponent(TestComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
-    switchEl = fixture.nativeElement.querySelector('.input-rating');
   });
 
   it('should create', () => {

@@ -17,7 +17,6 @@ import { NgxEqModule } from './ngx-eq.module';
 class TestComponent {}
 
 describe('NgxEqDirective', () => {
-  let component: TestComponent;
   let fixture: ComponentFixture<TestComponent>;
 
   beforeEach(async(() => {
@@ -27,10 +26,9 @@ describe('NgxEqDirective', () => {
     }).compileComponents();
 
     fixture = TestBed.createComponent(TestComponent);
-    component = fixture.componentInstance;
   }));
 
-  it('should apply ngx-eq css class', fakeAsync(done => {
+  it('should apply ngx-eq css class', fakeAsync(() => {
     tick();
     expect(fixture.nativeElement.innerHTML).toContain('ngx-eq');
   }));

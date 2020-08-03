@@ -21,7 +21,6 @@ class TestComponent {
 describe('NgxInputSwitchComponent', () => {
   let component: TestComponent;
   let fixture: ComponentFixture<TestComponent>;
-  let switchEl;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -34,7 +33,6 @@ describe('NgxInputSwitchComponent', () => {
     fixture = TestBed.createComponent(TestComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
-    switchEl = fixture.nativeElement.querySelector('.switch');
   });
 
   it('should create', () => {

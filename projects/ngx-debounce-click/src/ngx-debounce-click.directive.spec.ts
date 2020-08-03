@@ -38,7 +38,7 @@ describe('NgxDebounceClickDirective', () => {
     button = fixture.nativeElement.querySelector('button');
   }));
 
-  it('should debounce a click event', fakeAsync(done => {
+  it('should debounce a click event', fakeAsync(() => {
     expect(component.count).toBe(0);
     button.click();
     expect(component.count).toBe(0);

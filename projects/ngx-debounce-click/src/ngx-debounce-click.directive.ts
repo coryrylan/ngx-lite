@@ -3,13 +3,10 @@ import {
   EventEmitter,
   HostListener,
   Input,
-  Inject,
   OnInit,
   OnDestroy,
-  Output,
-  PLATFORM_ID
+  Output
 } from '@angular/core';
-import { isPlatformBrowser } from '@angular/common';
 import { Subject, Subscription } from 'rxjs';
 import { debounceTime } from 'rxjs/operators';
 
@@ -21,11 +18,6 @@ export class NgxDebounceClickDirective implements OnInit, OnDestroy {
   @Output() readonly debouncedClick = new EventEmitter<MouseEvent>();
   private readonly clicks = new Subject<MouseEvent>();
   private subscription: Subscription;
-  private isBrowser = false;
-
-  constructor(@Inject(PLATFORM_ID) platformId: string) {
-    this.isBrowser = isPlatformBrowser(platformId);
-  }
 
   ngOnInit() {
     this.listenToClicks();

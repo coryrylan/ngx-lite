@@ -1,7 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { NgxJsonLdComponent } from './ngx-json-ld.component';
-import { SimpleChange } from '@angular/core';
 
 const testSchema = {
   '@context': 'http://schema.org',
