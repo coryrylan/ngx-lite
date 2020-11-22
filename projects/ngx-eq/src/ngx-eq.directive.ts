@@ -5,14 +5,14 @@ import {
   Input,
   OnDestroy,
   ChangeDetectorRef,
-  Inject
+  Inject,
 } from '@angular/core';
 import ResizeObserver from 'resize-observer-polyfill';
 
 import { NGX_EQ_CONFIG, Config } from './ngx-eq.di-tokens';
 
 @Directive({
-  selector: '[ngxEQ]'
+  selector: '[ngxEQ]',
 })
 export class NgxEqDirective implements OnDestroy {
   @HostBinding('class.ngx-eq') ngxEQ = true;
@@ -36,28 +36,28 @@ export class NgxEqDirective implements OnDestroy {
     const element = this.elementRef.nativeElement;
 
     if (!this.config.disableForTesting) {
-      this.changes = new ResizeObserver(entries => {
+      this.changes = new ResizeObserver((entries) => {
         for (const entry of entries) {
           const width = entry.contentRect.width;
           this.reset();
 
-          if (width >= this.extraSmall) {
+          if (this.extraSmall && width >= this.extraSmall) {
             this.extraSmallClass = true;
           }
 
-          if (width >= this.small) {
+          if (this.small && width >= this.small) {
             this.smallClass = true;
           }
 
-          if (width >= this.medium) {
+          if (this.medium && width >= this.medium) {
             this.mediumClass = true;
           }
 
-          if (width >= this.large) {
+          if (this.large && width >= this.large) {
             this.largeClass = true;
           }
 
-          if (width >= this.extraLarge) {
+          if (this.extraLarge && width >= this.extraLarge) {
             this.extraLargeClass = true;
           }
         }

@@ -5,7 +5,7 @@ import { fadeAnimation } from './common/animations/index';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
-  animations: [fadeAnimation]
+  animations: [fadeAnimation],
 })
 export class AppComponent {
   show = false;

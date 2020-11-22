@@ -21,7 +21,7 @@ import { DocsNgxLoadersComponent } from './docs-ngx-loaders/docs-ngx-loaders.com
 import {
   DocsNgxTabsComponent,
   DocsNgxTabRoutes1Component,
-  DocsNgxTabRoutes2Component
+  DocsNgxTabRoutes2Component,
 } from './docs-ngx-tabs/docs-ngx-tabs.component';
 import { DocsNgxCarbonAdComponent } from './docs-ngx-carbon-ad/docs-ngx-carbon-ad.component';
 import { DocsNgxProgressComponent } from './docs-ngx-progress/docs-ngx-progress.component';
@@ -29,6 +29,7 @@ import { DocsNgxMenuComponent } from './docs-ngx-menu/docs-ngx-menu.component';
 
 @NgModule({
   imports: [SharedModule, DocsRoutingModule],
+  exports: [SharedModule],
   declarations: [
     DocsComponent,
     DocsHomeComponent,
@@ -51,7 +52,7 @@ import { DocsNgxMenuComponent } from './docs-ngx-menu/docs-ngx-menu.component';
     DocsNgxTabRoutes2Component,
     DocsNgxCarbonAdComponent,
     DocsNgxProgressComponent,
-    DocsNgxMenuComponent
-  ]
+    DocsNgxMenuComponent,
+  ],
 })
 export class DocsModule {}

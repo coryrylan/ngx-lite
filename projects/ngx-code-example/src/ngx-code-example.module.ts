@@ -5,6 +5,6 @@ import { NgxCodeExampleComponent } from './ngx-code-example.component';
 @NgModule({
   imports: [CommonModule],
   declarations: [NgxCodeExampleComponent],
-  exports: [NgxCodeExampleComponent]
+  exports: [NgxCodeExampleComponent],
 })
 export class NgxCodeExampleModule {}

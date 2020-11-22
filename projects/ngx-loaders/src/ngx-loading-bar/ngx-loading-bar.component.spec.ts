@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { waitForAsync, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { NgxLoadingBarComponent } from './ngx-loading-bar.component';
 
@@ -6,11 +6,13 @@ describe('NgxLoadingBarComponent', () => {
   let component: NgxLoadingBarComponent;
   let fixture: ComponentFixture<NgxLoadingBarComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [NgxLoadingBarComponent]
-    }).compileComponents();
-  }));
+  beforeEach(
+    waitForAsync(() => {
+      TestBed.configureTestingModule({
+        declarations: [NgxLoadingBarComponent],
+      }).compileComponents();
+    })
+  );
 
   beforeEach(() => {
     fixture = TestBed.createComponent(NgxLoadingBarComponent);

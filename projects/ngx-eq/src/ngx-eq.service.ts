@@ -9,7 +9,7 @@ export class NgxEqService {
   resizeObserver: any;
 
   constructor() {
-    this.resizeObserver = new ResizeObserver(entries => {
+    this.resizeObserver = new ResizeObserver((entries) => {
       for (const entry of entries) {
         const width = entry.contentRect.width;
       }

@@ -5,6 +5,6 @@ import { NgxInViewportDirective } from './ngx-in-viewport.directive';
 @NgModule({
   imports: [CommonModule],
   declarations: [NgxInViewportDirective],
-  exports: [NgxInViewportDirective]
+  exports: [NgxInViewportDirective],
 })
 export class NgxInViewportModule {}

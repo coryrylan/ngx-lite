@@ -1,5 +1,5 @@
 // This component causes a weird async error in karma
-// import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+// import { waitForAsync, ComponentFixture, TestBed } from '@angular/core/testing';
 
 // import { NgxCarbonAdComponent } from './ngx-carbon-ad.component';
 
@@ -7,7 +7,7 @@
 //   let component: NgxCarbonAdComponent;
 //   let fixture: ComponentFixture<NgxCarbonAdComponent>;
 
-//   beforeEach(async(() => {
+//   beforeEach(waitForAsync(() => {
 //     TestBed.configureTestingModule({
 //       declarations: [NgxCarbonAdComponent]
 //     })

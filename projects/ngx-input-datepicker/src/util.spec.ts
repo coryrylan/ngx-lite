@@ -6,7 +6,7 @@ import {
   isStartOfDateRange,
   isEndOfDateRange,
   getDayOfWeekOffset,
-  daysInMonth
+  daysInMonth,
 } from './util';
 
 describe('ngx-input-datepicker utilities', () => {
@@ -22,8 +22,6 @@ describe('ngx-input-datepicker utilities', () => {
 
   it('should remove time values from a date object if available', () => {
     const date = new Date('2018-11-30 8:05:05');
-
-    expect(removeTimeIfAvailable(null)).toBe(null);
     expect(date.getHours()).toBeTruthy();
     expect(date.getMinutes()).toBeTruthy();
     expect(date.getSeconds()).toBeTruthy();

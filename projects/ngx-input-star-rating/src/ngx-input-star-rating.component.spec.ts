@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import {
-  async,
+  waitForAsync,
   fakeAsync,
   ComponentFixture,
-  TestBed
+  TestBed,
 } from '@angular/core/testing';
 
 import { NgxInputStarRatingComponent } from './ngx-input-star-rating.component';
@@ -12,7 +12,7 @@ import { NgxInputStarRatingComponent } from './ngx-input-star-rating.component';
 @Component({
   template: `
     <ngx-input-star-rating formContolName="rate"></ngx-input-star-rating>
-  `
+  `,
 })
 class TestComponent {
   rate = new FormControl(3);
@@ -23,12 +23,14 @@ describe('NgxInputStarRatingComponent', () => {
   let fixture: ComponentFixture<TestComponent>;
   let switchEl;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      imports: [ReactiveFormsModule],
-      declarations: [TestComponent, NgxInputStarRatingComponent]
-    }).compileComponents();
-  }));
+  beforeEach(
+    waitForAsync(() => {
+      TestBed.configureTestingModule({
+        imports: [ReactiveFormsModule],
+        declarations: [TestComponent, NgxInputStarRatingComponent],
+      }).compileComponents();
+    })
+  );
 
   beforeEach(() => {
     fixture = TestBed.createComponent(TestComponent);

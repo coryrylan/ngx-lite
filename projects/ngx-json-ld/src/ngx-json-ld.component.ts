@@ -2,21 +2,21 @@ import {
   Component,
   HostBinding,
   Input,
-  ChangeDetectionStrategy
+  ChangeDetectionStrategy,
 } from '@angular/core';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
 @Component({
   selector: 'ngx-json-ld',
   template: '',
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class NgxJsonLdComponent {
   @Input()
   set json(currentValue: {}) {
     this.jsonLD = this.getSafeHTML(currentValue);
   }
-  @HostBinding('innerHTML') jsonLD: SafeHtml;
+  @HostBinding('innerHTML') jsonLD?: SafeHtml;
   constructor(private sanitizer: DomSanitizer) {}
 
   getSafeHTML(value: {}) {

@@ -7,6 +7,6 @@ const routes: Routes = [{ path: '', component: SupportComponent }];
 
 @NgModule({
   imports: [CommonModule, RouterModule.forChild(routes)],
-  declarations: [SupportComponent]
+  declarations: [SupportComponent],
 })
 export class SupportModule {}

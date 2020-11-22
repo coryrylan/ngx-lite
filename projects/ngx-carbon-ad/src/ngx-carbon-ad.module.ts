@@ -5,6 +5,6 @@ import { NgxCarbonAdComponent } from './ngx-carbon-ad.component';
 @NgModule({
   imports: [CommonModule],
   declarations: [NgxCarbonAdComponent],
-  exports: [NgxCarbonAdComponent]
+  exports: [NgxCarbonAdComponent],
 })
 export class NgxCarbonAdModule {}

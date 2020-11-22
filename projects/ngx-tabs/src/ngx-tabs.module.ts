@@ -4,12 +4,12 @@ import { RouterModule } from '@angular/router';
 import {
   NgxTabsComponent,
   NgxTabComponent,
-  NgxTabRoutesComponent
+  NgxTabRoutesComponent,
 } from './ngx-tabs.component';
 
 @NgModule({
   imports: [CommonModule, RouterModule],
   declarations: [NgxTabsComponent, NgxTabComponent, NgxTabRoutesComponent],
-  exports: [NgxTabsComponent, NgxTabComponent, NgxTabRoutesComponent]
+  exports: [NgxTabsComponent, NgxTabComponent, NgxTabRoutesComponent],
 })
 export class NgxTabsModule {}

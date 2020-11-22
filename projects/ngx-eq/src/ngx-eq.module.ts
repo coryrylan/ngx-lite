@@ -1,4 +1,4 @@
-import { NgModule, ModuleWithProviders } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { NgxEqDirective } from './ngx-eq.directive';
@@ -10,16 +10,16 @@ export const defaultConfig: Config = {
   medium: 720,
   large: 960,
   extraLarge: 1440,
-  disableForTesting: false // for unit testing in karma
+  disableForTesting: false, // for unit testing in karma
 };
 
 @NgModule({
   imports: [CommonModule],
   declarations: [NgxEqDirective],
-  exports: [NgxEqDirective]
+  exports: [NgxEqDirective],
 })
 export class NgxEqModule {
-  static forRoot(config: Config = {}): ModuleWithProviders {
+  static forRoot(config: Config = {}) {
     return {
       ngModule: NgxEqModule,
       providers: [
@@ -33,10 +33,10 @@ export class NgxEqModule {
             large: 960,
             extraLarge: 1440,
             disableForTesting: false,
-            ...config
-          }
-        }
-      ]
+            ...config,
+          },
+        },
+      ],
     };
   }
 }

@@ -1,14 +1,17 @@
 {
   "name": "@ngx-lite/tabs",
-  "version": "0.3.7",
+  "version": "0.3.8",
   "repository": "https://github.com/coryrylan/ngx-lite",
   "author": "Cory Rylan",
   "license": "MIT",
   "private": false,
   "peerDependencies": {
-    "@angular/core": "^8.0.0",
-    "@angular/common": "^8.0.0",
-    "@angular/router": "^8.0.0",
-    "rxjs": "^6.0.0"
+    "@angular/common": "^11.0.1",
+    "@angular/core": "^11.0.1",
+    "@angular/router": " ^11.0.1",
+    "rxjs": "^6.6.0"
+  },
+  "dependencies": {
+    "tslib": "^2.0.0"
   }
 }

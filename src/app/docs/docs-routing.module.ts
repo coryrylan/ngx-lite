@@ -23,7 +23,7 @@ import { DocsNgxProgressComponent } from './docs-ngx-progress/docs-ngx-progress.
 import {
   DocsNgxTabsComponent,
   DocsNgxTabRoutes1Component,
-  DocsNgxTabRoutes2Component
+  DocsNgxTabRoutes2Component,
 } from './docs-ngx-tabs/docs-ngx-tabs.component';
 
 const routes: Routes = [
@@ -53,16 +53,16 @@ const routes: Routes = [
         component: DocsNgxTabsComponent,
         children: [
           { path: '', component: DocsNgxTabRoutes1Component },
-          { path: '2', component: DocsNgxTabRoutes2Component }
-        ]
+          { path: '2', component: DocsNgxTabRoutes2Component },
+        ],
       },
-      { path: 'progress', component: DocsNgxProgressComponent }
-    ]
-  }
+      { path: 'progress', component: DocsNgxProgressComponent },
+    ],
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 export class DocsRoutingModule {}

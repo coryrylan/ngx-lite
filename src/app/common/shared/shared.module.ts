@@ -43,12 +43,12 @@ const modules = [
   NgxNavDrawerModule,
   NgxTabsModule,
   NgxProgressModule,
-  NgxMenusModule
+  NgxMenusModule,
 ];
 
 @NgModule({
   imports: [CommonModule, ReactiveFormsModule, ...modules],
   exports: [CommonModule, ReactiveFormsModule, ...modules, ...components],
-  declarations: [...components]
+  declarations: [...components],
 })
 export class SharedModule {}

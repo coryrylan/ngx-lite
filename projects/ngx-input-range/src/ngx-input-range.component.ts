@@ -12,7 +12,7 @@ import {
   PLATFORM_ID,
   SimpleChanges,
   ViewEncapsulation,
-  ChangeDetectionStrategy
+  ChangeDetectionStrategy,
 } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { FormControl, NG_VALUE_ACCESSOR } from '@angular/forms';
@@ -30,29 +30,29 @@ let instanceId = 0;
     {
       provide: NG_VALUE_ACCESSOR,
       useExisting: forwardRef(() => NgxInputRangeComponent),
-      multi: true
-    }
+      multi: true,
+    },
   ],
-  encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.None,
 })
 export class NgxInputRangeComponent
   implements OnInit, OnChanges, OnDestroy, AfterViewInit {
-  @ViewChild('rangeInput', { static: false }) rangeInput: ElementRef;
+  @ViewChild('rangeInput', { static: false }) rangeInput?: ElementRef;
   @Input() label = '';
   @Input() measure = '';
   @Input() min = 0;
   @Input() max = 100;
   @Input() step = 1;
-  @Input() labels: string[] = null;
+  @Input() labels: string[] | null = null;
 
   private _value = 50;
   control = new FormControl(this._value);
 
-  margin: string;
-  maxWidth: string;
-  rangeLabelCssClasses: string[];
+  margin?: string;
+  maxWidth?: string;
+  rangeLabelCssClasses: string[] = [];
   readonly instanceId = `ngx-input-range-id-${instanceId}`;
-  private currentLabelIndex: number;
+  private currentLabelIndex?: number;
   private inputSubscription: Subscription;
   private readonly styleId = `ngx-input-range-id-${instanceId}-style`;
   private readonly isBrowser: boolean;
@@ -73,6 +73,10 @@ export class NgxInputRangeComponent
   constructor(@Inject(PLATFORM_ID) platformId: string) {
     instanceId++;
     this.isBrowser = isPlatformBrowser(platformId);
+
+    this.inputSubscription = this.control.valueChanges
+      .pipe(startWith(this.control.value), distinctUntilChanged())
+      .subscribe((v) => (this.value = v));
   }
 
   onChange = (_value: number) => {};
@@ -96,15 +100,6 @@ export class NgxInputRangeComponent
     if (!this.label) {
       throw new Error('Attribute label required');
     }
-
-    this.inputSubscription = this.control.valueChanges
-      .pipe(
-        startWith(this.control.value),
-        distinctUntilChanged()
-      )
-      .subscribe(v => {
-        this.value = v;
-      });
   }
 
   ngOnChanges(changes: SimpleChanges) {
@@ -112,8 +107,9 @@ export class NgxInputRangeComponent
       this.rangeLabelCssClasses = this.getRangeLabelCssClasses(
         changes.labels.currentValue
       );
-      this.margin = `0 ${100 / (changes.labels.currentValue.length + 1.5) -
-        2}%`;
+      this.margin = `0 ${
+        100 / (changes.labels.currentValue.length + 1.5) - 2
+      }%`;
     }
   }
 
@@ -125,7 +121,7 @@ export class NgxInputRangeComponent
     if (this.isBrowser) {
       const inlineStyle = document.getElementById(this.styleId);
 
-      if (inlineStyle) {
+      if (inlineStyle && inlineStyle.parentNode) {
         // ie
         inlineStyle.parentNode.removeChild(inlineStyle);
       }
@@ -139,7 +135,7 @@ export class NgxInputRangeComponent
 
   private updateCurrentLabel() {
     const displayLabels = this.labels && this.labels.length > 0;
-    if (displayLabels) {
+    if (displayLabels && this.labels) {
       this.currentLabelIndex = Math.min(
         Math.floor((this.value / this.max) * this.labels.length),
         this.labels.length - 1
@@ -176,9 +172,7 @@ export class NgxInputRangeComponent
       }
 
       inlineStyle.textContent = `
-        #${
-          this.instanceId
-        }::-webkit-slider-runnable-track{background-size:${percent}% 100%}
+        #${this.instanceId}::-webkit-slider-runnable-track{background-size:${percent}% 100%}
         #${this.instanceId}::-moz-range-track{background-size:${percent}% 100%}
       `;
     }

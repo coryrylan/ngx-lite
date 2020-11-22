@@ -1,15 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-docs-ngx-tabs',
   templateUrl: './docs-ngx-tabs.component.html',
-  preserveWhitespaces: true
+  preserveWhitespaces: true,
 })
-export class DocsNgxTabsComponent implements OnInit {
+export class DocsNgxTabsComponent {
   index = 0;
-  constructor() {}
-
-  ngOnInit() {}
 }
 
 @Component({
@@ -21,14 +18,12 @@ export class DocsNgxTabsComponent implements OnInit {
       </ngx-tab-routes> ]]>
     </ngx-code-example>
   `,
-  preserveWhitespaces: true
+  preserveWhitespaces: true,
 })
 export class DocsNgxTabRoutes1Component {}
 
 @Component({
   selector: 'app-docs-ngx-tab-routes',
-  template: `
-    Routable Tab 2
-  `
+  template: ` Routable Tab 2 `,
 })
 export class DocsNgxTabRoutes2Component {}

@@ -9,6 +9,6 @@ const components = [NgxLoadingSpinnerComponent, NgxLoadingBarComponent];
 @NgModule({
   imports: [CommonModule],
   declarations: components,
-  exports: components
+  exports: components,
 })
 export class NgxLoadersModule {}

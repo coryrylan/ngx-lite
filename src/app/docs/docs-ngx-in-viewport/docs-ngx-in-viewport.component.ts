@@ -1,17 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-docs-ngx-in-viewport',
   templateUrl: './docs-ngx-in-viewport.component.html',
-  preserveWhitespaces: true
+  preserveWhitespaces: true,
 })
-export class DocsNgxInViewportComponent implements OnInit {
+export class DocsNgxInViewportComponent {
   count = 0;
-  constructor() {}
 
-  ngOnInit() {}
-
-  log(event) {
+  log(event: any) {
     this.count++;
     console.log(event);
   }

@@ -1,18 +1,16 @@
 import { Component } from '@angular/core';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import {
-  async,
+  waitForAsync,
   fakeAsync,
   ComponentFixture,
-  TestBed
+  TestBed,
 } from '@angular/core/testing';
 
 import { NgxInputSwitchComponent } from './ngx-input-switch.component';
 
 @Component({
-  template: `
-    <ngx-input-switch formContolName="switch"></ngx-input-switch>
-  `
+  template: ` <ngx-input-switch formContolName="switch"></ngx-input-switch> `,
 })
 class TestComponent {
   switch = new FormControl(true);
@@ -23,12 +21,14 @@ describe('NgxInputSwitchComponent', () => {
   let fixture: ComponentFixture<TestComponent>;
   let switchEl;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      imports: [ReactiveFormsModule],
-      declarations: [TestComponent, NgxInputSwitchComponent]
-    }).compileComponents();
-  }));
+  beforeEach(
+    waitForAsync(() => {
+      TestBed.configureTestingModule({
+        imports: [ReactiveFormsModule],
+        declarations: [TestComponent, NgxInputSwitchComponent],
+      }).compileComponents();
+    })
+  );
 
   beforeEach(() => {
     fixture = TestBed.createComponent(TestComponent);

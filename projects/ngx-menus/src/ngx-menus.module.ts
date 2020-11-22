@@ -7,6 +7,6 @@ import { NgxMenuService } from './ngx-menu/ngx-menu.service';
   imports: [CommonModule],
   declarations: [NgxMenuComponent],
   exports: [NgxMenuComponent],
-  providers: [NgxMenuService]
+  providers: [NgxMenuService],
 })
 export class NgxMenusModule {}

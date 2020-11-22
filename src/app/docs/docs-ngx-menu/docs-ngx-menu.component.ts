@@ -1,13 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-docs-ngx-menu',
   templateUrl: './docs-ngx-menu.component.html',
-  preserveWhitespaces: true
+  preserveWhitespaces: true,
 })
-export class DocsNgxMenuComponent implements OnInit {
+export class DocsNgxMenuComponent {
   showMenu = false;
-  constructor() {}
-
-  ngOnInit() {}
 }

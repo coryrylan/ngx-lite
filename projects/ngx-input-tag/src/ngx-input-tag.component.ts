@@ -9,16 +9,16 @@ import {
   ViewChild,
   Inject,
   ViewEncapsulation,
-  ChangeDetectionStrategy
+  ChangeDetectionStrategy,
 } from '@angular/core';
 import {
   ControlValueAccessor,
   NG_VALIDATORS,
-  NG_VALUE_ACCESSOR
+  NG_VALUE_ACCESSOR,
 } from '@angular/forms';
 import {
   NGX_INPUT_TAG_TAG_FORMATTER,
-  TagFormatter
+  TagFormatter,
 } from './ngx-input-tag.di-tokens';
 
 export enum KeyCodes {
@@ -30,7 +30,7 @@ export enum KeyCodes {
   UpArrow = 38,
   RightArrow = 39,
   DownArrow = 40,
-  Comma = 188
+  Comma = 188,
 }
 
 @Component({
@@ -42,15 +42,15 @@ export enum KeyCodes {
     {
       provide: NG_VALUE_ACCESSOR,
       useExisting: forwardRef(() => NgxInputTagComponent),
-      multi: true
+      multi: true,
     },
     {
       provide: NG_VALIDATORS,
       useExisting: forwardRef(() => NgxInputTagComponent),
-      multi: true
-    }
+      multi: true,
+    },
   ],
-  encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.None,
 })
 export class NgxInputTagComponent implements ControlValueAccessor {
   get value() {
@@ -63,7 +63,7 @@ export class NgxInputTagComponent implements ControlValueAccessor {
     this.onTouched();
   }
 
-  @ViewChild('inputElement', { static: false }) inputElement: ElementRef;
+  @ViewChild('inputElement', { static: false }) inputElement?: ElementRef;
   @Input() tagSuggestions: string[] = [];
   @Input() maxTagLength = 25;
   @Input() maxNumberOfTags = 1000;
@@ -72,7 +72,7 @@ export class NgxInputTagComponent implements ControlValueAccessor {
   private _value: string[] = [];
   private prevTagInput = '';
   private currentNumberOfTags = 0;
-  private tagError: { message: string } = null;
+  private tagError: { message: string } | null = null;
 
   constructor(
     @Inject(NGX_INPUT_TAG_TAG_FORMATTER) private tagFormatter: TagFormatter
@@ -92,7 +92,7 @@ export class NgxInputTagComponent implements ControlValueAccessor {
 
   writeValue(value: string[]) {
     if (value) {
-      this.value = value.map(v => this.tagFormatter(v));
+      this.value = value.map((v) => this.tagFormatter(v));
       this.setCurrentNumberOfTags();
     }
   }
@@ -104,6 +104,7 @@ export class NgxInputTagComponent implements ControlValueAccessor {
   @HostListener('document:click', ['$event'])
   handleClick(event: MouseEvent) {
     if (
+      this.inputElement &&
       !this.inputElement.nativeElement.contains(event.target) &&
       this.inputElement.nativeElement.value
     ) {
@@ -123,7 +124,7 @@ export class NgxInputTagComponent implements ControlValueAccessor {
 
     if (!tagIsEmpty && invalidTagLength) {
       this.tagError = {
-        message: `Tag length cannot exceed ${this.maxTagLength} characters`
+        message: `Tag length cannot exceed ${this.maxTagLength} characters`,
       };
     }
 
@@ -134,7 +135,7 @@ export class NgxInputTagComponent implements ControlValueAccessor {
     if (exceedsMaxNumberOfTags) {
       const plural = this.maxNumberOfTags === 1 ? '' : 's';
       this.tagError = {
-        message: `Cannot exceed ${this.maxNumberOfTags} tag${plural}`
+        message: `Cannot exceed ${this.maxNumberOfTags} tag${plural}`,
       };
     }
 
@@ -142,7 +143,8 @@ export class NgxInputTagComponent implements ControlValueAccessor {
       !tagIsEmpty &&
       !invalidTagLength &&
       !duplicateTag &&
-      !exceedsMaxNumberOfTags
+      !exceedsMaxNumberOfTags &&
+      this.inputElement
     ) {
       this.tagError = null;
       this.value.push(formattedTag);
@@ -195,15 +197,15 @@ export class NgxInputTagComponent implements ControlValueAccessor {
     this.addTag(tag);
   }
 
-  removeTag(tag: string, event: KeyboardEvent) {
+  removeTag(tag: string, event: any) {
     if (event.keyCode !== KeyCodes.Enter) {
-      this.value = this._value.filter(t => t !== tag);
+      this.value = this._value.filter((t) => t !== tag);
       this.setCurrentNumberOfTags();
     }
   }
 
   focus() {
-    this.inputElement.nativeElement.focus();
+    this.inputElement?.nativeElement.focus();
   }
 
   setCurrentNumberOfTags() {

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 import { fadeAnimation } from './../common/animations';
 
@@ -6,14 +6,10 @@ import { fadeAnimation } from './../common/animations';
   selector: 'app-docs',
   templateUrl: './docs.component.html',
   styleUrls: ['./docs.component.scss'],
-  animations: [fadeAnimation]
+  animations: [fadeAnimation],
 })
-export class DocsComponent implements OnInit {
-  constructor() {}
-
-  ngOnInit() {}
-
-  getRouterOutletState(outlet) {
+export class DocsComponent {
+  getRouterOutletState(outlet: any) {
     return outlet.isActivated ? outlet.activatedRoute : '';
   }
 }

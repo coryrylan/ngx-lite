@@ -10,7 +10,7 @@ import {
   TemplateRef,
   SimpleChanges,
   ViewEncapsulation,
-  ChangeDetectionStrategy
+  ChangeDetectionStrategy,
 } from '@angular/core';
 
 import {
@@ -19,7 +19,7 @@ import {
   unlockScroll,
   ariaHideBody,
   ariaShowBody,
-  KeyCodes
+  KeyCodes,
 } from '@ngx-lite/util';
 
 @Component({
@@ -27,18 +27,18 @@ import {
   templateUrl: './ngx-modal.component.html',
   styleUrls: ['./ngx-modal.component.scss'],
   encapsulation: ViewEncapsulation.None,
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class NgxModalComponent implements OnChanges, OnDestroy {
   @Input() closable = true;
   @Input() type = '';
   @Input() large = false;
-  @Input() visible: boolean;
-  @Input() templateRef: TemplateRef<any>;
+  @Input() visible = false;
+  @Input() templateRef?: TemplateRef<any>;
   @Output()
   readonly visibleChange: EventEmitter<boolean> = new EventEmitter<boolean>();
 
-  private lastFocusedElement: HTMLElement;
+  private lastFocusedElement?: HTMLElement;
 
   constructor(private elementRef: ElementRef) {}
 
@@ -62,7 +62,7 @@ export class NgxModalComponent implements OnChanges, OnDestroy {
   }
 
   @HostListener('document:click', ['$event'])
-  rootClick(event) {
+  rootClick(event: any) {
     if (event && event.target) {
       this.lastFocusedElement = event.target;
     }
@@ -70,9 +70,7 @@ export class NgxModalComponent implements OnChanges, OnDestroy {
 
   @HostListener('window:keyup', ['$event'])
   closeOnEscape(event: KeyboardEvent) {
-    const closable = this.closable && event.keyCode === KeyCodes.Escape;
-
-    if (closable) {
+    if (this.closable) {
       this.close();
     }
   }

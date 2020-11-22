@@ -8,6 +8,6 @@ const routes: Routes = [{ path: '', component: AboutComponent }];
 
 @NgModule({
   imports: [CommonModule, RouterModule.forChild(routes)],
-  declarations: [AboutComponent]
+  declarations: [AboutComponent],
 })
 export class AboutModule {}

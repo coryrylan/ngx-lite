@@ -6,6 +6,6 @@ import { NgxDebounceClickDirective } from './ngx-debounce-click.directive';
 @NgModule({
   imports: [CommonModule],
   declarations: [NgxDebounceClickDirective],
-  exports: [NgxDebounceClickDirective]
+  exports: [NgxDebounceClickDirective],
 })
 export class NgxDebounceClickModule {}

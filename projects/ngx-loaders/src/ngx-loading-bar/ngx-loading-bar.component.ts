@@ -4,6 +4,6 @@ import { Component, ChangeDetectionStrategy } from '@angular/core';
   selector: 'ngx-loading-bar',
   templateUrl: './ngx-loading-bar.component.html',
   styleUrls: ['./ngx-loading-bar.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class NgxLoadingBarComponent {}

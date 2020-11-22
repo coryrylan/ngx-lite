@@ -44,7 +44,6 @@
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
-              "extractCss": true,
               "namedChunks": false,
               "aot": true,
               "extractLicenses": true,
@@ -156,7 +155,7 @@
       "prefix": "ngx",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
+          "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
             "tsConfig": "projects/tsconfig.lib.json",
             "project": "projects/ngx-util/ng-package.json"
@@ -176,7 +175,7 @@
       "prefix": "ngx",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
+          "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
             "tsConfig": "projects/tsconfig.lib.json",
             "project": "projects/ngx-carbon-ad/ng-package.json"
@@ -196,7 +195,7 @@
       "prefix": "ngx",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
+          "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
             "tsConfig": "projects/tsconfig.lib.json",
             "project": "projects/ngx-code-example/ng-package.json"
@@ -216,7 +215,7 @@
       "prefix": "ngx",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
+          "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
             "tsConfig": "projects/tsconfig.lib.json",
             "project": "projects/ngx-debounce-click/ng-package.json"
@@ -236,7 +235,7 @@
       "prefix": "ngx",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
+          "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
             "tsConfig": "projects/tsconfig.lib.json",
             "project": "projects/ngx-eq/ng-package.json"
@@ -256,7 +255,7 @@
       "prefix": "ngx",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
+          "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
             "tsConfig": "projects/tsconfig.lib.json",
             "project": "projects/ngx-in-viewport/ng-package.json"
@@ -276,7 +275,7 @@
       "prefix": "ngx",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
+          "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
             "tsConfig": "projects/tsconfig.lib.json",
             "project": "projects/ngx-input-datepicker/ng-package.json"
@@ -296,7 +295,7 @@
       "prefix": "ngx",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
+          "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
             "tsConfig": "projects/tsconfig.lib.json",
             "project": "projects/ngx-input-timepicker/ng-package.json"
@@ -316,7 +315,7 @@
       "prefix": "ngx",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
+          "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
             "tsConfig": "projects/tsconfig.lib.json",
             "project": "projects/ngx-input-range/ng-package.json"
@@ -336,7 +335,7 @@
       "prefix": "ngx",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
+          "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
             "tsConfig": "projects/tsconfig.lib.json",
             "project": "projects/ngx-input-star-rating/ng-package.json"
@@ -356,7 +355,7 @@
       "prefix": "ngx",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
+          "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
             "tsConfig": "projects/tsconfig.lib.json",
             "project": "projects/ngx-input-switch/ng-package.json"
@@ -376,7 +375,7 @@
       "prefix": "ngx",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
+          "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
             "tsConfig": "projects/tsconfig.lib.json",
             "project": "projects/ngx-loaders/ng-package.json"
@@ -396,7 +395,7 @@
       "prefix": "ngx",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
+          "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
             "tsConfig": "projects/tsconfig.lib.json",
             "project": "projects/ngx-input-tag/ng-package.json"
@@ -416,7 +415,7 @@
       "prefix": "ngx",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
+          "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
             "tsConfig": "projects/tsconfig.lib.json",
             "project": "projects/ngx-json-ld/ng-package.json"
@@ -436,7 +435,7 @@
       "prefix": "ngx",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
+          "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
             "tsConfig": "projects/tsconfig.lib.json",
             "project": "projects/ngx-modal/ng-package.json"
@@ -456,7 +455,7 @@
       "prefix": "ngx",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
+          "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
             "tsConfig": "projects/tsconfig.lib.json",
             "project": "projects/ngx-nav-drawer/ng-package.json"
@@ -476,7 +475,7 @@
       "prefix": "ngx",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
+          "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
             "tsConfig": "projects/tsconfig.lib.json",
             "project": "projects/ngx-progress/ng-package.json"
@@ -496,7 +495,7 @@
       "prefix": "ngx",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
+          "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
             "tsConfig": "projects/tsconfig.lib.json",
             "project": "projects/ngx-tabs/ng-package.json"
@@ -516,7 +515,7 @@
       "prefix": "ngx",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
+          "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
             "tsConfig": "projects/tsconfig.lib.json",
             "project": "projects/ngx-menus/ng-package.json"
@@ -530,5 +529,8 @@
       }
     }
   },
-  "defaultProject": "ngx-lite-docs"
+  "defaultProject": "ngx-lite-docs",
+  "cli": {
+    "analytics": "18b0c759-5f2a-4f1f-87f3-3806f244aede"
+  }
 }

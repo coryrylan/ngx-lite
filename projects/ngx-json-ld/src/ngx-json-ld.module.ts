@@ -5,6 +5,6 @@ import { NgxJsonLdComponent } from './ngx-json-ld.component';
 @NgModule({
   imports: [CommonModule],
   declarations: [NgxJsonLdComponent],
-  exports: [NgxJsonLdComponent]
+  exports: [NgxJsonLdComponent],
 })
 export class NgxJsonLdModule {}

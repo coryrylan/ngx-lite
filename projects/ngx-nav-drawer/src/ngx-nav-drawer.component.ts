@@ -13,7 +13,7 @@ import {
   ViewChild,
   ElementRef,
   OnChanges,
-  ChangeDetectionStrategy
+  ChangeDetectionStrategy,
 } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { fromEvent, Subscription } from 'rxjs';
@@ -25,7 +25,7 @@ import { trapTabFocus, KeyCodes } from '@ngx-lite/util';
   templateUrl: './ngx-nav-drawer.component.html',
   styleUrls: ['./ngx-nav-drawer.component.scss'],
   encapsulation: ViewEncapsulation.None,
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class NgxNavDrawerComponent implements OnChanges, OnDestroy, OnInit {
   @Output() openChange = new EventEmitter<boolean>();
@@ -37,12 +37,12 @@ export class NgxNavDrawerComponent implements OnChanges, OnDestroy, OnInit {
 
   @Input() fixed = false;
   @Input() fixedAtWidth = '1024px';
-  @ViewChild('nav', { static: false }) nav: ElementRef;
+  @ViewChild('nav', { static: false }) nav?: ElementRef;
 
   show = false;
   fixedMode = false;
-  private subscription: Subscription;
-  private lastFocusedElement: HTMLElement;
+  private subscription?: Subscription;
+  private lastFocusedElement?: HTMLElement;
 
   constructor(
     @Inject(PLATFORM_ID) private platformId: any,
@@ -52,14 +52,14 @@ export class NgxNavDrawerComponent implements OnChanges, OnDestroy, OnInit {
   ngOnInit() {
     if (isPlatformBrowser(this.platformId)) {
       this.setFixedPosition();
-      this.subscription = fromEvent(window, 'resize').subscribe(event =>
+      this.subscription = fromEvent(window, 'resize').subscribe((event) =>
         this.setFixedPosition()
       );
     }
   }
 
   @HostListener('document:click', ['$event'])
-  rootClick(event) {
+  rootClick(event: any) {
     this.lastFocusedElement = event.target;
   }
 
@@ -74,7 +74,7 @@ export class NgxNavDrawerComponent implements OnChanges, OnDestroy, OnInit {
   }
 
   @HostListener('window:keyup', ['$event'])
-  outerClick(event) {
+  outerClick(event: any) {
     if (event.keyCode === KeyCodes.Escape && this.show === true) {
       this.toggle();
     }
@@ -106,7 +106,7 @@ export class NgxNavDrawerComponent implements OnChanges, OnDestroy, OnInit {
 
   focus() {
     if (this.show) {
-      trapTabFocus(this.nav.nativeElement);
+      trapTabFocus(this.nav?.nativeElement);
     } else if (this.lastFocusedElement) {
       this.lastFocusedElement.focus();
     }

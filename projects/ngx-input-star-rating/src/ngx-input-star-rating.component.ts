@@ -6,14 +6,14 @@ import {
   OnInit,
   SimpleChanges,
   ViewEncapsulation,
-  ChangeDetectionStrategy
+  ChangeDetectionStrategy,
 } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 const starIcons = {
   outline: 'outline',
   full: 'full',
-  half: 'half'
+  half: 'half',
 };
 
 @Component({
@@ -25,10 +25,10 @@ const starIcons = {
     {
       provide: NG_VALUE_ACCESSOR,
       useExisting: forwardRef(() => NgxInputStarRatingComponent),
-      multi: true
-    }
+      multi: true,
+    },
   ],
-  encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.None,
 })
 export class NgxInputStarRatingComponent
   implements ControlValueAccessor, OnInit, OnChanges {
@@ -116,7 +116,7 @@ export class NgxInputStarRatingComponent
   }
 
   mouseLeave() {
-    this.buttons.forEach(i => (i.active = false));
+    this.buttons.forEach((i) => (i.active = false));
   }
 
   private valueUpdate(value: number) {

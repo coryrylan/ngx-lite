@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 @Component({
   selector: 'app-docs-ngx-progress',
   templateUrl: './docs-ngx-progress.component.html',
-  preserveWhitespaces: true
+  preserveWhitespaces: true,
 })
 export class DocsNgxProgressComponent {
   readonly process: Observable<number>;
@@ -14,7 +14,7 @@ export class DocsNgxProgressComponent {
 }
 
 function emulateProcess() {
-  return new Observable<number>(observer => {
+  return new Observable<number>((observer) => {
     let val = 0;
     const interval = setInterval(() => {
       if (val < 100) {

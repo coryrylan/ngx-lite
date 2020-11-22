@@ -3,7 +3,7 @@ import {
   Component,
   Input,
   ViewEncapsulation,
-  ChangeDetectionStrategy
+  ChangeDetectionStrategy,
 } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
@@ -18,10 +18,10 @@ let instanceId = 0;
     {
       provide: NG_VALUE_ACCESSOR,
       useExisting: forwardRef(() => NgxInputSwitchComponent),
-      multi: true
-    }
+      multi: true,
+    },
   ],
-  encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.None,
 })
 export class NgxInputSwitchComponent implements ControlValueAccessor {
   get value() {

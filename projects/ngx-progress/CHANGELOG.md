@@ -1,5 +1,8 @@
 # Changelog
 
+# 0.3.5
+- angular 11 update
+
 ## 0.2.4
 - update peer deps
 

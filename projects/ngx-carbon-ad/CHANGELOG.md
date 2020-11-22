@@ -1,5 +1,8 @@
 # Changelog
 
+# 0.4.2
+- angular 11 update
+
 # 0.3.1
 - angular 7 update
 

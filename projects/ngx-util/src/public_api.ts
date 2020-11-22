@@ -6,7 +6,7 @@ export enum KeyCodes {
   Backspace = 8,
   Tab = 9,
   Enter = 13,
-  Escape = 27
+  Escape = 27,
 }
 
 export function trapTabFocus(elm: HTMLElement) {
@@ -23,10 +23,8 @@ export function trapTabFocus(elm: HTMLElement) {
 
   // if two or more focusable items create focus loop
   if (firstFocusableEl && lastFocusableEl) {
-    elm.addEventListener('keydown', e => {
-      const isTabPressed = e.key === 'Tab' || e.keyCode === KeyCodes.Tab;
-
-      if (!isTabPressed) {
+    elm.addEventListener('keydown', (e) => {
+      if (e.key !== 'Tab') {
         return;
       }
 

@@ -1,14 +1,8 @@
-import * as isSameDay_ from 'date-fns/is_same_day';
-import * as isSameYear_ from 'date-fns/is_same_year';
-import * as getDaysInMonth_ from 'date-fns/get_days_in_month';
-import * as isBefore_ from 'date-fns/is_before';
-import * as isAfter_ from 'date-fns/is_after';
-
-const getDaysInMonth = getDaysInMonth_;
-const isSameYear = isSameYear_;
-const isSameDay = isSameDay_;
-const isBefore = isBefore_;
-const isAfter = isAfter_;
+import isAfter from 'date-fns/esm/isAfter';
+import isBefore from 'date-fns/esm/isBefore';
+import isSameDay from 'date-fns/esm/isSameDay';
+import isSameYear from 'date-fns/esm/isSameYear';
+import getDaysInMonth from 'date-fns/esm/getDaysInMonth';
 
 export const weekDays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
@@ -24,7 +18,7 @@ export const monthNames = [
   'September',
   'October',
   'November',
-  'December'
+  'December',
 ];
 
 export function removeTimeIfAvailable(date: Date) {

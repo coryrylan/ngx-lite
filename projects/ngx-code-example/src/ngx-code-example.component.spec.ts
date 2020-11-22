@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { waitForAsync, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { NgxCodeExampleComponent } from './ngx-code-example.component';
 
@@ -9,7 +9,7 @@ import { NgxCodeExampleComponent } from './ngx-code-example.component';
       <![CDATA[ if (someCondition) { console.log('hi'); } else {
       console.log('bye'); } ]]>
     </ngx-code-example>
-  `
+  `,
 })
 class TestComponent {}
 
@@ -17,11 +17,13 @@ describe('NgxCodeExampleComponent', () => {
   let component: NgxCodeExampleComponent;
   let fixture: ComponentFixture<NgxCodeExampleComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [NgxCodeExampleComponent, TestComponent]
-    }).compileComponents();
-  }));
+  beforeEach(
+    waitForAsync(() => {
+      TestBed.configureTestingModule({
+        declarations: [NgxCodeExampleComponent, TestComponent],
+      }).compileComponents();
+    })
+  );
 
   beforeEach(() => {
     fixture = TestBed.createComponent(NgxCodeExampleComponent);

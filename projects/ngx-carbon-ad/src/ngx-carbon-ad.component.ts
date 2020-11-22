@@ -5,7 +5,7 @@ import {
   AfterViewInit,
   ElementRef,
   ViewEncapsulation,
-  ChangeDetectionStrategy
+  ChangeDetectionStrategy,
 } from '@angular/core';
 
 @Component({
@@ -13,7 +13,7 @@ import {
   templateUrl: './ngx-carbon-ad.component.html',
   styleUrls: ['./ngx-carbon-ad.component.scss'],
   encapsulation: ViewEncapsulation.None,
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class NgxCarbonAdComponent implements OnInit, AfterViewInit {
   @Input() placement = '';
@@ -25,9 +25,7 @@ export class NgxCarbonAdComponent implements OnInit, AfterViewInit {
     s.async = true;
     s.id = '_carbonads_js';
     s.type = 'text/javascript';
-    s.src = `//cdn.carbonads.com/carbon.js?serve=${this.serve}&placement=${
-      this.placement
-    }`;
+    s.src = `//cdn.carbonads.com/carbon.js?serve=${this.serve}&placement=${this.placement}`;
     this.elementRef.nativeElement.appendChild(s);
   }
 

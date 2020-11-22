@@ -1,13 +1,16 @@
 {
   "name": "@ngx-lite/menus",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "repository": "https://github.com/coryrylan/ngx-lite",
   "author": "Cory Rylan",
   "license": "MIT",
   "private": false,
   "peerDependencies": {
-    "@angular/core": "^8.0.0",
-    "@angular/common": "^8.0.0",
+    "@angular/common": "^11.0.1",
+    "@angular/core": "^11.0.1",
     "@ngx-lite/util": "0.0.0"
+  },
+  "dependencies": {
+    "tslib": "^2.0.0"
   }
 }

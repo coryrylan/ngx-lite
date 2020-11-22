@@ -1,5 +1,8 @@
 # Changelog
 
+# 0.5.6
+- angular 11 update
+
 ## 0.4.5
 - fix focus issue for one or less focusable elements
 

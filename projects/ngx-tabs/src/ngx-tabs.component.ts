@@ -8,7 +8,7 @@ import {
   SimpleChanges,
   TemplateRef,
   ViewEncapsulation,
-  ChangeDetectionStrategy
+  ChangeDetectionStrategy,
 } from '@angular/core';
 import { tap } from 'rxjs/operators';
 
@@ -17,7 +17,7 @@ import { tap } from 'rxjs/operators';
   templateUrl: './ngx-tabs.component.html',
   styleUrls: ['./ngx-tabs.component.scss'],
   encapsulation: ViewEncapsulation.None,
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class NgxTabsComponent implements OnChanges {
   @Input() activeTabIndex = 0;
@@ -60,12 +60,12 @@ export class NgxTabsComponent implements OnChanges {
       <ng-template [ngTemplateOutlet]="templateRef"></ng-template>
     </div>
   `,
-  encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.None,
 })
 export class NgxTabComponent {
-  @Input() name: string;
+  @Input() name?: string;
   @Input() active = false;
-  @Input() templateRef: TemplateRef<any>;
+  @Input() templateRef?: TemplateRef<any>;
 
   constructor(@Host() tabsComponent: NgxTabsComponent) {
     tabsComponent.addTab(this);
@@ -93,7 +93,7 @@ export class NgxTabComponent {
   `,
   styleUrls: ['./ngx-tabs.component.scss'],
   encapsulation: ViewEncapsulation.None,
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class NgxTabRoutesComponent {
   @Input() tabs: { name: string; path: string }[] = [];

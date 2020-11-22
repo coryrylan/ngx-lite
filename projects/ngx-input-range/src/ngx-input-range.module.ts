@@ -6,6 +6,6 @@ import { NgxInputRangeComponent } from './ngx-input-range.component';
 @NgModule({
   imports: [CommonModule, ReactiveFormsModule],
   declarations: [NgxInputRangeComponent],
-  exports: [NgxInputRangeComponent]
+  exports: [NgxInputRangeComponent],
 })
 export class NgxInputRangeModule {}

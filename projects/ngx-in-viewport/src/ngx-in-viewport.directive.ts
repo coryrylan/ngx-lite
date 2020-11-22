@@ -7,7 +7,7 @@ import {
   OnDestroy,
   OnInit,
   Output,
-  PLATFORM_ID
+  PLATFORM_ID,
 } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { fromEvent, Subscription } from 'rxjs';
@@ -19,12 +19,12 @@ export interface InViewportEvent {
 }
 
 @Directive({
-  selector: '[ngxInViewport]'
+  selector: '[ngxInViewport]',
 })
 export class NgxInViewportDirective implements OnInit, OnDestroy {
   @Input() offset = 0;
   @Output() readonly inViewport = new EventEmitter<InViewportEvent>();
-  private subscription: Subscription;
+  private subscription?: Subscription;
 
   constructor(
     @Inject(PLATFORM_ID) private platformId: any,
@@ -34,10 +34,7 @@ export class NgxInViewportDirective implements OnInit, OnDestroy {
   ngOnInit() {
     if (isPlatformBrowser(this.platformId)) {
       this.subscription = fromEvent(window, 'scroll')
-        .pipe(
-          merge(fromEvent(window, 'resize')),
-          debounceTime(100)
-        )
+        .pipe(merge(fromEvent(window, 'resize')), debounceTime(100))
         .subscribe(() => this.check());
     }
   }
@@ -54,7 +51,7 @@ export class NgxInViewportDirective implements OnInit, OnDestroy {
       value:
         document.body.contains(this.elementRef.nativeElement) &&
         this.elementRef.nativeElement.getBoundingClientRect().top <=
-          window.innerHeight + this.offset
+          window.innerHeight + this.offset,
     };
 
     this.inViewport.emit(event);

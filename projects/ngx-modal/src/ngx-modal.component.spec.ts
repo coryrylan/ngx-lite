@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { By } from '@angular/platform-browser';
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { waitForAsync, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { NgxModalComponent } from './ngx-modal.component';
 
@@ -15,7 +15,7 @@ import { NgxModalComponent } from './ngx-modal.component';
     <ng-template #template>
       <p>ng-template content test</p>
     </ng-template>
-  `
+  `,
 })
 export class TestComponent {
   visible = false;
@@ -25,16 +25,19 @@ describe('NgxModalComponent', () => {
   let testFixture: ComponentFixture<TestComponent>;
   let component: NgxModalComponent;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [NgxModalComponent, TestComponent]
-    }).compileComponents();
+  beforeEach(
+    waitForAsync(() => {
+      TestBed.configureTestingModule({
+        declarations: [NgxModalComponent, TestComponent],
+      }).compileComponents();
 
-    testFixture = TestBed.createComponent(TestComponent);
-    component = testFixture.debugElement.query(By.directive(NgxModalComponent))
-      .componentInstance;
-    testFixture.detectChanges();
-  }));
+      testFixture = TestBed.createComponent(TestComponent);
+      component = testFixture.debugElement.query(
+        By.directive(NgxModalComponent)
+      ).componentInstance;
+      testFixture.detectChanges();
+    })
+  );
 
   it('should create', () => {
     expect(component).toBeTruthy();

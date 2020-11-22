@@ -1,5 +1,8 @@
 # Changelog
 
+# 0.4.6
+- angular 11 update
+
 ## 0.3.5
 - fix peer dep
 

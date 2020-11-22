@@ -1,13 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-docs-ngx-nav-drawer',
   templateUrl: './docs-ngx-nav-drawer.component.html',
-  preserveWhitespaces: true
+  preserveWhitespaces: true,
 })
-export class DocsNgxNavDrawerComponent implements OnInit {
+export class DocsNgxNavDrawerComponent {
   show = false;
-  constructor() {}
-
-  ngOnInit() {}
 }

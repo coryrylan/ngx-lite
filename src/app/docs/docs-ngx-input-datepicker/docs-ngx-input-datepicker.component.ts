@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { startWith } from 'rxjs/operators';
@@ -6,18 +6,16 @@ import { startWith } from 'rxjs/operators';
 @Component({
   selector: 'app-docs-ngx-input-datepicker',
   templateUrl: './docs-ngx-input-datepicker.component.html',
-  preserveWhitespaces: true
+  preserveWhitespaces: true,
 })
-export class DocsNgxInputDatepickerComponent implements OnInit {
+export class DocsNgxInputDatepickerComponent {
   form: FormGroup;
   value: Observable<[Date, Date]>;
   value2: Observable<Date>;
   minDate: Date;
   maxDate: Date;
 
-  constructor(private formBuilder: FormBuilder) {}
-
-  ngOnInit() {
+  constructor(private formBuilder: FormBuilder) {
     const today = new Date();
     const tomorrow = new Date();
     tomorrow.setDate(today.getDate() + 1);
@@ -33,7 +31,7 @@ export class DocsNgxInputDatepickerComponent implements OnInit {
 
     this.form = this.formBuilder.group({
       date: [rangeValue],
-      date2: [today]
+      date2: [today],
     });
 
     this.value = this.form.controls.date.valueChanges.pipe(
@@ -43,7 +41,7 @@ export class DocsNgxInputDatepickerComponent implements OnInit {
   }
 
   submit() {
-    console.log(this.form.value);
-    alert(this.form.value.date);
+    console.log(this.form?.value);
+    alert(this.form?.value.date);
   }
 }

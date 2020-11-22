@@ -1,5 +1,8 @@
 # Changelog
 
+# 0.4.9
+- angular 11 update
+
 ## 0.3.8
 - allow max tag length to be customizable
 

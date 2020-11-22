@@ -1,11 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-support',
-  templateUrl: './support.component.html'
+  templateUrl: './support.component.html',
 })
-export class SupportComponent implements OnInit {
-  constructor() {}
-
-  ngOnInit() {}
-}
+export class SupportComponent {}

@@ -6,17 +6,16 @@ import {
   Input,
   HostListener,
   ElementRef,
-  ChangeDetectionStrategy
+  ChangeDetectionStrategy,
 } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
-import * as addMonths_ from 'date-fns/add_months';
-import * as subMonths_ from 'date-fns/sub_months';
-import * as setDate_ from 'date-fns/set_date';
-import * as isToday_ from 'date-fns/is_today';
-import * as getDayOfYear_ from 'date-fns/get_day_of_year';
-import * as isBefore_ from 'date-fns/is_before';
-import * as isAfter_ from 'date-fns/is_after';
-
+import isAfter from 'date-fns/esm/isAfter';
+import isBefore from 'date-fns/esm/isBefore';
+import getDayOfYear from 'date-fns/esm/getDayOfYear';
+import isToday from 'date-fns/esm/isToday';
+import setDate from 'date-fns/esm/setDate';
+import subMonths from 'date-fns/esm/setDate';
+import addMonths from 'date-fns/esm/setDate';
 import {
   removeTimeIfAvailable,
   daysInMonth,
@@ -26,17 +25,8 @@ import {
   isBetweenDateRange,
   isSameDate,
   weekDays,
-  monthNames
+  monthNames,
 } from './util';
-
-// https://github.com/rollup/rollup/issues/670
-const addMonths = addMonths_;
-const subMonths = subMonths_;
-const setDate = setDate_;
-const isToday = isToday_;
-const getDayOfYear = getDayOfYear_;
-const isBefore = isBefore_;
-const isAfter = isAfter_;
 
 let instanceId = 0;
 
@@ -50,9 +40,9 @@ let instanceId = 0;
     {
       provide: NG_VALUE_ACCESSOR,
       useExisting: forwardRef(() => NgxInputDatepickerComponent),
-      multi: true
-    }
-  ]
+      multi: true,
+    },
+  ],
 })
 export class NgxInputDatepickerComponent
   implements ControlValueAccessor, OnInit {
@@ -61,25 +51,25 @@ export class NgxInputDatepickerComponent
   @Input() placeholder = '';
   @Input() label = '';
   @Input() showLabel = true;
-  @Input() minDate: Date;
-  @Input() maxDate: Date;
+  @Input() minDate?: Date;
+  @Input() maxDate?: Date;
 
   weekDays = weekDays;
-  calendarDate: Date;
-  monthName: string;
-  year: number;
-  daysInMonth: Date[];
-  dayOfWeekOffset: number[];
+  calendarDate?: Date;
+  monthName?: string;
+  year?: number;
+  daysInMonth?: Date[];
+  dayOfWeekOffset?: number[];
   showInputDatepicker = false;
 
-  private _value: Date | [Date, Date];
+  private _value?: Date | [Date, Date];
   private selectedRangeIndex = 0;
 
   get value() {
     return this._value;
   }
 
-  set value(val) {
+  set value(val: any) {
     if (val) {
       if ((val as Date[]).length) {
         val = [removeTimeIfAvailable(val[0]), removeTimeIfAvailable(val[1])];
@@ -95,7 +85,7 @@ export class NgxInputDatepickerComponent
 
   instanceId = `ngx-input-switch-${instanceId++}`;
 
-  onChange = (_value: Date | [Date, Date]) => {};
+  onChange: any = (_value: Date | [Date, Date]) => {};
   onTouched = () => {};
 
   @HostListener('document:click', ['$event'])
@@ -128,11 +118,11 @@ export class NgxInputDatepickerComponent
   }
 
   prev() {
-    this.setCalendarDate(subMonths(this.calendarDate, 1));
+    this.setCalendarDate(subMonths(this.calendarDate as Date, 1));
   }
 
   next() {
-    this.setCalendarDate(addMonths(this.calendarDate, 1));
+    this.setCalendarDate(addMonths(this.calendarDate as Date, 1));
   }
 
   clear() {
@@ -159,27 +149,27 @@ export class NgxInputDatepickerComponent
     const value = this.value as Date;
     const dayIsSameDayOfYear =
       getDayOfYear(value) ===
-      getDayOfYear(setDate(this.calendarDate, dayOfMonth.getDate()));
+      getDayOfYear(setDate(this.calendarDate as Date, dayOfMonth.getDate()));
     this.value = !dayIsSameDayOfYear
-      ? setDate(this.calendarDate, dayOfMonth.getDate())
+      ? setDate(this.calendarDate as Date, dayOfMonth.getDate())
       : undefined;
     this.showInputDatepicker = false;
   }
 
   setRange(dayOfMonth: Date) {
-    let dates = this.value as [Date, Date];
+    let dates: any = this.value as [Date, Date];
     const day = dayOfMonth.getDate();
     const dayIsSameDayOfYear =
       getDayOfYear(dates[this.selectedRangeIndex]) ===
-      getDayOfYear(setDate(this.calendarDate, day));
+      getDayOfYear(setDate(this.calendarDate as Date, day));
 
     if (this.selectedRangeIndex === 0) {
       dates[0] = !dayIsSameDayOfYear
-        ? setDate(this.calendarDate, day)
+        ? setDate(this.calendarDate as Date, day)
         : undefined;
       dates[1] = undefined;
     } else {
-      dates[1] = setDate(this.calendarDate, day);
+      dates[1] = setDate(this.calendarDate as Date, day);
     }
 
     dates = isAfter(dates[0], dates[1]) ? [dates[1], dates[0]] : dates;

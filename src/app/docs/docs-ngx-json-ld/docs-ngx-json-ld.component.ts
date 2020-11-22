@@ -1,11 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-docs-ngx-json-ld',
   templateUrl: './docs-ngx-json-ld.component.html',
-  preserveWhitespaces: true
+  preserveWhitespaces: true,
 })
-export class DocsNgxJsonLdComponent implements OnInit {
+export class DocsNgxJsonLdComponent {
   demoData = {
     '@context': 'http://schema.org',
     '@type': 'Organization',
@@ -14,17 +14,13 @@ export class DocsNgxJsonLdComponent implements OnInit {
     contactPoint: {
       '@type': 'ContactPoint',
       telephone: '+1-401-555-1212',
-      contactType: 'Customer service'
-    }
+      contactType: 'Customer service',
+    },
   };
 
   json = {
     name: 'Cory',
     age: 26,
-    test: '<script>alert(0)</script>'
+    test: '<script>alert(0)</script>',
   };
-
-  constructor() {}
-
-  ngOnInit() {}
 }

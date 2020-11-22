@@ -5,6 +5,6 @@ import { NgxInputSwitchComponent } from './ngx-input-switch.component';
 @NgModule({
   imports: [CommonModule],
   declarations: [NgxInputSwitchComponent],
-  exports: [NgxInputSwitchComponent]
+  exports: [NgxInputSwitchComponent],
 })
 export class NgxInputSwitchModule {}

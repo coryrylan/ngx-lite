@@ -3,79 +3,85 @@
   "compilerOptions": {
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
     "sourceMap": true,
     "declaration": false,
-    "module": "esnext",
-    "moduleResolution": "node",
-    "emitDecoratorMetadata": true,
+    "downlevelIteration": true,
     "experimentalDecorators": true,
+    "moduleResolution": "node",
     "importHelpers": true,
     "target": "es2015",
-    "typeRoots": [
-      "node_modules/@types"
-    ],
+    "module": "es2020",
     "lib": [
       "es2018",
       "dom"
     ],
     "paths": {
       "@ngx-lite/util": [
-        "dist/ngx-util"
+        "./dist/ngx-util"
       ],
       "@ngx-lite/carbon-ad": [
-        "dist/ngx-carbon-ad"
+        "./dist/ngx-carbon-ad"
       ],
       "@ngx-lite/code-example": [
-        "dist/ngx-code-example"
+        "./dist/ngx-code-example"
       ],
       "@ngx-lite/debounce-click": [
-        "dist/ngx-debounce-click"
+        "./dist/ngx-debounce-click"
       ],
       "@ngx-lite/eq": [
-        "dist/ngx-eq"
+        "./dist/ngx-eq"
       ],
       "@ngx-lite/in-viewport": [
-        "dist/ngx-in-viewport"
+        "./dist/ngx-in-viewport"
       ],
       "@ngx-lite/input-datepicker": [
-        "dist/ngx-input-datepicker"
+        "./dist/ngx-input-datepicker"
       ],
       "@ngx-lite/input-timepicker": [
-        "dist/ngx-input-timepicker"
+        "./dist/ngx-input-timepicker"
       ],
       "@ngx-lite/input-range": [
-        "dist/ngx-input-range"
+        "./dist/ngx-input-range"
       ],
       "@ngx-lite/input-star-rating": [
-        "dist/ngx-input-star-rating"
+        "./dist/ngx-input-star-rating"
       ],
       "@ngx-lite/input-switch": [
-        "dist/ngx-input-switch"
+        "./dist/ngx-input-switch"
       ],
       "@ngx-lite/loaders": [
-        "dist/ngx-loaders"
+        "./dist/ngx-loaders"
       ],
       "@ngx-lite/input-tag": [
-        "dist/ngx-input-tag"
+        "./dist/ngx-input-tag"
       ],
       "@ngx-lite/json-ld": [
-        "dist/ngx-json-ld"
+        "./dist/ngx-json-ld"
       ],
       "@ngx-lite/modal": [
-        "dist/ngx-modal"
+        "./dist/ngx-modal"
       ],
       "@ngx-lite/nav-drawer": [
-        "dist/ngx-nav-drawer"
+        "./dist/ngx-nav-drawer"
       ],
       "@ngx-lite/progress": [
-        "dist/ngx-progress"
+        "./dist/ngx-progress"
       ],
       "@ngx-lite/tabs": [
-        "dist/ngx-tabs"
+        "./dist/ngx-tabs"
       ],
       "@ngx-lite/menus": [
-        "dist/ngx-menus"
+        "./dist/ngx-menus"
       ]
     }
+  },
+  "angularCompilerOptions": {
+    "strictInjectionParameters": true,
+    "strictInputAccessModifiers": true,
+    "strictTemplates": true
   }
 }

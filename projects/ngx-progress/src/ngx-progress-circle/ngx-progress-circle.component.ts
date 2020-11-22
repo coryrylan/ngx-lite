@@ -4,7 +4,7 @@ import {
   SimpleChanges,
   OnChanges,
   ViewEncapsulation,
-  ChangeDetectionStrategy
+  ChangeDetectionStrategy,
 } from '@angular/core';
 
 @Component({
@@ -12,17 +12,17 @@ import {
   templateUrl: './ngx-progress-circle.component.html',
   styleUrls: ['./ngx-progress-circle.component.scss'],
   encapsulation: ViewEncapsulation.None,
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class NgxProgressCircleComponent implements OnChanges {
-  @Input() value: number;
+  @Input() value: number | null = 0;
   @Input() symbol = '%';
   @Input() label = 'complete';
-  @Input() valueLabel: string = null;
+  @Input() valueLabel = '';
 
   radius = 74;
   circumference = 2 * Math.PI * this.radius;
-  dashoffset: number;
+  dashoffset = 0;
 
   constructor() {
     this.progress(0);

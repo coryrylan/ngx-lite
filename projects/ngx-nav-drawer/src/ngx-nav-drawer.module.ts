@@ -5,6 +5,6 @@ import { NgxNavDrawerComponent } from './ngx-nav-drawer.component';
 @NgModule({
   imports: [CommonModule],
   declarations: [NgxNavDrawerComponent],
-  exports: [NgxNavDrawerComponent]
+  exports: [NgxNavDrawerComponent],
 })
 export class NgxNavDrawerModule {}

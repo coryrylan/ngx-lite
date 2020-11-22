@@ -5,6 +5,6 @@ import { NgxInputTimepickerComponent } from './ngx-input-timepicker.component';
 @NgModule({
   imports: [CommonModule],
   declarations: [NgxInputTimepickerComponent],
-  exports: [NgxInputTimepickerComponent]
+  exports: [NgxInputTimepickerComponent],
 })
 export class NgxInputTimepickerModule {}

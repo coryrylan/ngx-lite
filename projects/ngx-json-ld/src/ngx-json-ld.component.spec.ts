@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { waitForAsync, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { NgxJsonLdComponent } from './ngx-json-ld.component';
 import { SimpleChange } from '@angular/core';
@@ -11,20 +11,22 @@ const testSchema = {
   contactPoint: {
     '@type': 'ContactPoint',
     telephone: '+1-401-555-1212',
-    contactType: 'Customer service'
+    contactType: 'Customer service',
   },
-  scriptTest: '<script>window.scriptInjection = true</script>'
+  scriptTest: '<script>window.scriptInjection = true</script>',
 };
 
 describe('NgxJsonLdComponent', () => {
   let component: NgxJsonLdComponent;
   let fixture: ComponentFixture<NgxJsonLdComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [NgxJsonLdComponent]
-    }).compileComponents();
-  }));
+  beforeEach(
+    waitForAsync(() => {
+      TestBed.configureTestingModule({
+        declarations: [NgxJsonLdComponent],
+      }).compileComponents();
+    })
+  );
 
   beforeEach(() => {
     fixture = TestBed.createComponent(NgxJsonLdComponent);
