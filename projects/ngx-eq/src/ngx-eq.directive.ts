@@ -7,7 +7,6 @@ import {
   ChangeDetectorRef,
   Inject,
 } from '@angular/core';
-import ResizeObserver from 'resize-observer-polyfill';
 
 import { NGX_EQ_CONFIG, Config } from './ngx-eq.di-tokens';
 

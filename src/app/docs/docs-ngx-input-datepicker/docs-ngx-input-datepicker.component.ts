@@ -25,7 +25,7 @@ export class DocsNgxInputDatepickerComponent {
     this.minDate = new Date();
     this.minDate.setDate(today.getDate());
     this.maxDate = new Date();
-    this.maxDate.setDate(today.getDate() + 30);
+    this.maxDate.setDate(today.getDate() + 20);
 
     const rangeValue: [Date, Date] = [tomorrow, later];
 

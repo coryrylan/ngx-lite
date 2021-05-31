@@ -1,5 +1,8 @@
 # Changelog
 
+# 0.6.4
+- angular 12 update
+
 # 0.6.3
 - angular 11 update
 

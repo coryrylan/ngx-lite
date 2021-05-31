@@ -31,7 +31,14 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [],
+            "aot": false,
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "production": {
@@ -157,12 +164,15 @@
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
-            "tsConfig": "projects/tsconfig.lib.json",
             "project": "projects/ngx-util/ng-package.json"
           },
           "configurations": {
             "production": {
-              "project": "projects/ngx-util/ng-package.prod.json"
+              "project": "projects/ngx-util/ng-package.prod.json",
+              "tsConfig": "projects/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/tsconfig.lib.json"
             }
           }
         }
@@ -177,12 +187,15 @@
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
-            "tsConfig": "projects/tsconfig.lib.json",
             "project": "projects/ngx-carbon-ad/ng-package.json"
           },
           "configurations": {
             "production": {
-              "project": "projects/ngx-carbon-ad/ng-package.prod.json"
+              "project": "projects/ngx-carbon-ad/ng-package.prod.json",
+              "tsConfig": "projects/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/tsconfig.lib.json"
             }
           }
         }
@@ -197,12 +210,15 @@
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
-            "tsConfig": "projects/tsconfig.lib.json",
             "project": "projects/ngx-code-example/ng-package.json"
           },
           "configurations": {
             "production": {
-              "project": "projects/ngx-code-example/ng-package.prod.json"
+              "project": "projects/ngx-code-example/ng-package.prod.json",
+              "tsConfig": "projects/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/tsconfig.lib.json"
             }
           }
         }
@@ -217,12 +233,15 @@
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
-            "tsConfig": "projects/tsconfig.lib.json",
             "project": "projects/ngx-debounce-click/ng-package.json"
           },
           "configurations": {
             "production": {
-              "project": "projects/ngx-debounce-click/ng-package.prod.json"
+              "project": "projects/ngx-debounce-click/ng-package.prod.json",
+              "tsConfig": "projects/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/tsconfig.lib.json"
             }
           }
         }
@@ -237,12 +256,15 @@
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
-            "tsConfig": "projects/tsconfig.lib.json",
             "project": "projects/ngx-eq/ng-package.json"
           },
           "configurations": {
             "production": {
-              "project": "projects/ngx-eq/ng-package.prod.json"
+              "project": "projects/ngx-eq/ng-package.prod.json",
+              "tsConfig": "projects/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/tsconfig.lib.json"
             }
           }
         }
@@ -257,12 +279,15 @@
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
-            "tsConfig": "projects/tsconfig.lib.json",
             "project": "projects/ngx-in-viewport/ng-package.json"
           },
           "configurations": {
             "production": {
-              "project": "projects/ngx-in-viewport/ng-package.prod.json"
+              "project": "projects/ngx-in-viewport/ng-package.prod.json",
+              "tsConfig": "projects/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/tsconfig.lib.json"
             }
           }
         }
@@ -277,12 +302,15 @@
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
-            "tsConfig": "projects/tsconfig.lib.json",
             "project": "projects/ngx-input-datepicker/ng-package.json"
           },
           "configurations": {
             "production": {
-              "project": "projects/ngx-input-datepicker/ng-package.prod.json"
+              "project": "projects/ngx-input-datepicker/ng-package.prod.json",
+              "tsConfig": "projects/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/tsconfig.lib.json"
             }
           }
         }
@@ -297,12 +325,15 @@
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
-            "tsConfig": "projects/tsconfig.lib.json",
             "project": "projects/ngx-input-timepicker/ng-package.json"
           },
           "configurations": {
             "production": {
-              "project": "projects/ngx-input-timepicker/ng-package.prod.json"
+              "project": "projects/ngx-input-timepicker/ng-package.prod.json",
+              "tsConfig": "projects/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/tsconfig.lib.json"
             }
           }
         }
@@ -317,12 +348,15 @@
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
-            "tsConfig": "projects/tsconfig.lib.json",
             "project": "projects/ngx-input-range/ng-package.json"
           },
           "configurations": {
             "production": {
-              "project": "projects/ngx-input-range/ng-package.prod.json"
+              "project": "projects/ngx-input-range/ng-package.prod.json",
+              "tsConfig": "projects/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/tsconfig.lib.json"
             }
           }
         }
@@ -337,12 +371,15 @@
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
-            "tsConfig": "projects/tsconfig.lib.json",
             "project": "projects/ngx-input-star-rating/ng-package.json"
           },
           "configurations": {
             "production": {
-              "project": "projects/ngx-input-star-rating/ng-package.prod.json"
+              "project": "projects/ngx-input-star-rating/ng-package.prod.json",
+              "tsConfig": "projects/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/tsconfig.lib.json"
             }
           }
         }
@@ -357,12 +394,15 @@
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
-            "tsConfig": "projects/tsconfig.lib.json",
             "project": "projects/ngx-input-switch/ng-package.json"
           },
           "configurations": {
             "production": {
-              "project": "projects/ngx-input-switch/ng-package.prod.json"
+              "project": "projects/ngx-input-switch/ng-package.prod.json",
+              "tsConfig": "projects/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/tsconfig.lib.json"
             }
           }
         }
@@ -377,12 +417,15 @@
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
-            "tsConfig": "projects/tsconfig.lib.json",
             "project": "projects/ngx-loaders/ng-package.json"
           },
           "configurations": {
             "production": {
-              "project": "projects/ngx-loaders/ng-package.prod.json"
+              "project": "projects/ngx-loaders/ng-package.prod.json",
+              "tsConfig": "projects/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/tsconfig.lib.json"
             }
           }
         }
@@ -397,12 +440,15 @@
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
-            "tsConfig": "projects/tsconfig.lib.json",
             "project": "projects/ngx-input-tag/ng-package.json"
           },
           "configurations": {
             "production": {
-              "project": "projects/ngx-input-tag/ng-package.prod.json"
+              "project": "projects/ngx-input-tag/ng-package.prod.json",
+              "tsConfig": "projects/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/tsconfig.lib.json"
             }
           }
         }
@@ -417,12 +463,15 @@
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
-            "tsConfig": "projects/tsconfig.lib.json",
             "project": "projects/ngx-json-ld/ng-package.json"
           },
           "configurations": {
             "production": {
-              "project": "projects/ngx-json-ld/ng-package.prod.json"
+              "project": "projects/ngx-json-ld/ng-package.prod.json",
+              "tsConfig": "projects/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/tsconfig.lib.json"
             }
           }
         }
@@ -437,12 +486,15 @@
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
-            "tsConfig": "projects/tsconfig.lib.json",
             "project": "projects/ngx-modal/ng-package.json"
           },
           "configurations": {
             "production": {
-              "project": "projects/ngx-modal/ng-package.prod.json"
+              "project": "projects/ngx-modal/ng-package.prod.json",
+              "tsConfig": "projects/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/tsconfig.lib.json"
             }
           }
         }
@@ -457,12 +509,15 @@
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
-            "tsConfig": "projects/tsconfig.lib.json",
             "project": "projects/ngx-nav-drawer/ng-package.json"
           },
           "configurations": {
             "production": {
-              "project": "projects/ngx-nav-drawer/ng-package.prod.json"
+              "project": "projects/ngx-nav-drawer/ng-package.prod.json",
+              "tsConfig": "projects/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/tsconfig.lib.json"
             }
           }
         }
@@ -477,12 +532,15 @@
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
-            "tsConfig": "projects/tsconfig.lib.json",
             "project": "projects/ngx-progress/ng-package.json"
           },
           "configurations": {
             "production": {
-              "project": "projects/ngx-progress/ng-package.prod.json"
+              "project": "projects/ngx-progress/ng-package.prod.json",
+              "tsConfig": "projects/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/tsconfig.lib.json"
             }
           }
         }
@@ -497,12 +555,15 @@
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
-            "tsConfig": "projects/tsconfig.lib.json",
             "project": "projects/ngx-tabs/ng-package.json"
           },
           "configurations": {
             "production": {
-              "project": "projects/ngx-tabs/ng-package.prod.json"
+              "project": "projects/ngx-tabs/ng-package.prod.json",
+              "tsConfig": "projects/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/tsconfig.lib.json"
             }
           }
         }
@@ -517,12 +578,15 @@
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
-            "tsConfig": "projects/tsconfig.lib.json",
             "project": "projects/ngx-menus/ng-package.json"
           },
           "configurations": {
             "production": {
-              "project": "projects/ngx-menus/ng-package.prod.json"
+              "project": "projects/ngx-menus/ng-package.prod.json",
+              "tsConfig": "projects/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/tsconfig.lib.json"
             }
           }
         }

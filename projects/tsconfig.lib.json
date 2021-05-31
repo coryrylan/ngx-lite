@@ -21,10 +21,5 @@
   "exclude": [
     "./test.ts",
     "**/*.spec.ts"
-  ],
-  "paths": {
-    "@ngx-lite/util": [
-      "./../dist/ngx-util"
-    ]
-  }
+  ]
 }
