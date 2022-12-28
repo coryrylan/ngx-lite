@@ -51,10 +51,10 @@ export class NgxInputStarRatingComponent
 
   buttons: { active: boolean; icon: string }[] = [];
 
-  // tslint:disable-next-line:no-empty
+  // eslint-disable-next-line no-empty,@typescript-eslint/no-empty-function
   onChange = (_value: number) => {};
 
-  // tslint:disable-next-line:no-empty
+  // eslint-disable-next-line no-empty, @typescript-eslint/no-empty-function
   onTouched = () => {};
 
   registerOnChange(fn: (value: number) => void) {

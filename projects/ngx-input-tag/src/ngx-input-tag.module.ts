@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { ModuleWithProviders, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
   NgxInputTagComponent,
@@ -12,7 +12,9 @@ import { NGX_INPUT_TAG_TAG_FORMATTER } from './ngx-input-tag.di-tokens';
   exports: [NgxInputTagComponent],
 })
 export class NgxInputTagModule {
-  static forRoot(config = { tagFormatter }) {
+  static forRoot(
+    config = { tagFormatter }
+  ): ModuleWithProviders<NgxInputTagModule> {
     return {
       ngModule: NgxInputTagModule,
       providers: [
