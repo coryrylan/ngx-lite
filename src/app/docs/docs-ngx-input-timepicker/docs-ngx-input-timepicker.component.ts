@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { startWith } from 'rxjs/operators';
 
@@ -9,10 +9,10 @@ import { startWith } from 'rxjs/operators';
   preserveWhitespaces: true,
 })
 export class DocsNgxInputTimepickerComponent {
-  form: FormGroup;
+  form: UntypedFormGroup;
   value: Observable<Date>;
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(private formBuilder: UntypedFormBuilder) {
     this.form = this.formBuilder.group({
       date: [new Date()],
     });

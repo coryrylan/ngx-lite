@@ -13,13 +13,13 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 })
 export class NgxJsonLdComponent {
   @Input()
-  set json(currentValue: {}) {
+  set json(currentValue: any) {
     this.jsonLD = this.getSafeHTML(currentValue);
   }
   @HostBinding('innerHTML') jsonLD?: SafeHtml;
   constructor(private sanitizer: DomSanitizer) {}
 
-  getSafeHTML(value: {}) {
+  getSafeHTML(value: any) {
     const json = value
       ? JSON.stringify(value, null, 2).replace(/<\/script>/g, '<\\/script>')
       : '';

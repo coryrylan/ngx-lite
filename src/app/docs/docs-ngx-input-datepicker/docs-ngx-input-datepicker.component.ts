@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { startWith } from 'rxjs/operators';
 
@@ -9,13 +9,13 @@ import { startWith } from 'rxjs/operators';
   preserveWhitespaces: true,
 })
 export class DocsNgxInputDatepickerComponent {
-  form: FormGroup;
+  form: UntypedFormGroup;
   value: Observable<[Date, Date]>;
   value2: Observable<Date>;
   minDate: Date;
   maxDate: Date;
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(private formBuilder: UntypedFormBuilder) {
     const today = new Date();
     const tomorrow = new Date();
     tomorrow.setDate(today.getDate() + 1);
