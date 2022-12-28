@@ -15,7 +15,7 @@ import {
   ChangeDetectionStrategy,
 } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
-import { FormControl, NG_VALUE_ACCESSOR } from '@angular/forms';
+import { UntypedFormControl, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { Subscription } from 'rxjs';
 import { distinctUntilChanged, startWith } from 'rxjs/operators';
 
@@ -46,7 +46,7 @@ export class NgxInputRangeComponent
   @Input() labels: string[] | null = null;
 
   private _value = 50;
-  control = new FormControl(this._value);
+  control = new UntypedFormControl(this._value);
 
   margin?: string;
   maxWidth?: string;

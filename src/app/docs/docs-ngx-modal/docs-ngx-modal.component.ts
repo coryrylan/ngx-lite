@@ -1,5 +1,9 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import {
+  UntypedFormBuilder,
+  UntypedFormGroup,
+  Validators,
+} from '@angular/forms';
 
 const controls = {
   firstName: 'firstName',
@@ -17,10 +21,10 @@ export class DocsNgxModalComponent {
   showLongContent = false;
   showTemplate = false;
   showForm = false;
-  readonly modalForm: FormGroup;
+  readonly modalForm: UntypedFormGroup;
   readonly controls = controls;
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(private formBuilder: UntypedFormBuilder) {
     this.modalForm = this.formBuilder.group({
       firstName: ['', Validators.required],
       lastName: ['', Validators.required],

@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { ModuleWithProviders, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { NgxEqDirective } from './ngx-eq.directive';
@@ -19,7 +19,7 @@ export const defaultConfig: Config = {
   exports: [NgxEqDirective],
 })
 export class NgxEqModule {
-  static forRoot(config: Config = {}) {
+  static forRoot(config: Config = {}): ModuleWithProviders<NgxEqModule> {
     return {
       ngModule: NgxEqModule,
       providers: [

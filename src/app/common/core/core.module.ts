@@ -1,6 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
-import { NgModule, Optional, SkipSelf } from '@angular/core';
+import {
+  ModuleWithProviders,
+  NgModule,
+  Optional,
+  SkipSelf,
+} from '@angular/core';
 
 import { NgxInputTagModule } from '@ngx-lite/input-tag';
 import { NgxEqModule } from '@ngx-lite/eq';
@@ -15,7 +20,7 @@ import { NgxEqModule } from '@ngx-lite/eq';
   exports: [HttpClientModule],
 })
 export class CoreModule {
-  static forRoot() {
+  static forRoot(): ModuleWithProviders<any> {
     return {
       ngModule: CoreModule,
       providers: [],
