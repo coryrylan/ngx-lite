@@ -1,6 +1,6 @@
 {
   "name": "@ngx-lite/json-ld",
-  "version": "0.6.4",
+  "version": "0.6.5",
   "repository": "https://github.com/coryrylan/ngx-json-ld",
   "author": "Cory Rylan",
   "license": "MIT",
