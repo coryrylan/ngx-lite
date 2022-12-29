@@ -1,13 +1,13 @@
 {
   "name": "@ngx-lite/in-viewport",
-  "version": "0.1.6",
+  "version": "0.2.0",
   "repository": "https://github.com/coryrylan/ngx-lite",
   "author": "Cory Rylan",
   "license": "MIT",
   "private": false,
   "peerDependencies": {
-    "@angular/common": "^12.0.2",
-    "@angular/core": "^12.0.2",
+    "@angular/common": "^14.2.12",
+    "@angular/core": "^14.2.12",
     "rxjs": "^6.6.0"
   },
   "dependencies": {
