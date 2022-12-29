@@ -1,6 +1,6 @@
 {
   "name": "@ngx-lite/code-example",
-  "version": "0.3.4",
+  "version": "0.3.5",
   "peerDependencies": {
     "@angular/common": "^12.0.2",
     "@angular/core": "^12.0.2",
