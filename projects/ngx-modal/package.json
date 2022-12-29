@@ -1,13 +1,13 @@
 {
   "name": "@ngx-lite/modal",
-  "version": "0.5.8",
+  "version": "0.6.0",
   "repository": "https://github.com/coryrylan/ngx-lite",
   "author": "Cory Rylan",
   "license": "MIT",
   "private": false,
   "peerDependencies": {
-    "@angular/common": "^12.0.2",
-    "@angular/core": "^12.0.2",
+    "@angular/common": "^14.2.12",
+    "@angular/core": "^14.2.12",
     "@ngx-lite/util": "^0.0.1"
   },
   "dependencies": {

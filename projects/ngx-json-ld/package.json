@@ -1,15 +1,15 @@
 {
   "name": "@ngx-lite/json-ld",
-  "version": "0.6.5",
+  "version": "0.7.0",
   "repository": "https://github.com/coryrylan/ngx-json-ld",
   "author": "Cory Rylan",
   "license": "MIT",
   "private": false,
   "peerDependencies": {
-    "@angular/platform-browser": "^12.0.2",
-    "@angular/common": "^12.0.2",
-    "@angular/core": "^12.0.2",
-    "@angular/forms": "^12.0.2"
+    "@angular/platform-browser": "^14.2.12",
+    "@angular/common": "^14.2.12",
+    "@angular/core": "^14.2.12",
+    "@angular/forms": "^14.2.12"
   },
   "dependencies": {
     "tslib": "^2.0.0"
