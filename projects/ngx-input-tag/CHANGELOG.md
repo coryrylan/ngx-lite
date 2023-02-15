@@ -1,5 +1,8 @@
 # Changelog
 
+# 14.0.0
+- angular 14 update
+
 # 0.4.10
 - angular 12 update
 

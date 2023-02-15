@@ -1,11 +1,8 @@
 # ngx-lite
-[![Build Status](https://travis-ci.org/coryrylan/ngx-lite.svg?branch=master)](https://travis-ci.org/coryrylan/ngx-lite)
-
-[Become a Patron!](https://www.patreon.com/bePatron?u=10431713)
 
 [ngxlite.com](https://ngxlite.com/)
 
-Angular 11+
+Angular 14+
 
 A mono repo collection of lightweight stand alone Angular libraries built with 
 the [Angular CLI](https://github.com/angular/angular-cli) and [ng-packagr](https://github.com/dherges/ng-packagr)
