@@ -20,13 +20,11 @@ describe('NgxJsonLdComponent', () => {
   let component: NgxJsonLdComponent;
   let fixture: ComponentFixture<NgxJsonLdComponent>;
 
-  beforeEach(
-    waitForAsync(() => {
-      TestBed.configureTestingModule({
-        declarations: [NgxJsonLdComponent],
-      }).compileComponents();
-    })
-  );
+  beforeEach(waitForAsync(() => {
+    TestBed.configureTestingModule({
+      declarations: [NgxJsonLdComponent],
+    }).compileComponents();
+  }));
 
   beforeEach(() => {
     fixture = TestBed.createComponent(NgxJsonLdComponent);

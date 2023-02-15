@@ -6,13 +6,11 @@ describe('NgxProgressCircleComponent', () => {
   let component: NgxProgressCircleComponent;
   let fixture: ComponentFixture<NgxProgressCircleComponent>;
 
-  beforeEach(
-    waitForAsync(() => {
-      TestBed.configureTestingModule({
-        declarations: [NgxProgressCircleComponent],
-      }).compileComponents();
-    })
-  );
+  beforeEach(waitForAsync(() => {
+    TestBed.configureTestingModule({
+      declarations: [NgxProgressCircleComponent],
+    }).compileComponents();
+  }));
 
   beforeEach(() => {
     fixture = TestBed.createComponent(NgxProgressCircleComponent);

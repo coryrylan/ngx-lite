@@ -6,13 +6,11 @@ describe('NgxLoadingBarComponent', () => {
   let component: NgxLoadingBarComponent;
   let fixture: ComponentFixture<NgxLoadingBarComponent>;
 
-  beforeEach(
-    waitForAsync(() => {
-      TestBed.configureTestingModule({
-        declarations: [NgxLoadingBarComponent],
-      }).compileComponents();
-    })
-  );
+  beforeEach(waitForAsync(() => {
+    TestBed.configureTestingModule({
+      declarations: [NgxLoadingBarComponent],
+    }).compileComponents();
+  }));
 
   beforeEach(() => {
     fixture = TestBed.createComponent(NgxLoadingBarComponent);

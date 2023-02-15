@@ -23,14 +23,12 @@ describe('NgxInputStarRatingComponent', () => {
   let fixture: ComponentFixture<TestComponent>;
   let switchEl;
 
-  beforeEach(
-    waitForAsync(() => {
-      TestBed.configureTestingModule({
-        imports: [ReactiveFormsModule],
-        declarations: [TestComponent, NgxInputStarRatingComponent],
-      }).compileComponents();
-    })
-  );
+  beforeEach(waitForAsync(() => {
+    TestBed.configureTestingModule({
+      imports: [ReactiveFormsModule],
+      declarations: [TestComponent, NgxInputStarRatingComponent],
+    }).compileComponents();
+  }));
 
   beforeEach(() => {
     fixture = TestBed.createComponent(TestComponent);

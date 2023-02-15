@@ -21,14 +21,12 @@ describe('NgxInputSwitchComponent', () => {
   let fixture: ComponentFixture<TestComponent>;
   let switchEl;
 
-  beforeEach(
-    waitForAsync(() => {
-      TestBed.configureTestingModule({
-        imports: [ReactiveFormsModule],
-        declarations: [TestComponent, NgxInputSwitchComponent],
-      }).compileComponents();
-    })
-  );
+  beforeEach(waitForAsync(() => {
+    TestBed.configureTestingModule({
+      imports: [ReactiveFormsModule],
+      declarations: [TestComponent, NgxInputSwitchComponent],
+    }).compileComponents();
+  }));
 
   beforeEach(() => {
     fixture = TestBed.createComponent(TestComponent);

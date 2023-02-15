@@ -6,13 +6,11 @@ describe('NgxTabsComponent', () => {
   let component: NgxTabsComponent;
   let fixture: ComponentFixture<NgxTabsComponent>;
 
-  beforeEach(
-    waitForAsync(() => {
-      TestBed.configureTestingModule({
-        declarations: [NgxTabsComponent],
-      }).compileComponents();
-    })
-  );
+  beforeEach(waitForAsync(() => {
+    TestBed.configureTestingModule({
+      declarations: [NgxTabsComponent],
+    }).compileComponents();
+  }));
 
   beforeEach(() => {
     fixture = TestBed.createComponent(NgxTabsComponent);

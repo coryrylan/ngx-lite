@@ -6,13 +6,11 @@ describe('NgxNavDrawerComponent', () => {
   let component: NgxNavDrawerComponent;
   let fixture: ComponentFixture<NgxNavDrawerComponent>;
 
-  beforeEach(
-    waitForAsync(() => {
-      TestBed.configureTestingModule({
-        declarations: [NgxNavDrawerComponent],
-      }).compileComponents();
-    })
-  );
+  beforeEach(waitForAsync(() => {
+    TestBed.configureTestingModule({
+      declarations: [NgxNavDrawerComponent],
+    }).compileComponents();
+  }));
 
   beforeEach(() => {
     fixture = TestBed.createComponent(NgxNavDrawerComponent);

@@ -45,7 +45,8 @@ let instanceId = 0;
   ],
 })
 export class NgxInputDatepickerComponent
-  implements ControlValueAccessor, OnInit {
+  implements ControlValueAccessor, OnInit
+{
   @Input() showInput = false;
   @Input() range = false;
   @Input() placeholder = '';

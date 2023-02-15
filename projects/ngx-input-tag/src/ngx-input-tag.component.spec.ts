@@ -23,19 +23,17 @@ describe('NgxInputTagComponent', () => {
   let component: TestComponent;
   let fixture: ComponentFixture<TestComponent>;
 
-  beforeEach(
-    waitForAsync(() => {
-      TestBed.configureTestingModule({
-        declarations: [TestComponent, NgxInputTagComponent],
-        providers: [
-          {
-            provide: NGX_INPUT_TAG_TAG_FORMATTER,
-            useValue: formatter,
-          },
-        ],
-      }).compileComponents();
-    })
-  );
+  beforeEach(waitForAsync(() => {
+    TestBed.configureTestingModule({
+      declarations: [TestComponent, NgxInputTagComponent],
+      providers: [
+        {
+          provide: NGX_INPUT_TAG_TAG_FORMATTER,
+          useValue: formatter,
+        },
+      ],
+    }).compileComponents();
+  }));
 
   beforeEach(() => {
     fixture = TestBed.createComponent(TestComponent);

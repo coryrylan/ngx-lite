@@ -7,14 +7,12 @@ describe('NgxMenuComponent', () => {
   let component: NgxMenuComponent;
   let fixture: ComponentFixture<NgxMenuComponent>;
 
-  beforeEach(
-    waitForAsync(() => {
-      TestBed.configureTestingModule({
-        declarations: [NgxMenuComponent],
-        providers: [NgxMenuService],
-      }).compileComponents();
-    })
-  );
+  beforeEach(waitForAsync(() => {
+    TestBed.configureTestingModule({
+      declarations: [NgxMenuComponent],
+      providers: [NgxMenuService],
+    }).compileComponents();
+  }));
 
   beforeEach(() => {
     fixture = TestBed.createComponent(NgxMenuComponent);

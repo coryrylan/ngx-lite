@@ -1,6 +1,6 @@
-@import '~normalize.css/normalize';
-@import '~blueprint-css/src/blueprint';
-@import '~prismjs/themes/prism.css';
+@import 'normalize.css/normalize';
+@import 'blueprint-css/src/blueprint';
+@import 'prismjs/themes/prism.css';
 @import './styles/_config';
 @import './styles/_typography';
 @import './styles/_global';
@@ -12,28 +12,6 @@ body {
   --color-theme-primary: $color-secondary;
 }
 
-// ngx-input-range {
-//   --color-range-lower-fill: var(--color-theme-primary) !important;
-//   --color-range-thumb: var(--color-theme-primary) !important;
-// }
-
 ngx-input-star-rating {
   --color-star-highlight: gold !important;
 }
-
-// ngx-input-switch {
-//   --color-selected: var(--color-theme-primary) !important;
-// }
-
-// ngx-input-datepicker {
-//   --color-today: var(--color-theme-primary) !important;
-//   --color-selected: var(--color-theme-primary) !important;
-// }
-
-// ngx-progress-bar {
-//   --color-bar: var(--color-theme-primary) !important;
-// }
-
-// ngx-progress-circle {
-//   --color-stroke: var(--color-theme-primary) !important;
-// }

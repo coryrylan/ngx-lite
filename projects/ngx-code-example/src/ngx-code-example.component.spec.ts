@@ -17,13 +17,11 @@ describe('NgxCodeExampleComponent', () => {
   let component: NgxCodeExampleComponent;
   let fixture: ComponentFixture<NgxCodeExampleComponent>;
 
-  beforeEach(
-    waitForAsync(() => {
-      TestBed.configureTestingModule({
-        declarations: [NgxCodeExampleComponent, TestComponent],
-      }).compileComponents();
-    })
-  );
+  beforeEach(waitForAsync(() => {
+    TestBed.configureTestingModule({
+      declarations: [NgxCodeExampleComponent, TestComponent],
+    }).compileComponents();
+  }));
 
   beforeEach(() => {
     fixture = TestBed.createComponent(NgxCodeExampleComponent);

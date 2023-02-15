@@ -17,7 +17,6 @@ class TestComponent {
 
   add() {
     this.count = this.count + 1;
-    console.log('add()', this.count);
   }
 }
 
@@ -26,17 +25,15 @@ describe('NgxDebounceClickDirective', () => {
   let fixture: ComponentFixture<TestComponent>;
   let button: any;
 
-  beforeEach(
-    waitForAsync(() => {
-      TestBed.configureTestingModule({
-        declarations: [NgxDebounceClickDirective, TestComponent],
-      }).compileComponents();
+  beforeEach(waitForAsync(() => {
+    TestBed.configureTestingModule({
+      declarations: [NgxDebounceClickDirective, TestComponent],
+    }).compileComponents();
 
-      fixture = TestBed.createComponent(TestComponent);
-      component = fixture.componentInstance;
-      button = fixture.nativeElement.querySelector('button');
-    })
-  );
+    fixture = TestBed.createComponent(TestComponent);
+    component = fixture.componentInstance;
+    button = fixture.nativeElement.querySelector('button');
+  }));
 
   it('should debounce a click event', fakeAsync(() => {
     expect(component.count).toBe(0);

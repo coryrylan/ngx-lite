@@ -6,13 +6,11 @@ describe('NgxProgressBarComponent', () => {
   let component: NgxProgressBarComponent;
   let fixture: ComponentFixture<NgxProgressBarComponent>;
 
-  beforeEach(
-    waitForAsync(() => {
-      TestBed.configureTestingModule({
-        declarations: [NgxProgressBarComponent],
-      }).compileComponents();
-    })
-  );
+  beforeEach(waitForAsync(() => {
+    TestBed.configureTestingModule({
+      declarations: [NgxProgressBarComponent],
+    }).compileComponents();
+  }));
 
   beforeEach(() => {
     fixture = TestBed.createComponent(NgxProgressBarComponent);

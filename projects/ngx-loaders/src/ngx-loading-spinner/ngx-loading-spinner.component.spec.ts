@@ -6,13 +6,11 @@ describe('NgxLoadingSpinnerComponent', () => {
   let component: NgxLoadingSpinnerComponent;
   let fixture: ComponentFixture<NgxLoadingSpinnerComponent>;
 
-  beforeEach(
-    waitForAsync(() => {
-      TestBed.configureTestingModule({
-        declarations: [NgxLoadingSpinnerComponent],
-      }).compileComponents();
-    })
-  );
+  beforeEach(waitForAsync(() => {
+    TestBed.configureTestingModule({
+      declarations: [NgxLoadingSpinnerComponent],
+    }).compileComponents();
+  }));
 
   beforeEach(() => {
     fixture = TestBed.createComponent(NgxLoadingSpinnerComponent);

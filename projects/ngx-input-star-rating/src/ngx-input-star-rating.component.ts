@@ -31,7 +31,8 @@ const starIcons = {
   encapsulation: ViewEncapsulation.None,
 })
 export class NgxInputStarRatingComponent
-  implements ControlValueAccessor, OnInit, OnChanges {
+  implements ControlValueAccessor, OnInit, OnChanges
+{
   get value() {
     return this._value;
   }

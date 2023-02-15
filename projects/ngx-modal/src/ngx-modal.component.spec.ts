@@ -25,19 +25,17 @@ describe('NgxModalComponent', () => {
   let testFixture: ComponentFixture<TestComponent>;
   let component: NgxModalComponent;
 
-  beforeEach(
-    waitForAsync(() => {
-      TestBed.configureTestingModule({
-        declarations: [NgxModalComponent, TestComponent],
-      }).compileComponents();
+  beforeEach(waitForAsync(() => {
+    TestBed.configureTestingModule({
+      declarations: [NgxModalComponent, TestComponent],
+    }).compileComponents();
 
-      testFixture = TestBed.createComponent(TestComponent);
-      component = testFixture.debugElement.query(
-        By.directive(NgxModalComponent)
-      ).componentInstance;
-      testFixture.detectChanges();
-    })
-  );
+    testFixture = TestBed.createComponent(TestComponent);
+    component = testFixture.debugElement.query(
+      By.directive(NgxModalComponent)
+    ).componentInstance;
+    testFixture.detectChanges();
+  }));
 
   it('should create', () => {
     expect(component).toBeTruthy();

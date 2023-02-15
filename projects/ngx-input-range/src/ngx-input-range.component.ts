@@ -36,7 +36,8 @@ let instanceId = 0;
   encapsulation: ViewEncapsulation.None,
 })
 export class NgxInputRangeComponent
-  implements OnInit, OnChanges, OnDestroy, AfterViewInit {
+  implements OnInit, OnChanges, OnDestroy, AfterViewInit
+{
   @ViewChild('rangeInput', { static: false }) rangeInput?: ElementRef;
   @Input() label = '';
   @Input() measure = '';
