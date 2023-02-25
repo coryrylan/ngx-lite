@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { startWith } from 'rxjs/operators';
 
@@ -12,11 +12,11 @@ const tagSuggestions = ['google', 'apple', 'microsoft'];
   preserveWhitespaces: true,
 })
 export class DocsNgxInputTagComponent {
-  form: UntypedFormGroup;
+  form: FormGroup;
   value: Observable<string[]>;
   tagSuggestions = tagSuggestions;
 
-  constructor(private formBuilder: UntypedFormBuilder) {
+  constructor(private formBuilder: FormBuilder) {
     this.form = this.formBuilder.group({
       tags: [tags],
     });

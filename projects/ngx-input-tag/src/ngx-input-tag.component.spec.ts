@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { UntypedFormControl } from '@angular/forms';
+import { FormControl } from '@angular/forms';
 import {
   waitForAsync,
   ComponentFixture,
@@ -16,7 +16,7 @@ const testData = ['dog', 'cat', 'bird'];
   template: ` <ngx-input-tag formContolName="tags"></ngx-input-tag> `,
 })
 class TestComponent {
-  tags = new UntypedFormControl(testData);
+  tags = new FormControl(testData);
 }
 
 describe('NgxInputTagComponent', () => {

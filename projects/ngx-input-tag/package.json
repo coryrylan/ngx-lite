@@ -1,14 +1,14 @@
 {
   "name": "@ngx-lite/input-tag",
-  "version": "14.0.0",
+  "version": "13.0.0",
   "repository": "https://github.com/coryrylan/ngx-lite",
   "author": "Cory Rylan",
   "license": "MIT",
   "private": false,
   "peerDependencies": {
-    "@angular/common": "^14.2.12",
-    "@angular/core": "^14.2.12",
-    "@angular/forms": "^14.2.12"
+    "@angular/common": "^13.3.12",
+    "@angular/core": "^13.3.12",
+    "@angular/forms": "^13.3.12"
   },
   "dependencies": {
     "tslib": "^2.0.0"

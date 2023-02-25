@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { UntypedFormControl, ReactiveFormsModule } from '@angular/forms';
+import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import {
   waitForAsync,
   fakeAsync,
@@ -15,7 +15,7 @@ import { NgxInputStarRatingComponent } from './ngx-input-star-rating.component';
   `,
 })
 class TestComponent {
-  rate = new UntypedFormControl(3);
+  rate = new FormControl(3);
 }
 
 describe('NgxInputStarRatingComponent', () => {

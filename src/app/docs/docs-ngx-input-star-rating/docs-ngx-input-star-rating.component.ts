@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { startWith } from 'rxjs/operators';
 
@@ -9,10 +9,10 @@ import { startWith } from 'rxjs/operators';
   preserveWhitespaces: true,
 })
 export class DocsNgxInputStarRatingComponent {
-  form: UntypedFormGroup;
+  form: FormGroup;
   value: Observable<number>;
 
-  constructor(private formBuilder: UntypedFormBuilder) {
+  constructor(private formBuilder: FormBuilder) {
     this.form = this.formBuilder.group({
       rating: [3.5],
     });

@@ -1,13 +1,13 @@
 {
   "name": "@ngx-lite/nav-drawer",
-  "version": "14.0.0",
+  "version": "13.0.0",
   "repository": "https://github.com/coryrylan/ngx-lite",
   "author": "Cory Rylan",
   "license": "MIT",
   "private": false,
   "peerDependencies": {
-    "@angular/common": "^14.2.12",
-    "@angular/core": "^14.2.12",
+    "@angular/common": "^13.3.12",
+    "@angular/core": "^13.3.12",
     "rxjs": "^6.6.0",
     "@ngx-lite/util": "^0.0.1"
   },

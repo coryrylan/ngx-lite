@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { UntypedFormControl, ReactiveFormsModule } from '@angular/forms';
+import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import {
   waitForAsync,
   fakeAsync,
@@ -13,7 +13,7 @@ import { NgxInputSwitchComponent } from './ngx-input-switch.component';
   template: ` <ngx-input-switch formContolName="switch"></ngx-input-switch> `,
 })
 class TestComponent {
-  switch = new UntypedFormControl(true);
+  switch = new FormControl(true);
 }
 
 describe('NgxInputSwitchComponent', () => {
