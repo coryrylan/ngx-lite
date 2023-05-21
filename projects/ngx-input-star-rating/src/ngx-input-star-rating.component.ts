@@ -7,6 +7,7 @@ import {
   SimpleChanges,
   ViewEncapsulation,
   ChangeDetectionStrategy,
+  ChangeDetectorRef,
 } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
@@ -44,6 +45,8 @@ export class NgxInputStarRatingComponent
     this.onTouched();
   }
 
+  constructor(private _cdRef: ChangeDetectorRef) {}
+
   @Input('value') _value = 0;
   @Input() count = 5;
   @Input() disabled = false;
@@ -66,9 +69,15 @@ export class NgxInputStarRatingComponent
     this.onTouched = fn;
   }
 
+  setDisabledState(val: boolean): void {
+    this.disabled = val;
+    this._cdRef.markForCheck();
+  }
+
   writeValue(value: number) {
     if (value !== this.value) {
       this.value = value;
+      this._cdRef.detectChanges();
     }
   }
 
@@ -126,10 +135,10 @@ export class NgxInputStarRatingComponent
 
       if (value >= starValue) {
         btn.icon = starIcons.full;
-      }
-
-      if (value >= starValue - 0.5 && value < starValue) {
+      } else if (value >= starValue - 0.5 && value < starValue) {
         btn.icon = starIcons.half;
+      } else {
+        btn.icon = starIcons.outline;
       }
     });
   }
